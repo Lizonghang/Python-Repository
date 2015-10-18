@@ -8,3 +8,5 @@ $ git reset --h ard HEAD^  # 将当前版本回退到上一版本
 						  # 当前版本HEAD,上一版本HEAD^^,上上版本HEAD^^,回退n个版本HEAD~n
 $ git reset --hard 版本ID  # 返回到未来的某版本
 $ git reflog  # 记录每一次命令(可查看commit id以找回版本)
+$ git rm 文件名.后缀  # 将文件从工作区中删除
+$ git checkout  # 用版本库里的版本替换工作区的版本,一键还原

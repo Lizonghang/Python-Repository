@@ -13,3 +13,4 @@ $ git checkout  # 用版本库里的版本替换工作区的版本,一键还原
 $ cat <file>  # 查看文件中的数据
 $ git checkout -- <file>  # 丢弃工作区的修改 
 $ git reset HEAD <file>  # 将暂存区中的修改回退到工作区
+$ git push origin master  # 把本地master分支最新修改推送至GitHub

@@ -15,3 +15,4 @@ $ git checkout -- <file>  # 丢弃工作区的修改
 $ git reset HEAD <file>  # 将暂存区中的修改回退到工作区
 $ git push origin master  # 把本地master分支最新修改推送至GitHub
 $ git pull origin master  # 取回远程主机的master分支
+$ git push -u origin master -f  # 强制把本地master分支推送至GitHub

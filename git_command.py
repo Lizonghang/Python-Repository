@@ -16,3 +16,5 @@ $ git reset HEAD <file>  # 将暂存区中的修改回退到工作区
 $ git push origin master  # 把本地master分支最新修改推送至GitHub
 $ git pull origin master  # 取回远程主机的master分支
 $ git push -u origin master -f  # 强制把本地master分支推送至GitHub
+$ git clone git@github.com:lizonghang/python-repository.git  # 克隆得到一个本地库
+$ ls # 查看Git库中的文件,需要先进入Git仓库目录

@@ -20,4 +20,7 @@ $ git clone git@github.com:lizonghang/python-repository.git  # 克隆得到一�
 $ ls # 查看Git库中的文件,需要先进入Git仓库目录
 $ git checkout -b <branch>  # 创建并切换分支
 $ git branch <branch>  # 创建一个分支
+$ git branch  # 查看所有分支
 $ git checkout <branch>  # 切换到分支
+$ git merge <branch>  # 合并指定分支到当前分支
+$ git branch -d <branch>  # 删除分支

@@ -13,14 +13,22 @@ $ git checkout  # 用版本库里的版本替换工作区的版本,一键还原
 $ cat <file>  # 查看文件中的数据
 $ git checkout -- <file>  # 丢弃工作区的修改 
 $ git reset HEAD <file>  # 将暂存区中的修改回退到工作区
-$ git push origin master  # 把本地master分支最新修改推送至GitHub
+$ git push origin <branch>  # 把本地指定分支最新修改推送至GitHub
 $ git pull origin master  # 取回远程主机的master分支
 $ git push -u origin master -f  # 强制把本地master分支推送至GitHub
 $ git clone git@github.com:lizonghang/python-repository.git  # 克隆得到一个本地库
 $ ls # 查看Git库中的文件,需要先进入Git仓库目录
 $ git checkout -b <branch>  # 创建并切换分支
+$ git checkout -b <branch> origin/<branch>  # 创建远程origin的<branch>分支到本地
 $ git branch <branch>  # 创建一个分支
 $ git branch  # 查看所有分支
 $ git checkout <branch>  # 切换到分支
 $ git merge <branch>  # 合并指定分支到当前分支
+$ git merge --no-ff -m <message> <branch>  # 禁用Fast forward合并分支,且原分支保留
 $ git branch -d <branch>  # 删除分支
+$ git stash  # 储藏当前工作现场,等待恢复现场后继续工作
+$ git stash list  # 查看储藏的工作现场列表
+$ git stash apply stash@<index> # 恢复工作现场,不删除stash内容
+$ git stash drop stash@<index>  # 删除stash内容
+$ git stash pop  # 恢复工作现场,同时删除stash内容
+$ git branch --set-upstream <branch> origin/<branch>  # 指定本地<branch>分支与远程<branch>分支的链接

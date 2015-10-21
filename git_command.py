@@ -18,3 +18,6 @@ $ git pull origin master  # 取回远程主机的master分支
 $ git push -u origin master -f  # 强制把本地master分支推送至GitHub
 $ git clone git@github.com:lizonghang/python-repository.git  # 克隆得到一个本地库
 $ ls # 查看Git库中的文件,需要先进入Git仓库目录
+$ git checkout -b <branch>  # 创建并切换分支
+$ git branch <branch>  # 创建一个分支
+$ git checkout <branch>  # 切换到分支

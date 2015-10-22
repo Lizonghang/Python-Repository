@@ -37,3 +37,7 @@ $ git tag <tag-name>  # 添加一个新标签,默认打在最新提交的commit�
 $ git tag <tag-name> <commit-id>  # 给指定的提交添加标签
 $ git show <tag-name>  # 查看标签信息
 $ git tag -a <tag-name> -m <message> <commit-id>  # 创建带有说明的标签
+$ git tag -d <tag-name>  # 删除标签
+$ git push origin <tag-name>  # 推送标签<tag-name>至远程
+$ git push origin --tags  # 一次性推送全部尚未推送到远程的本地标签
+$ git push origin :refs/tags/<tag-name>  # 删除远程tag标签,需要先删除本地标签

@@ -32,3 +32,8 @@ $ git stash apply stash@<index> # 恢复工作现场,不删除stash内容
 $ git stash drop stash@<index>  # 删除stash内容
 $ git stash pop  # 恢复工作现场,同时删除stash内容
 $ git branch --set-upstream <branch> origin/<branch>  # 指定本地<branch>分支与远程<branch>分支的链接
+$ git tag # 查看所有标签
+$ git tag <tag-name>  # 添加一个新标签,默认打在最新提交的commit上
+$ git tag <tag-name> <commit-id>  # 给指定的提交添加标签
+$ git show <tag-name>  # 查看标签信息
+$ git tag -a <tag-name> -m <message> <commit-id>  # 创建带有说明的标签

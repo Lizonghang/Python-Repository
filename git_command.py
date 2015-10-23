@@ -5,6 +5,7 @@ $ git status  # 查看仓库当前状态
 $ git diff <file> # 对比工作区修改的内容
 $ git diff HEAD -- <file>  # 查看工作区和版本库里面最新版本的区别
 $ git log  # 查看提交日志
+$ git log -1  # 查看最近一次提交信息
 $ git reset --hard HEAD^  # 将当前版本回退到上一版本,当前版本HEAD,上一版本HEAD^^,上上版本HEAD^^,回退n个版本HEAD~n
 $ git reset --hard <commit-id>  # 返回到未来的某版本
 $ git reflog  # 记录每一次命令(可查看commit id以找回版本)
@@ -13,6 +14,7 @@ $ git checkout  # 用版本库里的版本替换工作区的版本,一键还原
 $ cat <file>  # 查看文件中的数据
 $ git checkout -- <file>  # 丢弃工作区的修改 
 $ git reset HEAD <file>  # 将暂存区中的修改回退到工作区
+$ git remote add origin git@github.com:<github-name>/<repository>.git  # 与远程库建立链接
 $ git push origin <branch>  # 把本地指定分支最新修改推送至GitHub
 $ git pull origin master  # 取回远程主机的master分支
 $ git push -u origin master -f  # 强制把本地master分支推送至GitHub
@@ -41,3 +43,4 @@ $ git tag -d <tag-name>  # 删除标签
 $ git push origin <tag-name>  # 推送标签<tag-name>至远程
 $ git push origin --tags  # 一次性推送全部尚未推送到远程的本地标签
 $ git push origin :refs/tags/<tag-name>  # 删除远程tag标签,需要先删除本地标签
+$ git config --global alias.<rename> <origin-name>  # 配置别名

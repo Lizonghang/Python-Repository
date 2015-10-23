@@ -34,10 +34,12 @@ class ImageCollect:
             try:
                 req = urllib2.Request(root_url, headers=self.headers)
                 page_message = urllib2.urlopen(req).read()
-            except urllib2.HTTPError, err:
-                if err.code == 404:
-                    self.index_count -= 1
-                    continue
+			#except urllib2.URLError:
+			#	self.index_count -= 1
+			#	continue
+            except urllib2.HTTPError:
+                self.index_count -= 1
+                continue
             print u'请求URL:%s' % root_url
             title = self.find_title(page_message)
             self.get_images(page_message, title)

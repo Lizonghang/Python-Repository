@@ -82,7 +82,7 @@ class ImageSpider:
                 self.list_urls.append(link)
 
     def find_images(self, page_message):
-        image_match = re.compile(r'src=\"(.*?\.jpg)\"')
+        image_match = re.compile(r'src=\"(.*?\.[jpg|gif])\"')
         image_list = re.findall(image_match, page_message)
         for image in image_list:
             if image not in self.images:

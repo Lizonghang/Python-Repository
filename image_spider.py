@@ -24,7 +24,7 @@ class ImageSpider:
                             AppleWebKit/537.36 (KHTML, like Gecko)
                             Chrome/42.0.2311.152 Safari/537.36 LBBROWSER'''
         }
-        self.image_count = 1
+        self.image_count = 0
         reload(sys)
         sys.setdefaultencoding('utf-8')
         urllib2.socket.setdefaulttimeout(5)
@@ -58,7 +58,7 @@ class ImageSpider:
             return
         title = self.find_title(page_message)
         self.find_link(page_message)
-        self.find_images(page_message, title)
+        self.find_images(page_message)
 
     def find_title(self, page_message):
         myMatch = re.search(r'<title>(.*?)</title>', page_message, re.S)

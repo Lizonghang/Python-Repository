@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta http-equiv="CONTENT-TYPE" content="text/html">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>问卷网</title>
+    <link href="{% static "admin/css/public.css" %}" rel="stylesheet">
+    <link href="{% static "admin/css/home.css" %}" rel="stylesheet">
+    <link href="{% static "admin/css/index.css" %}" rel="stylesheet">
+    <link href="{% static "admin/css/bootstrap.min.css" %}" rel="stylesheet">
+    <script src="{% static "admin/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "admin/js/jquery.js" %}"></script>
+</head>
+<body>
+<div class="head_index clearfix">
+    <div class="head_nav clearfix">
+        <div class="mb_a a">
+            <a href="/naire/select/" class="down_a" style="text-decoration: none">新建问卷</a>
+        </div>
+    </div>
+    <div class="btn_member">
+        <a href="/naire/login/" class="login_dj_cq" rel="nofollow" style="text-decoration: none">登录</a>
+        <a href="/naire/regist/$" rel="nofollow" style="text-decoration: none">注册</a>
+    </div>
+</div>
+{% load staticfiles %}
+<div class="survey_ban"><img src="{% static 'admin/img/wj_ban.jpg' %}" width="100%"/></div>
+<div class="survey_box1">
+    {% load staticfiles %}
+    <img src="{% static "admin/img/wj1.jpg" %}" width="100%" />
+    <div class="wz_box wz1">
+        <h3>客户满意度</h3>
+        <p>提供多种客户满意度模版，让你无需了解复杂的<br/>满意度模型和理论，就能倾听客户</p>
+        <p>可通过网页、手机、微信、邮件等多种方式让你<br/>的客户方便的参与调查</p>
+    </div>
+</div>
+
+<div class="survey_box2 wj_bg">
+    {% load staticfiles %}
+    <img src="{% static "admin/img/wj_bg.jpg" %}" width="100%" />
+    <div class="banner">
+        <div class="img">
+            <img src="{% static "admin/img/wenjuan-1.png" %}" width="100%" />
+        </div>
+    </div>
+    <div class="wz_box wz2 tc">
+        <h3>人力资源调查</h3>
+        <p>提供员工满意度、培训反馈、360度评估等人力资源常用模板<br/>可以自定义主题，添加LOGO，让问卷与企业形象更匹配</p>
+    </div>
+</div>
+<div class="survey_box3">
+    {% load staticfiles %}
+    <img src="{% static "admin/img/wj3.jpg" %}" width="100%" />
+    <div class="wz_box wz3">
+        <h3>投票评选</h3>
+        <p>原来制作图文投票可以如此简单！<br/>多重保障防刷票，可在投票后公开显示结果</p>
+    </div>
+</div>
+<div class="survey_box4">
+    {% load staticfiles %}
+    <img src="{% static "admin/img/wj4.jpg" %}" width="100%" />
+    <div class="wz_box wz4 tc">
+        <h3>市场调查</h3>
+        <p>可提供交叉分析报表和多种数据格式导出，支持SPSS，满足你的专业市场分析需求<br/>
+                并能变更主题颜色，插入图片，满足你对市场调查个性化的需求
+        </p>
+    </div>
+</div>
+<div class="survey_box5">
+    {% load staticfiles %}
+    <img src="{% static "admin/img/wj5.jpg" %}" width="100%" />
+    <div class="wz_box wz5 tc">
+        <h3>学术教育</h3>
+        <p>可分享到社交网络的在线问卷，调查再也不受地理限制<br/>自动分析，助你轻松完成学术研究</p>
+    </div>
+</div>
+<div class="bg_ceng"></div>
+<div class="tc_login_cq">
+    <center>
+        <div style="height: 30px"></div>
+        {% load staticfiles %}
+        <img src="{% static "admin/img/logo_tc.png" %}" style="width: 200px;width: 100px;">
+    </center>
+    <a href="javascript:" class="close_tc"></a>
+    <div class="login_center_cq">
+        <div class="error"></div>
+        <div class="login_name">
+            <i></i><input type="text" style="height: 38px" class="txt" id="loginwin_emailorusername" placeholder="邮箱/手机号/用户名"/>
+        </div>
+        <div class="login_password">
+            <i></i><input type="password" style="height: 38px" id="loginwin_password" placeholder="密码"/>
+        </div>
+        <a style="text-decoration: none" class="loginbut" href="javascript:void(0);" onclick="javascript: check_loginwin('header'); return false;">登 录</a>
+    </div>
+</div>
+</body>
+</html>

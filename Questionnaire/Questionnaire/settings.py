@@ -78,12 +78,13 @@ WSGI_APPLICATION = 'Questionnaire.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '199014',
-        'HOST': '',
-        'PORT': '5432',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
+	'NAME': 'postgres',
+        #'USER': 'postgres',
+        #'PASSWORD': '199014',
+        #'HOST': 'localhost',
+        #'PORT': '5432',
     }
 }
 

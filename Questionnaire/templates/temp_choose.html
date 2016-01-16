@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load staticfiles %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,16 +8,16 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <title>模板选择</title>
-    <link href="{% static "admin/css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "admin/css/site.min.css" %}">
-    <link href="{% static "admin/css/public.css" %}" rel="stylesheet">
-    <link href="{% static "admin/css/home.css" %}" rel="stylesheet">
-    <link href="{% static "admin/css/index.css" %}" rel="stylesheet">
-    <script src="{% static "admin/js/bootstrap.min.js" %}"></script>
-    <script src="{% static "admin/js/jquery.js" %}"></script>
+    <link href="../static/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/admin/css/site.min.css" rel="stylesheet">
+    <link href="../static/admin/css/public.css" rel="stylesheet">
+    <link href="../static/admin/css/home.css" rel="stylesheet">
+    <link href="../static/admin/css/index.css" rel="stylesheet">
+    <script src="../static/admin/js/bootstrap.min.js"></script>
+    <script src="../static/admin/js/jquery.js"></script>
 </head>
 <body class="home-template" style="background-color: #EDF3FE">
-<div class="header" style="background-image: url({% static "admin/img/topic.jpg" %});width: 1280px;height: 400px;">
+<div class="header" style="background-image: url('../static/admin/img/topic.jpg');width: 1280px;height: 400px;">
     <div style="height: 160px"></div>
     <p style="font-size: 30px;color: white;" align="center">选择模板</p>
 </div>

@@ -230,68 +230,16 @@
             <div class="right">
                 <div class="phone" id="phone_quick"></div>
                 <div class="enterA" id="enterA">
-                    <div id="enterBanner"></div>
                     <div class="haomaTitle">
                         <div class="haoma-inner" id="haoma-inner">注册帐号</div>
                     </div>
-                    <form action="" method="post" onsubmit="return window.index&&index.submit()">
-                        <div id="email_box" class="hide"><div id="email_tips" class="box box_1" style="display:none">
-                            <div class="item">注册方式</div>
-                            <div class="ipt_box method_box nobg">
-                                <a id="email_2" name="new_other_mail" onclick="index.needShowError[2]=0,index.changeMethod(2)" onmouseout="this.removeAttribute(&quot;_hover&quot;)" onmouseover="this.setAttribute(&quot;_hover&quot;,&quot;over&quot;)" tabindex="1">使用非<span class="tahoma">QQ/Foxmail</span> 邮箱</a>
-                                <a name="new_self_mail" id="email_1" class="checked" onclick="index.needShowError[1]=0,index.changeMethod(1)" onmouseout="this.removeAttribute(&quot;_hover&quot;)" onmouseover="this.setAttribute(&quot;_hover&quot;,&quot;over&quot;)" tabindex="2">注册<span class="tahoma">QQ/Foxmail</span> 邮箱</a>
-                            </div>
-                            <div class="info">
-                                <table>
-                                    <tr>
-                                        <td class="hidden"></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                            <div class="box box_2">
-                                <label class="item" for="other_email">邮箱帐号</label>
-                                <div id="mail_box" class="ipt_box nobg self" style="z-index:99">
-                                    <div class="ipt_other">
-                                        <div id="other_email_bg" class="bg_txt">
-                                            <input id="other_email" type="text" class="new_txt" name="other_email" tabindex="3" autocomplete="off" maxlength="38">
-                                        </div>
-                                        <ul id="other_email_ul" class="other_email_ul hide"></ul>
-                                    </div>
-                                    <div class="ipt_self">
-                                        <input type="text" name="self_email" id="self_email" tabindex="4" autocomplete="off" maxlength="18">
-                                        <div class="outer">
-                                            <div id="selfType" tabindex="5">@qq.com</div>
-                                            <ul id="selfTypeBox" class="hide">
-                                                <li id="selfType0">@qq.com</li>
-                                                <li id="selfType1">@foxmail.com</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <table>
-                                        <tr>
-                                            <td id="email_info" class="hidden"></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                    <form action="" method="post">
                         <div class="box box_3" style="z-index:0">
                             <label class="item" for="nick">昵称</label>
                             <div class="ipt_box nick_ipt_box">
                                 <div id="nick_bg" class="bg_txt">
                                     <input type="text" class="new_txt" id="nick" name="nick" tabindex="6" style="z-index:0" maxlength="24" autocomplete="off">
                                 </div>
-                            </div>
-                            <div class="info">
-                                <table>
-                                    <tr>
-                                        <td id="nick_info" class="hidden"></td>
-                                    </tr>
-                                </table>
                             </div>
                         </div>
                         <div class="box box_4">
@@ -302,15 +250,11 @@
                                 </div>
                             </div>
                             <div class="info pwd_info">
-                                <div class="pwd_tips hide" id="pwd_tips">
+                                <div class="pwd_tips" id="pwd_tips">
                                     <div class="default" id="pwd_tip1">长度为6-16个字符</div>
                                     <div class="default" id="pwd_tip3">不能包含空格</div>
                                     <div class="default" id="pwd_tip2">不能是9位以下纯数字</div>
                                 </div>
-                                <table id="pwd_result" class="hide">
-                                    <tr><td id="password_pic">弱</td></tr>
-                                    <tr><td id="password_info" class="password_info"></td></tr>
-                                </table>
                             </div>
                         </div>
                         <div class="box box_5">
@@ -320,40 +264,29 @@
                                     <input type="password" class="new_txt" name="pass_again" id="password_again" tabindex="8" maxlength="16">
                                 </div>
                             </div>
-                            <div class="info">
-                                <table>
-                                    <tr><td id="password_again_info" class="hidden"></td></tr>
-                                </table>
-                            </div>
                         </div>
                         <div class="box box_6">
                             <div class="item">性别</div>
                             <div class="ipt_box nobg sex_box">
-                                <a name="male" id="sex_1" class="checked" tabindex="9">男</a>
-                                <a id="sex_2" class="unchecked" name="femail" tabindex="10">女</a>
-                            </div>
-                            <div class="info">
-                                <table>
-                                    <tr><td id="sex_info" class="hidden"></td></tr>
-                                </table>
+                                <input type="radio" name="sex" id="sex_1" class="checked">男</input><br><br>
+                                <input type="radio" id="sex_2" class="unchecked" name="sex">女</input>
                             </div>
                         </div>
                         <div class="box box_11">
                             <div class="item"></div>
                             <div class="ipt_box">
+                                <br><br>
                                 <div class="agree_box">
-                                    <label name="agree" class="a_1 checked" id="agree" tabindex="22">我已阅读并同意<a tabindex="22" style="color: blue" href="#">相关服务条款和隐私政策</a>
-                                </div>
-                                <div class="submit">
-                                    <input class="" type="submit" value="提交注册" title="提交注册" tabindex="23" id="submit">
+                                    <input name="agree" id="agree" type="checkbox">我已阅读并同意<a style="color: red" href="#">相关服务条款和隐私政策</a></input>
+                                    <div class="submit">
+                                        <br>
+                                    <input class="" type="submit" value="提交注册" title="提交注册" id="submit">
                                 </div>
                             </div>
-                            <div class="info"></div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="clear"></div>
         </div>
     </div>
 </div>

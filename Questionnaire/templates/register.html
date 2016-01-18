@@ -29,7 +29,7 @@
         .box .tip{color:grey;background:0 0}.info table{margin-left:6px}.info td{width:233px;height:35px;vertical-align:middle}
         .box_1 .ipt_box{height:40px}
         .box .method_box{width:306px;padding-left:0}
-        .box .method_box a{padding-left:20px;background:url(../static/admin//img/ipt.png) -300px -321px no-repeat;display:inline-block;height:18px;line-height:18px;margin-right:6px;cursor:pointer}
+        .box .method_box a{padding-left:20px;background:url(../static/admin/img/ipt.png) -300px -321px no-repeat;display:inline-block;height:18px;line-height:18px;margin-right:6px;cursor:pointer}
         .box .ipt_box .ipt_other,.box .ipt_box .ipt_self{height:50px;position:relative}
         .box .method_box a.checked{background:url(../static/admin/img/ipt.png) -300px -353px no-repeat}
         .box .ipt_box .ipt_other{}.box .ipt_box .ipt_self input{background:url(../static/admin/img/ipt.png) 0 -176px no-repeat;border:none;line-height:18px;font-size:14px;width:181px;padding:8px;display:block;float:left;margin-right:4px;height:19px}
@@ -222,30 +222,6 @@
     <div class="web_notice_text" id="web_notice_text"></div>
 </div>
 <div class="cover" id="cover"></div>
-<div class="box_">
-    <div class="chk_email_code" id="chk_email_code_box">
-        <a class="close" onclick="window.index&&index.hideEmailCode()"></a>
-        <h2>操作提示</h2>
-        <div class="div_1">
-            <span class="chkError"></span>
-            您短时间内尝试次数过多，请填写验证码或稍后再试
-        </div>
-        <div class="div_2">
-            <span>验证码:</span>
-            <input type="text" name="email_code" id="email_code_ipt" maxlength="8" autocomplete="off">
-            <span id="email_code_ipt_err">验证码错误</span>
-        </div>
-        <div class="div_3">按下图字符填写，不区分大小写。<br>
-            <img src="" onclick="window.index&&index.changeEmailCode()" id="email_code_img" alt="验证码" title="请输入验证码"><br>
-            <a onclick="window.index&&index.changeEmailCode()">看不清楚？换一个</a><br>
-            <input type="button" onclick="window.index&&index.ajaxChkEmail()">
-        </div>
-    </div>
-</div>
-<div class="haomaBox" id="haomaBox">
-    <a class="haomaClose" id="haomaClose" title="关闭"></a>
-    <a id="haomaBtn" href="http://zc.qq.com/chs/new.html" title="精品靓号免费拿" onclick="$.report.monitor(&quot;l_enter_a_click&quot;)"></a>
-</div>
 <div class="bg">
     <div class="container">
         <div class="header"></div>
@@ -362,156 +338,11 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="box box_7">
-                            <div class="item">生日</div>
-                            <div class="ipt_box nopadding nobg">
-                                <div id="inptu_search_tips" class="paopao" style="display:none"><span id="inptu_search_tips_wording" class="p_l"></span> <span class="p_r"></span></div>
-                                <div id="birthday_type_box">
-                                    <a href="javascript:void(0)" id="birthday_type_value" class="value_box" tabindex="11">公历</a>
-                                    <ul id="birthday_type_ul" class="hide">
-                                        <li id="birthday_0" value="0" class="hover">公历</li>
-                                        <li id="birthday_1" value="1">农历</li>
-                                    </ul>
-                                </div>
-                                <div id="year_box">
-                                    <div id="year_bg" class="year_bg_txt">
-                                        <input id="year_value" class="year_value" tabindex="12" value="年" maxlength="10" autocomplete="off">
-                                    </div>
-                                    <ul id="year_ul" class="hide"></ul>
-                                </div>
-                                <div id="month_box">
-                                    <input id="month_value" class="month_value" tabindex="13" value="月" maxlength="4" autocomplete="off">
-                                    <ul id="month_ul" class="hide"></ul>
-                                </div>
-                                <div id="day_box">
-                                    <input id="day_value" class="day_value" tabindex="14" value="日" maxlength="4" autocomplete="off">
-                                    <ul id="day_ul" class="hide"></ul>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <table>
-                                    <tr><td id="birthday_info" class="hidden"></td></tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="box box_8">
-                            <div class="item">所在地</div>
-                            <div class="ipt_box nopadding nobg">
-                                <div id="country_box">
-                                    <div id="country_value_bg" class="area_value_bg">
-                                        <input type="text" id="country_value" class="country_value" tabindex="15" maxlength="20" autocomplete="off">
-                                    </div>
-                                    <ul id="country_ul" class="hide"></ul>
-                                </div>
-                                <div id="province_box">
-                                    <div id="province_value_bg" class="area_value_bg">
-                                        <input type="text" id="province_value" class="province_value" tabindex="16" maxlength="20" autocomplete="off">
-                                    </div>
-                                    <ul id="province_ul" class="hide"></ul>
-                                </div>
-                                <div id="city_box">
-                                    <div id="city_value_bg" class="area_value_bg">
-                                        <input type="text" id="city_value" class="city_value" tabindex="17" maxlength="20" autocomplete="off">
-                                    </div>
-                                    <ul id="city_ul" class="hide"></ul>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <table>
-                                    <tr><td id="area_info" class="hidden"></td></tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="box box_9 hide" id="code_box">
-                            <label class="item" for="code">验证码</label>
-                            <div class="ipt_box code_bg">
-                                <input id="code" class="code_ipt" type="text" name="code" tabindex="18" autocomplete="off" maxlength="8">
-                                <img id="code_img" style="float:left;cursor:pointer;margin-left:5px" width="130" height="53" src="" title="点击换一张" onclick="window.index&&index.changeCode(!0)">
-                            </div>
-                            <div class="info">
-                                <table>
-                                    <tr><td id="code_info"><span id="code_info_err" class="tips">请输入图中的字母，不区分大小写</span></td></tr>
-                                    <tr><td style="height:18px"><span class="change" onclick="window.index&&index.changeCode(!0)" title="点击换一张">点击换一张</span></td></tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div id="phone_box" class="phone_box_land">
-                            <div id="sea_phone" class="box box_2 sea_phone">
-                                <label class="item" for="sea_country_input">地区</label>
-                                <div class="sea_country_box" id="sea_country_box">
-                                    <div class="sea_area_value_bg">
-                                        <input id="sea_country_input" autocomplete="off" class="sea_country_input" tabindex="19">
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="land_phone" class="box box_2 land_phone">
-                                <label class="item" for="phone_num"><span style="display:inline-block;text-align:center">手机号码</span></label>
-                                <div id="" class="ipt_box">
-                                    <div class="ipt_other">
-                                        <div id="phone_num_bg" class="bg_txt">
-                                            <input id="phone_num" type="text" class="new_txt" name="phone_num" tabindex="20" autocomplete="off" maxlength="11">
-                                            <a class="phone_del hide" id="phone_del" href="javascript:void(0);"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <table>
-                                        <tr><td id="phone_info" class="tip"></td></tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="box box_phone_tip">
-                                <div class="tip" style="margin-left:189px">
-                                    <div style="font-size:14px;margin-bottom:5px">忘记密码时，可通过该手机号码快速找回密码</div>
-                                    <span id="sea_entry" class="tip">请输入中国大陆手机号码（不含小灵通）<br>其他地区号码<a onclick="index.seaPhone()" href="javascript:void(0);">点击这里</a></span>
-                                </div>
-                            </div>
-                            <div id="sms_box" class="box" style="z-index:0">
-                                <div class="item"></div>
-                                <div class="ipt_box verima_ipt_box" id="verima_ipt_box">
-                                    <div id="verima_bg" class="bg_txt">
-                                        <input type="text" class="new_txt" id="verima" name="verima" style="z-index:0" autocomplete="off" maxlength="6" tabindex="21">
-                                    </div>
-                                    <label id="verima_label" class="noplinfo hide">系统已将验证码发送到您的手机，请填入验证码</label>
-                                </div>
-                                <div class="getverima">
-                                    <div id="getverima" title="获取短信验证码"><span id="timeLeft"></span><span id="verimaTip">获取短信验证码</span></div>
-                                </div>
-                                <div class="info">
-                                    <table>
-                                        <tr><td id="verima_info" class="hidden"></td></tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div id="up_box" class="box hide">
-                                <div class="item"></div>
-                                <div class="">
-                                    <p>请用此手机号发送 <span class="green">1</span> 到 <span class="green">1069 0700 511</span> 完成验证</p>
-                                    <div class="tip">注:1、您仅需支付运营商收取的标准短信资费，无需任何额外费用。<br>
-                                                        2、腾讯公司承诺不会对外泄漏您的手机号码及用于其他任何商业用途。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box box_10" id="qzone_box">
-                            <div class="item"></div>
-                            <div class="ipt_box qzone_box nopadding">
-                                <a class="checked" name="qzone" id="qzone" tabindex="22">同时开通QQ空间</a>
-                            </div>
-                        </div>
                         <div class="box box_11">
                             <div class="item"></div>
                             <div class="ipt_box">
                                 <div class="agree_box">
-                                    <a name="agree" class="a_1 checked" id="agree" tabindex="22">我已阅读并同意相关服务条款和隐私政策</a>
-                                    <div id="x_box" class="x_box">
-                                        <div id="x_switcher" title="点击查看用户协议"></div>
-                                        <p>
-                                            <a id="item_1" href="agreement1_chs.html" target="_blank" title="点击查看《QQ号码规则》">《QQ号码规则》</a><br>
-                                            <a id="item_2" href="http://qzone.qq.com/web/tk.html" target="_blank" title="点击查看《QQ空间服务协议》">《QQ空间服务协议》</a><br>
-                                            <a id="item_3" href="http://www.qq.com/privacy.htm" target="_blank" title="点击查看《隐私政策》">《隐私政策》</a><br>
-                                        </p>
-                                    </div>
+                                    <label name="agree" class="a_1 checked" id="agree" tabindex="22">我已阅读并同意<a tabindex="22" style="color: blue" href="#">相关服务条款和隐私政策</a>
                                 </div>
                                 <div class="submit">
                                     <input class="" type="submit" value="提交注册" title="提交注册" tabindex="23" id="submit">
@@ -520,10 +351,6 @@
                             <div class="info"></div>
                         </div>
                     </form>
-                </div>
-                <div class="enterB" id="enterB">
-                    <a id="to_good_num" title="参加免费注册靓号活动" href="http://zc.qq.com/chs/new.html" onclick="$.report.monitor(&quot;l_enter_b_l_click&quot;)"></a>
-                    <a id="old_reg" title="注册普通帐号" href="javascript:void(0);"></a>
                 </div>
             </div>
             <div class="clear"></div>

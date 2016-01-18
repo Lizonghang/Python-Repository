@@ -15,3 +15,7 @@ def register(request):
 
 def choose_template(request):
     return render_to_response("temp_choose.html")
+
+
+def agreement(request):
+    return render_to_response("agreement.html")

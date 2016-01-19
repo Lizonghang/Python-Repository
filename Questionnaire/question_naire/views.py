@@ -5,10 +5,6 @@ def home_page(request):
     return render_to_response("questionnaire.html")
 
 
-def login(request):
-    return render_to_response("login.html")
-
-
 def register(request):
     return render_to_response("register.html")
 

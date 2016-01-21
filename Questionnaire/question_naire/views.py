@@ -23,3 +23,7 @@ def template_1(request):
 
 def submit_success(request):
     return render_to_response("Success.html")
+
+
+def edit_template_1(request):
+    return render_to_response("edit_template_1.html")

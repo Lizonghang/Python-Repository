@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^select/agreement/$', agreement),
     url(r'^select/template_1/$', template_1),
     url(r'^select/success/$', submit_success),
+    url(r'^select/template_1/edit/$', edit_template_1),
     url(r'^$', home_page),
 ]

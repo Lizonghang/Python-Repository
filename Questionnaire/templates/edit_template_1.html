@@ -1,13 +1,12 @@
-<html>
- <head>
-  <title>设计问卷</title>
-  <meta charset="utf-8" http-equiv="content-type"/>
-  <link href="http://www.desckie.com/static/admin/css/NewDefault.css" rel="stylesheet" type="text/css"/>
-  <link href="http://www.desckie.com/static/admin/css/q.css" id="linkBaseUrl" rel="stylesheet" type="text/css"/>
-  <link href="http://www.desckie.com/static/admin/css/newdesign.css" rel="stylesheet" type="text/css"/>
-  <script src="http://www.desckie.com/static/admin/js/zhezhao.js"></script>
-  <style rel="stylesheet" type="text/css">
-   #m-rightbar {
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <title>设计问卷 － [问卷星 www.sojump.com] － 专业的在线问卷调查平台</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <link href="http://www.desckie.com/static/admin/css/NewDefault.css" rel="stylesheet" type="text/css">
+    <link id="linkBaseUrl" rel="stylesheet" type="text/css" href="http://www.desckie.com/static/admin/css/q.css">
+    <link href="http://www.desckie.com/static/admin/css/newdesign.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://www.sojump.com/Js/zhezhao.js"></script>
+<style>
+#m-rightbar {
 	z-index:99;
 	width:45px;
 	height:156px;
@@ -27,12 +26,12 @@
 	outline:0;
 }
 .m-top, .m-help, .m-comment, .m-bottom {
-	background:url(http://www.sojump.com/images/mysojump/rightbar.gif) no-repeat;
+	background:url(/images/mysojump/rightbar.gif) no-repeat;
 	width:45px;
 	height:39px
 }
 .m-top a:hover, .m-help a:hover, .m-comment a:hover, .m-bottom a:hover {
-	background:url(http://www.sojump.com/images/mysojump/rightbar-hover.gif) no-repeat;
+	background:url(/images/mysojump/rightbar-hover.gif) no-repeat;
 }
 .m-help,.m-help a:hover {
 	background-position:0 -39px;
@@ -44,1711 +43,290 @@
 .m-bottom,.m-bottom a:hover{
 	background-position:0 -117px;
 	}
-  </style>
-  <script src="http://www.desckie.com/static/admin/js/operation_new.js"></script>
-  <script src="http://www.desckie.com/static/admin/js/kindeditor.js"></script>
-  <script src="http://www.desckie.com/static/admin/js/createqattr_new.js"></script>
-  <script src="http://www.desckie.com/static/admin/js/utility_new.js"></script>
- </head>
- <body style="background: #eeeeee; margin: 0px; padding: 0px;">
-  <div id="ss-header">
-   <div id="divMenu" style="visibility: visible;">
-    <ul>
-     <li style="display:none;">
-      <a class="link-666 menu" href="javascript:void(0);" onclick="save_paper('edit',true);" title="保存并继续编辑，可以使用快捷键Ctrl+S">
-       <span class="design-icon design-save">
-       </span>
-       <span>
-        <strong>
-         保存
-        </strong>
-       </span>
-      </a>
-      (
-      <input checked="checked" id="chkAutoSave" onclick="chkAutoSave_Click(this);" style="vertical-align: middle;" title="每5分钟定时保存一次" type="checkbox"/>
-      自动保存)
-     </li>
-     <li style="margin-right:20px;">
-      <a class="BS_btn" href="http://www.sojump.com/jq/7058464.aspx?wg=1" onclick="return save_paper('preview',true,true);" style="height:30px; line-height:30px;padding-left:15px; padding-right:15px;" target="_blank">
-       预览问卷
-      </a>
-     </li>
-     <li style="margin-right:60px;">
-      <a class="sumitbutton" href="#" id="hrefFiQ" onclick="return save_paper('pub',true);" style="padding-left:15px; padding-right:15px;">
-       完成编辑
-      </a>
-      <span style="display:none;">
-       [
-       <a class="link-U666" href="javascript:abort();" title="放弃更改并返回">
-        放弃更改
-       </a>
-       ]
-      </span>
-     </li>
-     <li>
-      <a class="titlelnk" href="javascript:initPageQuestionRandom();" style="font-weight:bold;">
-       <span>
-       </span>
-       <span id="spanRandom">
-        题目随机设置
-       </span>
-      </a>
-     </li>
-     <li>
-      <div style="vertical-align: middle; line-height:26px;">
-       <input id="chkUseSelfTopic" type="checkbox"/>
-       <label for="chkUseSelfTopic">
-        隐藏系统
-        <b>
-         题号
-        </b>
-       </label>
-      </div>
-     </li>
-    </ul>
-   </div>
-  </div>
-  <input id="hfData" name="hfData" type="hidden" value="2016/1/21 11:42:10§企业员工满意度调查问卷[复制]§&amp;nbsp;您好！&lt;br /&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp; 欢迎参加“企业员工满意度”的调查工作！此次调查是本公司为了加强企业部门的组织建设而专门设计的，旨在通过对员工满意度的调查对公司的相关建设做出改进。希望你抽出一点时间积极配合我们的调查工作，谢谢你的参与。&lt;br /&gt;
-说明：&lt;br /&gt;
-（1）本次调查采用匿名形式，我们将严格保密你的信息，你可以放心作答。§0§0§0§false§false§0¤page§1§一：&amp;nbsp;总体满意度§0§§§¤radio§1§从总体而言，你对企业满意程度〒〒〒§2§1〒§true§false§0§true§§§0§§§不满意〒false〒1〒0〒〒〒〒〒〒§选项3〒false〒2〒0〒〒〒〒〒〒§选项5〒false〒3〒〒〒〒〒〒〒§选项4〒false〒3〒〒〒〒〒〒〒§满意〒false〒5〒〒〒〒〒〒〒¤radio§2§&amp;nbsp;对自己岗位的满意度〒〒〒§2§1〒§true§false§0§true§§§0§§§很不满意〒false〒1〒0〒〒〒〒〒〒§不满意〒false〒2〒0〒〒〒〒〒〒§一般〒false〒3〒0〒〒〒〒〒〒§满意〒false〒4〒0〒〒〒〒〒〒§很满意〒false〒5〒0〒〒〒〒〒〒¤radio§3§&amp;nbsp;你对公司的归属感〒〒〒§0§1〒§false§false§0§true§§§0§§§很高〒false〒0〒0〒〒〒〒〒〒§较高〒false〒1〒0〒〒〒〒〒〒§一般〒false〒3〒〒〒〒〒〒〒§很少〒false〒4〒〒〒〒〒〒〒§没有〒false〒5〒〒〒〒〒〒〒¤cut§&lt;strong&gt;&amp;nbsp;二：岗位满意度&lt;/strong&gt;§¤slider§4§在工作中你的成就欲望〒〒§0§true§0§100§没有§很高§§false§0¤radio§5§&amp;nbsp;你一天的工作量〒〒〒§0§1〒§false§false§0§true§§§0§§§超负荷〒false〒0〒0〒〒〒〒〒〒§满意〒false〒1〒0〒〒〒〒〒〒§一般〒false〒3〒〒〒〒〒〒〒§很低〒false〒4〒〒〒〒〒〒〒¤radio§6§&amp;nbsp;你对自己岗位的工作〒〒〒§0§1〒§false§false§0§true§§§0§§§很有兴趣〒false〒0〒0〒〒〒〒〒〒§兴趣不浓〒false〒1〒0〒〒〒〒〒〒§没有兴趣〒false〒3〒〒〒〒〒〒〒¤radio§7§&amp;nbsp;在工作中你学习新技能的机会〒〒〒§0§1〒§false§false§0§true§§§0§§§很多〒false〒0〒0〒〒〒〒〒〒§有时〒false〒1〒0〒〒〒〒〒〒§视情况而定〒false〒3〒〒〒〒〒〒〒§几乎没有〒false〒4〒〒〒〒〒〒〒¤radio§8§&amp;nbsp;你觉得自己在工作中的发挥〒〒〒§0§1〒§false§false§0§true§§§0§§§充分发挥〒false〒0〒0〒〒〒〒〒〒§大部分发挥〒false〒1〒0〒〒〒〒〒〒§部分发挥〒false〒3〒〒〒〒〒〒〒§基本没发挥〒false〒4〒〒〒〒〒〒〒¤radio§9§&amp;nbsp;你对自己奋斗的目标〒〒〒§0§1〒§false§false§0§true§§§0§§§清楚〒false〒0〒0〒〒〒〒〒〒§较为清楚〒false〒1〒0〒〒〒〒〒〒§不太清楚〒false〒3〒〒〒〒〒〒〒§不清楚〒false〒4〒〒〒〒〒〒〒¤radio§10§&amp;nbsp;你对自己的工作权限〒〒〒§0§1〒§false§false§0§true§§§0§§§明确〒false〒0〒0〒〒〒〒〒〒§较为明确〒false〒1〒0〒〒〒〒〒〒§不太明确〒false〒3〒〒〒〒〒〒〒§不明确〒false〒4〒〒〒〒〒〒〒¤radio§11§你现在付出的努力和实际收到的报酬相匹配。 〒〒〒§0§1〒§false§false§0§true§§§0§§§很满意〒false〒0〒0〒〒〒〒〒〒§满意〒false〒1〒0〒〒〒〒〒〒§一般〒false〒3〒〒〒〒〒〒〒§不满意〒false〒4〒〒〒〒〒〒〒¤cut§&lt;strong&gt;三：&amp;nbsp;对上司的满意度&lt;/strong&gt;§¤slider§12§&amp;nbsp;总体上你觉得你部门的组长能力〒〒§0§true§0§100§很低§很高§§false§0¤radio§13§组长能够用人所长，扬长避短〒〒〒§0§1〒§false§false§0§true§§§0§§§总是〒false〒0〒0〒〒〒〒〒〒§有时〒false〒1〒0〒〒〒〒〒〒§很少〒false〒3〒〒〒〒〒〒〒§没有〒false〒4〒〒〒〒〒〒〒¤radio§14§&amp;nbsp;组长听取员工意见次数〒〒〒§0§1〒§false§false§0§true§§§0§§§经常〒false〒0〒0〒〒〒〒〒〒§偶尔〒false〒1〒0〒〒〒〒〒〒§几乎不〒false〒3〒〒〒〒〒〒〒¤radio§15§组长与员工的关系〒〒〒§0§1〒§false§false§0§true§§§0§§§很好〒false〒0〒0〒〒〒〒〒〒§一般〒false〒1〒0〒〒〒〒〒〒§不好〒false〒3〒〒〒〒〒〒〒§经常吵〒false〒4〒〒〒〒〒〒〒œfalse§9a255438-1137-4ce4-98d2-3a52a0e6ee27§0§q.css§False§null"/>
-  <div style="width:870px; margin: 0 auto; text-align: left;">
-   <div id="topnav" style="visibility: visible; position: relative;">
-    <div class="tabQTypet" style="background: 0px; border: 0px; height: 40px;">
-     <ul id="tQType">
-      <li style="margin-left: 5px; width:55px;">
-       <a href="javascript:createFreQ('radio');" id="hrefChoice" style="text-decoration: none; padding:0;">
-        <span class="design-icon design-radio">
-        </span>
-        <span class="spanQTxt">
-         单选
-        </span>
-       </a>
-      </li>
-      <li style="width:55px;">
-       <a href="javascript:createFreQ('check');" style="text-decoration: none;
-                        padding: 0;">
-        <span class="design-icon design-check">
-        </span>
-        <span class="spanQTxt">
-         多选
-        </span>
-       </a>
-      </li>
-      <li style="width:65px;">
-       <a href="javascript:createFreQ('question');" onmouseout="sb_setmenunav('divText', false,this)" onmouseover="sb_setmenunav('divText', true,this)" style="text-decoration: none;
-                        padding: 0;" title="可以用做主观题，问答题等">
-        <span class="design-icon design-text">
-        </span>
-        <span class="spanQTxt">
-         填空
-        </span>
-        <span class="bordCss bordBottomCssN">
-        </span>
-       </a>
-      </li>
-      <li onmouseover="setCepingTip(this,'矩阵题的每行是&lt;b&gt;一个小问题&lt;/b&gt;，由多行组成');">
-       <a href="javascript:createFreQ('matrix',101);" onmouseout="sb_setmenunav('divqMatrix', false,this)" onmouseover="sb_setmenunav('divqMatrix', true,this)" style="text-decoration: none;
-                        padding: 0;" title="矩阵题">
-        <span class="design-icon design-juzhen">
-        </span>
-        <span class="spanQTxt">
-         矩阵题
-        </span>
-        <span class="bordCss bordBottomCssN">
-        </span>
-       </a>
-      </li>
-      <li style="width:60px;">
-       <a href="javascript:void(0);" onclick="createFreQ('fileupload');">
-        <span class="spanQTxt">
-         上传文件
-        </span>
-       </a>
-      </li>
-      <li onmouseover="setCepingTip(this,'评分题可以设置&lt;b&gt;每个选项的分数&lt;/b&gt;，适合于满意度调查与测评');" style="width:60px;">
-       <a href="javascript:createFreQ('likert');" onmouseout="sb_setmenunav('divScore', false,this);" onmouseover="sb_setmenunav('divScore', true,this);" style="text-decoration: none; padding:0;" title="">
-        <span class="spanQTxt">
-         评分题
-        </span>
-        <span class="bordCss bordBottomCssN">
-        </span>
-       </a>
-      </li>
-      <li style="width:45px;">
-       <a href="javascript:" id="hrefqKs" onmouseout="sb_setmenunav('divTest', false,this);" onmouseover="sb_setmenunav('divTest', true,this);" style="text-decoration: none; padding:0;color:#ff6600;" title="">
-        <span class="spanQTxt">
-         考试
-        </span>
-        <span class="bordCss bordBottomCssN">
-        </span>
-       </a>
-      </li>
-      <li onmouseout="setCepingTipOut(this);" onmouseover="setCepingTip(this,'投票题可以直接显示每个选项的&lt;b&gt;票数&lt;/b&gt;，适合于投票、评选等');" style="width:55px;">
-       <a href="javascript:createFreQ('toupiao',1);" onmouseout="sb_setmenunav('divTouPiao', false,this);" onmouseover="sb_setmenunav('divTouPiao', true,this);" style="text-decoration: none; padding:0; margin-left:4px;" title="">
-        <span class="spanQTxt">
-         投票
-        </span>
-        <span class="bordCss bordBottomCssN">
-        </span>
-       </a>
-      </li>
-      <li style="width:55px;">
-       <a href="javascript:createFreQ('page');" style="text-decoration: none;
-                        padding: 0;">
-        <span class="design-icon design-page">
-        </span>
-        <span class="spanQTxt">
-         分页
-        </span>
-       </a>
-      </li>
-      <li style="width:60px;">
-       <a href="javascript:createFreQ('cut');" style="text-decoration: none;
-                        padding:0;">
-        <span class="spanQTxt">
-         段落说明
-        </span>
-       </a>
-      </li>
-      <li id="liAll" style="width:50px;">
-       <a href="javascript:void(0);" onmouseout="sb_setmenunav('qType',false,this);" onmouseover="sb_setmenunav('qType',true,this);" style="padding:0px;">
-        <span class="spanQTxt">
-         更多...
-        </span>
-        <span class="bordCss bordBottomCssN">
-        </span>
-       </a>
-      </li>
-     </ul>
-     <div style="clear:both;">
-     </div>
+</style>
+<script src="http://www.sojump.com/Js/operation_new.js?v=9" type="text/javascript"></script>
+    <script src="http://www.sojump.com/kindeditor/kindeditor.js" type="text/javascript"></script>
+    <script src="http://www.sojump.com/Js/createqattr_new.js?v=12" type="text/javascript"></script>
+    <script src="http://www.sojump.com/JS/utility_new.js" type="text/javascript"></script></head>
+<body style="background: #eeeeee; margin: 0px; padding: 0px;">
+    <div id="ss-header">
+
+        <div id="divMenu" style="visibility: visible;">
+
+            <ul>
+                <li style="display:none;"><a href="javascript:void(0);" onclick="save_paper('edit',true);" class="link-666 menu" title="保存并继续编辑，可以使用快捷键Ctrl+S">
+                    <span class="design-icon design-save"></span><span><strong>保存</strong></span></a>(<input id="chkAutoSave" type="checkbox" checked="checked" onclick="chkAutoSave_Click(this);" style="vertical-align: middle;" title="每5分钟定时保存一次">自动保存) </li>
+                <li style="margin-right:20px;"><a href="http://www.sojump.com/jq/7067931.aspx?wg=1" onclick="return save_paper('preview',true,true);" target="_blank" class="BS_btn" style="height:30px; line-height:30px;padding-left:15px; padding-right:15px;">预览问卷</a></li>
+                <li style="margin-right:60px;"><a href="#" style="padding-left:15px; padding-right:15px;" onclick="return save_paper('pub',true);" class="sumitbutton" id="hrefFiQ">
+                   完成编辑</a><span style="display:none;">[<a href="javascript:abort();" title="放弃更改并返回" class="link-U666">放弃更改</a>]</span></li>
+
+                     <li><a href="javascript:initPageQuestionRandom();" class="titlelnk" style="font-weight:bold;"><span></span><span id="spanRandom">题目随机设置</span></a>
+                    </li>
+                     <li><div style="vertical-align: middle; line-height:26px;"><input type="checkbox" id="chkUseSelfTopic"><label for="chkUseSelfTopic">隐藏系统<b>题号</b></label></div></li>
+
+
+
+            </ul>
+        </div>
     </div>
-    <div style="position: absolute; left: -50px; top:12px;">
-     <img alt="" src="http://www.sojump.com/images/wjx/newicon.gif"/>
+
+    <input name="hfData" type="hidden" id="hfData" value="2016/1/22 14:23:36§企业员工满意度调查问卷[复制]§&amp;nbsp;您好！<br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 欢迎参加“企业员工满意度”的调查工作！此次调查是本公司为了加强企业部门的组织建设而专门设计的，旨在通过对员工满意度的调查对公司的相关建设做出改进。希望你抽出一点时间积极配合我们的调查工作，谢谢你的参与。<br />
+说明：<br />
+（1）本次调查采用匿名形式，我们将严格保密你的信息，你可以放心作答。§0§0§0§false§false§0¤page§1§一：&amp;nbsp;总体满意度§0§§§¤radio§1§从总体而言，你对企业满意程度〒〒〒§2§1〒§true§false§0§true§§§0§§§不满意〒false〒1〒0〒〒〒〒〒〒§选项3〒false〒2〒0〒〒〒〒〒〒§选项5〒false〒3〒〒〒〒〒〒〒§选项4〒false〒3〒〒〒〒〒〒〒§满意〒false〒5〒〒〒〒〒〒〒¤radio§2§&amp;nbsp;对自己岗位的满意度〒〒〒§2§1〒§true§false§0§true§§§0§§§很不满意〒false〒1〒0〒〒〒〒〒〒§不满意〒false〒2〒0〒〒〒〒〒〒§一般〒false〒3〒0〒〒〒〒〒〒§满意〒false〒4〒0〒〒〒〒〒〒§很满意〒false〒5〒0〒〒〒〒〒〒¤radio§3§&amp;nbsp;你对公司的归属感〒〒〒§0§1〒§false§false§0§true§§§0§§§很高〒false〒0〒0〒〒〒〒〒〒§较高〒false〒1〒0〒〒〒〒〒〒§一般〒false〒3〒〒〒〒〒〒〒§很少〒false〒4〒〒〒〒〒〒〒§没有〒false〒5〒〒〒〒〒〒〒¤cut§<strong>&amp;nbsp;二：岗位满意度</strong>§¤slider§4§在工作中你的成就欲望〒〒§0§true§0§100§没有§很高§§false§0¤radio§5§&amp;nbsp;你一天的工作量〒〒〒§0§1〒§false§false§0§true§§§0§§§超负荷〒false〒0〒0〒〒〒〒〒〒§满意〒false〒1〒0〒〒〒〒〒〒§一般〒false〒3〒〒〒〒〒〒〒§很低〒false〒4〒〒〒〒〒〒〒¤radio§6§&amp;nbsp;你对自己岗位的工作〒〒〒§0§1〒§false§false§0§true§§§0§§§很有兴趣〒false〒0〒0〒〒〒〒〒〒§兴趣不浓〒false〒1〒0〒〒〒〒〒〒§没有兴趣〒false〒3〒〒〒〒〒〒〒¤radio§7§&amp;nbsp;在工作中你学习新技能的机会〒〒〒§0§1〒§false§false§0§true§§§0§§§很多〒false〒0〒0〒〒〒〒〒〒§有时〒false〒1〒0〒〒〒〒〒〒§视情况而定〒false〒3〒〒〒〒〒〒〒§几乎没有〒false〒4〒〒〒〒〒〒〒¤radio§8§&amp;nbsp;你觉得自己在工作中的发挥〒〒〒§0§1〒§false§false§0§true§§§0§§§充分发挥〒false〒0〒0〒〒〒〒〒〒§大部分发挥〒false〒1〒0〒〒〒〒〒〒§部分发挥〒false〒3〒〒〒〒〒〒〒§基本没发挥〒false〒4〒〒〒〒〒〒〒¤radio§9§&amp;nbsp;你对自己奋斗的目标〒〒〒§0§1〒§false§false§0§true§§§0§§§清楚〒false〒0〒0〒〒〒〒〒〒§较为清楚〒false〒1〒0〒〒〒〒〒〒§不太清楚〒false〒3〒〒〒〒〒〒〒§不清楚〒false〒4〒〒〒〒〒〒〒¤radio§10§&amp;nbsp;你对自己的工作权限〒〒〒§0§1〒§false§false§0§true§§§0§§§明确〒false〒0〒0〒〒〒〒〒〒§较为明确〒false〒1〒0〒〒〒〒〒〒§不太明确〒false〒3〒〒〒〒〒〒〒§不明确〒false〒4〒〒〒〒〒〒〒¤radio§11§你现在付出的努力和实际收到的报酬相匹配。 〒〒〒§0§1〒§false§false§0§true§§§0§§§很满意〒false〒0〒0〒〒〒〒〒〒§满意〒false〒1〒0〒〒〒〒〒〒§一般〒false〒3〒〒〒〒〒〒〒§不满意〒false〒4〒〒〒〒〒〒〒¤cut§<strong>三：&amp;nbsp;对上司的满意度</strong>§¤slider§12§&amp;nbsp;总体上你觉得你部门的组长能力〒〒§0§true§0§100§很低§很高§§false§0¤radio§13§组长能够用人所长，扬长避短〒〒〒§0§1〒§false§false§0§true§§§0§§§总是〒false〒0〒0〒〒〒〒〒〒§有时〒false〒1〒0〒〒〒〒〒〒§很少〒false〒3〒〒〒〒〒〒〒§没有〒false〒4〒〒〒〒〒〒〒¤radio§14§&amp;nbsp;组长听取员工意见次数〒〒〒§0§1〒§false§false§0§true§§§0§§§经常〒false〒0〒0〒〒〒〒〒〒§偶尔〒false〒1〒0〒〒〒〒〒〒§几乎不〒false〒3〒〒〒〒〒〒〒¤radio§15§组长与员工的关系〒〒〒§0§1〒§false§false§0§true§§§0§§§很好〒false〒0〒0〒〒〒〒〒〒§一般〒false〒1〒0〒〒〒〒〒〒§不好〒false〒3〒〒〒〒〒〒〒§经常吵〒false〒4〒〒〒〒〒〒〒œfalse§44cb6c28-9572-476d-8622-daf0e09c80c9§0§q.css§False§null">
+    <div style="width:870px; margin: 0 auto; text-align: left;">
+        <div id="topnav" style="visibility: visible; position: relative;">
+            <div class="tabQTypet" style="background: 0px; border: 0px; height: 40px;">
+                <ul id="tQType">
+                    <li style="margin-left: 5px; width:55px;"><a id="hrefChoice" href="javascript:createFreQ('radio');" style="text-decoration: none; padding:0;"><span class="design-icon design-radio">
+                        </span><span class="spanQTxt">单选</span></a></li>
+                    <li style="width:55px;"><a href="javascript:createFreQ('check');" style="text-decoration: none;
+                        padding: 0;"><span class="design-icon design-check"></span><span class="spanQTxt">多选</span></a></li>
+                    <li style="width:65px;"><a href="javascript:createFreQ('question');" onmouseout="sb_setmenunav('divText', false,this)" onmouseover="sb_setmenunav('divText', true,this)" style="text-decoration: none;
+                        padding: 0;" title="可以用做主观题，问答题等"><span class="design-icon design-text"></span><span class="spanQTxt">填空</span><span class="bordCss bordBottomCssN"></span></a>
+                    </li>
+                     <li onmouseover="setCepingTip(this,'矩阵题的每行是<b>一个小问题</b>，由多行组成');"><a href="javascript:createFreQ('matrix',101);" title="矩阵题" onmouseout="sb_setmenunav('divqMatrix', false,this)" onmouseover="sb_setmenunav('divqMatrix', true,this)" style="text-decoration: none;
+                        padding: 0;"><span class="design-icon design-juzhen"></span><span class="spanQTxt">矩阵题</span><span class="bordCss bordBottomCssN"></span></a></li>
+                     <li style="width:60px;"><a href="javascript:void(0);" onclick="createFreQ('fileupload');">
+                            <span class="spanQTxt">上传文件</span></a></li>
+                    <li style="width:60px;" onmouseover="setCepingTip(this,'评分题可以设置<b>每个选项的分数</b>，适合于满意度调查与测评');"><a href="javascript:createFreQ('likert');" onmouseout="sb_setmenunav('divScore', false,this);" onmouseover="sb_setmenunav('divScore', true,this);" title="" style="text-decoration: none; padding:0;"><span class="spanQTxt">评分题</span><span class="bordCss bordBottomCssN"></span></a></li>
+                     <li style="width:45px;"><a href="javascript:" onmouseout="sb_setmenunav('divTest', false,this);" onmouseover="sb_setmenunav('divTest', true,this);" title="" style="text-decoration: none; padding:0;color:#ff6600;" id="hrefqKs"><span class="spanQTxt">考试</span><span class="bordCss bordBottomCssN"></span></a></li>
+                    <li style="width:55px;" onmouseover="setCepingTip(this,'投票题可以直接显示每个选项的<b>票数</b>，适合于投票、评选等');" onmouseout="setCepingTipOut(this);"><a href="javascript:createFreQ('toupiao',1);" onmouseout="sb_setmenunav('divTouPiao', false,this);" onmouseover="sb_setmenunav('divTouPiao', true,this);" title="" style="text-decoration: none; padding:0; margin-left:4px;"><span class="spanQTxt">投票</span><span class="bordCss bordBottomCssN"></span></a></li>
+                    <li style="width:55px;"><a href="javascript:createFreQ('page');" style="text-decoration: none;
+                        padding: 0;"><span class="design-icon design-page"></span><span class="spanQTxt">分页</span></a></li>
+                      <li style="width:60px;"><a href="javascript:createFreQ('cut');" style="text-decoration: none;
+                        padding:0;"><span class="spanQTxt">段落说明</span></a></li>
+                    <li id="liAll" style="width:50px;"><a href="javascript:void(0);" style="padding:0px;" onmouseover="sb_setmenunav('qType',true,this);" onmouseout="sb_setmenunav('qType',false,this);"><span class="spanQTxt">更多...</span><span class="bordCss bordBottomCssN"></span></a></li>
+
+
+                </ul> <div style="clear:both;"></div>
+            </div>
+            <div style="position: absolute; left: -50px; top:12px;">
+                <img src="http://www.sojump.com/images/wjx/newicon.gif" alt="">
+            </div>
+
+            <div id="m-rightbar">
+                <div class="m-menu">
+                    <li class="m-top"><a href="javascript:;" onclick="gotop();" title="返回顶部">返回顶部</a></li>
+                    <li class="m-help"><a href="http://www.sojump.com/help/help.aspx?catid=65&amp;h=1" title="帮助中心" target="_blank">帮助中心</a></li>
+                    <li class="m-comment"><a href="http://www.sojump.com/jq/3779891.aspx" title="意见反馈" target="_blank">意见反馈</a></li>
+                    <li class="m-bottom"><a href="javascript:;" onclick="gobottom();" title="返回底部">返回底部</a></li>
+                </div>
+            </div>
+
+        </div>
+        <div class="survey" style="padding: 15px 24px 15px 25px; overflow: auto; width: 820px; height: 573px; background: rgb(255, 255, 255);" id="sur">
+            <div style="width: 780px;margin: 0 auto; padding-left: 10px;">
+                <div id="question" class="surveycontent">
+                    <div id="divId" class="surveyhead" style="border: 2px solid rgb(255, 255, 255); margin-top: 3px; width: 730px; cursor: pointer;" title="编辑问卷标题与问卷说明">
+                        <h1 id="pater_title" style="cursor: pointer;">企业员工满意度调查问卷[复制]</h1>
+                        <div id="pater_desc" class="surveydescription" style="cursor: pointer;">&nbsp;您好！<br>
+&nbsp;&nbsp;&nbsp; 欢迎参加“企业员工满意度”的调查工作！此次调查是本公司为了加强企业部门的组织建设而专门设计的，旨在通过对员工满意度的调查对公司的相关建设做出改进。希望你抽出一点时间积极配合我们的调查工作，谢谢你的参与。<br>
+说明：<br>
+（1）本次调查采用匿名形式，我们将严格保密你的信息，你可以放心作答。</div>
+                    </div>
+                <div class="div_question div_question_mouseout" tabindex="-1"><div class="div_preview"><div><span class="div_topic_page_question"><span style="font-size:14px; font-weight:bold;">第1页/共1页</span></span><span style="display: none;"><b style="color:red;">--甄别页</b></span><span></span><div class="div_title_page_question"><span>一：&nbsp;总体满意度</span></div><div style="clear: both;"></div></div><div class="spanLeft" style="height: 18px;"></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none; visibility: hidden;"><ul class="stuff"><li><a href="javascript:void(0);" onclick="editQ(this);" title="您也可以双击题目来进行编辑"><span class="design-icon design-edit"></span><span>编辑</span></a></li><div style="clear:both;"></div></ul></div><div style="clear: both;"></div><div style="clear: both;"></div></div></div><div class="div_question div_question_mouseout" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">1.</div><div class="div_title_question"><span>从总体而言，你对企业满意程度</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li class="notchoice" style="padding-right:15px;padding-top:5px"><b>不满意</b></li><li style="padding-left:3px;" class="design-icon design-on2"></li><li style="padding-left:3px;" class="design-icon design-on2"></li><li style="padding-left:3px;" class="design-icon design-on2"></li><li style="padding-left:3px;" class="design-icon design-on2"></li><li style="padding-left:3px;" class="design-icon design-off2"></li><li class="notchoice" style="padding-left:15px;padding-top:5px"><b>满意</b></li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none; visibility: hidden;"><ul class="stuff"><li><a href="javascript:void(0);" onclick="editQ(this);" title="您也可以双击题目来进行编辑"><span class="design-icon design-edit"></span><span>编辑</span></a></li><li><a href="javascript:void(0);" onclick="curover.copyQ();" title="复制此题"><span class="design-icon design-copy"></span><span>复制</span></a></li><li><a href="javascript:void(0);" onclick="curover.deleteQ();" title="删除此题"><span class="design-icon design-delete"></span><span>删除</span></a></li><li><a href="javascript:void(0);" onclick="curover.moveUp();" title="将此题上移"><span class="design-icon design-up"></span><span>上移</span></a></li><li><a href="javascript:void(0);" onclick="curover.moveDown();" title="将此题下移"><span class="design-icon design-down"></span><span>下移</span></a></li><li><a href="javascript:void(0);" onclick="curover.moveFirst();" title="将此题移动到第一题"><span class="design-icon design-first"></span><span>最前</span></a></li><li><a href="javascript:void(0);" onclick="curover.moveLast();" title="将此题移动到最后一题"><span class="design-icon design-last"></span><span>最后</span></a></li><div style="clear:both;"></div></ul></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">2.</div><div class="div_title_question"><span>&nbsp;对自己岗位的满意度</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li class="notchoice" style="padding-right:15px;padding-top:5px"><b>很不满意</b></li><li style="padding-left:3px;" class="design-icon design-on2"></li><li style="padding-left:3px;" class="design-icon design-on2"></li><li style="padding-left:3px;" class="design-icon design-on2"></li><li style="padding-left:3px;" class="design-icon design-on2"></li><li style="padding-left:3px;" class="design-icon design-off2"></li><li class="notchoice" style="padding-left:15px;padding-top:5px"><b>很满意</b></li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">3.</div><div class="div_title_question"><span>&nbsp;你对公司的归属感</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">很高</li><li style="width:99%;"><input type="radio">较高</li><li style="width:99%;"><input type="radio">一般</li><li style="width:99%;"><input type="radio">很少</li><li style="width:99%;"><input type="radio">没有</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_cut_question"><div class="div_title_question"><span><strong>&nbsp;二：岗位满意度</strong></span></div><div style="clear: both;"></div></div><div class="spanLeft" style="height: 18px;"></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">4.</div><div class="div_title_question"><span>在工作中你的成就欲望</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question" style="width: 60%;"><div class="div_table_clear_top"></div><span class="spanLeft" style="color: red;">没有</span><span class="spanLeft" style="color: red;">(0)</span><span class="spanRight" style="color: red;">(100)</span><span class="spanRight" style="color: red;">很高</span><div class="divclear"></div><img src="/Images/WJX/JoinQuestionnaire/slider1.jpg" style="width: 10px;"><img src="/Images/WJX/JoinQuestionnaire/sliderEnd.jpg" style="width: 97%; height: 23px;"><div class="divclear"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">5.</div><div class="div_title_question"><span>&nbsp;你一天的工作量</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">超负荷</li><li style="width:99%;"><input type="radio">满意</li><li style="width:99%;"><input type="radio">一般</li><li style="width:99%;"><input type="radio">很低</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">6.</div><div class="div_title_question"><span>&nbsp;你对自己岗位的工作</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">很有兴趣</li><li style="width:99%;"><input type="radio">兴趣不浓</li><li style="width:99%;"><input type="radio">没有兴趣</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">7.</div><div class="div_title_question"><span>&nbsp;在工作中你学习新技能的机会</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">很多</li><li style="width:99%;"><input type="radio">有时</li><li style="width:99%;"><input type="radio">视情况而定</li><li style="width:99%;"><input type="radio">几乎没有</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">8.</div><div class="div_title_question"><span>&nbsp;你觉得自己在工作中的发挥</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">充分发挥</li><li style="width:99%;"><input type="radio">大部分发挥</li><li style="width:99%;"><input type="radio">部分发挥</li><li style="width:99%;"><input type="radio">基本没发挥</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">9.</div><div class="div_title_question"><span>&nbsp;你对自己奋斗的目标</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">清楚</li><li style="width:99%;"><input type="radio">较为清楚</li><li style="width:99%;"><input type="radio">不太清楚</li><li style="width:99%;"><input type="radio">不清楚</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">10.</div><div class="div_title_question"><span>&nbsp;你对自己的工作权限</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">明确</li><li style="width:99%;"><input type="radio">较为明确</li><li style="width:99%;"><input type="radio">不太明确</li><li style="width:99%;"><input type="radio">不明确</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">11.</div><div class="div_title_question"><span>你现在付出的努力和实际收到的报酬相匹配。 </span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">很满意</li><li style="width:99%;"><input type="radio">满意</li><li style="width:99%;"><input type="radio">一般</li><li style="width:99%;"><input type="radio">不满意</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_cut_question"><div class="div_title_question"><span><strong>三：&nbsp;对上司的满意度</strong></span></div><div style="clear: both;"></div></div><div class="spanLeft" style="height: 18px;"></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">12.</div><div class="div_title_question"><span>&nbsp;总体上你觉得你部门的组长能力</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question" style="width: 60%;"><div class="div_table_clear_top"></div><span class="spanLeft" style="color: red;">很低</span><span class="spanLeft" style="color: red;">(0)</span><span class="spanRight" style="color: red;">(100)</span><span class="spanRight" style="color: red;">很高</span><div class="divclear"></div><img src="/Images/WJX/JoinQuestionnaire/slider1.jpg" style="width: 10px;"><img src="/Images/WJX/JoinQuestionnaire/sliderEnd.jpg" style="width: 97%; height: 23px;"><div class="divclear"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">13.</div><div class="div_title_question"><span>组长能够用人所长，扬长避短</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">总是</li><li style="width:99%;"><input type="radio">有时</li><li style="width:99%;"><input type="radio">很少</li><li style="width:99%;"><input type="radio">没有</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">14.</div><div class="div_title_question"><span>&nbsp;组长听取员工意见次数</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">经常</li><li style="width:99%;"><input type="radio">偶尔</li><li style="width:99%;"><input type="radio">几乎不</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div><div class="div_question" tabindex="-1"><div class="div_preview"><div class="div_title_question_all"><div class="div_topic_question">15.</div><div class="div_title_question"><span>组长与员工的关系</span><span style="color: red;">&nbsp;*</span></div><div style="clear: both;"></div></div><div class="div_table_radio_question"><div class="div_table_clear_top"></div><ul><li style="width:99%;"><input type="radio">很好</li><li style="width:99%;"><input type="radio">一般</li><li style="width:99%;"><input type="radio">不好</li><li style="width:99%;"><input type="radio">经常吵</li><div style="clear:both;"></div></ul><div class="div_table_clear_bottom"></div></div><div class="div_ins_question"></div><div class="spanLeft" style="height: 18px;"><div class="div_ins_question spanLeft" style="clear: none; display: none;">*此题设置了跳转逻辑</div><div class="div_ins_question spanLeft" style="clear: none; display: none;"></div></div><div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;"><a href="javascript:void(0);" onclick="insertQ(curover);" class="link-UF90" style="text-decoration:underline;">在此题后插入新题</a></div><div class="spanRight" style="clear: none;"></div><div style="clear: both;"></div></div></div></div>
+                <div style="clear: both;">
+                </div>
+            </div>
+            <div id="divbatchq" style="margin: 20px auto 10px; width: 220px;">
+             <a href="javascript:" class="BS_btn" style="height:35px; line-height:35px; width:200px; text-align:center; background:#56bbed;">批量添加题目</a>
+            </div>
+        </div>
+        <div id="status_tip" style="height: auto; left: 0.5px; display: none; top: 676px;">保存问卷成功！</div>
+
     </div>
-    <div id="m-rightbar">
-     <div class="m-menu">
-      <li class="m-top">
-       <a href="javascript:;" onclick="gotop();" title="返回顶部">
-        返回顶部
-       </a>
-      </li>
-      <li class="m-help">
-       <a href="http://www.sojump.com/help/help.aspx?catid=65&amp;h=1" target="_blank" title="帮助中心">
-        帮助中心
-       </a>
-      </li>
-      <li class="m-comment">
-       <a href="http://www.sojump.com/jq/3779891.aspx" target="_blank" title="意见反馈">
-        意见反馈
-       </a>
-      </li>
-      <li class="m-bottom">
-       <a href="javascript:;" onclick="gobottom();" title="返回底部">
-        返回底部
-       </a>
-      </li>
-     </div>
+
+    <div id="toolTipLayer" style="position: absolute; display: none; line-height: 20px; width: 250px; text-align: left; border: 1px solid rgb(127, 157, 185); z-index: 20000; overflow: auto; padding: 5px 8px; left: 631px; top: 473px; background: rgb(239, 247, 255);">提示：您可以通过“双击”题目来进行编辑</div>
+     <div id="qtypeLayer" style="position: absolute; display: none; line-height: 20px; width: 330px; text-align: left; z-index: 20000; overflow: auto; padding: 5px 8px; left: 444px; top: 26px; background: rgb(253, 251, 203);">矩阵题的每行是<b>一个小问题</b>，由多行组成</div>
+    <div id="divQAttr" style="width: 500px; text-align: left; display: none;">
+        <ul class="div_title_attr_question" style="padding: 10px 0 0 10px; margin: 0px; background:#fff;">
+            <li style="list-style-type: none;"><strong>问卷标题：</strong><input id="paper_attr_title" title="在此输入问卷的标题，例如：关于大学生心理健康的调查" onblur="paper_attr_title_onblur(this);" style="font-size: 12px;
+                width: 400px;" class="" type="text" value="请输入您的问卷的标题" size="54" maxlength="100">
+            </li>
+            <li style="margin-top: 15px;">
+                <table>
+                    <tbody><tr>
+                        <td valign="middle">
+                            <strong>问卷说明：</strong>
+                        </td>
+                        <td>
+                            <textarea id="paper_attr_desc" onblur="paper_attr_desc_onblur(this);" rows="10" title="在此输入问卷说明，可以使用HTML格式插入图片或者音乐，Google地图等" style="display: none;"></textarea><br>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td></td><td><div style="color:Red;">提示：问卷说明不能超过4000个字符<span id="spanDTip" style="display:none;">，已经输入<span id="spanHInput"></span>字符,还可以输入<span id="spanLeftInput"></span>字符</span></div></td>
+                    </tr>
+                </tbody></table>
+            </li>
+        </ul>
+        <div style="text-align: center; margin-top: 10px;">
+           <a href="javascript:;" onclick="window.parent.PDF_close();" class="sumitbutton">确定</a>
+        </div>
     </div>
-   </div>
-   <div class="survey" id="sur" style="padding: 15px 24px 15px 25px; overflow: auto; background-color: rgb(255, 255, 255); width: 820px; height: 515px; background-position: initial initial; background-repeat: initial initial;">
-    <div style="width: 780px;margin: 0 auto; padding-left: 10px;">
-     <div class="surveycontent" id="question">
-      <div class="surveyhead" id="divId" style="border: 2px solid rgb(255, 255, 255); margin-top: 3px; width: 730px; cursor: pointer;" title="编辑问卷标题与问卷说明">
-       <h1 id="pater_title" style="cursor: pointer;">
-        企业员工满意度调查问卷[复制]
-       </h1>
-       <div class="surveydescription" id="pater_desc" style="cursor: pointer;">
-        您好！
-        <br/>
-        欢迎参加“企业员工满意度”的调查工作！此次调查是本公司为了加强企业部门的组织建设而专门设计的，旨在通过对员工满意度的调查对公司的相关建设做出改进。希望你抽出一点时间积极配合我们的调查工作，谢谢你的参与。
-        <br/>
-        说明：
-        <br/>
-        （1）本次调查采用匿名形式，我们将严格保密你的信息，你可以放心作答。
-       </div>
-      </div>
-      <div class="div_question div_question_mouseout" tabindex="-1">
-       <div class="div_preview">
-        <div>
-         <span class="div_topic_page_question">
-          <span style="font-size:14px; font-weight:bold;">
-           第1页/共1页
-          </span>
-         </span>
-         <span style="display: none;">
-          <b style="color:red;">
-           --甄别页
-          </b>
-         </span>
-         <span>
-         </span>
-         <div class="div_title_page_question">
-          <span>
-           一： 总体满意度
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none; visibility: hidden;">
-         <ul class="stuff">
-          <li>
-           <a href="javascript:void(0);" onclick="editQ(this);" title="您也可以双击题目来进行编辑">
-            <span class="design-icon design-edit">
-            </span>
-            <span>
-             编辑
-            </span>
-           </a>
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-        </div>
-        <div style="clear: both;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          1.
-         </div>
-         <div class="div_title_question">
-          <span>
-           从总体而言，你对企业满意程度
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li class="notchoice" style="padding-right:15px;padding-top:5px">
-           <b>
-            不满意
-           </b>
-          </li>
-          <li class="design-icon design-on2" style="padding-left:3px;">
-          </li>
-          <li class="design-icon design-on2" style="padding-left:3px;">
-          </li>
-          <li class="design-icon design-on2" style="padding-left:3px;">
-          </li>
-          <li class="design-icon design-on2" style="padding-left:3px;">
-          </li>
-          <li class="design-icon design-off2" style="padding-left:3px;">
-          </li>
-          <li class="notchoice" style="padding-left:15px;padding-top:5px">
-           <b>
-            满意
-           </b>
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          2.
-         </div>
-         <div class="div_title_question">
-          <span>
-           对自己岗位的满意度
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li class="notchoice" style="padding-right:15px;padding-top:5px">
-           <b>
-            很不满意
-           </b>
-          </li>
-          <li class="design-icon design-on2" style="padding-left:3px;">
-          </li>
-          <li class="design-icon design-on2" style="padding-left:3px;">
-          </li>
-          <li class="design-icon design-on2" style="padding-left:3px;">
-          </li>
-          <li class="design-icon design-on2" style="padding-left:3px;">
-          </li>
-          <li class="design-icon design-off2" style="padding-left:3px;">
-          </li>
-          <li class="notchoice" style="padding-left:15px;padding-top:5px">
-           <b>
-            很满意
-           </b>
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          3.
-         </div>
-         <div class="div_title_question">
-          <span>
-           你对公司的归属感
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           很高
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           较高
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           一般
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           很少
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           没有
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_cut_question">
-         <div class="div_title_question">
-          <span>
-           <strong>
-            二：岗位满意度
-           </strong>
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          4.
-         </div>
-         <div class="div_title_question">
-          <span>
-           在工作中你的成就欲望
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question" style="width: 60%;">
-         <div class="div_table_clear_top">
-         </div>
-         <span class="spanLeft" style="color: red;">
-          没有
-         </span>
-         <span class="spanLeft" style="color: red;">
-          (0)
-         </span>
-         <span class="spanRight" style="color: red;">
-          (100)
-         </span>
-         <span class="spanRight" style="color: red;">
-          很高
-         </span>
-         <div class="divclear">
-         </div>
-         <img src="http://www.sojump.com/Images/WJX/JoinQuestionnaire/slider1.jpg" style="width: 10px;"/>
-         <img src="http://www.sojump.com/Images/WJX/JoinQuestionnaire/sliderEnd.jpg" style="width: 97%; height: 23px;"/>
-         <div class="divclear">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          5.
-         </div>
-         <div class="div_title_question">
-          <span>
-           你一天的工作量
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           超负荷
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           满意
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           一般
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           很低
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          6.
-         </div>
-         <div class="div_title_question">
-          <span>
-           你对自己岗位的工作
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           很有兴趣
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           兴趣不浓
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           没有兴趣
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          7.
-         </div>
-         <div class="div_title_question">
-          <span>
-           在工作中你学习新技能的机会
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           很多
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           有时
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           视情况而定
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           几乎没有
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          8.
-         </div>
-         <div class="div_title_question">
-          <span>
-           你觉得自己在工作中的发挥
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           充分发挥
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           大部分发挥
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           部分发挥
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           基本没发挥
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          9.
-         </div>
-         <div class="div_title_question">
-          <span>
-           你对自己奋斗的目标
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           清楚
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           较为清楚
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           不太清楚
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           不清楚
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          10.
-         </div>
-         <div class="div_title_question">
-          <span>
-           你对自己的工作权限
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           明确
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           较为明确
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           不太明确
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           不明确
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          11.
-         </div>
-         <div class="div_title_question">
-          <span>
-           你现在付出的努力和实际收到的报酬相匹配。
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           很满意
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           满意
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           一般
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           不满意
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_cut_question">
-         <div class="div_title_question">
-          <span>
-           <strong>
-            三： 对上司的满意度
-           </strong>
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          12.
-         </div>
-         <div class="div_title_question">
-          <span>
-           总体上你觉得你部门的组长能力
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question" style="width: 60%;">
-         <div class="div_table_clear_top">
-         </div>
-         <span class="spanLeft" style="color: red;">
-          很低
-         </span>
-         <span class="spanLeft" style="color: red;">
-          (0)
-         </span>
-         <span class="spanRight" style="color: red;">
-          (100)
-         </span>
-         <span class="spanRight" style="color: red;">
-          很高
-         </span>
-         <div class="divclear">
-         </div>
-         <img src="http://www.sojump.com/Images/WJX/JoinQuestionnaire/slider1.jpg" style="width: 10px;"/>
-         <img src="http://www.sojump.com/Images/WJX/JoinQuestionnaire/sliderEnd.jpg" style="width: 97%; height: 23px;"/>
-         <div class="divclear">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          13.
-         </div>
-         <div class="div_title_question">
-          <span>
-           组长能够用人所长，扬长避短
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           总是
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           有时
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           很少
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           没有
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          14.
-         </div>
-         <div class="div_title_question">
-          <span>
-           组长听取员工意见次数
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           经常
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           偶尔
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           几乎不
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-      <div class="div_question" tabindex="-1">
-       <div class="div_preview">
-        <div class="div_title_question_all">
-         <div class="div_topic_question">
-          15.
-         </div>
-         <div class="div_title_question">
-          <span>
-           组长与员工的关系
-          </span>
-          <span style="color: red;">
-           *
-          </span>
-         </div>
-         <div style="clear: both;">
-         </div>
-        </div>
-        <div class="div_table_radio_question">
-         <div class="div_table_clear_top">
-         </div>
-         <ul>
-          <li style="width:99%;">
-           <input type="radio"/>
-           很好
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           一般
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           不好
-          </li>
-          <li style="width:99%;">
-           <input type="radio"/>
-           经常吵
-          </li>
-          <div style="clear:both;">
-          </div>
-         </ul>
-         <div class="div_table_clear_bottom">
-         </div>
-        </div>
-        <div class="div_ins_question">
-        </div>
-        <div class="spanLeft" style="height: 18px;">
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-          *此题设置了跳转逻辑
-         </div>
-         <div class="div_ins_question spanLeft" style="clear: none; display: none;">
-         </div>
-        </div>
-        <div class="div_ins_question spanLeft" style="clear: none; visibility: hidden;">
-         <a class="link-UF90" href="javascript:void(0);" onclick="insertQ(curover);" style="text-decoration:underline;">
-          在此题后插入新题
-         </a>
-        </div>
-        <div class="spanRight" style="clear: none;">
-        </div>
-        <div style="clear: both;">
-        </div>
-       </div>
-      </div>
-     </div>
-     <div style="clear: both;">
-     </div>
+
+    <div id="qType">
+        <iframe class="zindexDiv2" frameborder="0"></iframe>
+        <table border="0" cellpadding="0" cellspacing="0" style="background: #cfe7ff; height:100px;">
+             <tbody><tr style="background: #cfe7ff;">
+                <td class="tdT">
+                    <div style="float: left; padding-top:7px; padding-left: 6px;font-weight:bold;">
+                        高级题型</div>
+
+                </td>
+                <td>
+                    <ul id="moretype">
+                        <li><a href="javascript:void(0);" onclick="createFreQ('check','','1');">排序题</a></li>
+
+                        <li><a href="javascript:void(0);" onclick="createFreQ('sum');">比重题</a></li>
+                        <li><a href="javascript:void(0);" onclick="createFreQ('slider');">滑动条</a></li>
+                        <li><a href="javascript:void(0);" onclick="createFreQ('qingjing');">情景随机</a></li>
+
+                        <li><a href="javascript:void(0);" onclick="createFreQ('shop');">商品题型</a></li>
+                         <li><a href="javascript:createFreQ('多级下拉');">多级下拉框</a></li>
+                    </ul>
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2" style="height: 5px; padding-top: 5px;">
+                    <hr class="fLine">
+                </td>
+            </tr>
+            <tr style="background: #cfe7ff; height:60px;">
+                <td class="tdT">
+                    <div style="float: left; padding-top:5px; padding-left: 6px;font-weight:bold;">
+                        个人信息</div>
+
+                </td>
+                <td align="center">
+                    <ul>
+                        <li><a href="javascript:createFreQ('性别');">性别</a></li>
+                        <li><a href="javascript:createFreQ('年龄段');">年龄段</a></li>
+                        <li><a href="javascript:createFreQ('省份');">省份</a></li>
+                        <li><a href="javascript:createFreQ('城市单选');">省市</a></li>
+                        <li><a href="javascript:createFreQ('省市区');">省市区</a></li>
+
+                        <li><a href="javascript:createFreQ('手机');">手机</a></li>
+                        <li><a href="javascript:createFreQ('手机验证');">手机验证</a></li>
+                        <li><a href="javascript:createFreQ('Email');">Email</a></li>
+                        <li><a href="javascript:createFreQ('生日');">日期</a></li>
+
+                        <li><a href="javascript:createFreQ('职业');">职业</a></li>
+                        <li><a href="javascript:createFreQ('行业');">行业</a></li>
+                        <li><a href="javascript:createFreQ('高校');">高校</a></li>
+                        <li><a href="javascript:createFreQ('邮寄地址');">邮寄地址</a></li>
+
+                    </ul>
+                </td>
+            </tr>
+        </tbody></table>
     </div>
-    <div id="divbatchq" style="margin: 20px auto 10px; width: 220px;">
-     <a class="BS_btn" href="javascript:" style="height:35px; line-height:35px; width:200px; text-align:center; background:#56bbed;">
-      批量添加题目
-     </a>
-    </div>
-   </div>
-   <div id="status_tip" style="height: auto; left: 0.5px; display: none; top: 615px;">
-    成功加载
-   </div>
-  </div>
-  <div id="toolTipLayer" style="position: absolute; display: none; line-height: 20px; width: 250px; background-color: rgb(239, 247, 255); text-align: left; border: 1px solid rgb(127, 157, 185); z-index: 20000; overflow: auto; padding: 5px 8px; left: 698px; top: 516px; background-position: initial initial; background-repeat: initial initial;">
-   提示：您可以通过“双击”题目来进行编辑
-  </div>
-  <div id="qtypeLayer" style="position: absolute; display: none; line-height: 20px; width:330px; background: #fdfbcb;
-        text-align: left;  z-index: 20000; overflow:auto; padding:5px 8px;">
-  </div>
-  <div id="divQAttr" style="width: 500px; text-align: left; display: none;">
-   <ul class="div_title_attr_question" style="padding: 10px 0 0 10px; margin: 0px; background:#fff;">
-    <li style="list-style-type: none;">
-     <strong>
-      问卷标题：
-     </strong>
-     <input class="" id="paper_attr_title" maxlength="100" onblur="paper_attr_title_onblur(this);" size="54" style="font-size: 12px;
-                width: 400px;" title="在此输入问卷的标题，例如：关于大学生心理健康的调查" type="text" value="请输入您的问卷的标题"/>
-    </li>
-    <li style="margin-top: 15px;">
-     <table>
-      <tbody>
-       <tr>
-        <td valign="middle">
-         <strong>
-          问卷说明：
-         </strong>
-        </td>
-        <td>
-         <textarea id="paper_attr_desc" onblur="paper_attr_desc_onblur(this);" rows="10" style="display: none;" title="在此输入问卷说明，可以使用HTML格式插入图片或者音乐，Google地图等">
-         </textarea>
-         <br/>
-        </td>
-       </tr>
-       <tr>
-        <td>
-        </td>
-        <td>
-         <div style="color:Red;">
-          提示：问卷说明不能超过4000个字符
-          <span id="spanDTip" style="display:none;">
-           ，已经输入
-           <span id="spanHInput">
-           </span>
-           字符,还可以输入
-           <span id="spanLeftInput">
-           </span>
-           字符
-          </span>
-         </div>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </li>
-   </ul>
-   <div style="text-align: center; margin-top: 10px;">
-    <a class="sumitbutton" href="javascript:;" onclick="window.parent.PDF_close();">
-     确定
-    </a>
-   </div>
-  </div>
-  <div id="qType">
-   <iframe class="zindexDiv2" frameborder="0">
-   </iframe>
-   <table border="0" cellpadding="0" cellspacing="0" style="background: #cfe7ff; height:100px;">
-    <tbody>
-     <tr style="background: #cfe7ff;">
-      <td class="tdT">
-       <div style="float: left; padding-top:7px; padding-left: 6px;font-weight:bold;">
-        高级题型
-       </div>
-      </td>
-      <td>
-       <ul id="moretype">
-        <li>
-         <a href="javascript:void(0);" onclick="createFreQ('check','','1');">
-          排序题
-         </a>
-        </li>
-        <li>
-         <a href="javascript:void(0);" onclick="createFreQ('sum');">
-          比重题
-         </a>
-        </li>
-        <li>
-         <a href="javascript:void(0);" onclick="createFreQ('slider');">
-          滑动条
-         </a>
-        </li>
-        <li>
-         <a href="javascript:void(0);" onclick="createFreQ('qingjing');">
-          情景随机
-         </a>
-        </li>
-        <li>
-         <a href="javascript:void(0);" onclick="createFreQ('shop');">
-          商品题型
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('多级下拉');">
-          多级下拉框
-         </a>
-        </li>
-       </ul>
-      </td>
-     </tr>
-     <tr>
-      <td colspan="2" style="height: 5px; padding-top: 5px;">
-       <hr class="fLine"/>
-      </td>
-     </tr>
-     <tr style="background: #cfe7ff; height:60px;">
-      <td class="tdT">
-       <div style="float: left; padding-top:5px; padding-left: 6px;font-weight:bold;">
-        个人信息
-       </div>
-      </td>
-      <td align="center">
-       <ul>
-        <li>
-         <a href="javascript:createFreQ('性别');">
-          性别
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('年龄段');">
-          年龄段
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('省份');">
-          省份
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('城市单选');">
-          省市
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('省市区');">
-          省市区
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('手机');">
-          手机
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('手机验证');">
-          手机验证
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('Email');">
-          Email
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('生日');">
-          日期
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('职业');">
-          职业
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('行业');">
-          行业
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('高校');">
-          高校
-         </a>
-        </li>
-        <li>
-         <a href="javascript:createFreQ('邮寄地址');">
-          邮寄地址
-         </a>
-        </li>
-       </ul>
-      </td>
-     </tr>
-    </tbody>
-   </table>
-  </div>
-  <div class="downMenu" id="divTouPiao" style="display: none; z-index: 10999; left: -5px;
+    <div id="divTouPiao" class="downMenu" style="display: none; z-index: 10999; left: -5px;
         position: absolute; top: 36px;">
-   <iframe class="zindexDiv2" frameborder="0">
-   </iframe>
-   <ul>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('toupiao',1);" style="width:66px;">
-      投票单选
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('toupiao',2);" style="width:66px;">
-      投票多选
-     </a>
-    </li>
-   </ul>
-  </div>
-  <div class="downMenu" id="divScore" style="display: none; z-index: 10999; left: -5px;
+        <iframe class="zindexDiv2" frameborder="0"></iframe>
+        <ul>
+
+              <li><a href="javascript:void(0);" onclick="createFreQ('toupiao',1);" style="width:66px;">投票单选</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('toupiao',2);" style="width:66px;">投票多选</a></li>
+        </ul>
+    </div>
+    <div id="divScore" class="downMenu" style="display: none; z-index: 10999; left: -5px;
         position: absolute; top: 36px;">
-   <iframe class="zindexDiv2" frameborder="0">
-   </iframe>
-   <ul>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('likert');" style="width:70px">
-      量表题
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('ceping',1);" style="width:70px">
-      评分单选
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('ceping',2);" style="width:70px">
-      评分多选
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('matrix',101);" style="width:70px">
-      矩阵量表
-     </a>
-    </li>
-   </ul>
-  </div>
-  <div id="divTest" style="display: none; z-index: 10999; left: -5px;
+        <iframe class="zindexDiv2" frameborder="0"></iframe>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="createFreQ('likert');" style="width:70px">量表题</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('ceping',1);" style="width:70px">评分单选</a> </li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('ceping',2);" style="width:70px">评分多选</a> </li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('matrix',101);" style="width:70px">矩阵量表</a></li>
+        </ul>
+    </div>
+    <div id="divTest" style="display: none; z-index: 10999; left: -5px;
         position: absolute; top: 36px;border:1px solid #cccccc; background:#cfe7ff;width:400px; padding:10px 0 15px; border-top:0;">
-   <div style="font-weight:bold; font-size:14px; text-align:left;color:#000; padding-left:5px; clear:both;">
-    添加题目：
-    <span style="display:inline-block;">
-     <a href="/help/help.aspx?helpid=251&amp;h=1" style="color:Green;" target="_blank">
-      (?)
-     </a>
-    </span>
-   </div>
-   <ul style="width:400px;clear:both;">
-    <li style="clear:both;">
-     <a href="javascript:void(0);" onclick="createFreQ('ceshi',1);" style="width:40px">
-      单选
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('ceshi',5);" style="width:40px">
-      判断
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('ceshi',2);" style="width:40px">
-      多选
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('ceshi',3);" style="width:70px">
-      单项填空
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('ceshi',4);" style="width:70px">
-      多项填空
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="PDF_launch('addbatchq.aspx?ks=1',620,450,null,'批量添加考试题');" style="width:70px;color:#ff6600;">
-      批量添加
-     </a>
-    </li>
-   </ul>
-   <ul style="padding-top:3px;clear:both; text-align:left;">
-    <li>
-     <a href="javascript:createFreQ('姓名');" style="width:40px;color:#529214;">
-      姓名
-     </a>
-    </li>
-    <li>
-     <a href="javascript:createFreQ('基本信息');" style="width:90px;color:#529214;">
-      基本信息
-     </a>
-    </li>
-   </ul>
-   <div style="padding-top:15px;clear:both; text-align:left; margin-left:5px;">
-    <div style="float:left;">
-     <b style="color:#000;font-size:14px;">
-      功能设置：
-     </b>
-     <a class="titlelnk" href="javascript:" onclick="setTikuRandom();" style="font-weight: bold;">
-      题库随机设置
-     </a>
-     <a class="titlelnk" href="javascript:" onclick="PDF_launch('http://www.sojump.com/wjx/design/settime.aspx?activity=7058464',600,300,null,'考试时间设置');" style="font-weight: bold;">
-      考试时间设置
-     </a>
-     <input id="chkUseTopic" type="checkbox"/>
-     <label for="chkUseTopic">
-      隐藏系统
-      <b>
-       题号
-      </b>
-     </label>
+
+        <div style="font-weight:bold; font-size:14px; text-align:left;color:#000; padding-left:5px; clear:both;">添加题目：
+        <span style="display:inline-block;"><a href="http://www.sojump.com/help/help.aspx?helpid=251&amp;h=1" target="_blank" style="color:Green;">(?)</a></span>
+        </div>
+        <ul style="width:400px;clear:both;">
+            <li style="clear:both;"><a href="javascript:void(0);" onclick="createFreQ('ceshi',1);" style="width:40px">
+                单选</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('ceshi',5);" style="width:40px">
+                判断</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('ceshi',2);" style="width:40px">
+                多选</a></li>
+             <li><a href="javascript:void(0);" onclick="createFreQ('ceshi',3);" style="width:70px">
+                单项填空</a></li>
+             <li><a href="javascript:void(0);" onclick="createFreQ('ceshi',4);" style="width:70px">
+                多项填空</a></li>
+            <li><a href="javascript:void(0);" onclick="PDF_launch('addbatchq.aspx?ks=1',620,450,null,'批量添加考试题');" style="width:70px;color:#ff6600;">
+                批量添加</a></li>
+        </ul>
+         <ul style="padding-top:3px;clear:both; text-align:left;">
+           <li> <a href="javascript:createFreQ('姓名');" style="width:40px;color:#529214;">姓名</a></li>
+           <li> <a href="javascript:createFreQ('基本信息');" style="width:90px;color:#529214;">基本信息</a></li>
+         </ul>
+        <div style="padding-top:15px;clear:both; text-align:left; margin-left:5px;">
+            <div style="float:left;">
+               <b style="color:#000;font-size:14px;">功能设置：</b>
+                <a href="javascript:" onclick="setTikuRandom();" class="titlelnk" style="font-weight: bold;">
+                    题库随机设置</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:" class="titlelnk" style="font-weight: bold;" onclick="PDF_launch('http://www.sojump.com/wjx/design/settime.aspx?activity=7067931',600,300,null,'考试时间设置');">
+                        考试时间设置</a>&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="chkUseTopic"><label for="chkUseTopic">隐藏系统<b>题号</b></label>
+            </div>
+            <div style="float:right; padding-right:10px;">
+
+            </div>
+            <div class="divclear"></div>
+        </div>
     </div>
-    <div style="float:right; padding-right:10px;">
+    <div id="divqMatrix" class="downMenu" style="display: none; z-index: 10999; left: 444px; position: absolute; top: 87px;">
+        <iframe class="zindexDiv2" frameborder="0"></iframe>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="createFreQ('matrix',101);" title="可以设置分数">矩阵量表题</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('matrix',103);">矩阵单选题</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('matrix',102);">矩阵多选题</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('matrix',201);">矩阵填空题</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('matrix',202);">矩阵滑动条</a></li>
+            <li><a href="javascript:void(0);" onclick="if(checkPermission(2)) createFreQ('matrix','303'); return false;">表格下拉框</a></li>
+             <li><a href="javascript:void(0);" onclick="if(checkPermission(2)) createFreQ('matrix','301'); return false;">表格数值题</a></li>
+              <li><a href="javascript:void(0);" onclick="if(checkPermission(2)) createFreQ('matrix','302'); return false;">表格文本题</a></li>
+        </ul>
     </div>
-    <div class="divclear">
-    </div>
-   </div>
-  </div>
-  <div class="downMenu" id="divqMatrix" style="display: none; z-index: 10999; left: -5px;
+    <div id="divText" class="downMenu" style="display: none; z-index: 10999; left: -5px;
         position: absolute; top: 36px;">
-   <iframe class="zindexDiv2" frameborder="0">
-   </iframe>
-   <ul>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('matrix',101);" title="可以设置分数">
-      矩阵量表题
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('matrix',103);">
-      矩阵单选题
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('matrix',102);">
-      矩阵多选题
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('matrix',201);">
-      矩阵填空题
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('matrix',202);">
-      矩阵滑动条
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="if(checkPermission(2)) createFreQ('matrix','303'); return false;">
-      表格下拉框
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="if(checkPermission(2)) createFreQ('matrix','301'); return false;">
-      表格数值题
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="if(checkPermission(2)) createFreQ('matrix','302'); return false;">
-      表格文本题
-     </a>
-    </li>
-   </ul>
-  </div>
-  <div class="downMenu" id="divText" style="display: none; z-index: 10999; left: -5px;
-        position: absolute; top: 36px;">
-   <iframe class="zindexDiv2" frameborder="0">
-   </iframe>
-   <ul>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('question');" style="width:75px">
-      单项填空
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('gapfill');" style="width:75px">
-      多项填空
-     </a>
-    </li>
-    <li>
-     <a href="javascript:void(0);" onclick="createFreQ('matrix',201);" style="width:75px">
-      矩阵填空
-     </a>
-    </li>
-   </ul>
-  </div>
-  <div id="divTitleEditor" style="display: none;">
-   <div style="margin: 10px;">
-    <textarea id="textTitleId" style="width: 694px; height: 340px;">
-    </textarea>
-    <br/>
-    <input onclick="clickOK();" style="font-size: 14px; font-weight: bold; color: #0066cc;" type="button" value=" 保 存 "/>
-    <input onclick="clickCancel();" style="font-size: 12px; color: #0066cc;" type="button" value=" 取 消 "/>
-   </div>
-  </div>
-  <div id="divUpgradeVip" style="display: none;">
-   <div style="margin: 30px 0 0 20px;">
-    <div id="divUpTip">
+        <iframe class="zindexDiv2" frameborder="0"></iframe>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="createFreQ('question');" style="width:75px">单项填空</a></li>
+            <li><a href="javascript:void(0);" onclick="createFreQ('gapfill');" style="width:75px">多项填空</a></li>
+             <li><a href="javascript:void(0);" onclick="createFreQ('matrix',201);" style="width:75px">矩阵填空</a></li>
+        </ul>
     </div>
-    <div style="margin-top: 15px;">
-     <a class="btnbgbig" href="javascript: save_paper('upgrade', true);">
-      <span>
-       立即升级
-      </span>
-     </a>
+    <div style="display: none;" id="divTitleEditor">
+        <div style="margin: 10px;">
+            <textarea style="width: 694px; height: 340px;" id="textTitleId"></textarea>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input style="font-size: 14px; font-weight: bold; color: #0066cc;" type="button" value=" 保 存 " onclick="clickOK();">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="font-size: 12px; color: #0066cc;" type="button" value=" 取 消 " onclick="clickCancel();"></div>
     </div>
-    <div id="divHighSchool">
+    <div style="display: none;" id="divUpgradeVip">
+        <div style="margin: 30px 0 0 20px;">
+            <div id="divUpTip">
+            </div>
+            <div style="margin-top: 15px;">
+                <a href="javascript: save_paper('upgrade', true);" class="btnbgbig"><span>立即升级</span></a>
+            </div>
+            <div id="divHighSchool"></div>
+        </div>
     </div>
-   </div>
-  </div>
-  <div id="divDesignStart" style="display:none;">
-   <div style="margin:0px 0 10px 10px; position:relative;">
-    <div style="overflow:auto;">
-     <img alt="" height="670" id="imgStart" width="700"/>
+    <div style="display:none;" id="divDesignStart">
+        <div style="margin:0px 0 10px 10px; position:relative;">
+           <div style="overflow:auto;"><img id="imgStart" alt="" width="700" height="670"></div>
+           <div style="margin-top:10px;">
+              <a href="javascript:" onclick="PDF_close();" class="sumitbutton" id="hrefsEdit">立即开始编辑问卷</a>
+           </div>
+        </div>
     </div>
-    <div style="margin-top:10px;">
-     <a class="sumitbutton" href="javascript:" id="hrefsEdit" onclick="PDF_close();">
-      立即开始编辑问卷
-     </a>
-    </div>
-   </div>
-  </div>
-  <script>
-   $ = function (element) {
+    <script type="text/javascript">
+        $ = function (element) {
             return (typeof (element) == 'object' ? element : document.getElementById(element));
         };
          function gotop(){
@@ -1764,7 +342,7 @@
         var bodyWidth = document.documentElement.clientWidth || document.body.clientWidth;
         var isNewActivity = "true";
         var vipUser = "";var proUser=0;
-        var activityID = "7058464";
+        var activityID = "7067931";
         var isTiyan = "";
         var hfData = $("hfData");
         var serverVersion = '7';
@@ -1787,9 +365,10 @@
                   $("divUpTip").innerHTML='只有企业版用户才能使用上传文件题，<a href="http://www.sojump.com/jq/1995936.aspx" class="link-U00a6e6" target="_blank">查看上传文件题示例</a>';
                 else if(type==2){
                   if(!proUser)
-                     alert('只有专业版跟企业版用户才能使用表格题，请升级！您现在可以先添加好题目,升级后问卷才能发布');
+                     alert('只有专业版跟企业版用户才能使用表格题，请升级！\r\n您现在可以先添加好题目，升级后问卷才能发布！');
                   return true;
                 }
+                  //
                 PDF_launch("divUpgradeVip",420,height);
                 return false;
             }
@@ -1835,23 +414,22 @@
               PDF_close();
             },showtime*1000);
          }
-  </script>
-  <script>
-   document.write('<script type="text/javascript" language="javascript"' + ' src="http://www.desckie.com/static/admin/js/hintinfo.js"><' + '/script>');
-        document.write('<script type="text/javascript" language="javascript"' + ' src="http://www.desckie.com/static/admin/js/design_new.js"><' + '/script>');
+    </script>
+    <script type="text/javascript">
+        document.write('<script type="text/javascript" language="javascript"' + ' src="http://www.sojump.com/Js/hintinfo.js?v=1"><' + '/script>');
+        document.write('<script type="text/javascript" language="javascript"' + ' src="http://www.sojump.com/Js/design_new.js?v=16"><' + '/script>');
+        //    document.write('<script type="text/javascript" language="javascript"' + ' src="/Js/cutpagequestion_new.js"><' + '/script>');
+        //    document.write('<script type="text/javascript" language="javascript"' + ' src="/Js/form_attr_new.js"><' + '/script>');
         try {
             document.execCommand("BackgroundImageCache", false, true);
         } catch (ex) { };
-  </script>
-  <script language="javascript" src="http://www.desckie.com/static/admin/js/hintinfo.js">
-  </script>
-  <script language="javascript" src="http://www.desckie.com/static/admin/js/design_new.js">
-  </script>
-  <div style="display:none;">
-   <script language="JavaScript" src="http://s20.cnzz.com/stat.php?id=4478442&amp;web_id=4478442">
-   </script>
-   <script charset="utf-8" src="http://c.cnzz.com/core.php?web_id=4478442&amp;t=z">
-   </script>
-  </div>
- </body>
-</html>
+    </script>
+    <script type="text/javascript" language="javascript" src="http://www.sojump.com/Js/hintinfo.js?v=1"></script>
+    <script type="text/javascript" language="javascript" src="http://www.sojump.com/Js/design_new.js?v=16"></script>
+    <div style="display:none;">
+<script src="http://s20.cnzz.com/stat.php?id=4478442&amp;web_id=4478442" language="JavaScript"></script><script src="http://c.cnzz.com/core.php?web_id=4478442&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=4478442" target="_blank" title="站长统计">站长统计</a>
+</div>
+
+
+
+</body></html>

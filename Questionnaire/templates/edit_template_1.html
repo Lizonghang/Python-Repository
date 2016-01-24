@@ -74,6 +74,11 @@
                     }
     </style>
     <script src="../static/admin/js/jquery.js"></script>
+    <script>
+        function createFreQ(s){
+            document.getElementById('new_simple_select').style.visibility='visible';
+        }
+    </script>
 </head>
 <body style="background: #eeeeee; margin: 0px; padding: 0px;">
     <div style="width:870px; margin: 0 auto; text-align: left;">
@@ -81,21 +86,143 @@
             <div class="tabQTypet" style="background: 0px; border: 0px; height: 40px;">
                 <ul id="tQType">
                     <li style="margin-left: 250px; width:85px;">
-                        <a id="hrefChoice" href="javascript:createFreQ('radio');" style="text-decoration: none; padding:0;">
+                        <a id="hrefChoice" href="javascript:createFreQ('simple_select');" style="text-decoration: none; padding:0;">
                             <span class="design-icon design-radio"></span><span class="spanQTxt">单项选择</span>
                         </a>
                     </li>
-                    <li style="width:85px;"><a href="javascript:createFreQ('check');" style="text-decoration: none;padding: 0;">
+                    <li style="width:85px;"><a href="javascript:createFreQ('multiple_choice');" style="text-decoration: none;padding: 0;">
                         <span class="design-icon design-check"></span><span class="spanQTxt">多项选择</span>
                     </a>
                     </li>
                     <li style="width:85px;">
-                        <a href="javascript:createFreQ('question');" style="text-decoration: none;padding: 0;">
+                        <a href="javascript:createFreQ('fitb');" style="text-decoration: none;padding: 0;">
                         <span class="design-icon design-text"></span><span class="spanQTxt">单项填空</span>
                         </a>
                     </li>
                 </ul>
                 <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="survey" style="padding: 15px 24px 15px 25px; overflow: auto; background-color: rgb(255, 255, 255); width: 820px; height: 515px" id="sur">
+            <div style="width: 780px;margin: 0 auto; padding-left: 10px;">
+                <div id="question" class="surveycontent">
+                    <div id="divId" class="surveyhead" style="border: 2px solid rgb(255, 255, 255); margin-top: 3px; width: 730px; cursor: pointer;" title="编辑问卷标题与问卷说明">
+                        <h1 id="pater_title" style="cursor: pointer;"></h1>
+                        <div id="pater_desc" class="surveydescription" style="cursor: pointer;"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="new_simple_select" class="div_question div_question_onclick" style="visibility: hidden">
+                <div class="div_preview">
+                    <div class="div_title_question_all">
+                        <div class="div_topic_question">1.</div>
+                        <div class="div_title_question"><span>请在此输入问题标题</span><span style="color: red;">&nbsp;*</span></div>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div class="div_table_radio_question">
+                        <div class="div_table_clear_top"></div>
+                        <ul>
+                            <li style="width:99%;"><input type="radio">选项一</li>
+                            <li style="width:99%;"><input type="radio">选项二</li>
+                            <div style="clear:both;"></div>
+                        </ul>
+                        <div class="div_table_clear_bottom"></div>
+                    </div>
+                    <div class="div_ins_question"></div>
+                    <div class="spanLeft" style="height: 18px;">
+                        <div class="div_ins_question spanLeft" style="clear: none; display: none;"></div>
+                    </div>
+                    <div class="spanRight" style="clear: none">
+                        <ul class="stuff">
+                            <li>
+                                <a href="javascript:void(0);" onclick="editQ(this);" title="完成编辑">
+                                    <span class="design-icon design-finish"></span><span>完成</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="curover.deleteQ();" title="删除此题">
+                                    <span class="design-icon design-delete"></span><span>删除</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="curover.moveUp();" title="将此题上移">
+                                    <span class="design-icon design-up"></span><span>上移</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="curover.moveDown();" title="将此题下移">
+                                    <span class="design-icon design-down"></span><span>下移</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="curover.moveFirst();" title="将此题移动到第一题">
+                                    <span class="design-icon design-first"></span><span>最前</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="curover.moveLast();" title="将此题移动到最后一题">
+                                    <span class="design-icon design-last"></span><span>最后</span>
+                                </a>
+                            </li>
+                            <div style="clear:both;"></div>
+                        </ul>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <div>
+                    <div class="div_title_attr_question">
+                        <div style="margin-left: 15px;">
+                            <div class="spanLeft">
+                                <div style="height: 27px; line-height: 27px; width: 395px; background: rgb(240, 240, 238)">
+                                    <div align="center"><b style="font-size:14px;">题目标题</b></div>
+                                    <div class="divclear"></div>
+                                </div>
+                                <div style="width: 395px;">
+                                    <textarea wrap="soft" rows="4" class="inputtext" id="tcradio1" style="width: 395px; height: 70px; overflow: auto; padding: 5px 0px 0px 5px; border: 1px solid rgb(204, 204, 204);"></textarea>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div style="margin-left: 15px;">
+                            <div style="padding-top: 10px;"></div>
+                            <div style="clear: both;">
+                                <div>
+                                    <table class="tableoption" cellspacing="3" cellpadding="3" style="background-color: rgb(213, 226, 242);">
+                                        <tbody>
+                                        <tr>
+                                            <td style="width: 40px"><span style="font-size: 12px">选项一:</span></td>
+                                            <td style="width: 217px;"><input type="text" class="inputtext choicetxt" style="width: 210px;"></td>
+                                            <td>
+                                                <span style="vertical-align: bottom;">
+                                                    <input type="checkbox" style="vertical-align: bottom;">
+                                                    <span style="font-size: 12px">添加自定义输入</span>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 40px"><span style="font-size: 12px">选项二:</span></td>
+                                            <td style="width: 217px;"><input type="text" class="inputtext choicetxt" style="width: 210px;"></td>
+                                            <td>
+                                                <span style="vertical-align: bottom;">
+                                                    <input type="checkbox" style="vertical-align: bottom;">
+                                                    <span style="font-size: 12px">必选</span>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="divclear"></div>
+                        </div>
+                        <div style="clear: both; line-height: 1px;">&nbsp;</div>
+                        <div style="margin: 10px 0px;">
+                            <input type="button" value="完成编辑" class="submitbutton" style="width: 100%;">
+                            <span style="color: red; font-size: 14px; display: inline-block; margin-left: 10px;"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -108,12 +235,16 @@
                     </li>
                     <li style="list-style-type: none;margin-top: 20px">
                         <div style="margin-top: 120px"><strong>问卷说明:</strong></div>&nbsp;
-                        <textarea style="background-color: whitesmoke;margin-left: 55px;margin-top: -120px;width: 400px;height: 200px"></textarea>
+                        <textarea id="pater_attr_desc" style="background-color: whitesmoke;margin-left: 55px;margin-top: -120px;width: 400px;height: 200px"></textarea>
                     </li>
                     <li><div style="height: 20px;width: 100%"></div></li>
                     <li>
                         <div align="center">
-                            <button id="ensure_button" class="orange" onclick="document.getElementById('PDF_bg_chezchenz').style.display='none';">确定</button>
+                            <button id="ensure_button" class="orange" onclick="
+                            document.getElementById('PDF_bg_chezchenz').style.display='none';
+                            document.getElementById('pater_title').innerText= document.getElementById('paper_attr_title').value;
+                            document.getElementById('pater_desc').innerHTML= '问卷说明:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+document.getElementById('pater_attr_desc').value;
+                            ">确定</button>
                         </div>
                     </li>
                 </ul>

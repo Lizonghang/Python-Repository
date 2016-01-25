@@ -78,6 +78,28 @@
         function createFreQ(s){
             document.getElementById('new_simple_select').style.visibility='visible';
         }
+        var subject_num = 1;
+        var id_num = 3;
+        function addNewItem_simple(){
+            var new_tr = document.createElement("tr");
+            new_tr.id = "tr" + id_num;
+            new_tr.innerHTML = "<td style=\"width: 40px\"><span style=\"font-size: 12px\">选项"+id_num+":</span></td><td style=\"width: 217px;\"><input id=\"input_"+id_num+"\" type=\"text\" class=\"inputtext choicetxt\" style=\"width: 210px;\" value=\"选项"+id_num+"\"></td><td><a class=\"design-icon design-finish\" href=\"javascript:change_select('"+id_num+"');\"></a></td>";
+            document.getElementById('option_tbody').appendChild(new_tr);
+            var new_li = document.createElement("li");
+            new_li.style.width = '99%';
+            new_li.innerHTML = '<input type="radio" name="subject'+subject_num+'"><label id=\"s'+id_num+'\">选项'+id_num+'</label>';
+            document.getElementById('ul_select').appendChild(new_li);
+            id_num++;
+        }
+        function change_select(c){
+            document.getElementById('s'+c).innerText = document.getElementById('input_'+c).value;
+        }
+        function loadQ(){
+            var insert_div = document.getElementById('Q'+subject_num);
+            var survet_body = document.getElementById('sur');
+            survet_body.appendChild(insert_div);
+            document.getElementById('new_simple_select').remove();
+        }
     </script>
 </head>
 <body style="background: #eeeeee; margin: 0px; padding: 0px;">
@@ -114,19 +136,21 @@
             </div>
             <div id="new_simple_select" class="div_question div_question_onclick" style="visibility: hidden">
                 <div class="div_preview">
-                    <div class="div_title_question_all">
-                        <div class="div_topic_question">1.</div>
-                        <div class="div_title_question"><span>请在此输入问题标题</span><span style="color: red;">&nbsp;*</span></div>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="div_table_radio_question">
-                        <div class="div_table_clear_top"></div>
-                        <ul>
-                            <li style="width:99%;"><input type="radio">选项一</li>
-                            <li style="width:99%;"><input type="radio">选项二</li>
-                            <div style="clear:both;"></div>
-                        </ul>
-                        <div class="div_table_clear_bottom"></div>
+                    <div id="Q1">
+                        <div class="div_title_question_all">
+                            <div class="div_topic_question">1.</div>
+                            <div class="div_title_question"><span id="title_1">请在此输入问题标题</span><span style="color: red;">&nbsp;*</span></div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="div_table_radio_question">
+                            <div class="div_table_clear_top"></div>
+                            <ul id="ul_select">
+                                <li style="width:99%;"><input type="radio" name="subject1"><label id="s1">选项1</label></li>
+                                <li style="width:99%;"><input type="radio" name="subject1"><label id="s2">选项2</label></li>
+                                <div style="clear:both;"></div>
+                            </ul>
+                            <div class="div_table_clear_bottom"></div>
+                        </div>
                     </div>
                     <div class="div_ins_question"></div>
                     <div class="spanLeft" style="height: 18px;">
@@ -173,12 +197,12 @@
                     <div class="div_title_attr_question">
                         <div style="margin-left: 15px;">
                             <div class="spanLeft">
-                                <div style="height: 27px; line-height: 27px; width: 395px; background: rgb(240, 240, 238)">
+                                <div style="height: 27px; line-height: 27px; width: 423px; background: rgb(240, 240, 238)">
                                     <div align="center"><b style="font-size:14px;">题目标题</b></div>
                                     <div class="divclear"></div>
                                 </div>
                                 <div style="width: 395px;">
-                                    <textarea wrap="soft" rows="4" class="inputtext" id="tcradio1" style="width: 395px; height: 70px; overflow: auto; padding: 5px 0px 0px 5px; border: 1px solid rgb(204, 204, 204);"></textarea>
+                                    <textarea wrap="soft" rows="4" class="inputtext" id="tcradio1" style="width: 423px; height: 70px; overflow: auto; padding: 5px 0px 0px 5px; border: 1px solid rgb(204, 204, 204);" onchange="document.getElementById('title_1').innerText = document.getElementById('tcradio1').value;">请在此输入问题标题</textarea>
                                 </div>
                             </div>
                             <div style="clear: both;"></div>
@@ -188,21 +212,12 @@
                             <div style="padding-top: 10px;"></div>
                             <div style="clear: both;">
                                 <div>
-                                    <table class="tableoption" cellspacing="3" cellpadding="3" style="background-color: rgb(213, 226, 242);">
-                                        <tbody>
-                                        <tr>
-                                            <td style="width: 40px"><span style="font-size: 12px">选项一:</span></td>
-                                            <td style="width: 217px;"><input type="text" class="inputtext choicetxt" style="width: 210px;"></td>
-                                            <td>
-                                                <span style="vertical-align: bottom;">
-                                                    <input type="checkbox" style="vertical-align: bottom;">
-                                                    <span style="font-size: 12px">添加自定义输入</span>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 40px"><span style="font-size: 12px">选项二:</span></td>
-                                            <td style="width: 217px;"><input type="text" class="inputtext choicetxt" style="width: 210px;"></td>
+                                    <table class="tableoption" cellspacing="3" cellpadding="3" style="background-color: rgb(213, 226, 242);width: 424px">
+                                        <tbody id="option_tbody">
+                                        <tr id="tr1">
+                                            <td style="width: 40px"><span style="font-size: 12px">选项1:</span></td>
+                                            <td style="width: 217px;"><input id="input_1" type="text" class="inputtext choicetxt" style="width: 210px;" value="选项1"></td>
+                                            <td><a class="design-icon design-finish" href="javascript:change_select('1');"></a></td>
                                             <td>
                                                 <span style="vertical-align: bottom;">
                                                     <input type="checkbox" style="vertical-align: bottom;">
@@ -210,15 +225,28 @@
                                                 </span>
                                             </td>
                                         </tr>
+                                        <tr id="tr2">
+                                            <td style="width: 40px"><span style="font-size: 12px">选项2:</span></td>
+                                            <td style="width: 217px;"><input id="input_2" type="text" class="inputtext choicetxt" style="width: 210px;" value="选项2"></td>
+                                            <td><a class="design-icon design-finish" href="javascript:change_select('2');"></a></td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="divclear"></div>
+                            <div style="margin: 5px 0px;">
+                                <div style="width: 94%;">
+                                    <span class="spanLeft">
+                                        <a href="javascript:addNewItem_simple();" class="titlelnk" style="text-decoration:none;">
+                                            <span class="choiceimg design-icon design-add"></span><b>添加选项</b>
+                                        </a>
+                                    </span>
+                                </div>
                         </div>
                         <div style="clear: both; line-height: 1px;">&nbsp;</div>
                         <div style="margin: 10px 0px;">
-                            <input type="button" value="完成编辑" class="submitbutton" style="width: 100%;">
+                            <input type="button" value="完成编辑" class="submitbutton" style="width: 100%;" onclick="loadQ()">
                             <span style="color: red; font-size: 14px; display: inline-block; margin-left: 10px;"></span>
                         </div>
                     </div>
@@ -243,7 +271,7 @@
                             <button id="ensure_button" class="orange" onclick="
                             document.getElementById('PDF_bg_chezchenz').style.display='none';
                             document.getElementById('pater_title').innerText= document.getElementById('paper_attr_title').value;
-                            document.getElementById('pater_desc').innerHTML= '问卷说明:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+document.getElementById('pater_attr_desc').value;
+                            document.getElementById('pater_desc').innerHTML= document.getElementById('pater_attr_desc').value;
                             ">确定</button>
                         </div>
                     </li>

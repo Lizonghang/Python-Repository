@@ -32,12 +32,8 @@ def edit_template_1(request):
 
 
 def view(request):
-    try:
-        if request.method == 'POST':
-            pageForm = simplejson.loads(request.POST.get('pageForm'))
-            return render_to_response("Success.html", {'pageForm': pageForm})
-        else:
-            return render_to_response("Success.html")
-    except Exception,msg:
-        with open('~/git-lib/Questionnaire/error.log','wb') as f:
-            f.write(Exception+':'+msg)
+    if request.method == 'POST':
+        pageForm = simplejson.loads(request.POST.get('pageForm'))
+        return render_to_response("Success.html", {'pageForm': pageForm})
+    else:
+        return render_to_response("Success.html")

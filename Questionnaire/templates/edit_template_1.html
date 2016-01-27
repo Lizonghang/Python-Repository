@@ -75,35 +75,87 @@
     </style>
     <script src="../static/admin/js/jquery.js"></script>
     <script>
-        function createFreQ(s){
-            document.getElementById('new_simple_select').style.visibility='visible';
-        }
         var subject_num = 1;
         var id_num = 3;
+        var chooseItem = id_num-1;
+        var Qs_temp;
+        function createFreQ(s){
+            var selector = document.createElement("div");
+            selector.id = "selector_container";
+            selector.innerHTML="<div id=\"new_simple_select\" class=\"div_question div_question_onclick\" style=\"visibility: visible\"> <div class=\"div_preview\"> <div class=\"Q1\"> <div class=\"div_title_question_all\"> <label class=\"div_topic_question\">1.</label> <div class=\"div_title_question\"><span id=\"title_1\">请在此输入问题标题</span><span style=\"color: red;\">&nbsp;*</span></div> <div style=\"clear: both;\"></div> </div> <div class=\"div_table_radio_question\"> <div class=\"div_table_clear_top\"></div> <ul class=\"ul_select\"> <li class=\"li1\" style=\"width:99%;\"><input type=\"radio\" name=\"subject1\"><label class=\"s1\">选项</label></li> <li class=\"li2\" style=\"width:99%;\"><input type=\"radio\" name=\"subject1\"><label class=\"s2\">选项</label></li> <div style=\"clear:both;\"></div> </ul> <div class=\"div_table_clear_bottom\"></div> </div> </div> <div class=\"div_ins_question\"></div><div style=\"clear: both;\"></div> </div> <div> <div class=\"div_title_attr_question\"> <div style=\"margin-left: 15px;\"> <div class=\"spanLeft\"> <div style=\"height: 27px; line-height: 27px; width: 423px; background: rgb(240, 240, 238)\"> <div align=\"center\"><b style=\"font-size:14px;\">题目标题</b></div> <div class=\"divclear\"></div> </div> <div style=\"width: 395px;\"> <textarea wrap=\"soft\" rows=\"4\" class=\"inputtext\" id=\"tcradio1\" style=\"width: 423px; height: 70px; overflow: auto; padding: 5px 0px 0px 5px; border: 1px solid rgb(204, 204, 204);\" onchange=\"change_title()\">请在此输入问题标题</textarea> </div> </div> <div style=\"clear: both;\"></div> </div> <div style=\"clear: both;\"></div> <div style=\"margin-left: 15px;\"> <div style=\"padding-top: 10px;\"></div> <div style=\"clear: both;\"> <div> <table class=\"tableoption\" cellspacing=\"3\" cellpadding=\"3\" style=\"background-color: rgb(213, 226, 242);width: 424px\"> <tbody id=\"option_tbody\"> <tr id=\"tr1\"> <td style=\"width: 40px\"><span style=\"font-size: 12px\">选项:</span></td> <td style=\"width: 217px;\"><input id=\"input_1\" type=\"text\" class=\"inputtext choicetxt\" style=\"width: 210px;\" value=\"选项\" onchange=\"change_select('1');\"></td> <td> <span style=\"vertical-align: bottom;\"> <input type=\"checkbox\"> <span style=\"font-size: 12px\">必选</span> </span> </td> </tr> <tr id=\"tr2\"> <td style=\"width: 40px\"><span style=\"font-size: 12px\">选项:</span></td> <td style=\"width: 217px;\"><input id=\"input_2\" type=\"text\" class=\"inputtext choicetxt\" style=\"width: 210px;\" value=\"选项\" onchange=\"change_select('2');\"></td> </tr> </tbody> </table> </div> </div> <div class=\"divclear\"></div> <div style=\"margin: 5px 0px;\"> <div style=\"width: 94%;\"> <span class=\"spanLeft\"> <a href=\"javascript:addNewItem_simple();\" class=\"titlelnk\" style=\"text-decoration:none;\"> <span class=\"choiceimg design-icon design-add\"></span><b>添加选项</b> </a> </span> </div> </div> <div style=\"clear: both; line-height: 1px;\">&nbsp;</div> <div style=\"margin: 10px 0px;\"> <input type=\"button\" value=\"完成编辑\" class=\"submitbutton\" style=\"width: 100%;\" onclick=\"loadQ()\"> <span style=\"color: red; font-size: 14px; display: inline-block; margin-left: 10px;\"></span> </div></div> </div> </div> </div>";
+            document.getElementById('sur').appendChild(selector);
+            id_reset();
+        }
         function addNewItem_simple(){
             var new_tr = document.createElement("tr");
+            new_tr.className = "new_tr";
             new_tr.id = "tr" + id_num;
-            new_tr.innerHTML = "<td style=\"width: 40px\"><span style=\"font-size: 12px\">选项"+id_num+":</span></td><td style=\"width: 217px;\"><input id=\"input_"+id_num+"\" type=\"text\" class=\"inputtext choicetxt\" style=\"width: 210px;\" value=\"选项"+id_num+"\"></td><td><a class=\"design-icon design-finish\" href=\"javascript:change_select('"+id_num+"');\"></a></td>";
+            new_tr.innerHTML = "<td style=\"width: 40px\"><span style=\"font-size: 12px\">选项:</span></td><td style=\"width: 217px;\"><input id=\"input_"+id_num+"\" type=\"text\" class=\"inputtext choicetxt\" style=\"width: 210px;\" value=\"选项\" onchange=\"change_select('"+id_num+"');\"></td>";
             document.getElementById('option_tbody').appendChild(new_tr);
             var new_li = document.createElement("li");
+            new_li.className = "li" + id_num;
             new_li.style.width = '99%';
-            new_li.innerHTML = '<input type="radio" name="subject'+subject_num+'"><label id=\"s'+id_num+'\">选项'+id_num+'</label>';
-            document.getElementById('ul_select').appendChild(new_li);
+            new_li.innerHTML = '<input type="radio" name="subject'+subject_num+'"><label class=\"s'+id_num+'\">选项</label>';
+            ul_selects=document.getElementsByClassName('ul_select');
+            ul_selects[ul_selects.length-1].appendChild(new_li);
             id_num++;
         }
+        function change_title(){
+            document.getElementsByClassName('Q'+Qs_temp)[0].getElementsByClassName('div_title_question_all')[0].getElementsByClassName('div_title_question')[0].getElementsByTagName('span')[0].innerText = document.getElementById('tcradio1').value;
+        }
         function change_select(c){
-            document.getElementById('s'+c).innerText = document.getElementById('input_'+c).value;
+            if(c == '1'){
+                document.getElementsByClassName('Q'+Qs_temp)[0].getElementsByClassName('div_table_radio_question')[0].getElementsByTagName('ul')[0].getElementsByClassName('li1')[0].getElementsByTagName('label')[0].innerText = document.getElementById('input_'+c).value;
+            }
+            else if(c == '2'){
+                document.getElementsByClassName('Q'+Qs_temp)[0].getElementsByClassName('div_table_radio_question')[0].getElementsByTagName('ul')[0].getElementsByClassName('li2')[0].getElementsByTagName('label')[0].innerText = document.getElementById('input_'+c).value;
+            }
+            else{
+                document.getElementsByClassName('s'+c)[0].innerText = document.getElementById('input_'+c).value;
+            }
         }
         function loadQ(){
-            var insert_div = document.getElementById('Q'+subject_num);
+            var clone_div = document.getElementsByClassName('Q'+subject_num)[0];
+            var insert_div = clone_div.cloneNode(true);
             var survet_body = document.getElementById('sur');
-            survet_body.appendChild(insert_div);
-            document.getElementById('new_simple_select').remove();
+            var selector = document.getElementById('selector_container');
+            survet_body.insertBefore(insert_div,selector);
+            selector.remove();
+            subject_num++;
+        }
+        function id_reset(){
+            var labels = document.getElementsByTagName('label');
+            var Qs = 0;
+            var currentQ;
+            for(var k=0;k<labels.length;k++){
+                if(labels[k].className == 'div_topic_question'){
+                    Qs++;
+                    currentQ=labels[k];
+                }
+            }
+            Qs_temp = Qs;
+            currentQ.innerText = Qs + ".";
+            document.getElementsByClassName('Q1')[1].className="Q"+subject_num;
+            var ul = document.getElementsByClassName('Q'+Qs)[0].getElementsByClassName('div_table_radio_question')[0].getElementsByTagName('ul')[0];
+            var li_of_ul = ul.getElementsByTagName('li');
+            var m=0;
+            var li_temp;
+            while(li_temp = li_of_ul[m]){
+                li_temp.getElementsByTagName('input')[0].name="subject"+Qs;
+                m++;
+            }
+            var m=1;
+            var temp;
+            while(temp = document.getElementsByClassName('s'+m)){
+                temp[1].className="s"+id_num;
+                id_num++;
+                m++;
+            }
         }
     </script>
 </head>
 <body style="background: #eeeeee; margin: 0px; padding: 0px;">
-    <div style="width:870px; margin: 0 auto; text-align: left;">
+    <div style="width:870px; margin: 0 auto; text-align: left;" id="page">
         <div id="topnav" style="position:relative">
             <div class="tabQTypet" style="background: 0px; border: 0px; height: 40px;">
                 <ul id="tQType">
@@ -129,153 +181,37 @@
             <div style="width: 780px;margin: 0 auto; padding-left: 10px;">
                 <div id="question" class="surveycontent">
                     <div id="divId" class="surveyhead" style="border: 2px solid rgb(255, 255, 255); margin-top: 3px; width: 730px; cursor: pointer;" title="编辑问卷标题与问卷说明">
-                        <h1 id="pater_title" style="cursor: pointer;"></h1>
+                        <h1 id="pater_title" style="color: deepskyblue"></h1>
                         <div id="pater_desc" class="surveydescription" style="cursor: pointer;"></div>
                     </div>
                 </div>
             </div>
-            <div id="new_simple_select" class="div_question div_question_onclick" style="visibility: hidden">
-                <div class="div_preview">
-                    <div id="Q1">
-                        <div class="div_title_question_all">
-                            <div class="div_topic_question">1.</div>
-                            <div class="div_title_question"><span id="title_1">请在此输入问题标题</span><span style="color: red;">&nbsp;*</span></div>
-                            <div style="clear: both;"></div>
-                        </div>
-                        <div class="div_table_radio_question">
-                            <div class="div_table_clear_top"></div>
-                            <ul id="ul_select">
-                                <li style="width:99%;"><input type="radio" name="subject1"><label id="s1">选项1</label></li>
-                                <li style="width:99%;"><input type="radio" name="subject1"><label id="s2">选项2</label></li>
-                                <div style="clear:both;"></div>
-                            </ul>
-                            <div class="div_table_clear_bottom"></div>
-                        </div>
-                    </div>
-                    <div class="div_ins_question"></div>
-                    <div class="spanLeft" style="height: 18px;">
-                        <div class="div_ins_question spanLeft" style="clear: none; display: none;"></div>
-                    </div>
-                    <div class="spanRight" style="clear: none">
-                        <ul class="stuff">
-                            <li>
-                                <a href="javascript:void(0);" onclick="editQ(this);" title="完成编辑">
-                                    <span class="design-icon design-finish"></span><span>完成</span>
-                                </a>
+        </div>
+        <div id="title_op">
+            <div id="PDF_bg_chezchenz" style="display: block; position: absolute; left: 0px; top: 0px; z-index: 10001; opacity: 0.6; width: 100%; height: 100%; background-color: rgb(0, 0, 0);">
+                <div id="PDF_c_chezchenz" style="width: 528px; position: absolute; top: 199px; height: 378px; left: 350px; z-index: 10003; border-radius: 10px; background-color: white">
+                    <div id="divQAttr" style="width: 520px; text-align: left; display: block; margin: 5px; padding: 0px; border: 0px; height: 350px; z-index: 10005; background: white;">
+                        <ul class="div_title_attr_question" style="padding: 10px 0 0 10px; margin: 0px; background:#fff;">
+                            <li style="list-style-type: none;margin-top: 20px">
+                                <strong>问卷标题:</strong><input id="paper_attr_title" style="margin-left: 12px;background-color: whitesmoke;font-size: 12px;width: 400px;" class="" type="text" value="" size="54" maxlength="30">
                             </li>
-                            <li>
-                                <a href="javascript:void(0);" onclick="curover.deleteQ();" title="删除此题">
-                                    <span class="design-icon design-delete"></span><span>删除</span>
-                                </a>
+                            <li style="list-style-type: none;margin-top: 20px">
+                                <div style="margin-top: 120px"><strong>问卷说明:</strong></div>&nbsp;
+                                <textarea id="pater_attr_desc" style="background-color: whitesmoke;margin-left: 55px;margin-top: -120px;width: 400px;height: 200px"></textarea>
                             </li>
+                            <li><div style="height: 20px;width: 100%"></div></li>
                             <li>
-                                <a href="javascript:void(0);" onclick="curover.moveUp();" title="将此题上移">
-                                    <span class="design-icon design-up"></span><span>上移</span>
-                                </a>
+                                <div align="center">
+                                    <button id="ensure_button" class="orange" onclick="
+                                    document.getElementById('PDF_bg_chezchenz').style.display='none';
+                                    document.getElementById('pater_title').innerText= document.getElementById('paper_attr_title').value;
+                                    document.getElementById('pater_desc').innerHTML= document.getElementById('pater_attr_desc').value;
+                                    ">确定</button>
+                                </div>
                             </li>
-                            <li>
-                                <a href="javascript:void(0);" onclick="curover.moveDown();" title="将此题下移">
-                                    <span class="design-icon design-down"></span><span>下移</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" onclick="curover.moveFirst();" title="将此题移动到第一题">
-                                    <span class="design-icon design-first"></span><span>最前</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" onclick="curover.moveLast();" title="将此题移动到最后一题">
-                                    <span class="design-icon design-last"></span><span>最后</span>
-                                </a>
-                            </li>
-                            <div style="clear:both;"></div>
                         </ul>
                     </div>
-                    <div style="clear: both;"></div>
                 </div>
-                <div>
-                    <div class="div_title_attr_question">
-                        <div style="margin-left: 15px;">
-                            <div class="spanLeft">
-                                <div style="height: 27px; line-height: 27px; width: 423px; background: rgb(240, 240, 238)">
-                                    <div align="center"><b style="font-size:14px;">题目标题</b></div>
-                                    <div class="divclear"></div>
-                                </div>
-                                <div style="width: 395px;">
-                                    <textarea wrap="soft" rows="4" class="inputtext" id="tcradio1" style="width: 423px; height: 70px; overflow: auto; padding: 5px 0px 0px 5px; border: 1px solid rgb(204, 204, 204);" onchange="document.getElementById('title_1').innerText = document.getElementById('tcradio1').value;">请在此输入问题标题</textarea>
-                                </div>
-                            </div>
-                            <div style="clear: both;"></div>
-                        </div>
-                        <div style="clear: both;"></div>
-                        <div style="margin-left: 15px;">
-                            <div style="padding-top: 10px;"></div>
-                            <div style="clear: both;">
-                                <div>
-                                    <table class="tableoption" cellspacing="3" cellpadding="3" style="background-color: rgb(213, 226, 242);width: 424px">
-                                        <tbody id="option_tbody">
-                                        <tr id="tr1">
-                                            <td style="width: 40px"><span style="font-size: 12px">选项1:</span></td>
-                                            <td style="width: 217px;"><input id="input_1" type="text" class="inputtext choicetxt" style="width: 210px;" value="选项1"></td>
-                                            <td><a class="design-icon design-finish" href="javascript:change_select('1');"></a></td>
-                                            <td>
-                                                <span style="vertical-align: bottom;">
-                                                    <input type="checkbox" style="vertical-align: bottom;">
-                                                    <span style="font-size: 12px">必选</span>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr id="tr2">
-                                            <td style="width: 40px"><span style="font-size: 12px">选项2:</span></td>
-                                            <td style="width: 217px;"><input id="input_2" type="text" class="inputtext choicetxt" style="width: 210px;" value="选项2"></td>
-                                            <td><a class="design-icon design-finish" href="javascript:change_select('2');"></a></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="divclear"></div>
-                            <div style="margin: 5px 0px;">
-                                <div style="width: 94%;">
-                                    <span class="spanLeft">
-                                        <a href="javascript:addNewItem_simple();" class="titlelnk" style="text-decoration:none;">
-                                            <span class="choiceimg design-icon design-add"></span><b>添加选项</b>
-                                        </a>
-                                    </span>
-                                </div>
-                        </div>
-                        <div style="clear: both; line-height: 1px;">&nbsp;</div>
-                        <div style="margin: 10px 0px;">
-                            <input type="button" value="完成编辑" class="submitbutton" style="width: 100%;" onclick="loadQ()">
-                            <span style="color: red; font-size: 14px; display: inline-block; margin-left: 10px;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="PDF_bg_chezchenz" style="display: block; position: absolute; left: 0px; top: 0px; z-index: 10001; opacity: 0.6; width: 100%; height: 100%; background-color: rgb(0, 0, 0);">
-        <div id="PDF_c_chezchenz" style="width: 528px; position: absolute; top: 199px; height: 378px; left: 350px; z-index: 10003; border-radius: 10px; background-color: white">
-            <div id="divQAttr" style="width: 520px; text-align: left; display: block; margin: 5px; padding: 0px; border: 0px; height: 350px; z-index: 10005; background: white;">
-                <ul class="div_title_attr_question" style="padding: 10px 0 0 10px; margin: 0px; background:#fff;">
-                    <li style="list-style-type: none;margin-top: 20px">
-                        <strong>问卷标题:</strong><input id="paper_attr_title" style="margin-left: 12px;background-color: whitesmoke;font-size: 12px;width: 400px;" class="" type="text" value="" size="54" maxlength="30">
-                    </li>
-                    <li style="list-style-type: none;margin-top: 20px">
-                        <div style="margin-top: 120px"><strong>问卷说明:</strong></div>&nbsp;
-                        <textarea id="pater_attr_desc" style="background-color: whitesmoke;margin-left: 55px;margin-top: -120px;width: 400px;height: 200px"></textarea>
-                    </li>
-                    <li><div style="height: 20px;width: 100%"></div></li>
-                    <li>
-                        <div align="center">
-                            <button id="ensure_button" class="orange" onclick="
-                            document.getElementById('PDF_bg_chezchenz').style.display='none';
-                            document.getElementById('pater_title').innerText= document.getElementById('paper_attr_title').value;
-                            document.getElementById('pater_desc').innerHTML= document.getElementById('pater_attr_desc').value;
-                            ">确定</button>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>

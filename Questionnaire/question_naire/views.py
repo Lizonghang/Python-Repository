@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 import simplejson
+import os
 
 
 def home_page(request):
@@ -31,8 +32,12 @@ def edit_template_1(request):
 
 
 def view(request):
-    if request.method == 'POST':
-        pageForm = simplejson.loads(request.POST.get('pageForm'))
-        return render_to_response("Success.html", {'pageForm': pageForm})
-    else:
-        return render_to_response("Success.html")
+    try:
+        if request.method == 'POST':
+            pageForm = simplejson.loads(request.POST.get('pageForm'))
+            return render_to_response("Success.html", {'pageForm': pageForm})
+        else:
+            return render_to_response("Success.html")
+    except Exception,msg:
+        with open('~/git-lib/Questionnaire/error.log','wb') as f:
+            f.write(Exception+':'+msg)

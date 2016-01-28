@@ -39,4 +39,4 @@ def view(request):
         UserDefine.objects.filter(username="Hang").delete()
         UserDefine.objects.create(username="Hang", pageForm=pageForm)
     else:
-        return render_to_response('Success.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm})
+        return render_to_response('Success.html', {'pageForm': (object)(UserDefine.objects.get(username="Hang").pageForm)})

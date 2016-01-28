@@ -36,10 +36,9 @@ def edit_template_1(request):
 def view(request):
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm')
-        p = UserDefine.objects.get(username="Hang")
-        if p:
-            p.pageForm = pageForm
-        else:
-            UserDefine.objects.create(username="Hang", pageForm=pageForm)
+        p = UserDefine.objects.filter(username="Hang")
+        while p:
+            p.delete()
+        UserDefine.objects.create(username="Hang", pageForm=pageForm)
     else:
         return render_to_response('Success.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm})

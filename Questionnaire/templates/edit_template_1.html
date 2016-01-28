@@ -179,8 +179,17 @@
             var page_form = encodeURI(document.getElementById('sur').innerHTML);
             var data = {'pageForm':page_form};
             //var data = JSON.stringify({'pageForm':page_form});
-            var URL = 'http://www.desckie.com/select/template_1/view/';
-            $.post(URL,data,alert("Send Successful"));
+            //var URL = 'http://www.desckie.com/select/template_1/view/';
+            //$.post(URL,data,alert("Send Successful"));
+            $.ajax({
+                    type: "POST",
+                    dataType: "text",
+                    url: 'Success.html',
+                    data: data,
+                    success: function (data) {
+                        alert("提交成功");
+                    }
+                });
         }
     </script>
 </head>

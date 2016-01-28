@@ -2468,7 +2468,7 @@ fieldset{border:0;}
          <style rel="stylesheet" type="text/css">html{ overflow-x:hidden;overflow-y:auto;}</style>
       <div class="survey" style="margin:0px auto;">
           <script>
-              var def_html = {{ pageForm }};
+              var def_html = html_unescape({{ pageForm }});
               document.getElementsByClassName('survey')[0].innerHTML = def_html;
           </script>
      </div>

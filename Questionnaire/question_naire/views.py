@@ -35,7 +35,7 @@ def edit_template_1(request):
 
 def view(request):
     if request.method == 'POST':
-        pageForm = request.POST.get('pageForm')
+        pageForm = request.POST.get('pageForm').encode('utf-8')
         UserDefine.objects.filter(username="Hang").delete()
         UserDefine.objects.create(username="Hang", pageForm=pageForm)
     else:

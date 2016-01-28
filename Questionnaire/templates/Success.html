@@ -3,11 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>提交成功</title>
+    <link href="http://www.desckie.com/static/admin/css/NewDefault.css" rel="stylesheet" type="text/css" />
+    <link id="linkBaseUrl" rel="stylesheet" type="text/css" href="http://www.desckie.com/static/admin/css/q.css" />
+    <link href="http://www.desckie.com/static/admin/css/newdesign.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+#m-rightbar {
+	z-index:99;
+	width:45px;
+	height:156px;
+	right: -47px;
+    top: 300px;
+    position: absolute;
+}
+.m-menu {
+	width:45px;
+	height:156px;
+}
+.m-menu li a {
+	width:45px;
+	height:39px;
+	display:block;
+	text-indent:-9999px;
+	outline:0;
+}
+.m-top, .m-help, .m-comment, .m-bottom {
+	background:url(http://www.sojump.com/images/mysojump/rightbar.gif) no-repeat;
+	width:45px;
+	height:39px
+}
+.m-top a:hover, .m-help a:hover, .m-comment a:hover, .m-bottom a:hover {
+	background:url(http://www.sojump.com/images/mysojump/rightbar-hover.gif) no-repeat;
+}
+.m-help,.m-help a:hover {
+	background-position:0 -39px;
+}
+
+.m-comment,.m-comment a:hover{
+	background-position:0 -78px;
+}
+.m-bottom,.m-bottom a:hover{
+	background-position:0 -117px;
+	}
+</style>
+    <style type="text/css">
+                    .orange {
+                        color: #fef4e9;
+                        border: solid 1px #da7c0c;
+                        background: #f78d1d;
+                        background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+                        background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+                        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+                        width: 90px;
+                        height: 30px;
+                        -webkit-border-radius: .5em;
+                        -moz-border-radius: .5em;
+                        border-radius: .5em;
+
+                    }
+                    .orange:hover {
+                        background: #f47c20;
+                        background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+                        background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+                        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+                    }
+                    .orange:active {
+                        color: #fcd3a5;
+                        background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+                        background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+                        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+                    }
+    </style>
+    <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
 </head>
 <body>
 {{ pageForm }}
 <script>
-    var def_text = document.getElementsByTagName('body')[0].innerHTML;
+    var def_text = document.getElementsByTagName('body')[0].innerText;
     def_text[0]='';
     def_text[def_text.length-1]='';
 </script>

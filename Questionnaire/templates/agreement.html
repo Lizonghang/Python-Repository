@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>协约</title>
+  <style rel="stylesheet" type="text/css">
+        .confirm_btn:hover,a{text-decoration:none}a:hover,a:link{color:#4199d7}*,body{color:#333}*{padding:0;margin:0;list-style:none}img,table,td,tr{border:none;border-collapse:collapse}a{color:#84a8c8}a:active,a:visited{color:#4099d6}a:hover{cursor:pointer}
+        .clear{clear:both;font-size:0;line-height:0}
+        .hide{display:none!important}
+        .hidden{visibility:hidden!important}
+        .noborder{border:none!important}
+        .nobg{background:0 0!important}html{overflow-y:scroll;overflow-x:auto}body{background:url(http://www.desckie.com/static/admin/img/body.png) repeat-x #fff;font:400 12px/14px Geneva,"瀹嬩綋",Tahoma,sans-serif;overflow-y:hidden;overflow-x:auto\9}
+        .bg{background:url(http://www.desckie.com/static/admin/img/bg_chs.png) center top no-repeat}
+        .container{width:956px;margin:0 auto;background:url(http://www.desckie.com/static/admin/img/left.png) left bottom no-repeat;position:relative}
+        .header{background:url(http://www.desckie.com/static/admin/img/bg_chs.png) center top no-repeat;height:94px}
+        .header .logo{float:left;width:289px;height:94px}
+        .header .feedback{float:right;color:#fff;margin:65px 20px 0 0;margin-top:67px\9;cursor:pointer}
+        .left,.left .search ul a,.left .search ul li,.right{float:left}
+        .left{width:210px;background:url(http://www.desckie.com/static/admin/img/left.png) left top no-repeat #f8fdff;height:580px;padding-top:30px}
+        .left a.nav_box{margin-left:2px;background:url(http://www.desckie.com/static/admin/img/left_2.png) left top no-repeat;height:72px;padding:10px 0 0 20px;cursor:pointer;display:block;width:168px}
+        .left a.nav_box span{display:block;color:#616c72}
+        .left a.cur{background-position:left bottom;color:#fff;width:auto}
+        .left a.nav_box span.dt{font-size:20px;font-family:'寰蒋闆呴粦';line-height:26px;padding-left:30px;height:26px}
+        .left .search ul .item_1{background:url(http://www.desckie.com/static/admin/img/ipt.png) -267px -70px no-repeat}
+        .left .search ul .item_2{background:url(http://www.desckie.com/static/admin/img/ipt.png) -267px -97px no-repeat}
+        .left .search ul .item_3{background:url(http://www.desckie.com/static/admin/img/ipt.png) -267px -125px no-repeat}
+        .left .search ul .item_4{background:url(http://www.desckie.com/static/admin/img/ipt.png) -267px -152px no-repeat}
+        .left .search ul .item_5{background:url(http://www.desckie.com/static/admin/img/ipt.png) -267px -181px no-repeat}
+        .left .search ul .item_6{background:url(http://www.desckie.com/static/admin/img/ipt.png) -267px -209px no-repeat}
+        .right{border-top:solid 1px #80add9;border-bottom:solid 1px #d6d9db;background:url(//6.url.cn/zc/chs/img/right_1600.png?v=10078) right top no-repeat #f8fdff;padding-bottom:80px;min-height:530px;_height:530px;width:746px}
+        .right .phone{text-align:left;height:20px;padding:10px 0 0;position:relative;z-index:1}
+        .right .phone h3{font-weight:700;color:#333;font-size:12px}
+        .right .phone .hr{background-color:#ddd;height:1px;margin:3px 0;line-height:1px}
+        .right .phone .hover,.right .phone .normal{border-style:solid;border-width:1px 1px 0;display:inline-block;height:14px;padding-top:2px;padding-left:8px;width:90px;z-index:2;color:#3F9AD3;top:10px;right:6px;position:absolute}
+        .right .phone .normal{border-color:#F8FDFF}.right .phone .hover{border-color:#7FBBF1;background:#fff}
+        .right .phone .tip{color:#6F7374}.right .phone .red{color:#f66}
+        .right .phone .quickReg{background-color:#FFF;border:1px solid #7FBBF1;display:none;height:248px;position:absolute;right:6px;top:26px;width:236px;z-index:1;line-height:18px;padding:6px 0 0 10px}
+        .right .phone .quickReg p{color:#6f7374}.right .phone .quickReg .ml55{margin-left:54px}
+        .right .box{margin-right:3px}.footer{width:956px;margin:0 auto;background:#fff;text-align:center;color:#a6a6a6;padding:20px 0}
+        .footer span{font-family:Tahoma,Verdana,Arial,'瀹嬩綋';color:#A6A6A6}.search .ipt_box .search_form{margin:0;padding:2px 0 0}.radio_checked,.radio_unchecked{padding-left:20px;height:18px;line-height:18px;display:inline-block}#lang_box{position:absolute;z-index:99;right:2px;top:40px}#lang_box a,#lang_box a:active,#lang_box a:hover,#lang_box a:visited{color:#E7E7E7}#lang_box,#lang_box span{color:#FFF}#lang_box,#lang_box a,#lang_box span{font-family:Tahoma,Verdana,Arial,'瀹嬩綋'}
+        .radio_checked{background:url(http://www.desckie.com/static/admin/img/ipt.png) -300px -354px no-repeat;color:#84A8C8}
+        .radio_checked:link{color:#84A8C8}.radio_checked:hover{color:#4199d7;cursor:pointer}
+        .radio_unchecked{background:url(http://www.desckie.com/static/admin/img/ipt.png) -300px -322px no-repeat;color:#84A8C8}
+        .radio_unchecked:link{color:#84A8C8}.radio_unchecked:hover{color:#4199d7;cursor:pointer}
+        .confirm_btn{background:url(http://www.desckie.com/static/admin/img/ipt.png) 0 -344px no-repeat;border:none;color:#FFF;cursor:pointer;display:inline-block;font:700 22px/52px "寰蒋闆呴粦";height:52px;text-align:center;width:183px}
+        .confirm_btn:hover{color:#FFF}.phone_verify_sea_country_box{z-index:1000}
+        .phone_verify_sea_country_box .combox-list{overflow-y:scroll;max-height:200px;_height:200px}
+        .phone_verify_sea_phone{display:none}.phone_verify_phone_tips{color:grey;left:0;position:absolute;top:45px;width:360px}
+        .phone_verify_sea_country_input{background:0 0;border:none;color:#696C6E;display:inline-block;height:18px;line-height:18px;padding:8px;width:284px}#nav_3{display:none}input::-ms-clear{display:none}input::-ms-reveal{display:none}
+    </style>
+  <style rel="stylesheet" type="text/css">
+      .tos-content{font-size:12px;line-height:20px;border-bottom:1px solid #dadada}.tos-content .top{background:url(//6.url.cn/zc/chs/img/agree_top_bg.png?v=10078) no-repeat #f8fdff;width:926px;padding:10px 15px}.tos-content .bottom{background:url(//6.url.cn/zc/chs/img/agree_buttom_bg.png?v=10078) repeat-y #f8fdff;width:926px;padding:10px 15px}.tos-content .title{background:url(http://www.desckie.com/static/admin/img/agree_title_bg.png) no-repeat #f8fdff;width:926px;padding:25px 15px 0;height:35px;font-size:16px;font-weight:700}.tos-content p{margin:0}.tos-content .first_title{padding-bottom:0}.tos-content .indent{text-indent:24px}.tos-content .p_title{padding-bottom:15px}*{font-family:Tahoma,Arial,Helvetica,sans-serif}h1,h2,li,p{font-size:14px}li,p,ul{line-height:24px}ul{margin-left:6px}h1{color:#000;margin:0 0 10px}.content{color:#666;line-height:20px;margin-bottom:20px;margin-left:20px;margin-right:20px;text-align:left}.content-expand2{margin-bottom:100px;text-align:right}h2{color:#000;margin:0 0 10px}li,p{margin-bottom:10px}ul{margin-bottom:20px;padding-left:22px;padding-right:22px}.bold{font-weight:700}
+  </style>
+ </head>
+ <body>
+  <div class="bg">
+   <div class="container">
+    <div class="header"></div>
+    <div class="tos-content">
+     <div class="title" id="title" style="text-align:center">使用条款(引用腾讯条款占位)</div>
+     <div class="top" id="top">
+      <div class="content bold">
+       <p>
+        【首部及导言】
+       </p>
+       <p style="text-indent:22px">
+        为有效利用QQ号码资源，维护用户合法权益，特制订《QQ号码规则》（以下简称“本规则”）。请您务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款，以及开通或使用某项服务的单独协议，并选择接受或不接受。限制、免责条款可能以加粗形式提示您注意。
+       </p>
+       <p style="text-indent:22px">
+        除非您已阅读并接受本规则所有条款，否则您无权申请或使用QQ号码。您申请或使用QQ号码的行为即视为您已阅读并同意受本规则的约束。
+       </p>
+      </div>
+     </div>
+     <div class="bottom" id="buttom">
+      <div class="content">
+       <h1>
+        一、【规则的范围】
+       </h1>
+       <ul>
+        <li>
+         1.1 本规则是腾讯制定的关于获取和使用QQ号码的相关规则。本规则适用于腾讯提供的需要注册或使用QQ号码的全部软件和服务。
+        </li>
+        <li>
+         1.2 本规则属于腾讯的业务规则，是腾讯服务协议不可分割的组成部分。
+        </li>
+        <li>
+         1.3 您通过QQ号码使用腾讯的软件和服务时，须同时遵守各项服务的单独协议。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        二、【QQ号码的性质】
+       </h1>
+       <ul>
+        <li>
+         QQ号码是腾讯创设的用于识别用户身份的数字标识。
+         <span class="bold">
+          QQ号码的所有权属于腾讯。
+         </span>
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        三、【QQ号码的获取】
+       </h1>
+       <ul>
+        <li>
+         3.1 您可以通过如下方式免费或有偿申请注册QQ号码，包括但不限于：
+         <br/>
+         （1）软件客户端；
+         <br/>
+         （2）腾讯网站；
+         <br/>
+         （3）手机短信、电话语音（IVR）；
+         <br/>
+         （4）参与腾讯开展或授权开展的活动；
+         <br/>
+         （5）其他腾讯授权的方式。
+         <br/>
+        </li>
+        <li>
+         3.2 您完成申请注册程序后，依照腾讯的业务规则获得该号码的使用权。
+        </li>
+        <li>
+         3.3 无论您通过何种方式获取QQ号码，均受本规则约束。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        四、【用户身份信息验证】
+       </h1>
+       <ul>
+        <li>
+         4.1 您在申请QQ号码过程中，需要填写一些必要的信息，请保持这些信息的及时更新，以便腾讯向您提供帮助，或更好地为您提供服务。若国家法律法规有特殊规定的，您需要填写真实的身份信息。若您填写的信息不完整或不准确，则可能无法使用服务或在使用过程中受到限制。
+        </li>
+        <li>
+         4.2 腾讯与用户一同致力于个人信息的保护，保护用户个人信息是腾讯的一项基本原则。未经您的同意，腾讯不会向腾讯以外的任何公司、组织和个人披露您的个人信息，但法律法规另有规定的除外。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        五、【QQ号码的使用】
+       </h1>
+       <ul>
+        <li>
+         5.1 您可以按照腾讯的业务规则用QQ号码登录和使用腾讯提供的各种软件和服务。
+        </li>
+        <li>
+         5.2 除了腾讯提供的软件和服务，您还可以用QQ号码登录使用腾讯合作伙伴的相关服务。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        六、【QQ号码的安全】
+       </h1>
+       <ul>
+        <li class="bold">
+         6.1 QQ密码由您自行设定。您应妥善保管您的QQ号码与密码。
+        </li>
+        <li>
+         6.2 腾讯与您共同负有维护QQ号码安全的责任。腾讯会采取并不断更新技术措施，努力保护您的QQ号码在服务器端的安全。
+        </li>
+        <li>
+         6.3 您需要采取特定措施保护您的号码安全，包括但不限于妥善保管QQ号码与密码、安装防病毒木马软件、定期更改密码等措施。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        七、【QQ号码的找回】
+       </h1>
+       <ul>
+        <li>
+         如果您的QQ号码被盗、密码遗忘或因其他原因导致无法正常登录，您可以按照腾讯的申诉途径进行申诉，并遵守《QQ帐号申诉服务协议》。
+         <span class="bold">
+          腾讯并不承诺您一定能通过申诉找回QQ号码。
+         </span>
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        八、【用户行为规范】
+       </h1>
+       <ul>
+        <li class="bold">
+         8.1 您不得恶意注册QQ号码。腾讯可以对恶意注册行为进行独立判断和处理。
+        </li>
+        <li class="bold">
+         8.2 QQ号码使用权仅属于初始申请注册人。未经腾讯许可，您不得赠与、借用、租用、转让或售卖QQ号码或者以其他方式许可非初始申请注册人使用QQ号码。
+        </li>
+        <li>
+         8.3 如果您当前使用的QQ号码并不是您初始申请注册的或者通过腾讯提供的其他途径获得的，但您却知悉该QQ号码当前的密码，您不得用该号码登录或进行任何操作，并请您在第一时间通知腾讯或者该号码的初始申请注册人。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        九、【责任承担】
+       </h1>
+       <ul>
+        <li>
+         9.1 您理解并同意，作为QQ号码的初始申请注册人和使用人，您应承担该号码项下所有活动产生的全部责任。
+        </li>
+        <li>
+         9.2 因腾讯原因导致您的QQ号码被盗，腾讯将依法承担相应责任。非因腾讯原因导致的，腾讯不承担任何责任。
+        </li>
+        <li class="bold">
+         9.3 腾讯依照业务规则限制、冻结或终止您的QQ号码使用，可能会给您造成一定的损失，该损失由您自行承担，腾讯不承担任何责任。
+        </li>
+        <li class="bold">
+         9.4 您不得有偿或无偿转让QQ号码，以免产生纠纷。您应当自行承担由此产生的任何责任，同时腾讯保留追究上述行为人法律责任的权利。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        十、【QQ号码使用的限制、冻结或终止】
+       </h1>
+       <ul>
+        <li class="bold">
+         10.1 如您违反法律法规、腾讯各服务协议或业务规则的规定，腾讯有权进行独立判断并随时限制、冻结或终止您对QQ号码的使用，且根据实际情况决定是否恢复使用。
+        </li>
+        <li class="bold">
+         10.2 如果腾讯发现您并非号码初始申请注册人，腾讯有权在未经通知的情况下终止您使用该号码。
+        </li>
+        <li class="bold">
+         10.3 为了充分利用QQ号码资源，如果您存在注册QQ号码后未及时进行初次登录使用，或长期未登陆使用QQ号码等情形，腾讯有权终止该号码的使用。
+        </li>
+        <li class="bold">
+         10.4 腾讯按照本规则或相关法律法规，限制、冻结或终止您对QQ号码的使用，而由此给您带来的损失（包括但不限于通信中断，用户资料、邮件和游戏道具及相关数据等的清空等），由您自行承担。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        十一、【客户服务】
+       </h1>
+       <ul>
+        <li>
+         如果您对腾讯采取的QQ号码的限制措施有异议或在使用QQ号码的过程中有其他问题的，均可联系腾讯客户服务部门（http://kf.qq.com），我们会给予您必要的帮助。
+        </li>
+       </ul>
+      </div>
+      <div class="content">
+       <h1>
+        十二、【其他】
+       </h1>
+       <ul>
+        <li>
+         12.1 您申请或使用QQ号码即视为您已阅读并同意受本规则的约束。腾讯有权在必要时修改本规则条款。您可以在腾讯相关页面查阅本规则的最新版本。本规则条款变更后，如果您继续使用QQ号码，即视为您已接受修改后的规则。如果您不接受修改后的规则，应当停止使用QQ号码。
+        </li>
+        <li>
+         12.2 本规则内容同时包括《腾讯服务协议》等。上述内容一经正式发布，即为本规则不可分割的组成部分，您同样应当遵守。上述内容与本规则存在冲突的，以本规则为准。您对前述任何业务规则、协议的接受，即视为您对本规则全部的接受。
+        </li>
+        <li class="bold">
+         12.3 本规则签订地为中华人民共和国广东省深圳市南山区。
+        </li>
+        <li class="bold">
+         12.4 本规则的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）。
+        </li>
+        <li class="bold">
+         12.5 若您和腾讯之间发生任何纠纷或争议，首先应友好协商解决；协商不成的，您同意将纠纷或争议提交本规则签订地有管辖权的人民法院管辖。
+        </li>
+        <li>
+         12.6 本规则所有条款的标题仅为阅读方便，本身并无实际涵义，不能作为本规则涵义解释的依据。
+        </li>
+        <li>
+         12.7 本规则条款无论因何种原因部分无效或不可执行，其余条款仍有效，对双方具有约束力。（正文完）
+        </li>
+       </ul>
+       <p style="text-align:right">
+        XX公司
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer">Copyright<span>©</span>2016 Hang All Rights Reserved</div>
+ </body>
+</html>

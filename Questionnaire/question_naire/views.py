@@ -33,9 +33,7 @@ def edit_template_1(request):
 
 
 def view(request):
+    global pageForm
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm')
-    #c = Context({'pageForm': pageForm})
-    #t = loader.get_template('Success.html')
-    #t.render(c)
     return render_to_response('Success.html', {'pageForm': pageForm})

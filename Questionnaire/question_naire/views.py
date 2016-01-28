@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 import simplejson
+from django.template import Template, Context, loader
 
 
 def home_page(request):
@@ -32,9 +33,9 @@ def edit_template_1(request):
 
 
 def view(request):
-    return render_to_response("Success.html")
-    # if request.method == 'POST':
-    #     pageForm = simplejson.loads(request.POST.get('pageForm'))
-    #     return render_to_response("Success.html", {'pageForm': pageForm})
-    # else:
-    #     return render_to_response("Success.html")
+    if request.method == 'POST':
+        pageForm = request.POST.get('pageForm')
+    #c = Context({'pageForm': pageForm})
+    #t = loader.get_template('Success.html')
+    #t.render(c)
+    return render_to_response('Success.html', {'pageForm': pageForm})

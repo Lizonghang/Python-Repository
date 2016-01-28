@@ -177,10 +177,9 @@
         }
         function submit(){
             var page_form = document.getElementById('sur').innerHTML;
-            var data = {'pageForm':page_form};
-            //var data = JSON.stringify({'pageForm':page_form});
+            var data = JSON.stringify({'pageForm':page_form});
             var URL = 'http://www.desckie.com/select/template_1/view/';
-            alert(typeof(data));
+            alert(data);
             $.post(URL,data,alert("Send Successful"));
         }
     </script>

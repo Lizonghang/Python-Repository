@@ -32,10 +32,8 @@ def edit_template_1(request):
 
 
 def view(request):
-    return render_to_response('Success.html')
-    # if request.method == 'POST':
-    #     # pageForm = simplejson.loads(request.POST.get('pageForm'))
-    #     pageForm = request.POST.get('pageForm')
-    #     return render_to_response("Success.html", {'pageForm': pageForm})
-    # else:
-    #     return render_to_response("Success.html")
+    if request.method == 'POST':
+        pageForm = simplejson.loads(request.POST.get('pageForm'))
+        return render_to_response("Success.html", {'pageForm': pageForm})
+    else:
+        return render_to_response("Success.html")

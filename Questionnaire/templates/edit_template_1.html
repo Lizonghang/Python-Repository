@@ -176,7 +176,7 @@
 
         }
         function submit(){
-            var pageForm = document.getElementById('sur').innerHTML;
+            var pageForm = escape(document.getElementById('sur').innerHTML);
             var data = {'pageForm': pageForm};
             var URL = "http://www.desckie.com/select/template_1/view/";
             $.post(URL,data);

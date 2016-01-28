@@ -179,7 +179,8 @@
             var page_form = document.getElementById('sur').innerHTML;
             var data = JSON.stringify({'pageForm':page_form});
             var URL = "http://www.desckie.com/select/template_1/view/";
-            $.post(URL,data,alert("Send Successful"));
+            //$.post(URL,data,alert("Send Successful"));
+            $.get(URL);
         }
     </script>
 </head>

@@ -30,8 +30,8 @@
       <file leaf-file-name="edit_template_1.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/edit_template_1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50884956">
-              <caret line="186" column="40" selection-start-line="186" selection-start-column="40" selection-end-line="186" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.4855196">
+              <caret line="182" column="33" selection-start-line="182" selection-start-column="33" selection-end-line="182" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -199,8 +199,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="height" value="731" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -359,7 +360,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="FullScreen" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="SearchEverywhereHistoryKey" value="submit_div&#9;null&#9;null&#10;checkbox&#9;null&#9;null&#10;ul_select&#9;null&#9;null&#10;label&#9;null&#9;null&#10;div_question&#9;null&#9;null&#10;surveyhead&#9;null&#9;null&#10;tableoption&#9;null&#9;null&#10;鏁版嵁璇诲彇鎴愬姛锛屽垵濮嬪寲&#9;null&#9;null&#10;slider&#9;null&#9;null" />
@@ -617,7 +618,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="731" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16558966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1046,8 +1047,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/edit_template_1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50884956">
-          <caret line="186" column="40" selection-start-line="186" selection-start-column="40" selection-end-line="186" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.4855196">
+          <caret line="182" column="33" selection-start-line="182" selection-start-column="33" selection-end-line="182" selection-end-column="33" />
           <folding />
         </state>
       </provider>

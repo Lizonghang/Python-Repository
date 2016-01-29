@@ -1,9 +1,12 @@
-<html><head id="ctl00_Head1">
-  <title>企业员工满意度调查问卷模板</title>
+<html>
+ <head id="ctl00_Head1">
+  <title>
+   企业员工满意度调查问卷模板
+  </title>
   <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
-  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <style rel="stylesheet" type="text/css">
-      /*============================默认样式：直接定义元素的样式=======================================*/
+   /*============================默认样式：直接定义元素的样式=======================================*/
 body
 {
  text-align: center;
@@ -1962,10 +1965,9 @@ div .bar img
     line-height:20px;word-break:break-all;
     word-wrap: break-word;
 }
-
   </style>
   <style rel="stylesheet" type="text/css">
-      body
+   body
 {
     font-family:"微软雅黑","Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
     word-break:break-all;
@@ -2414,7 +2416,7 @@ font-weight: bold;
 }
   </style>
   <style rel="stylesheet" type="text/css">
-      body {
+   body {
 background: #ddf4ff url("http://image.sojump.com/images/newbg/oldbg2-bg.jpg") repeat-x;
 }
 #jqContent {
@@ -2454,27 +2456,45 @@ input.submitbutton_hover
 legend{display:none;}
 fieldset{border:0;}
   </style>
+  <script>
+      function submit(){
+          window.location.href="http://www.desckie.com/submit/welcome/";
+          //数据处理
+      }
+  </script>
  </head>
  <body>
-  <div id="divNotRun" style="height:100px; text-align:center; display:none;"></div>
+  <div id="divNotRun" style="height:100px; text-align:center; display:none;">
+  </div>
   <div id="jqContent" style="text-align: left; ">
    <div id="headerCss" style="overflow-x: hidden; overflow-y: hidden; ">
     <div id="ctl00_header">
-     <div style="display:none;"></div>
+     <div style="display:none;">
+     </div>
     </div>
    </div>
    <div id="mainCss">
     <div id="mainInner">
      <div id="box">
-         <style rel="stylesheet" type="text/css">html{ overflow-x:hidden;overflow-y:auto;}</style>
+      <style rel="stylesheet" type="text/css">
+       html{ overflow-x:hidden;overflow-y:auto;}
+      </style>
       <div class="survey" style="margin:0px auto;">
-          <script>
-              var def_html = unescape('{{ pageForm }}');
+       <script>
+        var def_html = unescape('{{ pageForm }}');
               document.getElementsByClassName('survey')[0].innerHTML = def_html;
-          </script>
+       </script>
+      </div>
      </div>
     </div>
    </div>
+  </div>
+  <div id="submit_div" style="width: 820px;height: 60px;background-color: transparent">
+   <div style="background-color: transparent;margin-left: 205px">
+    <a class="sumitbutton" href="javascript:submit()" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px;width: 270px">
+     确认提交
+    </a>
    </div>
-      </div>
-</body></html>
+  </div>
+ </body>
+</html>

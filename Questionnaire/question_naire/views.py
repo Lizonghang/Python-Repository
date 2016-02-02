@@ -53,10 +53,7 @@ def analysis(request):
     if request.method == 'POST':
         data = simplejson.loads(request.POST.get('data'))
         with open('question_naire/testdata.py', 'ab') as f:
-            f.write(''+data[0][0]+data[0][1]+data[0][2]+data[0][3]+data[0][4]+'\n')
-            f.write(''+data[1][0]+data[1][1]+data[1][2]+'\n')
-            f.write(data[2][0]+'\n')
-            f.write(''+data[3][0]+data[3][1]+'\n')
-            f.write(''+data[4][0]+data[4][1]+data[4][2]+'\n')
-            f.write(data[5][0]+'\n')
-            f.write('end')
+            f.write(''+data[0][0]+data[0][1]+data[0][2]+data[0][3]+data[0][4]+'\n'
+                    +data[1][0]+data[1][1]+data[1][2]+'\n'+data[2][0]+'\n'
+                    +data[3][0]+data[3][1]+'\n'+data[4][0]+data[4][1]+data[4][2]+'\n'
+                    +data[5][0]+'\n'+'end')

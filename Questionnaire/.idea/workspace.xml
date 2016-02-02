@@ -101,28 +101,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/template.html">
+      <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.44690266">
+              <caret line="2470" column="39" selection-start-line="2470" selection-start-column="39" selection-end-line="2470" selection-end-column="39" />
               <folding>
-                <marker date="1454050946000" expanded="true" signature="49158:49187" placeholder="{...}" />
-                <marker date="1454050946000" expanded="true" signature="52261:52290" placeholder="{...}" />
+                <marker date="1454402117000" expanded="true" signature="49161:49190" placeholder="{...}" />
+                <marker date="1454402117000" expanded="true" signature="52264:52293" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/question_naire/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75663716">
-              <caret line="2484" column="19" selection-start-line="2484" selection-start-column="19" selection-end-line="2484" selection-end-column="19" />
-              <folding>
-                <marker date="1454401872000" expanded="true" signature="49161:49190" placeholder="{...}" />
-                <marker date="1454401872000" expanded="true" signature="52264:52293" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -932,14 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/question_naire/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/uwsgi.log">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -971,8 +960,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding>
-            <marker date="1454050946000" expanded="true" signature="49158:49187" placeholder="{...}" />
-            <marker date="1454050946000" expanded="true" signature="52261:52290" placeholder="{...}" />
+            <marker date="1454050946000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454050946000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1011,14 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Questionnaire/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/question_naire/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1048,13 +1029,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/question_naire/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Questionnaire/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75663716">
-          <caret line="2484" column="19" selection-start-line="2484" selection-start-column="19" selection-end-line="2484" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.44690266">
+          <caret line="2470" column="39" selection-start-line="2470" selection-start-column="39" selection-end-line="2470" selection-end-column="39" />
           <folding>
-            <marker date="1454401872000" expanded="true" signature="49161:49190" placeholder="{...}" />
-            <marker date="1454401872000" expanded="true" signature="52264:52293" placeholder="{...}" />
+            <marker date="1454402117000" expanded="true" signature="49161:49190" placeholder="{...}" />
+            <marker date="1454402117000" expanded="true" signature="52264:52293" placeholder="{...}" />
           </folding>
         </state>
       </provider>

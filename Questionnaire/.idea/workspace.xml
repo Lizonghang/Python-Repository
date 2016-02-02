@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_def_temp1.html" afterPath="$PROJECT_DIR$/templates/user_def_temp1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/question_naire/views.py" afterPath="$PROJECT_DIR$/question_naire/views.py" />
     </list>
     <ignored path="Questionnaire.iws" />
@@ -38,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/question_naire/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.7865854">
+              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -82,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80128205">
+            <state vertical-scroll-proportion="-15.625">
               <caret line="2507" column="88" selection-start-line="2507" selection-start-column="88" selection-end-line="2507" selection-end-column="88" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -1015,16 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/question_naire/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/question_naire/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1035,7 +1024,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80128205">
+        <state vertical-scroll-proportion="-15.625">
           <caret line="2507" column="88" selection-start-line="2507" selection-start-column="88" selection-end-line="2507" selection-end-column="88" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -1043,6 +1032,16 @@
             <element signature="n#style#2;n#head#0;n#html#0;n#!!top" expanded="false" />
             <marker date="1454423855000" expanded="true" signature="49161:49190" placeholder="{...}" />
             <marker date="1454423855000" expanded="true" signature="52264:52293" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/question_naire/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7865854">
+          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -50,6 +50,4 @@ def welcome(request):
 
 
 def analysis(request):
-    if request.method == 'POST':
-        pass
     return 'hello'

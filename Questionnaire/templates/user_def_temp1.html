@@ -2460,22 +2460,21 @@ fieldset{border:0;}
       function submit(){
           var Qs=1;
           var tempQ;
+          //var maxLen=1;
           while(tempQ = document.getElementsByClassName("Q"+Qs)[0]){
               if(tempQ.getElementsByClassName("plot")[0].style.visibility == 'visible'){
                   var lis = tempQ.getElementsByTagName("li");
                   var check = false;
                   var len = lis.length;
-                  alert(len);
+                  //if(len > maxLen)  maxLen = len;
                   if(len == 1){
                       if(lis[0].getElementsByTagName("textarea")[0].value != "")
                           check = true;
-                      alert(check);
                   }
                   else{
                       for(var i=0;i<len;i++){
                         if(lis[i].getElementsByTagName("input")[0].checked == true)   check = true;
                       }
-                      alert(check);
                   }
                   if(check == false){
                       alert("题目"+Qs+"为必选题");
@@ -2484,8 +2483,32 @@ fieldset{border:0;}
               }
               Qs++;
           }
-          alert("问卷信息通过检验,处理问卷信息并提交");
-          window.location.href="http://www.desckie.com/submit/welcome/";
+          Qs=1;
+          var ans = new Array();
+          while(document.getElementsByClassName("Q"+Qs)[0]){
+              ans[Qs-1] = new Array();
+              Qs++;
+          }
+          Qs=1;
+          while(tempQ = document.getElementsByClassName("Q"+Qs)[0]){
+              lis = tempQ.getElementsByTagName("li");
+              len = lis.length;
+              var k;
+              if(len==1){
+                  ans[Qs-1][0]=lis[0].getElementsByTagName("input")[0].value;
+              }
+              else{
+                  for(k=0;k<len;k++){
+                      ans[Qs-1][k]=(lis[k].getElementsByTagName("input")[0].checked==true?1:0);
+                  }
+              }
+              Qs++;
+          }
+          var i,j;
+          for(i=0;i<3;i++)
+            for(j=0;j<3;j++)
+                alert(ans[i][j]);
+          //window.location.href="http://www.desckie.com/submit/welcome/";
       }
   </script>
  </head>

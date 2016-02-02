@@ -2456,6 +2456,7 @@ input.submitbutton_hover
 legend{display:none;}
 fieldset{border:0;}
   </style>
+  <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
   <script>
       function submit(){
           var Qs=1;
@@ -2504,14 +2505,8 @@ fieldset{border:0;}
               }
               Qs++;
           }
-          var i,j;
-          alert(""+ans[0][0]+ans[0][1]+ans[0][2]+ans[0][3]+ans[0][4]);
-          alert(""+ans[1][0]+ans[1][1]+ans[1][2]);
-          alert(ans[2][0]);
-          alert(""+ans[3][0]+ans[3][1]);
-          alert(""+ans[4][0]+ans[4][1]+ans[4][2]);
-          alert(ans[5][0]);
-          //window.location.href="http://www.desckie.com/submit/welcome/";
+          $.post("http://www.desckie.com/select/template_1/analysis/",{"data":JSON.stringify(ans)},function(){alert("提交成功")});
+          window.location.href="http://www.desckie.com/submit/welcome/";
       }
   </script>
  </head>

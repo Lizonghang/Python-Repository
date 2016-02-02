@@ -2473,9 +2473,9 @@ fieldset{border:0;}
                   }
                   else{
                       for(var i=0;i<len;i++){
-                        if(lis[i].checked == 'checked')   check = true;
+                        if(lis[i].getElementsByTagName("input")[0].checked == 'checked')   check = true;
                       }
-                      alert(check)
+                      alert(check);
                   }
                   if(check == false){
                       alert("题目"+Qs+"为必选题");

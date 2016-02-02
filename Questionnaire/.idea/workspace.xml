@@ -105,10 +105,10 @@
         <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.53539824">
-              <caret line="2497" column="80" selection-start-line="2497" selection-start-column="80" selection-end-line="2497" selection-end-column="80" />
+              <caret line="2497" column="65" selection-start-line="2497" selection-start-column="65" selection-end-line="2497" selection-end-column="65" />
               <folding>
-                <marker date="1454419070000" expanded="true" signature="49161:49190" placeholder="{...}" />
-                <marker date="1454419070000" expanded="true" signature="52264:52293" placeholder="{...}" />
+                <marker date="1454419403000" expanded="true" signature="49161:49190" placeholder="{...}" />
+                <marker date="1454419403000" expanded="true" signature="52264:52293" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -1048,10 +1048,10 @@
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53539824">
-          <caret line="2497" column="80" selection-start-line="2497" selection-start-column="80" selection-end-line="2497" selection-end-column="80" />
+          <caret line="2497" column="65" selection-start-line="2497" selection-start-column="65" selection-end-line="2497" selection-end-column="65" />
           <folding>
-            <marker date="1454419070000" expanded="true" signature="49161:49190" placeholder="{...}" />
-            <marker date="1454419070000" expanded="true" signature="52264:52293" placeholder="{...}" />
+            <marker date="1454419403000" expanded="true" signature="49161:49190" placeholder="{...}" />
+            <marker date="1454419403000" expanded="true" signature="52264:52293" placeholder="{...}" />
           </folding>
         </state>
       </provider>

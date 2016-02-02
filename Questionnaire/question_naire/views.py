@@ -52,4 +52,4 @@ def welcome(request):
 def analysis(request):
     if request.method == 'POST':
         data = simplejson.loads(request.POST.get('data'))
-    return data[3][0]
+    return 'hello'

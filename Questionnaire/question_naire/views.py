@@ -51,5 +51,5 @@ def welcome(request):
 
 def analysis(request):
     if request.method == 'POST':
-        data = simplejson.loads(request.POST.get('data'))
+        pass
     return 'hello'

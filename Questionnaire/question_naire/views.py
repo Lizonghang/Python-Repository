@@ -10,7 +10,10 @@ def home_page(request):
 
 
 def register(request):
-    return render_to_response("register.html")
+    if request.method == 'GET':
+        return render_to_response("register.html")
+    else:
+        pass
 
 
 def choose_template(request):

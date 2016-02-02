@@ -2458,8 +2458,31 @@ fieldset{border:0;}
   </style>
   <script>
       function submit(){
+          var Qs=1;
+          var tempQ;
+          while(tempQ = document.getElementsByClassName("Q"+Qs)[0]){
+              if(tempQ.getElementsByClassName("plot")[0].style.visibility == 'visible'){
+                  var lis = tempQ.getElementsByTagName("li");
+                  var check = false;
+                  var len = lis.length;
+                  if(len == 1){
+                      if(lis[0].getElementsByTagName("textarea")[0].value != "")
+                          check = true;
+                  }
+                  else{
+                      for(var i=0;i<len;i++){
+                        if(lis[i].checked == 'checked')   check = true;
+                      }
+                  }
+                  if(check == false){
+                      alert("题目"+Qs+"为必选题");
+                      return;
+                  }
+              }
+              Qs++;
+          }
+          alert("问卷信息通过检验,处理问卷信息并提交");
           window.location.href="http://www.desckie.com/submit/welcome/";
-          //数据处理
       }
   </script>
  </head>

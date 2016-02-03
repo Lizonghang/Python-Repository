@@ -52,6 +52,6 @@ def welcome(request):
 def analysis(request):
     if request.method == 'POST':
         ans = request.POST.get('data')
-        return render_to_response('welcome.html', {'data': ans[3][0]})
+        return render_to_response('realTimeStatics.html', {'data': ans[3][0]})
     else:
-        return render_to_response('welcome.html', {'data': 'Not Post'})
+        return render_to_response('realTimeStatics.html', {'data': 'Not Post'})

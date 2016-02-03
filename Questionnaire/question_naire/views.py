@@ -51,7 +51,7 @@ def welcome(request):
 
 def analysis(request):
     if request.method == 'POST':
-        ans = request.POST.get('data')
-        return render_to_response('realTimeStatics.html', {'data': type(ans)})
+        ans = simplejson.loads(request.POST.get('data'))
+        return render_to_response('realTimeStatics.html', {'data': ans[2][0]})
     else:
         return render_to_response('realTimeStatics.html', {'data': 'Not Post'})

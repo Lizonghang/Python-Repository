@@ -51,5 +51,5 @@ def welcome(request):
 
 
 def analysis(request):
-    ans = simplejson.loads(request.POST.get('data'))
-    return HttpResponse(ans[2][0])
+    ans = request.POST.get('data')
+    return HttpResponse(ans+","+type(ans))

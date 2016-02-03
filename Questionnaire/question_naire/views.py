@@ -58,4 +58,8 @@ def analysis(request):
     for k in range(0, len(ans)):
         arr.append([])
         arr[k] = ans[k].split(",")
-    return HttpResponse(arr[2][0])
+    for i in range(0, len(ans)):
+        for j in range(0, len(arr[i])):
+            if arr[i][j] == '1' or arr[i][j] == '0':
+                arr[i][j] = int(arr[i][j])
+    return HttpResponse(arr)

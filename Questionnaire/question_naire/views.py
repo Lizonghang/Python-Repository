@@ -53,4 +53,4 @@ def welcome(request):
 
 def analysis(request):
     ans = request.POST.get('data')
-    return HttpResponse(ans+ans[0][0])
+    return HttpResponse(ans)

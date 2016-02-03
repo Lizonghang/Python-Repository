@@ -50,4 +50,4 @@ def welcome(request):
 
 
 def analysis(request):
-    return 'hello'
+    return render_to_response('welcome.html')

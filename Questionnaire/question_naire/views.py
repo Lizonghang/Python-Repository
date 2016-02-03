@@ -53,6 +53,7 @@ def welcome(request):
 def analysis(request):
     if request.method == 'POST':
         ans = simplejson.loads(request.POST.get('data'))
-        return HttpResponse(ans[2][0])
+        return HttpResponse('Hello')
+        # return HttpResponse(ans[2][0])
     else:
         return HttpResponse('Not post')

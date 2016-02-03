@@ -53,4 +53,9 @@ def welcome(request):
 
 def analysis(request):
     ans = request.POST.get('data')
-    return HttpResponse(ans)
+    ans = ans[2:len(ans)-3].split("],[")
+    arr = []
+    for k in range(0, len(ans)):
+        arr.append([])
+        arr[k] = ans[k].split(",")
+    return HttpResponse(arr[2][0])

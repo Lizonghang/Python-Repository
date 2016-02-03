@@ -40,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/question_naire/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.82905984">
               <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
@@ -94,14 +94,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7345133">
-              <caret line="2508" column="81" selection-start-line="2508" selection-start-column="81" selection-end-line="2508" selection-end-column="81" />
+            <state vertical-scroll-proportion="-21.375">
+              <caret line="2509" column="74" selection-start-line="2509" selection-start-column="74" selection-end-line="2509" selection-end-column="74" />
               <folding>
-                <marker date="1454520128000" expanded="true" signature="49161:49190" placeholder="{...}" />
-                <marker date="1454520128000" expanded="true" signature="52264:52293" placeholder="{...}" />
+                <marker date="1454520220000" expanded="true" signature="49161:49190" placeholder="{...}" />
+                <marker date="1454520220000" expanded="true" signature="52264:52293" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -187,8 +187,8 @@
         <option value="$PROJECT_DIR$/Questionnaire/urls.py" />
         <option value="$PROJECT_DIR$/question_naire/testdata.py" />
         <option value="$PROJECT_DIR$/templates/realTimeStatics.html" />
-        <option value="$PROJECT_DIR$/question_naire/views.py" />
         <option value="$PROJECT_DIR$/templates/user_def_temp1.html" />
+        <option value="$PROJECT_DIR$/question_naire/views.py" />
       </list>
     </option>
   </component>
@@ -1034,23 +1034,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/question_naire/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+        <state vertical-scroll-proportion="-21.375">
+          <caret line="2509" column="74" selection-start-line="2509" selection-start-column="74" selection-end-line="2509" selection-end-column="74" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <marker date="1454520220000" expanded="true" signature="49161:49190" placeholder="{...}" />
+            <marker date="1454520220000" expanded="true" signature="52264:52293" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
+    <entry file="file://$PROJECT_DIR$/question_naire/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7345133">
-          <caret line="2508" column="81" selection-start-line="2508" selection-start-column="81" selection-end-line="2508" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.82905984">
+          <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
           <folding>
-            <marker date="1454520128000" expanded="true" signature="49161:49190" placeholder="{...}" />
-            <marker date="1454520128000" expanded="true" signature="52264:52293" placeholder="{...}" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

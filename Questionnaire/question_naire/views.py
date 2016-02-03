@@ -52,4 +52,5 @@ def welcome(request):
 
 def analysis(request):
     ans = request.POST.get('data')
-    return HttpResponse(ans[2][0])
+    respnse = "" + ans + "\n" + ans[0][0]+ans[0][1]+ans[0][2]+ans[0][3]+ans[0][4]+"\n"+ans[1][0]+ans[1][1]+ans[1][2]+"\n"+ans[2][0]+"\n"+ans[3][0]+ans[3][1]+"\n"+ans[4][0]+ans[4][1]+ans[4][2]+"\n"+ans[5][0]
+    return HttpResponse(respnse)

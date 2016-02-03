@@ -1,4 +1,3 @@
-# -*- coding = utf-8 -*-
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 import simplejson
@@ -65,5 +64,5 @@ def analysis(request):
         for j in range(0, len(arr[i])):
             if arr[i][j] == '1' or arr[i][j] == '0':
                 arr[i][j] = int(arr[i][j])
-    # arr 中保存有问卷信息,创建models并记入数据库
+
     return HttpResponse('RECEIVE SUCCESS')

@@ -50,4 +50,6 @@ def welcome(request):
 
 
 def analysis(request):
+    if request.method == 'POST':
+        pass
     return render_to_response('welcome.html')

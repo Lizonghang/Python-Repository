@@ -3,6 +3,7 @@ from django.template import RequestContext
 import simplejson
 from django.template import Template, Context, loader
 from question_naire.models import *
+from django.http import HttpResponse
 
 
 def home_page(request):
@@ -52,6 +53,6 @@ def welcome(request):
 def analysis(request):
     if request.method == 'POST':
         ans = simplejson.loads(request.POST.get('data'))
-        return render_to_response('realTimeStatics.html', {'data': ans[2][0]})
+        return HttpResponse(ans[2][0])
     else:
-        return render_to_response('realTimeStatics.html', {'data': 'Not Post'})
+        return HttpResponse('Not post')

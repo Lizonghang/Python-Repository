@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 import simplejson
+import json
 from django.template import Template, Context, loader
 from question_naire.models import *
 from django.http import HttpResponse

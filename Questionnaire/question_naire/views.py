@@ -65,8 +65,7 @@ def analysis(request):
         for j in range(0, len(arr[i])):
             if arr[i][j] == '1' or arr[i][j] == '0':
                 arr[i][j] = int(arr[i][j])
-    if Statics.objects.all():
-        for m in range(0, len(ans)):
+    for m in range(0, len(ans)):
             if len(arr[m]) == 1:
                 foreign_key = 'arr[' + str(m) + '][0]'
                 Statics.objects.get(key=foreign_key).strValue += ('\n' + arr[m][0])
@@ -74,6 +73,15 @@ def analysis(request):
             for l in range(0, len(arr[m])):
                 foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
                 Statics.objects.get(key=foreign_key).intValue += arr[m][l]
+    # if Statics.objects.all():
+    #     for m in range(0, len(ans)):
+    #         if len(arr[m]) == 1:
+    #             foreign_key = 'arr[' + str(m) + '][0]'
+    #             Statics.objects.get(key=foreign_key).strValue += ('\n' + arr[m][0])
+    #             continue
+    #         for l in range(0, len(arr[m])):
+    #             foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
+    #             Statics.objects.get(key=foreign_key).intValue += arr[m][l]
     # else:
     #     for m in range(0, len(ans)):
     #         if len(arr[m]) == 1:

@@ -68,11 +68,15 @@ def analysis(request):
     for m in range(0, len(ans)):
             if len(arr[m]) == 1:
                 foreign_key = 'arr[' + str(m) + '][0]'
-                Statics.objects.get(key=foreign_key).strValue += ('\n' + arr[m][0])
+                s = Statics.objects.get(key=foreign_key)
+                s.strValue = s.strValue + '\n' + arr[m][0]
+                s.save()
                 continue
             for l in range(0, len(arr[m])):
                 foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-                Statics.objects.get(key=foreign_key).intValue += arr[m][l]
+                s = Statics.objects.get(key=foreign_key)
+                s.intValue = s.intValue + arr[m][l]
+                s.save()
     # if Statics.objects.all():
     #     for m in range(0, len(ans)):
     #         if len(arr[m]) == 1:

@@ -9,3 +9,13 @@ class UserDefine(models.Model):
 
     def __unicode__(self):
         return self.username
+
+
+class Statics(models.Model):
+    key = models.CharField(max_length=10)
+    intValue = models.IntegerField(default=0)
+    strValue = models.TextField(default="")
+    user = models.ForeignKey(UserDefine)
+
+    def __unicode__(self):
+        return self.key

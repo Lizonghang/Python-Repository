@@ -52,42 +52,42 @@ def welcome(request):
 
 
 def analysis(request):
-    ans = request.POST.get('data')
-    ans = ans[2:len(ans)-3].split("],[")
-    arr = []
-    for k in range(0, len(ans)):
-        arr.append([])
-        arr[k] = ans[k].split(",")
-    for i in range(0, len(ans)):
-        if len(arr[i]) == 1:
-            arr[i][0] = arr[i][0].replace("\"", "")
-            continue
-        for j in range(0, len(arr[i])):
-            if arr[i][j] == '1' or arr[i][j] == '0':
-                arr[i][j] = int(arr[i][j])
-    if Statics.objects.all():
-        for m in range(0, len(ans)):
-                if len(arr[m]) == 1:
-                    foreign_key = 'arr[' + str(m) + '][0]'
-                    s = Statics.objects.get(key=foreign_key)
-                    s.strValue = s.strValue + '\n' + arr[m][0]
-                    s.save()
-                    continue
-                for l in range(0, len(arr[m])):
-                    foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-                    s = Statics.objects.get(key=foreign_key)
-                    s.intValue = s.intValue + arr[m][l]
-                    s.save()
-    else:
-        for m in range(0, len(ans)):
-            if len(arr[m]) == 1:
-                foreign_key = 'arr[' + str(m) + '][0]'
-                # Statics.objects.filter(key=foreign_key).delete()
-                Statics.objects.create(key=foreign_key, strValue=arr[m][0].replace("\"", ""), user=UserDefine.objects.get(username="Hang"))
-                continue
-            for l in range(0, len(arr[m])):
-                foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-                # Statics.objects.filter(key=foreign_key).delete()
-                Statics.objects.create(key=foreign_key, intValue=arr[m][l], user=UserDefine.objects.get(username="Hang"))
-    t = UserDefine.objects.get(username="Hang").statics_set.get(key='arr[2][0]').strValue
-    return HttpResponse(t)
+    Statics.objects.all().delete()
+    return HttpResponse("CLEAR THE DATABASE")
+    # ans = request.POST.get('data')
+    # ans = ans[2:len(ans)-3].split("],[")
+    # arr = []
+    # for k in range(0, len(ans)):
+    #     arr.append([])
+    #     arr[k] = ans[k].split(",")
+    # for i in range(0, len(ans)):
+    #     if len(arr[i]) == 1:
+    #         arr[i][0] = arr[i][0].replace("\"", "")
+    #         continue
+    #     for j in range(0, len(arr[i])):
+    #         if arr[i][j] == '1' or arr[i][j] == '0':
+    #             arr[i][j] = int(arr[i][j])
+    # if Statics.objects.all():
+    #     for m in range(0, len(ans)):
+    #             if len(arr[m]) == 1:
+    #                 foreign_key = 'arr[' + str(m) + '][0]'
+    #                 s = Statics.objects.get(key=foreign_key)
+    #                 s.strValue = s.strValue + '\n' + arr[m][0]
+    #                 s.save()
+    #                 continue
+    #             for l in range(0, len(arr[m])):
+    #                 foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
+    #                 s = Statics.objects.get(key=foreign_key)
+    #                 s.intValue = s.intValue + arr[m][l]
+    #                 s.save()
+    # else:
+    #     for m in range(0, len(ans)):
+    #         if len(arr[m]) == 1:
+    #             foreign_key = 'arr[' + str(m) + '][0]'
+    #             Statics.objects.create(key=foreign_key, strValue=arr[m][0].replace("\"", ""), user=UserDefine.objects.get(username="Hang"))
+    #             continue
+    #         for l in range(0, len(arr[m])):
+    #             foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
+    #             Statics.objects.create(key=foreign_key, intValue=arr[m][l], user=UserDefine.objects.get(username="Hang"))
+    # t = UserDefine.objects.get(username="Hang").statics_set.get(key='arr[2][0]').strValue
+    # return HttpResponse(t)

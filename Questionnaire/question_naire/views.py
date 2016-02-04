@@ -75,5 +75,5 @@ def analysis(request):
             foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
             Statics.objects.filter(key=foreign_key).delete()
             Statics.objects.create(key=foreign_key, intValue=arr[m][l], user=UserDefine.objects.get(username="Hang"))
-    t = UserDefine.objects.get(username="Hang").statics_set.get(key='arr[2][0]')
+    t = UserDefine.objects.get(username="Hang").statics_set.get(key='arr[2][0]').strValue
     return HttpResponse(t)

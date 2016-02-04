@@ -10,7 +10,8 @@ urlpatterns = [
     url(r'^select/success/$', submit_success),
     url(r'^select/template_1/edit/$', edit_template_1),
     url(r'^select/template_1/view/$', view),
-    url(r'^select/template_1/analysis/', analysis),
+    url(r'^select/template_1/analysis/$', analysis),
     url(r'^submit/welcome/$', welcome),
+    url(r'^submit/welcome/realHandler/$', real_handler),
     url(r'^$', home_page),
 ]

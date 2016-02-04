@@ -61,8 +61,19 @@ def analysis(request):
     for i in range(0, len(ans)):
         if len(arr[i]) == 1:
             arr[i][0] = arr[i][0].replace("\"", "")
+            continue
         for j in range(0, len(arr[i])):
             if arr[i][j] == '1' or arr[i][j] == '0':
                 arr[i][j] = int(arr[i][j])
-
-    return HttpResponse('RECEIVE SUCCESS')
+    for m in range(0, len(ans)):
+        if len(arr[m]) == 1:
+            foreign_key = 'arr[' + m + '][0]'
+            s = Statics.objects.create(key=foreign_key, strValue=arr[m][0].replace("\"", ""))
+            s.user.add(UserDefine.objects.get(username="Hang"))
+            continue
+        for l in range(0, len(arr[m])):
+            foreign_key = 'arr[' + m + '][' + l + ']'
+            n = Statics.objects.create(key=foreign_key, intValue=arr[m][l])
+            n.user.add(UserDefine.objects.get(username="Hang"))
+    t = UserDefine.objects.get(username="Hang").statics_set.get(key='arr[2][0]')
+    return HttpResponse(t)

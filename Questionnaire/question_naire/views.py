@@ -69,13 +69,11 @@ def analysis(request):
         if len(arr[m]) == 1:
             foreign_key = 'arr[' + str(m) + '][0]'
             Statics.objects.filter(key=foreign_key).delete()
-            s = Statics.objects.create(key=foreign_key, strValue=arr[m][0].replace("\"", ""))
-            s.user.add(UserDefine.objects.get(username="Hang"))
+            Statics.objects.create(key=foreign_key, strValue=arr[m][0].replace("\"", ""), user="Hang")
             continue
         for l in range(0, len(arr[m])):
             foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
             Statics.objects.filter(key=foreign_key).delete()
-            n = Statics.objects.create(key=foreign_key, intValue=arr[m][l])
-            n.user.add(UserDefine.objects.get(username="Hang"))
+            Statics.objects.create(key=foreign_key, intValue=arr[m][l], user="Hang")
     t = UserDefine.objects.get(username="Hang").statics_set.get(key='arr[2][0]')
     return HttpResponse(t)

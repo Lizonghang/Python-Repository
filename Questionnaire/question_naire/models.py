@@ -1,3 +1,4 @@
+# coding=utf-8
 from django.db import models
 
 
@@ -16,6 +17,17 @@ class Statics(models.Model):
     intValue = models.IntegerField(default=0)
     strValue = models.TextField(default="")
     user = models.ForeignKey(UserDefine)
+    QContent = models.CharField(default="")
+    QType = models.CharField(default="")
+    dim = models.CharField(default="")
 
     def __unicode__(self):
         return self.key
+
+
+class AnsCount(models.Model):
+    question = models.ForeignKey(Statics)
+    multi_count = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        return u'多选题' + str(self.multi_count) + u'道'

@@ -129,12 +129,12 @@
                 document.getElementsByClassName('s'+c)[0].innerText = document.getElementById('input_'+c).value;
             }
         }
-        function loadQ(){
-            var clone_div = document.getElementsByClassName('Q'+subject_num)[0];
+        function loadQ() {
+            var clone_div = document.getElementsByClassName('Q' + subject_num)[0];
             var insert_div = clone_div.cloneNode(true);
             var survet_body = document.getElementById('sur');
             var selector = document.getElementById('selector_container');
-            survet_body.insertBefore(insert_div,selector);
+            survet_body.insertBefore(insert_div, selector);
             selector.remove();
             subject_num++;
         }
@@ -176,9 +176,32 @@
                 plot.style.visibility = "hidden";
 
         }
+        var QContent = "";
+        function get_content(){
+            var tempQ;
+            var QNum=1;
+            var sTitle;
+            var lis;
+            var i;
+            var title;
+            title = document.getElementById("pater_title").innerText;
+            QContent += title;
+            while(tempQ = document.getElementsByClassName("Q"+QNum)[0]){
+                QContent += ";";
+                sTitle = tempQ.getElementsByTagName("span")[0].innerText;
+                QContent += sTitle;
+                lis = tempQ.getElementsByTagName("li");
+                if(lis[0].getElementsByTagName("label")[0]){
+                    for(i=0;i<lis.length;i++) {
+                        QContent += ("," + lis[i].getElementsByTagName("label")[0].innerText);
+                    }
+                }
+                QNum++;
+            }
+        }
         function submit(){
             var pageForm = escape(document.getElementById('sur').innerHTML);
-            var data = {'pageForm': pageForm};
+            var data = {'pageForm': pageForm, 'QContent': QContent};
             var URL = "http://www.desckie.com/select/template_1/view/";
             $.post(URL,data);
             window.location.href="http://www.desckie.com/select/success/";

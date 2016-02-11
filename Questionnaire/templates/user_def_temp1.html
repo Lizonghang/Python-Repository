@@ -2486,6 +2486,7 @@ fieldset{border:0;}
           }
           Qs=1;
           var ans = new Array();
+          var type = new Array();
           while(document.getElementsByClassName("Q"+Qs)[0]){
               ans[Qs-1] = new Array();
               Qs++;
@@ -2497,16 +2498,24 @@ fieldset{border:0;}
               var k;
               if(len==1){
                   ans[Qs-1][0]=lis[0].getElementsByTagName("textarea")[0].value;
+                  type[Qs-1]="fitb";
               }
               else{
                   for(k=0;k<len;k++){
                       ans[Qs-1][k]=(lis[k].getElementsByTagName("input")[0].checked==true?1:0);
                   }
+                   var eType = lis[0].getElementsByTagName("input")[0].type;
+                  if(eType == "radio"){
+                      type[Qs-1]="radio";
+                  }
+                  else if(eType == "checkbox"){
+                      type[Qs-1]="checkbox";
+                  }
               }
               Qs++;
           }
           alert(""+ans[0][0]+ans[0][1]+ans[0][2]+ans[0][3]+ans[0][4]+"\n"+ans[1][0]+ans[1][1]+ans[1][2]+"\n"+ans[2][0]+"\n"+ans[3][0]+ans[3][1]+"\n"+ans[4][0]+ans[4][1]+ans[4][2]+"\n"+ans[5][0]);
-          $.post("http://www.desckie.com/select/template_1/analysis/",{'data':JSON.stringify(ans)});
+          $.post("http://www.desckie.com/select/template_1/analysis/",{'data':JSON.stringify(ans),'type':JSON.stringify(type)});
           window.location.href="http://www.desckie.com/submit/welcome/";
       }
   </script>

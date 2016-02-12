@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/realTimeStatics.html" afterPath="$PROJECT_DIR$/templates/realTimeStatics.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_def_temp1.html" afterPath="$PROJECT_DIR$/templates/user_def_temp1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/question_naire/views.py" afterPath="$PROJECT_DIR$/question_naire/views.py" />
     </list>
@@ -42,8 +41,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/question_naire/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6196581">
-              <caret line="50" column="208" selection-start-line="50" selection-start-column="208" selection-end-line="50" selection-end-column="208" />
+            <state vertical-scroll-proportion="0.5982906">
+              <caret line="50" column="225" selection-start-line="50" selection-start-column="225" selection-end-line="50" selection-end-column="225" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -84,11 +83,11 @@
       <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.375">
-              <caret line="2542" column="21" selection-start-line="2542" selection-start-column="21" selection-end-line="2542" selection-end-column="21" />
+            <state vertical-scroll-proportion="-17.0">
+              <caret line="2543" column="18" selection-start-line="2543" selection-start-column="18" selection-end-line="2543" selection-end-column="18" />
               <folding>
-                <marker date="1455263745000" expanded="true" signature="49161:49190" placeholder="{...}" />
-                <marker date="1455263745000" expanded="true" signature="52264:52293" placeholder="{...}" />
+                <marker date="1455263883000" expanded="true" signature="49161:49190" placeholder="{...}" />
+                <marker date="1455263883000" expanded="true" signature="52264:52293" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -983,19 +982,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.375">
-          <caret line="2542" column="21" selection-start-line="2542" selection-start-column="21" selection-end-line="2542" selection-end-column="21" />
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="2543" column="18" selection-start-line="2543" selection-start-column="18" selection-end-line="2543" selection-end-column="18" />
           <folding>
-            <marker date="1455263745000" expanded="true" signature="49161:49190" placeholder="{...}" />
-            <marker date="1455263745000" expanded="true" signature="52264:52293" placeholder="{...}" />
+            <marker date="1455263883000" expanded="true" signature="49161:49190" placeholder="{...}" />
+            <marker date="1455263883000" expanded="true" signature="52264:52293" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/question_naire/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6196581">
-          <caret line="50" column="208" selection-start-line="50" selection-start-column="208" selection-end-line="50" selection-end-column="208" />
+        <state vertical-scroll-proportion="0.5982906">
+          <caret line="50" column="225" selection-start-line="50" selection-start-column="225" selection-end-line="50" selection-end-column="225" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>

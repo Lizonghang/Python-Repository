@@ -10,8 +10,7 @@
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
       alert(QContent);
-      alert(document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie"));
-      document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
+      document.getElementsByClassName("QTitle")[0].innerText = QContent[0];
   </script>
  </head>
  <body style="BACKGROUND:#B0E0FA url(http://sojump.b0.upaiyun.com/images/wjx/JoinQuestionnaire/bg/abc2.jpg)  no-repeat fixed center 0">
@@ -24,7 +23,7 @@
      <div id="ctl02_ContentPlaceHolder1_ViewResult1_divNotPublisher" style="line-height:28px; padding-left: 20px; margin:20px 0 20px;">
       <div style="text-align:center;padding-top:10px;">
        <a class="titlelnk" href="http://www.desckie.com/select/template_1/view/" id="ctl02_ContentPlaceHolder1_ViewResult1_lkJQ" style="font-size:16px; text-decoration:none;" target="_blank" title="填写此问卷">
-        <b><span id="ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie"></span></b>
+        <b><span id="ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie" class="QTitle"></span></b>
        </a>
       </div>
      </div>

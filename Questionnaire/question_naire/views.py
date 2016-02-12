@@ -122,16 +122,7 @@ def analysis(request):
             s.dim += (str(len(arr[k])) + ',')
         s.dim = s.dim[0: len(s.dim)-2]
         s.save()
-
-    g = UserDefine.objects.get(username="Hang").statics_set.all()
-    t = str(g.get(key='arr[0][0]').intValue) + str(g.get(key='arr[0][1]').intValue) + str(
-        g.get(key='arr[0][2]').intValue) + str(g.get(key='arr[0][3]').intValue) + str(
-        g.get(key='arr[0][4]').intValue) + '\n' + str(g.get(key='arr[1][0]').intValue) + str(
-        g.get(key='arr[1][1]').intValue) + str(g.get(key='arr[1][2]').intValue) + '\n' + g.get(
-        key='arr[2][0]').strValue + '\n' + str(g.get(key='arr[3][0]').intValue) + str(
-        g.get(key='arr[3][1]').intValue) + '\n' + str(g.get(key='arr[4][0]').intValue) + str(
-        g.get(key='arr[4][1]').intValue) + str(g.get(key='arr[4][2]').intValue) + '\n' + g.get(key='arr[5][0]').strValue
-    return HttpResponse(t)
+    return HttpResponse()
 
 
 def real_handler(request):

@@ -27,6 +27,7 @@ class Statics(models.Model):
 
 class AnsCount(models.Model):
     question = models.ForeignKey(Statics)
+    key = models.CharField(max_length=20)
     multi_count = models.IntegerField(default=0)
 
     def __unicode__(self):

@@ -135,7 +135,7 @@ def analysis(request):
 
 
 def real_handler(request):
-    s = UserDefine.objects.get(username="Hang").statics_set.get(key='arr[0][0]')
+    s = UserDefine.objects.get(username="Hang").statics_set.all().get(key='arr[0][0]')
     d = UserDefine.objects.get(username="Hang").statics_set
     type = s.QType
     type = type[1:len(type) - 2].replace("\"", "")

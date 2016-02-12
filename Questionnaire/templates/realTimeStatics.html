@@ -218,8 +218,7 @@
       var valid = "{{ valid }}".replace("[","").replace("]","").split(",");
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
-      data = data.substring(1,data.length-1);
-      alert(data);
+      data = data.substring(2,data.length-2).split("],[");
       document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
       QContent.splice(0,1);
       var j;
@@ -233,6 +232,10 @@
       for(j=0;j<valid.length;j++){
           valid[j] = parseInt(valid[j]);
       }
+      for(j=0;j<data.length;j++){
+          data[j] = data[j].split(",");
+      }
+      alert(data[0][1]);
       var Qs = 1;
       var i;
       var ul = document.getElementById("ulList");

@@ -20,8 +20,7 @@
      </div>
      <div id="ctl02_ContentPlaceHolder1_divViewStat" style="width:850px;margin:0 auto; background:#ffffff; padding:0 30px 20px;">
        <div id="divSumData">
-       <div style="clear: both;">
-       </div>
+       <div style="clear: both;"></div>
        <ul id="ulList" style="list-style-type: none;">
            <li>
          <div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanTitle" style="line-height: 24px">
@@ -325,7 +324,9 @@
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
       alert(QContent);
-      document.getElementsByClassName("QTitle")[0].innerText = QContent[0];
+      document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
+      QContent = QContent.splice(0,1)
+      alert(QContent);
   </script>
  </body>
 </html>

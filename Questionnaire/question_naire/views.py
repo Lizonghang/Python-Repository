@@ -93,7 +93,7 @@ def analysis(request):
                     if arr[m][r] == 1:
                         valid = True
                 if valid == True:
-                    a = UserDefine.objects.get(username='Hang').statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.all()
+                    a = UserDefine.objects.get(username='Hang').statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.get(key="multi_count")
                     a.multi_count += 1
                     a.save()
     else:
@@ -113,10 +113,10 @@ def analysis(request):
                     if arr[m][r] == 1:
                         valid = True
                 if valid == True:
-                    AnsCount.objects.create(multi_count=1,
+                    AnsCount.objects.create(multi_count=1, key="multi_count",
                                             question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
                 else:
-                    AnsCount.objects.create(multi_count=0,
+                    AnsCount.objects.create(multi_count=0, key="multi_count",
                                             question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
         s = UserDefine.objects.get(username="Hang").statics_set.get(key="head")
         s.QType = type
@@ -160,7 +160,7 @@ def real_handler(request):
                 lenradio += data_arr[k][l]
             valid_count.append(lenradio)
         elif type_arr[k] == 'checkbox':
-            lencheck = d.get(key='arr[' + str(k) + '][0]').anscount_set.all().multi_count
+            lencheck = d.get(key='arr[' + str(k) + '][0]').anscount_set.get(key="multi_count").multi_count
             valid_count.append(lencheck)
     valid_json = json.dumps(valid_count)
     QContent = s.QContent

@@ -43,8 +43,8 @@ def view(request):
         pageForm = request.POST.get('pageForm').encode('utf-8')
         QContent = request.POST.get('QContent')
         UserDefine.objects.filter(username="Hang").delete()
-        u = UserDefine.objects.create(username="Hang", pageForm=pageForm)
-        s = u.statics_set.get(key='arr[0][0]')
+        UserDefine.objects.create(username="Hang", pageForm=pageForm)
+        s = Statics.objects.create(key='head', user=UserDefine.objects.get(username="Hang"))
         s.QContent = QContent
         s.save()
     else:
@@ -116,7 +116,7 @@ def analysis(request):
                 else:
                     AnsCount.objects.create(multi_count=0,
                                             question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
-        s = Statics.objects.get(key='arr[0][0]')
+        s = Statics.objects.get(key='head')
         s.QType = type
         for k in range(0, len(ans)):
             s.dim += (str(len(arr[k])) + ',')
@@ -135,15 +135,15 @@ def analysis(request):
 
 
 def real_handler(request):
-    s = UserDefine.objects.get(username="Hang").statics_set.all().get(key='arr[0][0]')
+    s = UserDefine.objects.get(username="Hang").statics_set.get(key='head')
     d = UserDefine.objects.get(username="Hang").statics_set
     type = s.QType
     type = type[1:len(type) - 2].replace("\"", "")
     type_arr = type.split(",")
     dim = s.dim
     dim_arr = dim.split(",")
-    for d in range(0, len(dim_arr)):
-        dim_arr[d] = int(dim_arr[d])
+    for h in range(0, len(dim_arr)):
+        dim_arr[h] = int(dim_arr[h])
     data_arr = []
     for i in range(0, len(dim_arr)):
         data_arr.append([])
@@ -170,5 +170,5 @@ def real_handler(request):
             lencheck = d.get(key='arr[' + str(k) + '][0]').anscount_set.all().multi_count
             valid_count[k] = lencheck
     valid_json = json.dumps(valid_count)
-    QContent = d.get(key='arr[0][0]').QContent
+    QContent = d.get(key='head').QContent
     return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim, 'data': data_json, 'valid': valid_json, 'QContent': QContent})

@@ -668,3 +668,4 @@ Traceback (most recent call last):
     return Database.Cursor.execute(self, query, params)
 OperationalError: table question_naire_anscount has no column named key
 [pid: 21296|app: 0|req: 9/17] 222.209.181.22 () {50 vars in 1175 bytes} [Fri Feb 12 18:13:25 2016] POST /select/template_1/analysis/ => generated 14447 bytes in 136 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+[pid: 21293|app: 0|req: 9/18] 220.181.108.109 () {36 vars in 473 bytes} [Fri Feb 12 18:14:53 2016] GET / => generated 218404 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)

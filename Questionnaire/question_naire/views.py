@@ -146,7 +146,7 @@ def real_handler(request):
             continue
         for j in range(0, dim_arr[i]):
             foreign_key = 'arr[' + str(i) + '][' + str(j) + ']'
-            data_arr[i][j] = d.get(key=foreign_key).intValue
+            data_arr[i].append(d.get(key=foreign_key).intValue)
     data_json = json.dumps(data_arr)
     valid_count = []
     for k in range(0, len(type_arr)):

@@ -132,7 +132,6 @@ def real_handler(request):
     s = UserDefine.objects.get(username="Hang").statics_set.get(key='head')
     d = UserDefine.objects.get(username="Hang").statics_set
     type = s.QType
-    type = type[1:len(type) - 2].replace("\"", "")
     type_arr = type.split(",")
     dim = s.dim
     dim_arr = dim.split(",")

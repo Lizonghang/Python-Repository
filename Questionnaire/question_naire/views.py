@@ -72,7 +72,7 @@ def analysis(request):
         for j in range(0, len(arr[i])):
             if arr[i][j] == '1' or arr[i][j] == '0':
                 arr[i][j] = int(arr[i][j])
-    if Statics.objects.all():
+    if UserDefine.objects.get(username="Hang").statics_set.all():
         for m in range(0, len(ans)):
             if len(arr[m]) == 1:
                 foreign_key = 'arr[' + str(m) + '][0]'

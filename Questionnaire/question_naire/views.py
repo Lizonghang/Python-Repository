@@ -49,6 +49,7 @@ def view(request):
         s = Statics.objects.create(key='head', user=UserDefine.objects.get(username="Hang"))
         s.QContent = QContent
         s.save()
+        return HttpResponse(QContent)
     else:
         return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm})
 
@@ -69,7 +70,7 @@ def analysis(request):
         arr[k] = ans[k].split(",")
     for i in range(0, len(ans)):
         if len(arr[i]) == 1:
-            arr[i][0] = chr(arr[i][0].replace("\"", ""))
+            arr[i][0] = arr[i][0].replace("\"", "")
             continue
         for j in range(0, len(arr[i])):
             if arr[i][j] == '1' or arr[i][j] == '0':

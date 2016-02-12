@@ -318,7 +318,7 @@
   </div>
   <div style="clear: both;"></div>
  <script>
-      var QType = "{{ type }}";
+      var QType = "{{ type }}".split(",");
       var dim = "{{ dim }}";
       var valid = "{{ valid }}";
       var QContent = "{{ QContent }}".split(";");
@@ -326,7 +326,7 @@
       alert(QContent);
       document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
       QContent.splice(0,1);
-      alert(QType);
+      alert(valid);
   </script>
  </body>
 </html>

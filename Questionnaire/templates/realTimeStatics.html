@@ -4,7 +4,13 @@
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <link href="http://www.sojump.com/css/NewDefault.css?v=1" rel="stylesheet" type="text/css"/>
   <script>
-      // ...
+      var QType = "{{ type }}";
+      var dim = "{{ dim }}";
+      var valid = "{{ valid }}";
+      var QContent = "{{ QContent }}";
+      var data = "{{ data }}";
+      alert(data);
+{#      document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = #}
   </script>
  </head>
  <body style="BACKGROUND:#B0E0FA url(http://sojump.b0.upaiyun.com/images/wjx/JoinQuestionnaire/bg/abc2.jpg)  no-repeat fixed center 0">
@@ -16,21 +22,9 @@
     <div id="ctl02_wenjuan" style="margin-left: 10px; padding-bottom: 15px;">
      <div id="ctl02_ContentPlaceHolder1_ViewResult1_divNotPublisher" style="line-height:28px; padding-left: 20px; margin:20px 0 20px;">
       <div style="text-align:center;padding-top:10px;">
-       <a class="titlelnk" href="http://www.sojump.com/jq/467873.aspx" id="ctl02_ContentPlaceHolder1_ViewResult1_lkJQ" style="font-size:16px; text-decoration:none;" target="_blank" title="填写此问卷">
-        <b><span id="ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie">企业员工满意度调查问卷</span></b>
+       <a class="titlelnk" href="http://www.desckie.com/select/template_1/view/" id="ctl02_ContentPlaceHolder1_ViewResult1_lkJQ" style="font-size:16px; text-decoration:none;" target="_blank" title="填写此问卷">
+        <b><span id="ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie"></span></b>
        </a>
-          <script>
-              function func(){
-                  var QType = {{ data }};
-                  alert(QType);
-              }
-          </script>
-          <button onclick="func();">按钮</button>
-          <br>{{ type }}<br>
-          {{ dim }}<br>
-          {{ valid }}<br>
-          {{ QContent }}<br>
-          {{ data }}
       </div>
      </div>
      <div id="ctl02_ContentPlaceHolder1_divViewStat" style="width:850px;margin:0 auto; background:#ffffff; padding:0 30px 20px;">

@@ -57,73 +57,73 @@ def welcome(request):
 
 def analysis(request):
     ans = request.POST.get('data')
-    ans = ans[2:len(ans) - 3].split("],[")
-    arr = []
-    type = request.POST.get('type')
-    type = type[1:len(type) - 2].replace("\"", "")
-    type_arr = type.split(",")
-    for k in range(0, len(ans)):
-        arr.append([])
-        arr[k] = ans[k].split(",")
-    for i in range(0, len(ans)):
-        if len(arr[i]) == 1:
-            arr[i][0] = arr[i][0].replace("\"", "")
-            continue
-        for j in range(0, len(arr[i])):
-            if arr[i][j] == '1' or arr[i][j] == '0':
-                arr[i][j] = int(arr[i][j])
-    if Statics.objects.all():
-        for m in range(0, len(ans)):
-            if len(arr[m]) == 1:
-                foreign_key = 'arr[' + str(m) + '][0]'
-                s = Statics.objects.get(key=foreign_key)
-                s.strValue = s.strValue + '\n' + arr[m][0]
-                s.save()
-                continue
-            for l in range(0, len(arr[m])):
-                foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-                s = Statics.objects.get(key=foreign_key)
-                s.intValue = s.intValue + arr[m][l]
-                s.save()
-            if type_arr[m] == 'checkbox':
-                valid = False
-                for r in range(0, len(arr[m])):
-                    if arr[m][r] == 1:
-                        valid = True
-                if valid == True:
-                    a = UserDefine.objects.get(username='Hang').statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.all()
-                    a.multi_count += 1
-                    a.save()
-    else:
-        for m in range(0, len(ans)):
-            if len(arr[m]) == 1:
-                foreign_key = 'arr[' + str(m) + '][0]'
-                Statics.objects.create(key=foreign_key, strValue=arr[m][0].replace("\"", ""),
-                                       user=UserDefine.objects.get(username="Hang"))
-                continue
-            for l in range(0, len(arr[m])):
-                foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-                Statics.objects.create(key=foreign_key, intValue=arr[m][l],
-                                       user=UserDefine.objects.get(username="Hang"))
-            if type_arr[m] == 'checkbox':
-                valid = False
-                for r in range(0, len(arr[m])):
-                    if arr[m][r] == 1:
-                        valid = True
-                if valid == True:
-                    AnsCount.objects.create(multi_count=1,
-                                            question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
-                else:
-                    AnsCount.objects.create(multi_count=0,
-                                            question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
-        s = UserDefine.objects.get(username="Hang").statics_set.get(key="head")
-        s.QType = type
-        s.save()
-        for k in range(0, len(ans)):
-            s.dim += (str(len(arr[k])) + ',')
-        s.dim = s.dim[0: len(s.dim)-2]
-        s.save()
-    return HttpResponse(type)
+    # ans = ans[2:len(ans) - 3].split("],[")
+    # arr = []
+    # type = request.POST.get('type')
+    # type = type[1:len(type) - 2].replace("\"", "")
+    # type_arr = type.split(",")
+    # for k in range(0, len(ans)):
+    #     arr.append([])
+    #     arr[k] = ans[k].split(",")
+    # for i in range(0, len(ans)):
+    #     if len(arr[i]) == 1:
+    #         arr[i][0] = arr[i][0].replace("\"", "")
+    #         continue
+    #     for j in range(0, len(arr[i])):
+    #         if arr[i][j] == '1' or arr[i][j] == '0':
+    #             arr[i][j] = int(arr[i][j])
+    # if Statics.objects.all():
+    #     for m in range(0, len(ans)):
+    #         if len(arr[m]) == 1:
+    #             foreign_key = 'arr[' + str(m) + '][0]'
+    #             s = Statics.objects.get(key=foreign_key)
+    #             s.strValue = s.strValue + '\n' + arr[m][0]
+    #             s.save()
+    #             continue
+    #         for l in range(0, len(arr[m])):
+    #             foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
+    #             s = Statics.objects.get(key=foreign_key)
+    #             s.intValue = s.intValue + arr[m][l]
+    #             s.save()
+    #         if type_arr[m] == 'checkbox':
+    #             valid = False
+    #             for r in range(0, len(arr[m])):
+    #                 if arr[m][r] == 1:
+    #                     valid = True
+    #             if valid == True:
+    #                 a = UserDefine.objects.get(username='Hang').statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.all()
+    #                 a.multi_count += 1
+    #                 a.save()
+    # else:
+    #     for m in range(0, len(ans)):
+    #         if len(arr[m]) == 1:
+    #             foreign_key = 'arr[' + str(m) + '][0]'
+    #             Statics.objects.create(key=foreign_key, strValue=arr[m][0].replace("\"", ""),
+    #                                    user=UserDefine.objects.get(username="Hang"))
+    #             continue
+    #         for l in range(0, len(arr[m])):
+    #             foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
+    #             Statics.objects.create(key=foreign_key, intValue=arr[m][l],
+    #                                    user=UserDefine.objects.get(username="Hang"))
+    #         if type_arr[m] == 'checkbox':
+    #             valid = False
+    #             for r in range(0, len(arr[m])):
+    #                 if arr[m][r] == 1:
+    #                     valid = True
+    #             if valid == True:
+    #                 AnsCount.objects.create(multi_count=1,
+    #                                         question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
+    #             else:
+    #                 AnsCount.objects.create(multi_count=0,
+    #                                         question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
+    #     s = UserDefine.objects.get(username="Hang").statics_set.get(key="head")
+    #     s.QType = type
+    #     s.save()
+    #     for k in range(0, len(ans)):
+    #         s.dim += (str(len(arr[k])) + ',')
+    #     s.dim = s.dim[0: len(s.dim)-2]
+    #     s.save()
+    return HttpResponse(ans)
 
 
 def real_handler(request):

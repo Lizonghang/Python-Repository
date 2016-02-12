@@ -320,7 +320,7 @@
  <script>
       var QType = "{{ type }}".split(",");
       var dim = "{{ dim }}";
-      var valid = "{{ valid }}";
+      var valid = "{{ valid }}".replace("[","").replace("]","").split(",");
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
       alert(QContent);
@@ -328,6 +328,7 @@
       QContent.splice(0,1);
       valid.splice(1,valid.length-2);
       alert(valid);
+      alert(valid[0]);
   </script>
  </body>
 </html>

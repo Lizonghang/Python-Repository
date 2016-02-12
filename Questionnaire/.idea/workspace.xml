@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/realTimeStatics.html" afterPath="$PROJECT_DIR$/templates/realTimeStatics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Questionnaire.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,13 +73,9 @@
       <file leaf-file-name="realTimeStatics.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/realTimeStatics.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.79498863">
-              <caret line="256" column="368" selection-start-line="256" selection-start-column="368" selection-end-line="256" selection-end-column="368" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.6400911">
+              <caret line="253" column="43" selection-start-line="253" selection-start-column="43" selection-end-line="253" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,7 +105,7 @@
       <file leaf-file-name="edit_template_1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/edit_template_1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-73.125">
+            <state vertical-scroll-proportion="0.0">
               <caret line="205" column="71" selection-start-line="205" selection-start-column="71" selection-end-line="205" selection-end-column="71" />
               <folding />
             </state>
@@ -118,7 +115,7 @@
       <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-45.083332">
+            <state vertical-scroll-proportion="0.0">
               <caret line="2517" column="10" selection-start-line="2517" selection-start-column="10" selection-end-line="2517" selection-end-column="10" />
               <folding>
                 <marker date="1455274091000" expanded="true" signature="49161:49190" placeholder="{...}" />
@@ -217,8 +214,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -343,6 +338,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -612,7 +609,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2374798" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24071082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -972,7 +969,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-45.083332">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2517" column="10" selection-start-line="2517" selection-start-column="10" selection-end-line="2517" selection-end-column="10" />
           <folding>
             <marker date="1455274091000" expanded="true" signature="49161:49190" placeholder="{...}" />
@@ -985,9 +982,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.097949885">
           <caret line="1925" column="62" selection-start-line="1925" selection-start-column="62" selection-end-line="1925" selection-end-column="62" />
-          <folding>
-            <marker date="1454050946000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +996,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/edit_template_1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-73.125">
+        <state vertical-scroll-proportion="0.0">
           <caret line="205" column="71" selection-start-line="205" selection-start-column="71" selection-end-line="205" selection-end-column="71" />
           <folding />
         </state>
@@ -1027,13 +1022,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/realTimeStatics.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79498863">
-          <caret line="256" column="368" selection-start-line="256" selection-start-column="368" selection-end-line="256" selection-end-column="368" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.6400911">
+          <caret line="253" column="43" selection-start-line="253" selection-start-column="43" selection-end-line="253" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -20,10 +20,13 @@
         <b><span id="ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie">企业员工满意度调查问卷</span></b>
        </a>
           <script>
-              var QType = "{{ type }}";
-              alert(type(QType));
-              alert(QType);
+              function func(){
+                  var QType = "{{ type }}";
+                  alert(type(QType));
+                  alert(QType);
+              }
           </script>
+          <button onclick="func();">按钮</button>
           <br>{{ type }}<br>
           {{ dim }}<br>
           {{ valid }}<br>

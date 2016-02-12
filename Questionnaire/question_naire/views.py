@@ -41,14 +41,14 @@ def edit_template_1(request):
 def view(request):
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm').encode('utf-8')
-        QContent = request.POST.get('QContent')
+        QContent = request.POST.get('QContent').encode('utf-8')
         UserDefine.objects.filter(username="Hang").delete()
         UserDefine.objects.create(username="Hang", pageForm=pageForm)
         s = Statics.objects.create(key='head', user=UserDefine.objects.get(username="Hang"))
         s.QContent = QContent
         s.save()
     else:
-        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm, 'QContent': UserDefine.objects.get(username="Hang").statics_set.get(key="head").QContent, 'hello': 'hello'})
+        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm, 'QContent': Statics.objects.get(key='head').QContent})
 
 
 def welcome(request):

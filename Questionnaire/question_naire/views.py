@@ -69,7 +69,7 @@ def analysis(request):
         arr[k] = ans[k].split(",")
     for i in range(0, len(ans)):
         if len(arr[i]) == 1:
-            arr[i][0] = arr[i][0].replace("\"", "")
+            arr[i][0] = arr[i][0].replace("\"", "").decode('gbk')
             continue
         for j in range(0, len(arr[i])):
             if arr[i][j] == '1' or arr[i][j] == '0':

@@ -133,33 +133,34 @@ def real_handler(request):
     type_arr = type.split(",")
     dim = s.dim
     dim_arr = dim.split(",")
-    for h in range(0, len(dim_arr)):
-        dim_arr[h] = int(dim_arr[h])
-    data_arr = []
-    for i in range(0, len(dim_arr)):
-        data_arr.append([])
-        if dim_arr[i] == 1:
-            foreign_key = 'arr[' + str(i) + '][0]'
-            data_arr[i][0] = d.get(key=foreign_key).strValue
-            continue
-        for j in range(0, dim_arr[i]):
-            foreign_key = 'arr[' + str(i) + '][' + str(j) + ']'
-            data_arr[i][j] = d.get(key=foreign_key).intValue
-    data_json = json.dumps(data_arr)
-    valid_count = []
-    for k in range(0, len(type_arr)):
-        if type_arr[k] == 'fitb':
-            a = d.get(key='arr['+str(k) + '][0]').strValue
-            lenstr = len(a.split('\n'))
-            valid_count[k] = lenstr
-        elif type_arr[k] == 'radio':
-            lenradio = 0
-            for l in range(0, len(data_arr[k])):
-                lenradio += data_arr[k][l]
-            valid_count[k] = lenradio
-        elif type_arr[k] == 'checkbox':
-            lencheck = d.get(key='arr[' + str(k) + '][0]').anscount_set.all().multi_count
-            valid_count[k] = lencheck
-    valid_json = json.dumps(valid_count)
-    QContent = d.get(key='head').QContent
-    return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim, 'data': data_json, 'valid': valid_json, 'QContent': QContent})
+    # for h in range(0, len(dim_arr)):
+    #     dim_arr[h] = int(dim_arr[h])
+    # data_arr = []
+    # for i in range(0, len(dim_arr)):
+    #     data_arr.append([])
+    #     if dim_arr[i] == 1:
+    #         foreign_key = 'arr[' + str(i) + '][0]'
+    #         data_arr[i][0] = d.get(key=foreign_key).strValue
+    #         continue
+    #     for j in range(0, dim_arr[i]):
+    #         foreign_key = 'arr[' + str(i) + '][' + str(j) + ']'
+    #         data_arr[i][j] = d.get(key=foreign_key).intValue
+    # data_json = json.dumps(data_arr)
+    # valid_count = []
+    # for k in range(0, len(type_arr)):
+    #     if type_arr[k] == 'fitb':
+    #         a = d.get(key='arr['+str(k) + '][0]').strValue
+    #         lenstr = len(a.split('\n'))
+    #         valid_count[k] = lenstr
+    #     elif type_arr[k] == 'radio':
+    #         lenradio = 0
+    #         for l in range(0, len(data_arr[k])):
+    #             lenradio += data_arr[k][l]
+    #         valid_count[k] = lenradio
+    #     elif type_arr[k] == 'checkbox':
+    #         lencheck = d.get(key='arr[' + str(k) + '][0]').anscount_set.all().multi_count
+    #         valid_count[k] = lencheck
+    # valid_json = json.dumps(valid_count)
+    # QContent = d.get(key='head').QContent
+    # return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim, 'data': data_json, 'valid': valid_json, 'QContent': QContent})
+    return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim})

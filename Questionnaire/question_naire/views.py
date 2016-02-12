@@ -76,13 +76,13 @@ def analysis(request):
         for m in range(0, len(ans)):
             if len(arr[m]) == 1:
                 foreign_key = 'arr[' + str(m) + '][0]'
-                s = Statics.objects.get(key=foreign_key)
+                s = UserDefine.objects.get(username="Hang").statics_set.get(key=foreign_key)
                 s.strValue = s.strValue + '\n' + arr[m][0]
                 s.save()
                 continue
             for l in range(0, len(arr[m])):
                 foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-                s = Statics.objects.get(key=foreign_key)
+                s = UserDefine.objects.get(username="Hang").statics_set.get(key=foreign_key)
                 s.intValue = s.intValue + arr[m][l]
                 s.save()
             if type_arr[m] == 'checkbox':

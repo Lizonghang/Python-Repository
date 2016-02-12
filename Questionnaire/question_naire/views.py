@@ -142,7 +142,7 @@ def real_handler(request):
         data_arr.append([])
         if dim_arr[i] == 1:
             foreign_key = 'arr[' + str(i) + '][0]'
-            data_arr[i][0] = d.get(key=foreign_key).strValue
+            data_arr[i].append(d.get(key=foreign_key).strValue)
             continue
         for j in range(0, dim_arr[i]):
             foreign_key = 'arr[' + str(i) + '][' + str(j) + ']'

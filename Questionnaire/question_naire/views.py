@@ -67,12 +67,11 @@ def analysis(request):
     for k in range(0, len(ans)):
         arr.append([])
         if len(ans) == 1:
-            arr[k] = ans[k]
+            arr[k] = ans[k].replace("\"", "")
             continue
         arr[k] = ans[k].split(",")
     for i in range(0, len(ans)):
         if len(arr[i]) == 1:
-            arr[i][0] = arr[i][0].replace("\"", "")
             continue
         for j in range(0, len(arr[i])):
             if arr[i][j] == '1' or arr[i][j] == '0':
@@ -103,7 +102,7 @@ def analysis(request):
         for m in range(0, len(ans)):
             if len(arr[m]) == 1:
                 foreign_key = 'arr[' + str(m) + '][0]'
-                Statics.objects.create(key=foreign_key, strValue=arr[m][0].replace("\"", ""),
+                Statics.objects.create(key=foreign_key, strValue=arr[m][0],
                                        user=UserDefine.objects.get(username="Hang"))
                 continue
             for l in range(0, len(arr[m])):

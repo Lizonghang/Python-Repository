@@ -57,7 +57,7 @@ def welcome(request):
 
 def analysis(request):
     ans = request.POST.get('data')
-    # ans = ans[2:len(ans) - 3].split("],[")
+    ans = ans[2:len(ans) - 2].split("],[")
     # arr = []
     # type = request.POST.get('type')
     # type = type[1:len(type) - 2].replace("\"", "")
@@ -123,7 +123,7 @@ def analysis(request):
     #         s.dim += (str(len(arr[k])) + ',')
     #     s.dim = s.dim[0: len(s.dim)-2]
     #     s.save()
-    return HttpResponse(type(ans))
+    return HttpResponse(ans)
 
 
 def real_handler(request):

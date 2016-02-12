@@ -48,7 +48,7 @@ def view(request):
         s.QContent = QContent
         s.save()
     else:
-        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm, 'QContent': Statics.objects.get(key='head').QContent})
+        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm})
 
 
 def welcome(request):

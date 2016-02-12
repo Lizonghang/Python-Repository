@@ -123,7 +123,7 @@ def analysis(request):
         s.save()
         for k in range(0, len(ans)):
             s.dim += (str(len(arr[k])) + ',')
-        s.dim = s.dim[0: len(s.dim)-2]
+        s.dim = s.dim[0: len(s.dim)-1]
         s.save()
     return HttpResponse()
 
@@ -135,8 +135,8 @@ def real_handler(request):
     type_arr = type.split(",")
     dim = s.dim
     dim_arr = dim.split(",")
-    # for h in range(0, len(dim_arr)):
-    #     dim_arr[h] = int(dim_arr[h])
+    for h in range(0, len(dim_arr)):
+        dim_arr[h] = int(dim_arr[h])
     # data_arr = []
     # for i in range(0, len(dim_arr)):
     #     data_arr.append([])

@@ -116,13 +116,14 @@ def analysis(request):
                 else:
                     AnsCount.objects.create(multi_count=0,
                                             question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
-        s = Statics.objects.get(key='head')
+        s = UserDefine.objects.get(username="Hang").statics_set.get(key="head")
         s.QType = type
+        s.save()
         for k in range(0, len(ans)):
             s.dim += (str(len(arr[k])) + ',')
         s.dim = s.dim[0: len(s.dim)-2]
         s.save()
-    return HttpResponse()
+    return HttpResponse(type)
 
 
 def real_handler(request):

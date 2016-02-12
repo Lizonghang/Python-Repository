@@ -19,11 +19,15 @@
        <a class="titlelnk" href="http://www.sojump.com/jq/467873.aspx" id="ctl02_ContentPlaceHolder1_ViewResult1_lkJQ" style="font-size:16px; text-decoration:none;" target="_blank" title="填写此问卷">
         <b><span id="ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie">企业员工满意度调查问卷</span></b>
        </a>
+          <script>
+              var data = JSON.parse({{ data }});
+              document.getElementById("sdata").innerHTML = data;
+          </script>
           <br>{{ type }}<br>
           {{ dim }}<br>
-          {{ data }}<br>
           {{ valid }}<br>
           {{ QContent }}
+          <div id="sdata"></div>
       </div>
      </div>
      <div id="ctl02_ContentPlaceHolder1_divViewStat" style="width:850px;margin:0 auto; background:#ffffff; padding:0 30px 20px;">

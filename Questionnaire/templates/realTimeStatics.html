@@ -3,15 +3,6 @@
   <title>实时数据报告</title>
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <link href="http://www.sojump.com/css/NewDefault.css?v=1" rel="stylesheet" type="text/css"/>
-  <script>
-      var QType = "{{ type }}";
-      var dim = "{{ dim }}";
-      var valid = "{{ valid }}";
-      var QContent = "{{ QContent }}".split(";");
-      var data = "{{ data }}";
-      alert(QContent);
-      document.getElementsByClassName("QTitle")[0].innerText = QContent[0];
-  </script>
  </head>
  <body style="BACKGROUND:#B0E0FA url(http://sojump.b0.upaiyun.com/images/wjx/JoinQuestionnaire/bg/abc2.jpg)  no-repeat fixed center 0">
   <div class="" id="container">
@@ -327,5 +318,14 @@
    <div style="clear: both;"></div>
   </div>
   <div style="clear: both;"></div>
+ <script>
+      var QType = "{{ type }}";
+      var dim = "{{ dim }}";
+      var valid = "{{ valid }}";
+      var QContent = "{{ QContent }}".split(";");
+      var data = "{{ data }}";
+      alert(QContent);
+      document.getElementsByClassName("QTitle")[0].innerText = QContent[0];
+  </script>
  </body>
 </html>

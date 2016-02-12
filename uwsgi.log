@@ -1716,3 +1716,4 @@ WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x25809d0 pid: 2257
 *** uWSGI is running in multiple interpreter mode ***
 spawned uWSGI worker 1 (pid: 22579, cores: 1)
 spawned uWSGI worker 2 (pid: 22582, cores: 1)
+[pid: 22579|app: 0|req: 1/1] 222.209.181.22 () {44 vars in 1034 bytes} [Fri Feb 12 20:04:12 2016] GET /submit/welcome/realHandler/ => generated 15838 bytes in 68 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)

@@ -48,7 +48,7 @@ def view(request):
         s.QContent = QContent
         s.save()
     else:
-        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm, 'QContent': UserDefine.objects.get(username="Hang").statics_set.get(key="head").QContent})
+        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm})
 
 
 def welcome(request):
@@ -161,6 +161,6 @@ def real_handler(request):
     #         lencheck = d.get(key='arr[' + str(k) + '][0]').anscount_set.all().multi_count
     #         valid_count[k] = lencheck
     # valid_json = json.dumps(valid_count)
-    # QContent = d.get(key='head').QContent
+    QContent = s.QContent
     # return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim, 'data': data_json, 'valid': valid_json, 'QContent': QContent})
-    return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim})
+    return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim, 'QContent': QContent})

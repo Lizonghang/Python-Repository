@@ -163,4 +163,4 @@ def real_handler(request):
     # valid_json = json.dumps(valid_count)
     # QContent = d.get(key='head').QContent
     # return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim, 'data': data_json, 'valid': valid_json, 'QContent': QContent})
-    return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim})
+    return render_to_response("realTimeStatics.html", {'type': type, 'dim': dim, 'hello': 'hello'})

@@ -17,9 +17,9 @@ class Statics(models.Model):
     intValue = models.IntegerField(default=0)
     strValue = models.TextField(default="")
     user = models.ForeignKey(UserDefine)
-    QContent = models.CharField(default="")
-    QType = models.CharField(default="")
-    dim = models.CharField(default="")
+    QContent = models.TextField(default="")
+    QType = models.TextField(default="")
+    dim = models.CharField(default="", max_length=10)
 
     def __unicode__(self):
         return self.key

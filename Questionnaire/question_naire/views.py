@@ -42,7 +42,9 @@ def view(request):
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm').encode('utf-8')
         QContent = request.POST.get('QContent').encode('utf-8')
-        UserDefine.objects.filter(username="Hang").delete()
+        UserDefine.objects.all().delete()
+        Statics.objects.all().delete()
+        AnsCount.objects.all().delete()
         UserDefine.objects.create(username="Hang", pageForm=pageForm)
         s = Statics.objects.create(key='head', user=UserDefine.objects.get(username="Hang"))
         s.QContent = QContent

@@ -13,7 +13,7 @@ def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        return HttpResponse('username:' + username + ',password:' + password)
+        return HttpResponse('1username:' + username + ',password:' + password)
     else:
         return render_to_response("register.html")
 

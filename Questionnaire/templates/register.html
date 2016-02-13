@@ -218,11 +218,13 @@
         .phone_verify_sea_country_input{background:0 0;border:none;color:#696C6E;display:inline-block;height:18px;line-height:18px;padding:8px;width:284px}#nav_3{display:none}input::-ms-clear{display:none}input::-ms-reveal{display:none}
     </style>
     <script>
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        var password_again = document.getElementById("password_again").value;
+        var username;
+        var password;
         function checkForm(){
             var valid = true;
+            username = document.getElementById("username").value;
+            password = document.getElementById("password").value;
+            var password_again = document.getElementById("password_again").value;
             if(username == ""){
                 document.getElementById("name").style.color = "red";
                 valid = false;

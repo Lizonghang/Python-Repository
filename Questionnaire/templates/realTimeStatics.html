@@ -214,7 +214,6 @@
   <div style="clear: both;"></div>
  <script>
       var QType = "{{ type }}".split(",");
-{#      var dim = "{{ dim }}".split(",");#}
       var valid = "{{ valid }}".replace("[","").replace("]","").split(",");
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
@@ -226,9 +225,6 @@
       for(j=0;j<QNum;j++){
           QContent[j] = QContent[j].split(",");
       }
-{#      for(j=0;j<dim.length;j++){#}
-{#          dim[j] = parseInt(dim[j]);#}
-{#      }#}
       for(j=0;j<valid.length;j++){
           valid[j] = parseInt(valid[j]);
       }
@@ -258,7 +254,19 @@
               new_li.innerHTML = selects;
           }
           else if(QType[i] == 'checkbox'){
-                //
+              selects = '<div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanTitle" style="line-height: 24px"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionIndex" style="color:#666666;font-weight:bold;color:#3d81ee;">第' + Qs + '题：</span><h3 style="margin: 0px; padding: 0px;"><span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionDesp" style="color:#333333;font-size:14px;">' + QContent[i][0] + '</span> </h3> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbType" style="color:#0066FF;">[多选题] </span> </div> <div style="margin: 5px 0;"></div> <div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_divResult"> <div style="margin-top: 5px;"> <table border="0" cellpadding="3" cellspacing="0" chartid="c10000" class="tableResult" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_tbItemCounter" style="background-color:#D9E5ED;font-size:12px;width:820px;border-collapse:collapse;"> <thead> <tr align="center" class="text2" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_titleRow" style="font-weight:bold;"> <td style="cursor: pointer;">选项</td> <td align="center" style="width:50px;cursor: pointer;">小计</td> <td align="left" style="width:360px;">比例</td> </tr> </thead>';
+              for(k=1;k<QContent[i].length;k++){
+                  if(k%2==1){
+                      selects += '<tbody><tr style="background:white">';
+                  }
+                  else{
+                      selects += '<tbody><tr style="background:#eff6fb">';
+                  }
+                  selects += '<td>'+ QContent[i][k] +'</td><td align="center">'+ data[i][k-1] +'</td><td><div class="bar"><div class="precent" style="width: ' + (data[i][k-1]*100)/valid[i] + '.' + (data[i][k-1]*100%valid[i]) + '%; display: block;">';
+                  selects += '<img alt="" height="13" src="http://www.sojump.com/Images/wjx/viewstat/vote_cl_v2.png" width="149"/></div></div><div style="margin-top:3px;float:left;">'+ (data[i][k-1]*100)/valid[i] + '.' + (data[i][k-1]*100%valid[i]) +'%</div><div style="clear:both;"></div></td></tr>';
+              }
+              selects += '</tbody><tfoot><tr><td><b>本题有效填写人次</b></td><td align="center"><b>'+ valid[i] +'</b></td><td></td></tr></tfoot></table><div style="padding-top: 5px;"></div></div></div><span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"><hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/></span>';
+              new_li.innerHTML = selects;
           }
           else if(QType[i] == 'fitb'){
                 //

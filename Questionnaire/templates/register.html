@@ -160,7 +160,7 @@
         .paopao .p_r{background:url(../static/admin/img/pwd_sprite.png) 0 -423px no-repeat;display:inline-block;right:0;width:5px}
         .pwd_info{position:relative}
         .pwd_tips{width:158px;height:71px;padding-top:6px;position:absolute;top:-18px;background:url(../static/admin/img/pwd_sprite.png) no-repeat}
-        .pwd_tips div{height:22px;line-height:22px;margin-left:15px;padding-left:18px}
+        .pwd_tips div{height:18px;line-height:22px;margin-left:15px;padding-left:18px}
         .pwd_tips .default{background:url(../static/admin/img/pwd_sprite.png) 0 -215px no-repeat}
         .pwd_tips .yes{background:url(../static/admin/img/pwd_sprite.png) 0 -247px no-repeat}
         .pwd_tips .no{background:url(../static/admin/img/pwd_sprite.png) 0 -281px no-repeat}
@@ -217,6 +217,67 @@
         .phone_verify_sea_phone{display:none}.phone_verify_phone_tips{color:grey;left:0;position:absolute;top:45px;width:360px}
         .phone_verify_sea_country_input{background:0 0;border:none;color:#696C6E;display:inline-block;height:18px;line-height:18px;padding:8px;width:284px}#nav_3{display:none}input::-ms-clear{display:none}input::-ms-reveal{display:none}
     </style>
+    <script>
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var password_again = document.getElementById("password_again").value;
+        function checkForm(){
+            var valid = true;
+            if(username == ""){
+                document.getElementById("name").style.color = "red";
+                valid = false;
+            }
+            else{
+                document.getElementById("name").style.color = "black";
+            }
+            if(password.length < 6 || password.length >16){
+                document.getElementById("pwd_tip1").style.color = "red";
+                valid = false;
+            }
+            else{
+                document.getElementById("pwd_tip1").style.color = "green";
+            }
+            if(password.indexOf(" ")>0){
+                document.getElementById("pwd_tip2").style.color = "red";
+                document.getElementById("password").value = "";
+                document.getElementById("password_again").value = "";
+                valid = false;
+            }
+            else{
+                document.getElementById("pwd_tip2").style.color = "green";
+            }
+            if(password.length<9){
+                if(password == parseInt(password)){
+                    document.getElementById("pwd_tip3").style.color = "red";
+                    valid = false;
+                }
+                else{
+                    document.getElementById("pwd_tip3").style.color = "green";
+                }
+            }
+            else{
+                document.getElementById("pwd_tip3").style.color = "green";
+            }
+            if(password != password_again){
+                document.getElementById("pwd_tip4").style.color = "red";
+                document.getElementById("password_again").value = "";
+                valid = false;
+            }
+            else{
+                document.getElementById("pwd_tip4").style.color = "green";
+            }
+            return valid;
+        }
+        function submit(){
+            if(!checkForm()){
+                return;
+            }
+            var URL = "http://www.desckie.com/regist/";
+            var data = {'username': username, 'password': password};
+            $.post(URL,data);
+            //window.location.href = "http://www.desckie.com";
+        }
+    </script>
 </head>
 <body>
 <div class="web_notice" id="web_notice">
@@ -232,45 +293,39 @@
                 <div class="phone" id="phone_quick"></div>
                 <div class="enterA" id="enterA">
                     <div class="haomaTitle">
-                        <div class="haoma-inner" id="haoma-inner">注册帐号</div>
+                        <div class="haoma-inner" id="haoma-inner">帐号注册</div>
                     </div>
-                    <form action="http://www.desckie.com/regist/" method="post">
+                    <div style="margin-top: 20px">
                         <div class="box box_3" style="z-index:0">
-                            <label class="item" for="nick">昵称</label>
+                            <label class="item" id="name">昵称</label>
                             <div class="ipt_box nick_ipt_box">
                                 <div id="nick_bg" class="bg_txt">
-                                    <input type="text" class="new_txt" id="nick" name="nick" tabindex="6" style="z-index:0" maxlength="24" autocomplete="off">
+                                    <input type="text" class="new_txt" id="username" style="z-index:0" maxlength="24" autocomplete="on">
                                 </div>
                             </div>
                         </div>
                         <div class="box box_4">
-                            <label class="item" for="password">密码</label>
+                            <label class="item">密码</label>
                             <div class="ipt_box">
                                 <div id="password_bg" class="bg_txt">
-                                    <input type="password" class="new_txt" id="password" name="password" tabindex="7" maxlength="16">
+                                    <input type="password" class="new_txt" id="password" maxlength="16">
                                 </div>
                             </div>
                             <div class="info pwd_info">
                                 <div class="pwd_tips" id="pwd_tips">
-                                    <div class="default" id="pwd_tip1">长度为6-16个字符</div>
-                                    <div class="default" id="pwd_tip3">不能包含空格</div>
-                                    <div class="default" id="pwd_tip2">不能是9位以下纯数字</div>
+                                    <div class="default" id="pwd_tip1" style="margin-top: -5px">长度为6-16个字符</div>
+                                    <div class="default" id="pwd_tip2">不能包含空格</div>
+                                    <div class="default" id="pwd_tip3">不能是9位以下纯数字</div>
+                                    <div class="default" id="pwd_tip4">两次输入的密码不同</div>
                                 </div>
                             </div>
                         </div>
                         <div class="box box_5">
-                            <label class="item" for="password_again">确认密码</label>
+                            <label class="item" id="ensure">确认密码</label>
                             <div class="ipt_box">
                                 <div id="password_again_bg" class="bg_txt">
-                                    <input type="password" class="new_txt" name="pass_again" id="password_again" tabindex="8" maxlength="16">
+                                    <input type="password" class="new_txt" id="password_again" maxlength="16">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="box box_6">
-                            <div class="item">性别</div>
-                            <div class="ipt_box nobg sex_box">
-                                <input type="radio" name="sex" id="sex_1">&nbsp;男</input><br><br>
-                                <input type="radio" name="sex" id="sex_2">&nbsp;女</input>
                             </div>
                         </div>
                         <div class="box box_11">
@@ -278,14 +333,15 @@
                             <div class="ipt_box">
                                 <br><br>
                                 <div class="agree_box">
-                                    <input name="agree" id="agree" type="checkbox" checked="checked">我已阅读并同意<a style="color: red" href="http://www.desckie.com/select/agreement/" target="_blank">相关服务条款和隐私政策</a></input>
+                                    <input id="agree" type="checkbox" checked="checked">我已阅读并同意<a style="color: red" href="http://www.desckie.com/select/agreement/" target="_blank">相关服务条款和隐私政策</a></input>
                                     <div class="submit">
                                         <br>
-                                    <input class="" type="submit" value="提交注册" title="提交注册" id="submit">
+                                    <input type="button" value="提交注册" id="submit" onclick="javascript:submit()">
                                 </div>
                             </div>
                         </div>
-                    </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

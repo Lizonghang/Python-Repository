@@ -1,10 +1,8 @@
 from django.shortcuts import render_to_response
-from django.template import RequestContext
-import simplejson
 import json
-from django.template import Template, Context, loader
 from question_naire.models import *
 from django.http import HttpResponse
+from django.contrib.auth.models import User
 
 
 def home_page(request):
@@ -12,10 +10,12 @@ def home_page(request):
 
 
 def register(request):
-    if request.method == 'GET':
-        return render_to_response("register.html")
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        return HttpResponse('username:' + username + ',password:' + password)
     else:
-        pass
+        return render_to_response("register.html")
 
 
 def choose_template(request):

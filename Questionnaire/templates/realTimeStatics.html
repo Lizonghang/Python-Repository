@@ -152,6 +152,7 @@
           else if(QType[i] == 'fitb'){
               selects = '<div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanTitle" style="line-height: 24px"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionIndex" style="color:#666666;font-weight:bold;color:#3d81ee;">第' + Qs + '题： </span> <h3 style="margin: 0px; padding: 0px;"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionDesp" style="color:#333333;font-size:14px;">' + QContent[i][0] +' </span> </h3> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbType" style="color:#0066FF;">[填空题]&nbsp;&nbsp;<a href="javascript:void(0);">[隐藏]</a> </span> </div>';
               new_li.innerHTML = selects;
+              data[i][0] = data[i][0].replace("&quot;","");
               alert(data[i][0]);
           }
           ul.appendChild(new_li);

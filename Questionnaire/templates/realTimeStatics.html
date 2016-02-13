@@ -79,8 +79,8 @@
                   else{
                       selects += '<tbody><tr style="background:#eff6fb">';
                   }
-                  selects += '<td>'+ QContent[i][k] +'</td><td align="center">'+ data[i][k-1] +'</td><td><div class="bar"><div class="precent" style="width: ' + data[i][k-1]/valid[i] + '%; display: block;">';
-                  selects += '<img alt="" height="13" src="http://www.sojump.com/Images/wjx/viewstat/vote_cl_v2.png" width="149"/></div></div><div style="margin-top:3px;float:left;">'+ data[i][k-1]/valid[i] +'%</div><div style="clear:both;"></div></td></tr>';
+                  selects += '<td>'+ QContent[i][k] +'</td><td align="center">'+ data[i][k-1] +'</td><td><div class="bar"><div class="precent" style="width: ' + (data[i][k-1]*100/valid[i]).toFixed(2) + '%; display: block;">';
+                  selects += '<img alt="" height="13" src="http://www.sojump.com/Images/wjx/viewstat/vote_cl_v2.png" width="149"/></div></div><div style="margin-top:3px;float:left;">'+ (data[i][k-1]*100/valid[i]).toFixed(2) +'%</div><div style="clear:both;"></div></td></tr>';
               }
               selects += '</tbody><tfoot><tr><td><b>本题有效填写人次</b></td><td align="center"><b>'+ valid[i] +'</b></td><td></td></tr></tfoot></table><div style="padding-top: 5px;"></div></div></div><span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"><hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/></span>';
               new_li.innerHTML = selects;
@@ -94,8 +94,8 @@
                   else{
                       selects += '<tbody><tr style="background:#eff6fb">';
                   }
-                  selects += '<td>'+ QContent[i][k] +'</td><td align="center">'+ data[i][k-1] +'</td><td><div class="bar"><div class="precent" style="width: ' + data[i][k-1]/valid[i] + '%; display: block;">';
-                  selects += '<img alt="" height="13" src="http://www.sojump.com/Images/wjx/viewstat/vote_cl_v2.png" width="149"/></div></div><div style="margin-top:3px;float:left;">'+ data[i][k-1]/valid[i] +'%</div><div style="clear:both;"></div></td></tr>';
+                  selects += '<td>'+ QContent[i][k] +'</td><td align="center">'+ data[i][k-1] +'</td><td><div class="bar"><div class="precent" style="width: ' + (data[i][k-1]*100/valid[i]).toFixed(2) + '%; display: block;">';
+                  selects += '<img alt="" height="13" src="http://www.sojump.com/Images/wjx/viewstat/vote_cl_v2.png" width="149"/></div></div><div style="margin-top:3px;float:left;">'+ (data[i][k-1]*100/valid[i]).toFixed(2) +'%</div><div style="clear:both;"></div></td></tr>';
               }
               selects += '</tbody><tfoot><tr><td><b>本题有效填写人次</b></td><td align="center"><b>'+ valid[i] +'</b></td><td></td></tr></tfoot></table><div style="padding-top: 5px;"></div></div></div><span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"><hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/></span>';
               new_li.innerHTML = selects;

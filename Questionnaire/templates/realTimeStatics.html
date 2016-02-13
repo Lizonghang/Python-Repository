@@ -102,7 +102,7 @@
           }
           else if(QType[i] == 'fitb'){
               selects = '<div class="Q'+ (i+1) +'" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanTitle" style="line-height: 24px"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionIndex" style="color:#666666;font-weight:bold;color:#3d81ee;">第' + Qs + '题： </span> <h3 style="margin: 0px; padding: 0px;"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionDesp" style="color:#333333;font-size:14px;">' + QContent[i][0] +' </span> </h3> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbType" style="color:#0066FF;">[填空题]&nbsp;&nbsp; </span> </div>';
-              selects += '<div style="margin: 5px 0;"></div> <div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_divResult"> <div style="margin-top: 5px;"> <table border="0" cellpadding="3" cellspacing="0" chartid="c10000" class="tableResult" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_tbItemCounter" style="background-color:#D9E5ED;font-size:12px;width:820px;border-collapse:collapse;"> <thead> <tr align="center" class="text2" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_titleRow" style="font-weight:bold;"> <td style="width: 5%">序号</td> <td style="width: 95%">用户回复</td> </tr> </thead><tbody>';
+              selects += '<div style="margin: 5px 0;"></div> <div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_divResult"> <div style="margin-top: 5px;"> <table border="0" cellpadding="3" cellspacing="0" chartid="c10000" class="tableResult" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_tbItemCounter" style="background-color:#D9E5ED;font-size:12px;width:820px;border-collapse:collapse;"> <thead> <tr align="center" class="text2" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_titleRow" style="font-weight:bold;"> <td style="width: 5%">序号</td> <td style="width: 95%">用户回复('+ valid[i] +'人填写)</td> </tr> </thead><tbody>';
               data[i][0] = data[i][0].replace(/&quot;/g,"");
               var ans = data[i][0].split("\n");
               var ans_len = ans.length;
@@ -115,7 +115,7 @@
                   }
                   selects += '<td align="center">'+ (k+1) +'</td> <td>'+ ans[k] +'</td> </tr>';
               }
-              selects += '</tbody> <tfoot> <tr> <td><b>本题有效填写人次</b></td> <td align="center"><b>'+ valid[i] +'</b></td> </tr> </tfoot> </table> <div style="padding-top: 5px;"></div> </div> </div> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"> <hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/> </span>';
+              selects += '</tbody></table> <div style="padding-top: 5px;"></div> </div> </div> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"> <hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/> </span>';
               new_li.innerHTML = selects;
           }
           ul.appendChild(new_li);

@@ -67,7 +67,8 @@ def template_1(request):
 
 
 def submit_success(request):
-    return render_to_response("Success.html")
+    user = request.session['username']
+    return render_to_response("Success.html", {'user': user})
 
 
 def edit_template_1(request):
@@ -75,18 +76,19 @@ def edit_template_1(request):
 
 
 def view(request):
+    user = request.session['username']
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm').encode('utf-8')
         QContent = request.POST.get('QContent').encode('utf-8')
         UserDefine.objects.all().delete()
         Statics.objects.all().delete()
         AnsCount.objects.all().delete()
-        UserDefine.objects.create(username="Hang", pageForm=pageForm)
-        s = Statics.objects.create(key='head', user=UserDefine.objects.get(username="Hang"))
+        UserDefine.objects.create(username=user, pageForm=pageForm)
+        s = Statics.objects.create(key='head', user=UserDefine.objects.get(username=user))
         s.QContent = QContent
         s.save()
     else:
-        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username="Hang").pageForm})
+        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm})
 
 
 def welcome(request):
@@ -94,6 +96,7 @@ def welcome(request):
 
 
 def analysis(request):
+    user = request.session['username']
     ans = request.POST.get('data')
     ans = ans[2:len(ans) - 2].split("],[")
     arr = []
@@ -112,17 +115,17 @@ def analysis(request):
         for j in range(0, len(arr[i])):
             if arr[i][j] == '1' or arr[i][j] == '0':
                 arr[i][j] = int(arr[i][j])
-    if UserDefine.objects.get(username="Hang").statics_set.exclude(key='head'):
+    if UserDefine.objects.get(username=user).statics_set.exclude(key='head'):
         for m in range(0, len(ans)):
             if len(arr[m]) == 1:
                 foreign_key = 'arr[' + str(m) + '][0]'
-                s = UserDefine.objects.get(username="Hang").statics_set.get(key=foreign_key)
+                s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
                 s.strValue = s.strValue + '\n' + arr[m][0]
                 s.save()
                 continue
             for l in range(0, len(arr[m])):
                 foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-                s = UserDefine.objects.get(username="Hang").statics_set.get(key=foreign_key)
+                s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
                 s.intValue = s.intValue + arr[m][l]
                 s.save()
             if type_arr[m] == 'checkbox':
@@ -131,7 +134,7 @@ def analysis(request):
                     if arr[m][r] == 1:
                         valid = True
                 if valid == True:
-                    a = UserDefine.objects.get(username='Hang').statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.get(key="multi_count")
+                    a = UserDefine.objects.get(username=user).statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.get(key="multi_count")
                     a.multi_count += 1
                     a.save()
     else:
@@ -139,12 +142,12 @@ def analysis(request):
             if len(arr[m]) == 1:
                 foreign_key = 'arr[' + str(m) + '][0]'
                 Statics.objects.create(key=foreign_key, strValue=arr[m][0],
-                                       user=UserDefine.objects.get(username="Hang"))
+                                       user=UserDefine.objects.get(username=user))
                 continue
             for l in range(0, len(arr[m])):
                 foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
                 Statics.objects.create(key=foreign_key, intValue=arr[m][l],
-                                       user=UserDefine.objects.get(username="Hang"))
+                                       user=UserDefine.objects.get(username=user))
             if type_arr[m] == 'checkbox':
                 valid = False
                 for r in range(0, len(arr[m])):
@@ -156,7 +159,7 @@ def analysis(request):
                 else:
                     AnsCount.objects.create(multi_count=0, key="multi_count",
                                             question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
-        s = UserDefine.objects.get(username="Hang").statics_set.get(key="head")
+        s = UserDefine.objects.get(username=user).statics_set.get(key="head")
         s.QType = type
         s.save()
         for k in range(0, len(ans)):
@@ -167,8 +170,9 @@ def analysis(request):
 
 
 def real_handler(request):
-    s = UserDefine.objects.get(username="Hang").statics_set.get(key='head')
-    d = UserDefine.objects.get(username="Hang").statics_set
+    user = request.session['username']
+    s = UserDefine.objects.get(username=user).statics_set.get(key='head')
+    d = UserDefine.objects.get(username=user).statics_set
     type = s.QType
     type_arr = type.split(",")
     dim = s.dim

@@ -32,6 +32,12 @@ def logout(request):
     return HttpResponse(u"您的账户已注销")
 
 
+def clear_all_user(request):
+    auth.logout(request)
+    User.objects.all().delete()
+    return HttpResponse("注册用户全部删除")
+
+
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -40,7 +46,7 @@ def register(request):
             return HttpResponse(u"该用户已注册")
         else:
             User.objects.create_user(username=username, password=password)
-            return HttpResponseRedirect('http://www.desckie.com/')
+            return HttpResponse(u"注册成功")
     else:
         return render_to_response("register.html")
 

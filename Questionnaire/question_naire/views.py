@@ -53,7 +53,7 @@ def register(request):
 
 def choose_template(request):
     if request.user.is_authenticated():
-        return HttpResponse("已登录")
+        return render_to_response("temp_choose.html")
     else:
         return HttpResponse("请先登录")
 

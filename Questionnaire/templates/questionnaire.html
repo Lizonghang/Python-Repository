@@ -8,15 +8,15 @@
     <script src="../static/admin/js/jquery.js"></script>
     <script type="text/javascript">
         $(document).ready(function($){
-            $('.theme-login').click(function(){
+            $('#login_button').click(function(){
                 $('.theme-popover-mask').show();
                 $('.theme-popover-mask').height($(document).height());
                 $('.theme-popover').slideDown(200);
-            })
+            });
             $('.theme-poptit .close').click(function(){
                 $('.theme-popover-mask').hide();
                 $('.theme-popover').slideUp(200);
-            })
+            });
         });
     </script>
     <style type="text/css">
@@ -900,6 +900,7 @@
             document.getElementById("login_button").innerText = "登录";
             document.getElementById("regist_button").innerText = "注册";
             document.getElementById("logout").style.visibility = "hidden";
+            document.getElementById("clear").style.visibility = "hidden";
             alert(response);
         })
     }

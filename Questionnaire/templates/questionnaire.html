@@ -883,7 +883,7 @@
     }
     function logout(){
         var url="http://www.desckie.com/logout/";
-        $.post(url,{'username':username},function(response){
+        $.get(url,function(response){
             document.getElementById("login_button").innerText = "登录";
             document.getElementById("regist_button").innerText = "注册";
             document.getElementById("login").style.visibility = "hidden";

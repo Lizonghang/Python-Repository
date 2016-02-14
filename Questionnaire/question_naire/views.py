@@ -30,6 +30,9 @@ def login(request):
             return HttpResponse(u'您已登录')
 
 
+def logout(request):
+    auth.logout(request)
+    return HttpResponse(u"您的账户已注销")
 
 
 def register(request):

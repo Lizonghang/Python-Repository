@@ -17,6 +17,7 @@ def home_page(request):
 
 def register(request):
     auth.logout(request)
+    return HttpResponse()
     # if request.method == 'POST':
     #     username = request.POST.get('username')
     #     password = request.POST.get('password')

@@ -767,7 +767,7 @@
 <div class="head_index clearfix">
     <div class="head_nav clearfix">
         <div class="btn_member">
-            <a href="http://www.desckie.com/select/" class="down_a" style="text-decoration: none;color: white;margin-left: 625px;margin-top: 0px;font-family: 'Lucida Grande'" target="_blank">新建问卷</a>
+            <a href="javascript:newQs();" class="down_a" style="text-decoration: none;color: white;margin-left: 625px;margin-top: 0px;font-family: 'Lucida Grande'" target="_blank">新建问卷</a>
         </div>
     </div>
     <div class="btn_member">
@@ -887,6 +887,20 @@
             document.getElementById("regist_button").innerText = "注册";
             document.getElementById("logout").style.visibility = "hidden";
             alert(response);
+        })
+    }
+    function newQs(){
+        var url="http://www.desckie.com/select/";
+        $.get(url,function(response){
+            if(response == "请先登录"){
+                $('.theme-popover-mask').show();
+                $('.theme-popover-mask').height($(document).height());
+                $('.theme-popover').slideDown(200);
+                alert(response);
+            }
+            else{
+                //window.location.href = "http://www.desckie.com/select/";
+            }
         })
     }
 </script>

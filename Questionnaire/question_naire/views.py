@@ -52,7 +52,10 @@ def register(request):
 
 
 def choose_template(request):
-    return render_to_response("temp_choose.html")
+    if request.user.is_authenticated():
+        return render_to_response("temp_choose.html")
+    else:
+        return HttpResponse("请先登录")
 
 
 def agreement(request):

@@ -200,12 +200,12 @@
             }
         }
         function submit(){
-            get_content()
+            get_content();
             var pageForm = escape(document.getElementById('sur').innerHTML);
             var data = {'pageForm': pageForm, 'QContent': QContent};
             var URL = "http://www.desckie.com/select/template_1/view?user="+"{{ user }}";
             $.post(URL,data);
-            window.location.href="http://www.desckie.com/select/success/";
+            window.location.href="http://www.desckie.com/select/success?user={{ user }}";
         }
     </script>
 </head>

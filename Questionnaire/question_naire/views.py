@@ -15,6 +15,26 @@ def home_page(request):
         return render_to_response("questionnaire.html", {'user': user})
 
 
+def login(request):
+    if request.method == 'POST':
+        if not request.user.is_authenticated():
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = auth.authenticate(username=username, password=password)
+            if user is not None:
+                auth.login(request, user)
+                return HttpResponse(username)
+            else:
+                return HttpResponse(u'该用户不存在或账户密码错误')
+        else:
+            return HttpResponse(u'您已登录')
+
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponse(u"您的账户已注销")
+
+
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')

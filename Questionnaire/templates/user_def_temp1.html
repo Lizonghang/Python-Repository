@@ -2514,7 +2514,7 @@ fieldset{border:0;}
               }
               Qs++;
           }
-          var url = "http://www.desckie.com/select/template_1/analysis?user=" + "{{ user }}";
+          var url = "http://www.desckie.com/select/template_1/analysis/?user=" + "{{ user }}";
           $.post(url,{'data':JSON.stringify(ans),'type':JSON.stringify(type)});
           window.location.href="http://www.desckie.com/submit/welcome?user=" + "{{ user }}";
       }

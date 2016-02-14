@@ -11,8 +11,11 @@ def home_page(request):
     if not request.user.is_authenticated():
         return render_to_response("questionnaire.html")
     else:
-        user = request.session['username']
-        return render_to_response("questionnaire.html", {'user': user})
+        if 'username' in request.session:
+            user = request.session['username']
+            return render_to_response("questionnaire.html", {'user': user})
+        else:
+            return render_to_response("questionnaire.html")
 
 
 def login(request):

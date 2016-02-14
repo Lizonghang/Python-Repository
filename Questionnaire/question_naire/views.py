@@ -49,7 +49,7 @@ def register(request):
             user = auth.authenticate(username=username, password=password)
             auth.login(request, user)
             request.session['username'] = username
-            return HttpResponse(u"注册成功")
+            return render_to_response("questionnaire.html", {'user': username})
     else:
         return render_to_response("register.html")
 

@@ -863,8 +863,14 @@
 <hr>
 <div class="footer text-center">Copyright <span>©</span> 2016 Hang All Rights Reserved</div>
 <script>
+    var logged = {{ logged }};
     var username;
     var password;
+    if(logged == "logged"){
+        document.getElementById("login_button").innerText = "欢迎您:";
+        document.getElementById("regist_button").innerText = {{ user }};
+        document.getElementById("logout").style.visibility = "visible";
+    }
     function login(){
         username = document.getElementById("username").value;
         password = document.getElementById("password").value;

@@ -8,7 +8,11 @@ from django.contrib import auth
 
 
 def home_page(request):
-    return render_to_response("questionnaire.html")
+    if request.user.is_authenticated():
+        user = request.session['username']
+        return render_to_response("questionnaire.html", {'user': user, 'logged': 'logged'})
+    else:
+        return render_to_response("questionnaire.html")
 
 
 def login(request):

@@ -862,9 +862,8 @@
 </div>
 <hr>
 <div class="footer text-center">Copyright <span>©</span> 2016 Hang All Rights Reserved</div>
-{{ logged }}
 <script>
-        var logged = {{ logged }};
+        var logged = "{{ logged }}";
         alert(logged);
         if(logged == "logged"){
             document.getElementById("login_button").innerText = "欢迎您:";

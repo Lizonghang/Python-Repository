@@ -772,8 +772,13 @@
         </div>
     </div>
     <div class="btn_member">
-        <a href="javascript:;" class="login_dj_cq theme-login" rel="nofollow" style="text-decoration: none;color: white;font-family: 'Lucida Grande'">登录</a>
-        <a href="http://www.desckie.com/regist/" rel="nofollow" style="text-decoration: none;color: white;font-family: 'Lucida Grande'" target="_blank">注册</a>
+        <a href="javascript:;" class="login_dj_cq theme-login" rel="nofollow" style="text-decoration: none;color: white;font-family: 'Lucida Grande'" id="login_button">登录</a>
+        <a href="http://www.desckie.com/regist/" rel="nofollow" style="text-decoration: none;color: white;font-family: 'Lucida Grande'" target="_blank" id="regist_button">注册</a>
+    </div>
+    <div class="head_nav clearfix" id="logout" style="visibility: hidden">
+        <div class="btn_member">
+            <a href="javascript:logout();" class="down_a" style="text-decoration: none;color: white;margin-left: 625px;margin-top: 0px;font-family: 'Lucida Grande'" target="_blank">注销</a>
+        </div>
     </div>
 </div>
 <div class="survey_ban"><img src="../static/admin/img/wj_ban.jpg" width="100%"/></div>
@@ -830,7 +835,6 @@
         </a>
 	</div>
 	<div class="theme-popbod dform">
-		<form class="" name="loginform" action="#" method="post">
             <div class="box box_3">
                 <label style="font-family: 'Lucida Grande';font-size: 150%">登陆账号</label>
                 <br>
@@ -839,7 +843,7 @@
                 <label class="item" for="nick" style="font-family: 'Lucida Grande';">账号</label>
                 <div class="ipt_box nick_ipt_box">
                     <div id="nick_bg" class="bg_txt">
-                        <input type="text" class="new_txt" id="nick" name="nick" maxlength="24" autocomplete="off" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px">
+                        <input type="text" class="new_txt" id="username" maxlength="24" autocomplete="on" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px">
                     </div>
                 </div>
             </div>
@@ -847,18 +851,45 @@
                 <label class="item" for="password" style="font-family: 'Lucida Grande'">密码</label>
                 <div class="ipt_box">
                     <div id="password_bg" class="bg_txt">
-                        <input type="password" class="new_txt" id="password" name="password" maxlength="16" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px">
+                        <input type="password" class="new_txt" id="password" maxlength="16" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px">
                     </div>
                 </div>
             </div>
             <br>
             <div class="box">
-                <input type="submit" value="登陆" title="登陆" id="login" style="font-family: 'Lucida Grande';height: 30px;width: 50px;">
+                <input type="submit" value="登陆" style="font-family: 'Lucida Grande';height: 30px;width: 50px;" onclick="javascript:void(0);">
             </div>
-        </form>
 	</div>
 </div>
 <hr>
 <div class="footer text-center">Copyright <span>©</span> 2016 Hang All Rights Reserved</div>
+<script>
+    var username;
+    var password;
+    function login(){
+        username = document.getElementById("username").value;
+        password = document.getElementById("password").value;
+        var url = "http://www.desckie.com/login/";
+        $.post(url,{'username':username,'password':password},function(response){
+            if((response=="该用户不存在或账户密码错误") || (response=="您已登录"))   alert(response);
+            else{
+                $('.theme-popover-mask').hide();
+                $('.theme-popover').slideUp(200);
+                document.getElementById("login_button").innerText = "欢迎您:";
+                document.getElementById("regist_button").innerText = response;
+                document.getElementById("login").style.visibility = "visible";
+            }
+        })
+    }
+    function logout(){
+        var url="http://www.desckie.com/logout/";
+        $.post(url,{'username':username},function(response){
+            document.getElementById("login_button").innerText = "登录";
+            document.getElementById("regist_button").innerText = "注册";
+            document.getElementById("login").style.visibility = "hidden";
+            alert(response);
+        })
+    }
+</script>
 </body>
 </html>

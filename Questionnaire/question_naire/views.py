@@ -2,7 +2,7 @@
 from django.shortcuts import render_to_response
 import json
 from question_naire.models import *
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
@@ -40,7 +40,7 @@ def register(request):
             return HttpResponse(u"该用户已注册")
         else:
             User.objects.create_user(username=username, password=password)
-            return render_to_response("questionnaire.html")
+            return HttpResponseRedirect('http://www.desckie.com/')
     else:
         return render_to_response("register.html")
 

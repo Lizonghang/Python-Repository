@@ -10,7 +10,8 @@ from django.contrib import auth
 def home_page(request):
     if request.session:
         user = request.session['username']
-        return render_to_response("questionnaire.html", {'user': user, 'logged': 'logged'})
+        return HttpResponse(user)
+        # return render_to_response("questionnaire.html", {'user': user, 'logged': 'logged'})
     else:
         return render_to_response("questionnaire.html", {'logged': 'unlogged'})
 

@@ -100,7 +100,7 @@ def view(request):
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm').encode('utf-8')
         QContent = request.POST.get('QContent').encode('utf-8')
-        s = Statics.objects.filter(user=user)
+        s = Statics.objects.filter(user=UserDefine.objects.get(username=user))
         for i in range(0, len(s)):
             s[i].anscount_set.all().delete()
         UserDefine.objects.get(username=user).statics_set.all().delete()

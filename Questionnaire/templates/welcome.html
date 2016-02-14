@@ -70,11 +70,11 @@
      <div class="col-md-12">
       <div id="copy_published_form_link">
        <span>分享问卷</span>
-       <input style="margin-bottom: 3px" class="copy-target gd-input-thin" id="published_form_link" type="text" value="http://www.desckie.com/select/template_1/view/" disabled="disabled"/>
+       <input style="margin-bottom: 3px" class="copy-target gd-input-thin" id="published_form_link" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}" disabled="disabled"/>
        <a class="with-tooltip copy-form-link copy-form-link-event track-event" data-clipboard-target="#published_form_link" data-message="网址复制成功" data-need-reset-after-hide="true" data-placement="bottom" data-role="copy" data-title="复制网址" href="javascript:void(0);" title="复制网址">
         <i class="gd-icon-copy"></i>
        </a>
-       <a class="with-tooltip open-form-link open-form-link-event track-event" data-no-turbolink="true" data-placement="bottom" href="http://www.desckie.com/select/template_1/view/" target="_blank" title="直接打开">
+       <a class="with-tooltip open-form-link open-form-link-event track-event" data-no-turbolink="true" data-placement="bottom" href="http://www.desckie.com/select/template_1/view?user={{ user }}" target="_blank" title="直接打开">
         <i class="gd-icon-publish"></i>
        </a>
       </div>
@@ -99,7 +99,7 @@
             <img src="http://www.desckie.com/static/admin/img/55278fd8ac31e.png" alt="welcome" style="width: 400px;height: 278px;margin-left: 50px;margin-top: -15px;display: block">
             <div style="display: block;margin-left: 480px;margin-top: -190px">
                 <p><strong style="font-size: 18px;font-family: Consolas">提交成功,感谢您的支持!</strong></p>
-                <p style="font-size: 14px;font-family: Consolas">您的问卷已提交成功,感谢您的支持!如果对本问卷感兴趣,请<br>分享给您的好友,本问卷由<a href="http://www.desckie.com/" target="_blank" style="color: blue">问卷网</a>提供.<br>点击查看<a style="color: blue" target="_self" href="http://www.desckie.com/submit/welcome/realHandler/">数据统计报告</a></p>
+                <p style="font-size: 14px;font-family: Consolas">您的问卷已提交成功,感谢您的支持!如果对本问卷感兴趣,请<br>分享给您的好友,本问卷由<a href="http://www.desckie.com/" target="_blank" style="color: blue">问卷网</a>提供.<br>点击查看<a style="color: blue" target="_self" href="http://www.desckie.com/submit/welcome/realHandler?user={{ user }}">数据统计报告</a></p>
             </div>
           </div>
          </div>

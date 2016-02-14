@@ -78,11 +78,12 @@ def submit_success(request):
 
 
 def edit_template_1(request):
-    return render_to_response("edit_template_1.html")
+    user = request.session['username']
+    return render_to_response("edit_template_1.html", {'user': user})
 
 
 def view(request):
-    user = request.session['username']
+    user = request.GET.get('user')
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm').encode('utf-8')
         QContent = request.POST.get('QContent').encode('utf-8')
@@ -94,15 +95,16 @@ def view(request):
         s.QContent = QContent
         s.save()
     else:
-        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm})
+        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm, 'user': user})
 
 
 def welcome(request):
-    return render_to_response('welcome.html')
+    user = request.GET.get('user')
+    return render_to_response('welcome.html', {'user': user})
 
 
 def analysis(request):
-    user = request.session['username']
+    user = request.GET.get('user')
     ans = request.POST.get('data')
     ans = ans[2:len(ans) - 2].split("],[")
     arr = []
@@ -176,7 +178,7 @@ def analysis(request):
 
 
 def real_handler(request):
-    user = request.session['username']
+    user = request.GET.get('user')
     s = UserDefine.objects.get(username=user).statics_set.get(key='head')
     d = UserDefine.objects.get(username=user).statics_set
     type = s.QType

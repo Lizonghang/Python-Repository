@@ -40,7 +40,7 @@ def logout(request):
 
 def clear(request):
     user = request.session['username']
-    s = Statics.objects.filter(user=user)
+    s = Statics.objects.filter(user=UserDefine.objects.get(username=user))
     for i in range(0, len(s)):
         s[i].anscount_set.all().delete()
     UserDefine.objects.get(username=user).statics_set.all().delete()

@@ -8665,3 +8665,290 @@ Traceback (most recent call last):
     dim_arr[h] = int(dim_arr[h])
 ValueError: invalid literal for int() with base 10: ''
 [pid: 28933|app: 0|req: 20/40] 222.209.181.22 () {44 vars in 1267 bytes} [Mon Feb 15 00:09:23 2016] GET /submit/welcome/realHandler/?user=minmin => generated 59124 bytes in 87 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Mon Feb 15 00:10:03 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1d429d0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1d429d0 pid: 28974 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 28974, cores: 1)
+spawned uWSGI worker 2 (pid: 28977, cores: 1)
+[pid: 28974|app: 0|req: 1/1] 222.209.181.22 () {42 vars in 1124 bytes} [Mon Feb 15 00:10:07 2016] GET / => generated 58280 bytes in 39 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 1/2] 222.209.181.22 () {42 vars in 1154 bytes} [Mon Feb 15 00:10:13 2016] GET /clear_all_user/ => generated 30 bytes in 114 msecs (HTTP/1.1 200) 3 headers in 171 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 2/3] 222.209.181.22 () {42 vars in 1080 bytes} [Mon Feb 15 00:10:15 2016] GET / => generated 58276 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 2/4] 222.209.181.22 () {44 vars in 1133 bytes} [Mon Feb 15 00:10:17 2016] GET /regist/ => generated 34741 bytes in 9 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Internal Server Error: /select/success/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 89, in submit_success
+    user = request.session['username']
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 48, in __getitem__
+    return self._session[key]
+KeyError: 'username'
+[pid: 28974|app: 0|req: 3/5] 222.209.181.22 () {42 vars in 1110 bytes} [Mon Feb 15 00:10:27 2016] GET /select/success/ => generated 60304 bytes in 94 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 3/6] 222.209.181.22 () {50 vars in 1249 bytes} [Mon Feb 15 00:10:39 2016] POST /regist/ => generated 12 bytes in 163 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 4/7] 222.209.181.22 () {44 vars in 1126 bytes} [Mon Feb 15 00:10:39 2016] GET / => generated 58276 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 4/8] 222.209.181.22 () {50 vars in 1240 bytes} [Mon Feb 15 00:10:52 2016] POST /login/ => generated 10 bytes in 223 msecs (HTTP/1.1 200) 4 headers in 177 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 5/9] 222.209.181.22 () {42 vars in 1154 bytes} [Mon Feb 15 00:10:56 2016] GET /select/success/ => generated 14368 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 5/10] 222.209.181.22 () {44 vars in 1145 bytes} [Mon Feb 15 00:10:56 2016] GET /user_form_folders => generated 3596 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 6/11] 222.209.181.22 () {44 vars in 1170 bytes} [Mon Feb 15 00:10:58 2016] GET / => generated 58284 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 6/12] 222.209.181.22 () {44 vars in 1110 bytes} [Mon Feb 15 00:11:08 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 7/13] 222.209.181.22 () {44 vars in 1177 bytes} [Mon Feb 15 00:11:08 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 7/14] 222.209.181.22 () {44 vars in 1206 bytes} [Mon Feb 15 00:11:09 2016] GET /select/template_1/ => generated 82698 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 8/15] 222.209.181.22 () {44 vars in 1227 bytes} [Mon Feb 15 00:11:11 2016] GET /select/template_1/edit/ => generated 23916 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /select/success
+Internal Server Error: /select/template_1/view/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view question_naire.views.view didn't return an HttpResponse object. It returned None instead.
+[pid: 28974|app: 0|req: 9/16] 222.209.181.22 () {44 vars in 1245 bytes} [Mon Feb 15 00:11:35 2016] GET /select/success?user=lizonghang => generated 0 bytes in 12 msecs (HTTP/1.1 301) 2 headers in 118 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 8/17] 222.209.181.22 () {50 vars in 1376 bytes} [Mon Feb 15 00:11:34 2016] POST /select/template_1/view/?user=lizonghang => generated 16897 bytes in 88 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 10/18] 222.209.181.22 () {44 vars in 1247 bytes} [Mon Feb 15 00:11:35 2016] GET /select/success/?user=lizonghang => generated 14368 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 9/19] 222.209.181.22 () {44 vars in 1161 bytes} [Mon Feb 15 00:11:35 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 28974|app: 0|req: 11/20] 222.209.181.22 () {44 vars in 1269 bytes} [Mon Feb 15 00:11:37 2016] GET /select/template_1/view?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 10/21] 222.209.181.22 () {44 vars in 1271 bytes} [Mon Feb 15 00:11:37 2016] GET /select/template_1/view/?user=lizonghang => generated 64776 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome
+[pid: 28977|app: 0|req: 11/22] 222.209.181.22 () {44 vars in 1261 bytes} [Mon Feb 15 00:11:45 2016] GET /submit/welcome?user=lizonghang => generated 0 bytes in 8 msecs (HTTP/1.1 301) 2 headers in 118 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 12/23] 222.209.181.22 () {44 vars in 1263 bytes} [Mon Feb 15 00:11:45 2016] GET /submit/welcome/?user=lizonghang => generated 12698 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 12/24] 222.209.181.22 () {50 vars in 1398 bytes} [Mon Feb 15 00:11:44 2016] POST /select/template_1/analysis/?user=lizonghang => generated 13 bytes in 193 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 13/25] 222.209.181.22 () {44 vars in 1161 bytes} [Mon Feb 15 00:11:45 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 28974|app: 0|req: 13/26] 222.209.181.22 () {44 vars in 1276 bytes} [Mon Feb 15 00:11:47 2016] GET /submit/welcome/realHandler?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 130 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 14/27] 222.209.181.22 () {44 vars in 1278 bytes} [Mon Feb 15 00:11:47 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10947 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 28974|app: 0|req: 14/28] 222.209.181.22 () {40 vars in 971 bytes} [Mon Feb 15 00:12:02 2016] GET /select/template_1/view?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 15/29] 222.209.181.22 () {40 vars in 973 bytes} [Mon Feb 15 00:12:02 2016] GET /select/template_1/view/?user=lizonghang => generated 64776 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome
+[pid: 28974|app: 0|req: 15/30] 222.209.181.22 () {42 vars in 1033 bytes} [Mon Feb 15 00:12:06 2016] GET /submit/welcome?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 118 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 16/31] 222.209.181.22 () {42 vars in 1035 bytes} [Mon Feb 15 00:12:06 2016] GET /submit/welcome/?user=lizonghang => generated 12698 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 17/32] 222.209.181.22 () {44 vars in 979 bytes} [Mon Feb 15 00:12:06 2016] GET /user_form_folders => generated 3596 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 28974|app: 0|req: 16/33] 222.209.181.22 () {42 vars in 1049 bytes} [Mon Feb 15 00:12:07 2016] GET /submit/welcome/realHandler?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 130 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 18/34] 222.209.181.22 () {42 vars in 1051 bytes} [Mon Feb 15 00:12:07 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10947 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 28974|app: 0|req: 17/35] 222.209.181.22 () {40 vars in 971 bytes} [Mon Feb 15 00:12:20 2016] GET /select/template_1/view?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 19/36] 222.209.181.22 () {40 vars in 973 bytes} [Mon Feb 15 00:12:20 2016] GET /select/template_1/view/?user=lizonghang => generated 64776 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome
+[pid: 28977|app: 0|req: 20/37] 222.209.181.22 () {42 vars in 1033 bytes} [Mon Feb 15 00:12:28 2016] GET /submit/welcome?user=lizonghang => generated 0 bytes in 10 msecs (HTTP/1.1 301) 2 headers in 118 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 18/38] 222.209.181.22 () {50 vars in 1222 bytes} [Mon Feb 15 00:12:28 2016] POST /select/template_1/analysis/?user=lizonghang => generated 14 bytes in 127 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 21/39] 222.209.181.22 () {42 vars in 1035 bytes} [Mon Feb 15 00:12:28 2016] GET /submit/welcome/?user=lizonghang => generated 12698 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 22/40] 222.209.181.22 () {44 vars in 979 bytes} [Mon Feb 15 00:12:29 2016] GET /user_form_folders => generated 3596 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 28974|app: 0|req: 19/41] 222.209.181.22 () {42 vars in 1048 bytes} [Mon Feb 15 00:12:30 2016] GET /submit/welcome/realHandler?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 130 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 23/42] 222.209.181.22 () {42 vars in 1050 bytes} [Mon Feb 15 00:12:30 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10975 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 28974|app: 0|req: 20/43] 222.209.181.22 () {40 vars in 970 bytes} [Mon Feb 15 00:12:38 2016] GET /select/template_1/view?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 24/44] 222.209.181.22 () {40 vars in 972 bytes} [Mon Feb 15 00:12:38 2016] GET /select/template_1/view/?user=lizonghang => generated 64776 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome
+[pid: 28977|app: 0|req: 25/45] 222.209.181.22 () {42 vars in 1032 bytes} [Mon Feb 15 00:12:46 2016] GET /submit/welcome?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 118 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 26/46] 222.209.181.22 () {42 vars in 1034 bytes} [Mon Feb 15 00:12:46 2016] GET /submit/welcome/?user=lizonghang => generated 12698 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 21/47] 222.209.181.22 () {50 vars in 1221 bytes} [Mon Feb 15 00:12:46 2016] POST /select/template_1/analysis/?user=lizonghang => generated 8 bytes in 146 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 27/48] 222.209.181.22 () {44 vars in 978 bytes} [Mon Feb 15 00:12:46 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 28974|app: 0|req: 22/49] 222.209.181.22 () {42 vars in 1049 bytes} [Mon Feb 15 00:12:48 2016] GET /submit/welcome/realHandler?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 130 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 28/50] 222.209.181.22 () {42 vars in 1051 bytes} [Mon Feb 15 00:12:48 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10991 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 23/51] 222.209.181.22 () {44 vars in 1169 bytes} [Mon Feb 15 00:13:01 2016] GET / => generated 58284 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 29/52] 222.209.181.22 () {44 vars in 1109 bytes} [Mon Feb 15 00:13:04 2016] GET /logout/ => generated 21 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 171 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 24/53] 222.209.181.22 () {44 vars in 1132 bytes} [Mon Feb 15 00:13:07 2016] GET /regist/ => generated 34741 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 25/54] 222.209.181.22 () {50 vars in 1248 bytes} [Mon Feb 15 00:13:15 2016] POST /regist/ => generated 12 bytes in 165 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 30/55] 222.209.181.22 () {44 vars in 1125 bytes} [Mon Feb 15 00:13:15 2016] GET / => generated 58276 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 26/56] 222.209.181.22 () {50 vars in 1239 bytes} [Mon Feb 15 00:13:21 2016] POST /login/ => generated 6 bytes in 222 msecs (HTTP/1.1 200) 4 headers in 177 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 31/57] 222.209.181.22 () {44 vars in 1109 bytes} [Mon Feb 15 00:13:23 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 27/58] 222.209.181.22 () {44 vars in 1176 bytes} [Mon Feb 15 00:13:23 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 32/59] 222.209.181.22 () {44 vars in 1205 bytes} [Mon Feb 15 00:13:24 2016] GET /select/template_1/ => generated 82698 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 28/60] 222.209.181.22 () {44 vars in 1226 bytes} [Mon Feb 15 00:13:26 2016] GET /select/template_1/edit/ => generated 23908 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /select/success
+[pid: 28974|app: 0|req: 29/61] 222.209.181.22 () {44 vars in 1236 bytes} [Mon Feb 15 00:13:46 2016] GET /select/success?user=minmin => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 114 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/view/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view question_naire.views.view didn't return an HttpResponse object. It returned None instead.
+[pid: 28977|app: 0|req: 33/62] 222.209.181.22 () {50 vars in 1367 bytes} [Mon Feb 15 00:13:46 2016] POST /select/template_1/view/?user=minmin => generated 16903 bytes in 88 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 30/63] 222.209.181.22 () {44 vars in 1238 bytes} [Mon Feb 15 00:13:46 2016] GET /select/success/?user=minmin => generated 14344 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 34/64] 222.209.181.22 () {44 vars in 1156 bytes} [Mon Feb 15 00:13:47 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 28974|app: 0|req: 31/65] 222.209.181.22 () {44 vars in 1257 bytes} [Mon Feb 15 00:13:48 2016] GET /select/template_1/view?user=minmin => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 35/66] 222.209.181.22 () {44 vars in 1259 bytes} [Mon Feb 15 00:13:48 2016] GET /select/template_1/view/?user=minmin => generated 64780 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome
+[pid: 28977|app: 0|req: 36/67] 222.209.181.22 () {44 vars in 1249 bytes} [Mon Feb 15 00:13:55 2016] GET /submit/welcome?user=minmin => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 114 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 182, in analysis
+    question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 391, in get
+    (self.model._meta.object_name, num)
+MultipleObjectsReturned: get() returned more than one Statics -- it returned 2!
+[pid: 28974|app: 0|req: 32/68] 222.209.181.22 () {50 vars in 1386 bytes} [Mon Feb 15 00:13:55 2016] POST /select/template_1/analysis/?user=minmin => generated 12907 bytes in 111 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 37/69] 222.209.181.22 () {44 vars in 1251 bytes} [Mon Feb 15 00:13:55 2016] GET /submit/welcome/?user=minmin => generated 12686 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 38/70] 222.209.181.22 () {44 vars in 1157 bytes} [Mon Feb 15 00:13:55 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 28974|app: 0|req: 33/71] 222.209.181.22 () {44 vars in 1265 bytes} [Mon Feb 15 00:13:56 2016] GET /submit/welcome/realHandler?user=minmin => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+Internal Server Error: /submit/welcome/realHandler/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 205, in real_handler
+    dim_arr[h] = int(dim_arr[h])
+ValueError: invalid literal for int() with base 10: ''
+[pid: 28977|app: 0|req: 39/72] 222.209.181.22 () {44 vars in 1267 bytes} [Mon Feb 15 00:13:56 2016] GET /submit/welcome/realHandler/?user=minmin => generated 59124 bytes in 84 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 34/73] 222.209.181.22 () {44 vars in 1206 bytes} [Mon Feb 15 00:15:02 2016] GET /select/template_1/ => generated 82698 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 40/74] 222.209.181.22 () {44 vars in 1227 bytes} [Mon Feb 15 00:15:03 2016] GET /select/template_1/edit/ => generated 23908 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /select/success
+[pid: 28977|app: 0|req: 41/75] 222.209.181.22 () {44 vars in 1237 bytes} [Mon Feb 15 00:15:27 2016] GET /select/success?user=minmin => generated 0 bytes in 7 msecs (HTTP/1.1 301) 2 headers in 114 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/view/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view question_naire.views.view didn't return an HttpResponse object. It returned None instead.
+[pid: 28974|app: 0|req: 35/76] 222.209.181.22 () {50 vars in 1368 bytes} [Mon Feb 15 00:15:27 2016] POST /select/template_1/view/?user=minmin => generated 17128 bytes in 134 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 42/77] 222.209.181.22 () {44 vars in 1239 bytes} [Mon Feb 15 00:15:27 2016] GET /select/success/?user=minmin => generated 14344 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28974|app: 0|req: 36/78] 222.209.181.22 () {44 vars in 1157 bytes} [Mon Feb 15 00:15:27 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 28977|app: 0|req: 43/79] 222.209.181.22 () {44 vars in 1257 bytes} [Mon Feb 15 00:15:28 2016] GET /select/template_1/view?user=minmin => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 37/80] 222.209.181.22 () {44 vars in 1259 bytes} [Mon Feb 15 00:15:28 2016] GET /select/template_1/view/?user=minmin => generated 64990 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome
+[pid: 28974|app: 0|req: 38/81] 222.209.181.22 () {44 vars in 1249 bytes} [Mon Feb 15 00:15:33 2016] GET /submit/welcome?user=minmin => generated 0 bytes in 8 msecs (HTTP/1.1 301) 2 headers in 114 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 182, in analysis
+    question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 391, in get
+    (self.model._meta.object_name, num)
+MultipleObjectsReturned: get() returned more than one Statics -- it returned 2!
+[pid: 28974|app: 0|req: 39/82] 222.209.181.22 () {44 vars in 1251 bytes} [Mon Feb 15 00:15:33 2016] GET /submit/welcome/?user=minmin => generated 12686 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 44/83] 222.209.181.22 () {50 vars in 1386 bytes} [Mon Feb 15 00:15:32 2016] POST /select/template_1/analysis/?user=minmin => generated 12908 bytes in 147 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28974|app: 0|req: 40/84] 222.209.181.22 () {44 vars in 1157 bytes} [Mon Feb 15 00:15:33 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 28977|app: 0|req: 45/85] 222.209.181.22 () {44 vars in 1264 bytes} [Mon Feb 15 00:15:35 2016] GET /submit/welcome/realHandler?user=minmin => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+Internal Server Error: /submit/welcome/realHandler/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 205, in real_handler
+    dim_arr[h] = int(dim_arr[h])
+ValueError: invalid literal for int() with base 10: ''
+[pid: 28974|app: 0|req: 41/86] 222.209.181.22 () {44 vars in 1266 bytes} [Mon Feb 15 00:15:35 2016] GET /submit/welcome/realHandler/?user=minmin => generated 59122 bytes in 80 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 46/87] 222.209.181.22 () {44 vars in 1154 bytes} [Mon Feb 15 00:15:48 2016] GET / => generated 58280 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 42/88] 222.209.181.22 () {44 vars in 1109 bytes} [Mon Feb 15 00:15:51 2016] GET /logout/ => generated 21 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 171 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 47/89] 222.209.181.22 () {50 vars in 1239 bytes} [Mon Feb 15 00:16:00 2016] POST /login/ => generated 10 bytes in 249 msecs (HTTP/1.1 200) 4 headers in 177 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 43/90] 222.209.181.22 () {42 vars in 1153 bytes} [Mon Feb 15 00:16:05 2016] GET /select/success/ => generated 14368 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 48/91] 222.209.181.22 () {44 vars in 1144 bytes} [Mon Feb 15 00:16:05 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 28974|app: 0|req: 44/92] 222.209.181.22 () {44 vars in 1261 bytes} [Mon Feb 15 00:16:07 2016] GET /submit/welcome/realHandler?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 130 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 49/93] 222.209.181.22 () {44 vars in 1263 bytes} [Mon Feb 15 00:16:07 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10991 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 45/94] 222.209.181.22 () {44 vars in 1263 bytes} [Mon Feb 15 00:16:07 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10991 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 50/95] 222.209.181.22 () {42 vars in 1154 bytes} [Mon Feb 15 00:16:10 2016] GET /select/success/ => generated 14368 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 46/96] 222.209.181.22 () {42 vars in 1124 bytes} [Mon Feb 15 00:16:18 2016] GET / => generated 58284 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 51/97] 222.209.181.22 () {44 vars in 1110 bytes} [Mon Feb 15 00:16:21 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 47/98] 222.209.181.22 () {44 vars in 1177 bytes} [Mon Feb 15 00:16:21 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 52/99] 222.209.181.22 () {44 vars in 1206 bytes} [Mon Feb 15 00:16:22 2016] GET /select/template_1/ => generated 82698 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 48/100] 222.209.181.22 () {44 vars in 1227 bytes} [Mon Feb 15 00:16:25 2016] GET /select/template_1/edit/ => generated 23916 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /select/success
+[pid: 28974|app: 0|req: 49/101] 222.209.181.22 () {44 vars in 1245 bytes} [Mon Feb 15 00:16:52 2016] GET /select/success?user=lizonghang => generated 0 bytes in 10 msecs (HTTP/1.1 301) 2 headers in 118 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/view/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view question_naire.views.view didn't return an HttpResponse object. It returned None instead.
+[pid: 28974|app: 0|req: 50/102] 222.209.181.22 () {44 vars in 1247 bytes} [Mon Feb 15 00:16:52 2016] GET /select/success/?user=lizonghang => generated 14368 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 53/103] 222.209.181.22 () {50 vars in 1376 bytes} [Mon Feb 15 00:16:51 2016] POST /select/template_1/view/?user=lizonghang => generated 17117 bytes in 169 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28974|app: 0|req: 51/104] 222.209.181.22 () {44 vars in 1161 bytes} [Mon Feb 15 00:16:52 2016] GET /user_form_folders => generated 3596 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 28977|app: 0|req: 54/105] 222.209.181.22 () {44 vars in 1269 bytes} [Mon Feb 15 00:16:54 2016] GET /select/template_1/view?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 52/106] 222.209.181.22 () {44 vars in 1271 bytes} [Mon Feb 15 00:16:54 2016] GET /select/template_1/view/?user=lizonghang => generated 64971 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome
+[pid: 28974|app: 0|req: 53/107] 222.209.181.22 () {44 vars in 1261 bytes} [Mon Feb 15 00:16:59 2016] GET /submit/welcome?user=lizonghang => generated 0 bytes in 9 msecs (HTTP/1.1 301) 2 headers in 118 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 54/108] 222.209.181.22 () {44 vars in 1263 bytes} [Mon Feb 15 00:16:59 2016] GET /submit/welcome/?user=lizonghang => generated 12698 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 55/109] 222.209.181.22 () {50 vars in 1398 bytes} [Mon Feb 15 00:16:59 2016] POST /select/template_1/analysis/?user=lizonghang => generated 13 bytes in 190 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28974|app: 0|req: 55/110] 222.209.181.22 () {44 vars in 1161 bytes} [Mon Feb 15 00:17:00 2016] GET /user_form_folders => generated 3596 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 28977|app: 0|req: 56/111] 222.209.181.22 () {44 vars in 1276 bytes} [Mon Feb 15 00:17:02 2016] GET /submit/welcome/realHandler?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 130 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 56/112] 222.209.181.22 () {44 vars in 1278 bytes} [Mon Feb 15 00:17:02 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10961 bytes in 23 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 57/113] 220.181.108.84 () {36 vars in 472 bytes} [Mon Feb 15 00:17:13 2016] GET / => generated 58276 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 57/114] 222.209.181.22 () {42 vars in 1123 bytes} [Mon Feb 15 00:17:13 2016] GET / => generated 58284 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /clear/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 48, in clear
+    return HttpResponse("������ "+user+" ������������������������")
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+[pid: 28977|app: 0|req: 58/115] 222.209.181.22 () {44 vars in 1107 bytes} [Mon Feb 15 00:17:15 2016] GET /clear/ => generated 12165 bytes in 100 msecs (HTTP/1.1 500) 3 headers in 107 bytes (1 switches on core 0)
+Internal Server Error: /clear/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 43, in clear
+    s = Statics.objects.filter(user=UserDefine.objects.get(username=user))
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+DoesNotExist: UserDefine matching query does not exist.
+[pid: 28974|app: 0|req: 58/116] 222.209.181.22 () {42 vars in 1135 bytes} [Mon Feb 15 00:17:20 2016] GET /clear/ => generated 65550 bytes in 86 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 28977|app: 0|req: 59/117] 123.125.71.40 () {36 vars in 471 bytes} [Mon Feb 15 00:20:04 2016] GET / => generated 58276 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28974|app: 0|req: 59/118] 222.209.181.22 () {46 vars in 1206 bytes} [Mon Feb 15 00:21:01 2016] GET /select/success/ => generated 14368 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 28977|app: 0|req: 60/119] 222.209.181.22 () {48 vars in 1197 bytes} [Mon Feb 15 00:21:02 2016] GET /user_form_folders => generated 3596 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)

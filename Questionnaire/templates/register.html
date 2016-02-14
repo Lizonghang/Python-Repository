@@ -341,16 +341,13 @@
             }
             return valid;
         }
-        function callback(response){
-            alert(response);
-        }
         function submit(){
             if(!checkForm()){
                 return;
             }
             var URL = "http://www.desckie.com/regist/";
             var data = {'username': username, 'password': password};
-            $.post(URL,data, callback());
+            $.post(URL,data,function(response){alert(response);});
             //window.location.href = "http://www.desckie.com";
         }
     </script>

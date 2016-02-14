@@ -38,16 +38,6 @@ def logout(request):
     return HttpResponse(u"您的账户已注销")
 
 
-def clear(request):
-    user = request.session['username']
-    s = Statics.objects.filter(user=UserDefine.objects.get(username=user))
-    for i in range(0, len(s)):
-        s[i].anscount_set.all().delete()
-    UserDefine.objects.get(username=user).statics_set.all().delete()
-    UserDefine.objects.get(username=user).delete()
-    return HttpResponse("用户 "+user+" 的问卷已全部清除")
-
-
 def clear_all_user(request):
     auth.logout(request)
     User.objects.all().delete()

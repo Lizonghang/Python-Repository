@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Success.html" afterPath="$PROJECT_DIR$/templates/Success.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/question_naire/views.py" afterPath="$PROJECT_DIR$/question_naire/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Questionnaire/settings.py" afterPath="$PROJECT_DIR$/Questionnaire/settings.py" />
     </list>
     <ignored path="Questionnaire.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,6 +35,16 @@
               <folding>
                 <element signature="e#15#62#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Questionnaire/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="111" column="38" selection-start-line="111" selection-start-column="38" selection-end-line="111" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,16 +141,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/question_naire/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Questionnaire/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -189,7 +188,6 @@
         <option value="$PROJECT_DIR$/static/admin/js/zhezhao.js" />
         <option value="$PROJECT_DIR$/static/admin/css/NewDefault.css" />
         <option value="$PROJECT_DIR$/static/admin/css/newdesign.css" />
-        <option value="$PROJECT_DIR$/Questionnaire/settings.py" />
         <option value="$PROJECT_DIR$/templates/agreement.html" />
         <option value="$PROJECT_DIR$/templates/temp_choose.html" />
         <option value="$PROJECT_DIR$/question_naire/testdata.py" />
@@ -204,6 +202,7 @@
         <option value="$PROJECT_DIR$/templates/questionnaire.html" />
         <option value="$PROJECT_DIR$/templates/Success.html" />
         <option value="$PROJECT_DIR$/question_naire/views.py" />
+        <option value="$PROJECT_DIR$/Questionnaire/settings.py" />
       </list>
     </option>
   </component>
@@ -940,13 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Questionnaire/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1062,6 +1054,14 @@
             <marker date="1455452049000" expanded="true" signature="49158:49187" placeholder="{...}" />
             <marker date="1455452049000" expanded="true" signature="52261:52290" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Questionnaire/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="38" selection-start-line="111" selection-start-column="38" selection-end-line="111" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

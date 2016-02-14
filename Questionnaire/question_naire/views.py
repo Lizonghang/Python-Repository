@@ -8,7 +8,11 @@ from django.contrib import auth
 
 
 def home_page(request):
-    return render_to_response("questionnaire.html")
+    if not request.user.is_authenticated():
+        return render_to_response("questionnaire.html")
+    else:
+        user = request.session['username']
+        return render_to_response("questionnaire.html", {'user': user})
 
 
 def register(request):
@@ -21,6 +25,7 @@ def register(request):
             User.objects.create_user(username=username, password=password)
             user = auth.authenticate(username=username, password=password)
             auth.login(request, user)
+            request.session['username'] = username
             return HttpResponse(u"注册成功")
     else:
         return render_to_response("register.html")

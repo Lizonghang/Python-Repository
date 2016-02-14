@@ -1,8 +1,10 @@
+# coding=utf-8
 from django.shortcuts import render_to_response
 import json
 from question_naire.models import *
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.contrib import auth
 
 
 def home_page(request):
@@ -13,7 +15,13 @@ def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        return HttpResponse('1username:' + username + ',password:' + password)
+        if User.objects.get(username=username):
+            return HttpResponse(u"该用户已注册")
+        else:
+            User.objects.create_user(username=username, password=password)
+            user = auth.authenticate(username=username, password=password)
+            auth.login(request, user)
+            return HttpResponse(u"注册成功")
     else:
         return render_to_response("register.html")
 

@@ -83,11 +83,10 @@ def edit_template_1(request):
 
 
 def view(request):
-    user = request.GET.get('user')
-    if request.method == 'POST':
-        pageForm = request.POST.get('pageForm').encode('utf-8')
-        QContent = request.POST.get('QContent').encode('utf-8')
-        return HttpResponse(user+pageForm)
+    # user = request.GET.get('user')
+    # if request.method == 'POST':
+    #     pageForm = request.POST.get('pageForm').encode('utf-8')
+    #     QContent = request.POST.get('QContent').encode('utf-8')
     #     UserDefine.objects.all().delete()
     #     Statics.objects.all().delete()
     #     AnsCount.objects.all().delete()
@@ -97,6 +96,10 @@ def view(request):
     #     s.save()
     # else:
     #     return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm, 'user': user})
+    user = request.GET.get('user')
+    pageForm = request.POST.get('pageForm').encode('utf-8')
+    QContent = request.POST.get('QContent').encode('utf-8')
+    return HttpResponse(user+'\n'+pageForm)
 
 
 def welcome(request):

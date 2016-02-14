@@ -779,8 +779,8 @@
             <a href="javascript:logout();" class="down_a" style="text-decoration: none;color: white;margin-left: 625px;margin-top: 0px;font-family: 'Lucida Grande'" target="_blank">注销</a>
         </div>
     </div>
-    <div class="btn_member" id="clear" style="visibility: hidden">
-        <a href="javascript:clear();" class="login_dj_cq theme-login" rel="nofollow" style="text-decoration: none;color: white;font-family: 'Lucida Grande'">清空问卷</a>
+    <div class="btn_member" id="myQ" style="visibility: hidden">
+        <a href="http://www.desckie.com/select/success/" class="login_dj_cq theme-login" rel="nofollow" style="text-decoration: none;color: white;font-family: 'Lucida Grande'">我的问卷</a>
     </div>
 </div>
 <div class="survey_ban"><img src="../static/admin/img/wj_ban.jpg" width="100%"/></div>
@@ -871,7 +871,7 @@
             document.getElementById("login_button").innerText = "欢迎您:";
             document.getElementById("regist_button").innerText = "{{ user }}";
             document.getElementById("logout").style.visibility = "visible";
-            document.getElementById("clear").style.visibility = "visible";
+            document.getElementById("myQ").style.visibility = "visible";
         }
 </script>
 
@@ -890,7 +890,7 @@
                 document.getElementById("login_button").innerText = "欢迎您:";
                 document.getElementById("regist_button").innerText = response;
                 document.getElementById("logout").style.visibility = "visible";
-                document.getElementById("clear").style.visibility = "visible";
+                document.getElementById("myQ").style.visibility = "visible";
             }
         })
     }
@@ -900,7 +900,7 @@
             document.getElementById("login_button").innerText = "登录";
             document.getElementById("regist_button").innerText = "注册";
             document.getElementById("logout").style.visibility = "hidden";
-            document.getElementById("clear").style.visibility = "hidden";
+            document.getElementById("myQ").style.visibility = "hidden";
             alert(response);
         })
     }
@@ -917,9 +917,6 @@
                 window.location.href = "http://www.desckie.com/select/";
             }
         })
-    }
-    function clear(){
-        $.get("http://www.desckie.com/clear/", function(response){alert(response);})
     }
 </script>
 </body>

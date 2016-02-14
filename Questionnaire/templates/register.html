@@ -347,8 +347,10 @@
             }
             var URL = "http://www.desckie.com/regist/";
             var data = {'username': username, 'password': password};
-            $.post(URL,data,function(response){alert(response);});
-            //window.location.href = "http://www.desckie.com";
+            $.post(URL,data,function(response){
+                if(response == "该用户已注册")    alert(response);
+                else    window.location.href = "http://www.desckie.com";
+            });
         }
     </script>
 </body>

@@ -218,7 +218,77 @@
         .phone_verify_sea_country_input{background:0 0;border:none;color:#696C6E;display:inline-block;height:18px;line-height:18px;padding:8px;width:284px}#nav_3{display:none}input::-ms-clear{display:none}input::-ms-reveal{display:none}
     </style>
     <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
-    <script>
+</head>
+<body>
+<div class="web_notice" id="web_notice">
+    <div class="web_notice_text" id="web_notice_text"></div>
+</div>
+<div class="cover" id="cover"></div>
+<div class="bg">
+    <div class="container">
+        <div class="header"></div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="right">
+                <div class="phone" id="phone_quick"></div>
+                <div class="enterA" id="enterA">
+                    <div class="haomaTitle">
+                        <div class="haoma-inner" id="haoma-inner">帐号注册</div>
+                    </div>
+                    <div style="margin-top: 20px">
+                        <div class="box box_3" style="z-index:0">
+                            <label class="item" id="name">昵称</label>
+                            <div class="ipt_box nick_ipt_box">
+                                <div id="nick_bg" class="bg_txt">
+                                    <input type="text" class="new_txt" id="username" style="z-index:0" maxlength="24" autocomplete="on">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box_4">
+                            <label class="item">密码</label>
+                            <div class="ipt_box">
+                                <div id="password_bg" class="bg_txt">
+                                    <input type="password" class="new_txt" id="password" maxlength="16">
+                                </div>
+                            </div>
+                            <div class="info pwd_info">
+                                <div class="pwd_tips" id="pwd_tips">
+                                    <div class="default" id="pwd_tip1" style="margin-top: -5px">长度为6-16个字符</div>
+                                    <div class="default" id="pwd_tip2">不能包含空格</div>
+                                    <div class="default" id="pwd_tip3">不能是9位以下纯数字</div>
+                                    <div class="default" id="pwd_tip4">两次输入的密码不同</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box_5">
+                            <label class="item" id="ensure">确认密码</label>
+                            <div class="ipt_box">
+                                <div id="password_again_bg" class="bg_txt">
+                                    <input type="password" class="new_txt" id="password_again" maxlength="16">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box_11">
+                            <div class="item"></div>
+                            <div class="ipt_box">
+                                <br><br>
+                                <div class="agree_box">
+                                    <input id="agree" type="checkbox" checked="checked">我已阅读并同意<a style="color: red" href="http://www.desckie.com/select/agreement/" target="_blank">相关服务条款和隐私政策</a></input>
+                                    <div class="submit">
+                                        <br>
+                                    <input type="button" value="提交注册" id="submit" onclick="javascript:submit();">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">Copyright <span>©</span> 2016 Hang All Rights Reserved</div>
+<script>
         var username;
         var password;
         function checkForm(){
@@ -281,75 +351,5 @@
             //window.location.href = "http://www.desckie.com";
         }
     </script>
-</head>
-<body>
-<div class="web_notice" id="web_notice">
-    <div class="web_notice_text" id="web_notice_text"></div>
-</div>
-<div class="cover" id="cover"></div>
-<div class="bg">
-    <div class="container">
-        <div class="header"></div>
-        <div class="content">
-            <div class="left"></div>
-            <div class="right">
-                <div class="phone" id="phone_quick"></div>
-                <div class="enterA" id="enterA">
-                    <div class="haomaTitle">
-                        <div class="haoma-inner" id="haoma-inner">帐号注册</div>
-                    </div>
-                    <div style="margin-top: 20px">
-                        <div class="box box_3" style="z-index:0">
-                            <label class="item" id="name">昵称</label>
-                            <div class="ipt_box nick_ipt_box">
-                                <div id="nick_bg" class="bg_txt">
-                                    <input type="text" class="new_txt" id="username" style="z-index:0" maxlength="24" autocomplete="on">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box box_4">
-                            <label class="item">密码</label>
-                            <div class="ipt_box">
-                                <div id="password_bg" class="bg_txt">
-                                    <input type="password" class="new_txt" id="password" maxlength="16">
-                                </div>
-                            </div>
-                            <div class="info pwd_info">
-                                <div class="pwd_tips" id="pwd_tips">
-                                    <div class="default" id="pwd_tip1" style="margin-top: -5px">长度为6-16个字符</div>
-                                    <div class="default" id="pwd_tip2">不能包含空格</div>
-                                    <div class="default" id="pwd_tip3">不能是9位以下纯数字</div>
-                                    <div class="default" id="pwd_tip4">两次输入的密码不同</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box box_5">
-                            <label class="item" id="ensure">确认密码</label>
-                            <div class="ipt_box">
-                                <div id="password_again_bg" class="bg_txt">
-                                    <input type="password" class="new_txt" id="password_again" maxlength="16">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box box_11">
-                            <div class="item"></div>
-                            <div class="ipt_box">
-                                <br><br>
-                                <div class="agree_box">
-                                    <input id="agree" type="checkbox" checked="checked">我已阅读并同意<a style="color: red" href="http://www.desckie.com/select/agreement/" target="_blank">相关服务条款和隐私政策</a></input>
-                                    <div class="submit">
-                                        <br>
-                                    <input type="button" value="提交注册" id="submit" onclick="javascript:submit()">
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="footer">Copyright <span>©</span> 2016 Hang All Rights Reserved</div>
 </body>
 </html>

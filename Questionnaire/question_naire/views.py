@@ -16,19 +16,20 @@ def home_page(request):
 
 
 def register(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        if User.objects.filter(username=username):
-            return HttpResponse(u"该用户已注册")
-        else:
-            User.objects.create_user(username=username, password=password)
-            user = auth.authenticate(username=username, password=password)
-            auth.login(request, user)
-            request.session['username'] = username
-            return HttpResponse(u"注册成功")
-    else:
-        return render_to_response("register.html")
+    auth.logout(request)
+    # if request.method == 'POST':
+    #     username = request.POST.get('username')
+    #     password = request.POST.get('password')
+    #     if User.objects.filter(username=username):
+    #         return HttpResponse(u"该用户已注册")
+    #     else:
+    #         User.objects.create_user(username=username, password=password)
+    #         user = auth.authenticate(username=username, password=password)
+    #         auth.login(request, user)
+    #         request.session['username'] = username
+    #         return HttpResponse(u"注册成功")
+    # else:
+    #     return render_to_response("register.html")
 
 
 def choose_template(request):

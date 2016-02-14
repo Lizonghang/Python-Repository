@@ -893,10 +893,10 @@
         var url="http://www.desckie.com/select/";
         $.get(url,function(response){
             if(response == "请先登录"){
+                alert(response);
                 $('.theme-popover-mask').show();
                 $('.theme-popover-mask').height($(document).height());
                 $('.theme-popover').slideDown(200);
-                alert(response);
             }
             else{
                 //window.location.href = "http://www.desckie.com/select/";

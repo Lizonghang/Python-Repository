@@ -843,7 +843,7 @@
                 <label class="item" for="nick" style="font-family: 'Lucida Grande';">账号</label>
                 <div class="ipt_box nick_ipt_box">
                     <div id="nick_bg" class="bg_txt">
-                        <input type="text" class="new_txt" id="username" maxlength="24" autocomplete="on" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px">
+                        <input type="text" class="new_txt" id="username" maxlength="24" autocomplete="off" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px">
                     </div>
                 </div>
             </div>
@@ -886,7 +886,7 @@
         $.get(url,function(response){
             document.getElementById("login_button").innerText = "登录";
             document.getElementById("regist_button").innerText = "注册";
-            document.getElementById("login").style.visibility = "hidden";
+            document.getElementById("logout").style.visibility = "hidden";
             alert(response);
         })
     }

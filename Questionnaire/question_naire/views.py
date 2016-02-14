@@ -15,7 +15,7 @@ def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        if User.objects.get(username=username):
+        if User.objects.filter(username=username):
             return HttpResponse(u"该用户已注册")
         else:
             User.objects.create_user(username=username, password=password)

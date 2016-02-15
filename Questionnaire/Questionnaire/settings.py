@@ -26,7 +26,7 @@ SECRET_KEY = '!5mxs(qhp5zu6x*j#_p*w!c_jrzbna!@qr2^tjkh77@1s$lb5n'
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.desckie.com']
 
 
 # Application definition

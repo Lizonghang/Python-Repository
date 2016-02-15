@@ -11428,3 +11428,58 @@ Not Found: /forms/X5y5Lv/publish
 Not Found: /forms/X5y5Lv/publish
 [pid: 29816|app: 0|req: 16/32] 222.209.181.22 () {44 vars in 1218 bytes} [Mon Feb 15 11:20:33 2016] GET /forms/X5y5Lv/publish => generated 3497 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
 [pid: 29819|app: 0|req: 17/33] 222.209.181.22 () {44 vars in 1193 bytes} [Mon Feb 15 11:20:35 2016] GET /select/success/ => generated 14368 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Mon Feb 15 11:28:42 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x20059c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x20059c0 pid: 29928 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 29928, cores: 1)
+spawned uWSGI worker 2 (pid: 29931, cores: 1)
+[pid: 29928|app: 0|req: 1/1] 222.209.181.22 () {42 vars in 1124 bytes} [Mon Feb 15 11:28:48 2016] GET / => generated 58164 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29931|app: 0|req: 1/2] 222.209.181.22 () {44 vars in 1193 bytes} [Mon Feb 15 11:28:50 2016] GET /select/success/ => generated 14643 bytes in 32 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 29928|app: 0|req: 2/3] 222.209.181.22 () {44 vars in 1145 bytes} [Mon Feb 15 11:28:51 2016] GET /user_form_folders => generated 3488 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 29931|app: 0|req: 2/4] 222.209.181.22 () {44 vars in 1223 bytes} [Mon Feb 15 11:28:53 2016] GET /select/template_1/edit/ => generated 23916 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29928|app: 0|req: 3/5] 222.209.181.22 () {44 vars in 1192 bytes} [Mon Feb 15 11:29:02 2016] GET /select/success/ => generated 14643 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 29931|app: 0|req: 3/6] 222.209.181.22 () {44 vars in 1253 bytes} [Mon Feb 15 11:29:05 2016] GET /select/template_1/view?user=lizonghang => generated 0 bytes in 11 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/view/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 109, in view
+    return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm, 'user': user})
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+DoesNotExist: UserDefine matching query does not exist.
+[pid: 29928|app: 0|req: 4/7] 222.209.181.22 () {44 vars in 1255 bytes} [Mon Feb 15 11:29:05 2016] GET /select/template_1/view/?user=lizonghang => generated 66460 bytes in 101 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 29931|app: 0|req: 4/8] 103.41.52.94 () {34 vars in 497 bytes} [Mon Feb 15 11:30:44 2016] GET / => generated 58156 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29928|app: 0|req: 5/9] 103.41.52.93 () {34 vars in 497 bytes} [Mon Feb 15 11:31:42 2016] GET / => generated 58156 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)

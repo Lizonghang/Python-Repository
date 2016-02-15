@@ -55,10 +55,10 @@
         <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.44690266">
-              <caret line="2518" column="12" selection-start-line="2518" selection-start-column="12" selection-end-line="2518" selection-end-column="12" />
+              <caret line="2518" column="10" selection-start-line="2518" selection-start-column="10" selection-end-line="2518" selection-end-column="10" />
               <folding>
-                <marker date="1455557139000" expanded="true" signature="49161:49190" placeholder="{...}" />
-                <marker date="1455557139000" expanded="true" signature="52264:52293" placeholder="{...}" />
+                <marker date="1455557814000" expanded="true" signature="49161:49190" placeholder="{...}" />
+                <marker date="1455557814000" expanded="true" signature="52264:52293" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -67,7 +67,7 @@
       <file leaf-file-name="welcome.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
               <folding />
             </state>
@@ -932,14 +932,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -984,13 +976,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44690266">
-          <caret line="2518" column="12" selection-start-line="2518" selection-start-column="12" selection-end-line="2518" selection-end-column="12" />
+          <caret line="2518" column="10" selection-start-line="2518" selection-start-column="10" selection-end-line="2518" selection-end-column="10" />
           <folding>
-            <marker date="1455557139000" expanded="true" signature="49161:49190" placeholder="{...}" />
-            <marker date="1455557139000" expanded="true" signature="52264:52293" placeholder="{...}" />
+            <marker date="1455557814000" expanded="true" signature="49161:49190" placeholder="{...}" />
+            <marker date="1455557814000" expanded="true" signature="52264:52293" placeholder="{...}" />
           </folding>
         </state>
       </provider>

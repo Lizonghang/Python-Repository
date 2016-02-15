@@ -125,12 +125,12 @@ def analysis(request):
         type_arr = type.split(",")
         for k in range(0, len(ans)):
             arr.append([])
-            if len(ans) == 1:
+            if type_arr[k] == 'fitb':
                 arr[k] = ans[k].replace("\"", "")
                 continue
             arr[k] = ans[k].split(",")
         for i in range(0, len(ans)):
-            if len(arr[i]) == 1:
+            if type_arr[i] == 'fitb':
                 continue
             for j in range(0, len(arr[i])):
                 if arr[i][j] == '1' or arr[i][j] == '0':

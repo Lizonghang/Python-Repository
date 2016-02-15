@@ -100,6 +100,7 @@ def view(request):
         s = Statics.objects.create(key='head', user=UserDefine.objects.get(username=user))
         s.QContent = QContent
         s.save()
+        return HttpResponse(user+'\n'+pageForm+'\n'+QContent)
     else:
         return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm, 'user': user})
 
@@ -130,50 +131,50 @@ def analysis(request):
             for j in range(0, len(arr[i])):
                 if arr[i][j] == '1' or arr[i][j] == '0':
                     arr[i][j] = int(arr[i][j])
-        # if UserDefine.objects.get(username=user).statics_set.exclude(key='head'):
-        #     for m in range(0, len(ans)):
-        #         if len(arr[m]) == 1:
-        #             foreign_key = 'arr[' + str(m) + '][0]'
-        #             s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
-        #             s.strValue = s.strValue + '\n' + arr[m][0]
-        #             s.save()
-        #             continue
-        #         for l in range(0, len(arr[m])):
-        #             foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-        #             s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
-        #             s.intValue = s.intValue + arr[m][l]
-        #             s.save()
-        #         if type_arr[m] == 'checkbox':
-        #             valid = False
-        #             for r in range(0, len(arr[m])):
-        #                 if arr[m][r] == 1:
-        #                     valid = True
-        #             if valid == True:
-        #                 a = UserDefine.objects.get(username=user).statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.get(key="multi_count")
-        #                 a.multi_count += 1
-        #                 a.save()
-        # else:
-        #     for m in range(0, len(ans)):
-        #         if len(arr[m]) == 1:
-        #             foreign_key = 'arr[' + str(m) + '][0]'
-        #             Statics.objects.create(key=foreign_key, strValue=arr[m][0],
-        #                                    user=UserDefine.objects.get(username=user))
-        #             continue
-        #         for l in range(0, len(arr[m])):
-        #             foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-        #             Statics.objects.create(key=foreign_key, intValue=arr[m][l],
-        #                                    user=UserDefine.objects.get(username=user))
-        #         if type_arr[m] == 'checkbox':
-        #             valid = False
-        #             for r in range(0, len(arr[m])):
-        #                 if arr[m][r] == 1:
-        #                     valid = True
-        #             if valid == True:
-        #                 AnsCount.objects.create(multi_count=1, key="multi_count",
-        #                                         question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
-        #             else:
-        #                 AnsCount.objects.create(multi_count=0, key="multi_count",
-        #                                         question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
+        if UserDefine.objects.get(username=user).statics_set.exclude(key='head'):
+            for m in range(0, len(ans)):
+                if len(arr[m]) == 1:
+                    foreign_key = 'arr[' + str(m) + '][0]'
+                    s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
+                    s.strValue = s.strValue + '\n' + arr[m][0]
+                    s.save()
+                    continue
+                for l in range(0, len(arr[m])):
+                    foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
+                    s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
+                    s.intValue = s.intValue + arr[m][l]
+                    s.save()
+                if type_arr[m] == 'checkbox':
+                    valid = False
+                    for r in range(0, len(arr[m])):
+                        if arr[m][r] == 1:
+                            valid = True
+                    if valid == True:
+                        a = UserDefine.objects.get(username=user).statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.get(key="multi_count")
+                        a.multi_count += 1
+                        a.save()
+        else:
+            for m in range(0, len(ans)):
+                if len(arr[m]) == 1:
+                    foreign_key = 'arr[' + str(m) + '][0]'
+                    Statics.objects.create(key=foreign_key, strValue=arr[m][0],
+                                           user=UserDefine.objects.get(username=user))
+                    continue
+                for l in range(0, len(arr[m])):
+                    foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
+                    Statics.objects.create(key=foreign_key, intValue=arr[m][l],
+                                           user=UserDefine.objects.get(username=user))
+                if type_arr[m] == 'checkbox':
+                    valid = False
+                    for r in range(0, len(arr[m])):
+                        if arr[m][r] == 1:
+                            valid = True
+                    if valid == True:
+                        AnsCount.objects.create(multi_count=1, key="multi_count",
+                                                question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
+                    else:
+                        AnsCount.objects.create(multi_count=0, key="multi_count",
+                                                question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
             s = UserDefine.objects.get(username=user).statics_set.get(key="head")
             s.QType = type
             s.save()

@@ -100,7 +100,7 @@ def view(request):
         s = Statics.objects.create(key='head', user=UserDefine.objects.get(username=user))
         s.QContent = QContent
         s.save()
-        return HttpResponse(user+'\n'+pageForm+'\n'+QContent)
+        return HttpResponse('Method:Post')
     else:
         return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm, 'user': user})
 
@@ -183,7 +183,7 @@ def analysis(request):
             s.dim = s.dim[0: len(s.dim)-1]
             dim = s.dim
             s.save()
-        return HttpResponse(user+'\n'+ans+'\n'+type+'\n'+dim)
+        return HttpResponse(dim)
 
 
 def real_handler(request):

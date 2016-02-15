@@ -55,6 +55,10 @@ def register(request):
             return HttpResponse(u"该用户已注册")
         else:
             User.objects.create_user(username=username, password=password)
+            user = auth.authenticate(username=username, password=password)
+            if user is not None:
+                auth.login(request, user)
+                request.session['username'] = username
             return HttpResponse(u"注册成功")
     else:
         return render_to_response("register.html")

@@ -7,6 +7,7 @@
   <link data-turbolinks-track="true" debug="false" href="https://cdn.jinshuju.net/assets/columbus/application-b088ea91390620e22dcde607f13bc41c.css" media="screen" rel="stylesheet"/>
   <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/pusher-854ace9c4d1b08136b5092a579a1a274.js"></script>
   <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/application-178a2318a181f06287fb0efaa636f7f8.js"></script>
+  <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
   <script>
     window.zhuge = window.zhuge || [];
   window.zhuge.methods = "_init debug identify track trackLink trackForm page".split(" ");
@@ -45,6 +46,15 @@
         '注册日期': 2016-01-29
       });
    </script>
+  <script>
+      function quit(){
+          var url = "http://www.desckie.com/logout/";
+          $.get(url, function(response){
+              window.location.href = "http://www.desckie.com";
+              alert(response);
+          });
+      }
+  </script>
  </head>
  <body>
   <div class="flash-notifications" data-message="{}"></div>
@@ -83,14 +93,14 @@
         </div>
        </li>
        <li class="separator"></li>
-       <li><a class="setting-profile-link profile-event track-event" href="http://www.desckie.com/profile/">个人中心</a></li>
+       <li><a class="setting-profile-link profile-event track-event" href="http://www.desckie.com" target="_self">主页</a></li>
        <li class="separator"></li>
-       <li><a class="template-event track-event" href="http://www.desckie.com/select/">模板中心</a></li>
+       <li><a class="template-event track-event" href="http://www.desckie.com/select/" target="_blank">模板中心</a></li>
        <li class="separator"></li>
-       <li><a href="http://help.jinshuju.net/support/" target="_blank">我的问卷</a></li>
+       <li><a href="javascript:void(0);">我的问卷</a></li>
        <li class="separator"></li>
        <li class="logout">
-        <a class="logout-link logout-event track-event" href="http://www.desckie.com/">退出</a>
+        <a class="logout-link logout-event track-event" href="javascript:quit();">注销</a>
        </li>
       </ul>
      </div>
@@ -112,13 +122,10 @@
        </a>
       </div>
       <div class="subnav" data-placement="bottom" id="form_nav">
-       <a class="track-event" href="/forms/X5y5Lv">
-        概述
+       <a class="track-event" href="http://www.desckie.com/select/template_1/edit/" target="_self">
+        重置
        </a>
-       <a class="track-event" href="/forms/X5y5Lv/edit">
-        编辑
-       </a>
-       <a class="active track-event" href="/forms/X5y5Lv/publish" id="publish_nav">
+       <a class="active track-event" href="javascript:void(0);" id="publish_nav">
         发布
        </a>
        <a class="track-event" href="/submit/welcome/realHandler?user={{ user }}" id="entries_nav">

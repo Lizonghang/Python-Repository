@@ -2,9 +2,10 @@
 from django.shortcuts import render_to_response
 import json
 from question_naire.models import *
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.template import RequestContext
 
 
 def home_page(request):
@@ -228,3 +229,11 @@ def real_handler(request):
     valid_json = json.dumps(valid_count)
     QContent = s.QContent
     return render_to_response("realTimeStatics.html", {'type': type, 'data': data_json, 'valid': valid_json, 'QContent': QContent})
+
+
+def bad_request(request):
+    return render_to_response("404.html", context_instance=RequestContext(request), status=400)
+
+
+def server_error(request):
+    return render_to_response("50x.html", context_instance=RequestContext(request), status=500)

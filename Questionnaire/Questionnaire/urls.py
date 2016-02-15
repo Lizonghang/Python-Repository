@@ -1,6 +1,8 @@
-from django.conf.urls import include, url
-from django.contrib import admin
+from django.conf.urls import url, handler404, handler500
 from question_naire.views import *
+
+handler404 = 'question_naire.views.bad_request'
+handler500 = 'question_naire.views.server_error'
 
 urlpatterns = [
     url(r'^regist/$', register),

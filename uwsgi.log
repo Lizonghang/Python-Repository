@@ -11082,3 +11082,160 @@ Traceback (most recent call last):
     (self.model._meta.object_name, num)
 MultipleObjectsReturned: get() returned more than one Statics -- it returned 2!
 [pid: 29672|app: 0|req: 19/39] 222.209.181.22 () {54 vars in 1437 bytes} [Mon Feb 15 10:08:53 2016] POST /select/template_1/analysis/?user=minmin => generated 12947 bytes in 124 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Mon Feb 15 10:11:57 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x20fe9c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x20fe9c0 pid: 29716 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 29716, cores: 1)
+spawned uWSGI worker 2 (pid: 29719, cores: 1)
+[pid: 29716|app: 0|req: 1/1] 222.209.181.22 () {42 vars in 1154 bytes} [Mon Feb 15 10:12:02 2016] GET /clear_all_user/ => generated 30 bytes in 123 msecs (HTTP/1.1 200) 3 headers in 171 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 1/2] 222.209.181.22 () {46 vars in 1163 bytes} [Mon Feb 15 10:12:03 2016] GET /clear_all_user/ => generated 30 bytes in 43 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 2/3] 222.209.181.22 () {42 vars in 1080 bytes} [Mon Feb 15 10:12:10 2016] GET / => generated 58174 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 2/4] 222.209.181.22 () {44 vars in 1133 bytes} [Mon Feb 15 10:12:12 2016] GET /regist/ => generated 34741 bytes in 10 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 3/5] 222.209.181.22 () {50 vars in 1249 bytes} [Mon Feb 15 10:12:21 2016] POST /regist/ => generated 12 bytes in 163 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 3/6] 222.209.181.22 () {44 vars in 1126 bytes} [Mon Feb 15 10:12:21 2016] GET / => generated 58174 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 4/7] 222.209.181.22 () {44 vars in 1133 bytes} [Mon Feb 15 10:12:28 2016] GET /regist/ => generated 34741 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 5/8] 222.209.181.22 () {50 vars in 1249 bytes} [Mon Feb 15 10:12:36 2016] POST /regist/ => generated 12 bytes in 166 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 4/9] 222.209.181.22 () {44 vars in 1126 bytes} [Mon Feb 15 10:12:36 2016] GET / => generated 58174 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 6/10] 222.209.181.22 () {50 vars in 1240 bytes} [Mon Feb 15 10:12:45 2016] POST /login/ => generated 10 bytes in 271 msecs (HTTP/1.1 200) 4 headers in 177 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 5/11] 222.209.181.22 () {44 vars in 1110 bytes} [Mon Feb 15 10:12:47 2016] GET /select/ => generated 1626 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 7/12] 222.209.181.22 () {44 vars in 1177 bytes} [Mon Feb 15 10:12:47 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 6/13] 222.209.181.22 () {44 vars in 1206 bytes} [Mon Feb 15 10:12:48 2016] GET /select/template_1/ => generated 82698 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 8/14] 222.209.181.22 () {44 vars in 1227 bytes} [Mon Feb 15 10:12:50 2016] GET /select/template_1/edit/ => generated 23918 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 7/15] 222.209.181.22 () {50 vars in 1376 bytes} [Mon Feb 15 10:13:04 2016] POST /select/template_1/view/?user=lizonghang => generated 11 bytes in 59 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 9/16] 222.209.181.22 () {42 vars in 1154 bytes} [Mon Feb 15 10:13:14 2016] GET /select/success/ => generated 14368 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 8/17] 222.209.181.22 () {46 vars in 1207 bytes} [Mon Feb 15 10:13:14 2016] GET /select/success/ => generated 14368 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 29716|app: 0|req: 10/18] 222.209.181.22 () {48 vars in 1198 bytes} [Mon Feb 15 10:13:16 2016] GET /user_form_folders => generated 3488 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 29719|app: 0|req: 9/19] 222.209.181.22 () {44 vars in 1251 bytes} [Mon Feb 15 10:13:17 2016] GET /select/template_1/view?user=lizonghang => generated 0 bytes in 7 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 11/20] 222.209.181.22 () {44 vars in 1253 bytes} [Mon Feb 15 10:13:17 2016] GET /select/template_1/view/?user=lizonghang => generated 63815 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 10/21] 222.209.181.22 () {54 vars in 1447 bytes} [Mon Feb 15 10:13:23 2016] POST /select/template_1/analysis/?user=lizonghang => generated 3 bytes in 167 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 29716|app: 0|req: 12/22] 222.209.181.22 () {48 vars in 1312 bytes} [Mon Feb 15 10:13:30 2016] GET /submit/welcome/realHandler?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 130 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 11/23] 222.209.181.22 () {48 vars in 1314 bytes} [Mon Feb 15 10:13:30 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10864 bytes in 17 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 29716|app: 0|req: 13/24] 222.209.181.22 () {48 vars in 1312 bytes} [Mon Feb 15 10:13:30 2016] GET /submit/welcome/realHandler?user=lizonghang => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 130 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 12/25] 222.209.181.22 () {48 vars in 1314 bytes} [Mon Feb 15 10:13:30 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10864 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 14/26] 222.209.181.22 () {44 vars in 1153 bytes} [Mon Feb 15 10:13:41 2016] GET / => generated 58182 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 13/27] 222.209.181.22 () {44 vars in 1108 bytes} [Mon Feb 15 10:13:43 2016] GET /logout/ => generated 21 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 171 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 15/28] 222.209.181.22 () {50 vars in 1238 bytes} [Mon Feb 15 10:13:51 2016] POST /login/ => generated 6 bytes in 230 msecs (HTTP/1.1 200) 4 headers in 177 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 14/29] 222.209.181.22 () {44 vars in 1108 bytes} [Mon Feb 15 10:13:52 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 16/30] 222.209.181.22 () {44 vars in 1175 bytes} [Mon Feb 15 10:13:52 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 15/31] 222.209.181.22 () {44 vars in 1204 bytes} [Mon Feb 15 10:13:53 2016] GET /select/template_1/ => generated 82698 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 17/32] 222.209.181.22 () {44 vars in 1225 bytes} [Mon Feb 15 10:13:55 2016] GET /select/template_1/edit/ => generated 23910 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 16/33] 222.209.181.22 () {54 vars in 1419 bytes} [Mon Feb 15 10:14:11 2016] POST /select/template_1/view/?user=minmin => generated 11 bytes in 59 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 18/34] 222.209.181.22 () {42 vars in 1152 bytes} [Mon Feb 15 10:14:19 2016] GET /select/success/ => generated 14344 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 17/35] 222.209.181.22 () {46 vars in 1205 bytes} [Mon Feb 15 10:14:19 2016] GET /select/success/ => generated 14344 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 29716|app: 0|req: 19/36] 222.209.181.22 () {48 vars in 1196 bytes} [Mon Feb 15 10:14:20 2016] GET /user_form_folders => generated 3488 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 29719|app: 0|req: 18/37] 222.209.181.22 () {44 vars in 1245 bytes} [Mon Feb 15 10:14:23 2016] GET /select/template_1/view?user=minmin => generated 0 bytes in 10 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 20/38] 222.209.181.22 () {44 vars in 1247 bytes} [Mon Feb 15 10:14:23 2016] GET /select/template_1/view/?user=minmin => generated 63811 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 19/39] 222.209.181.22 () {54 vars in 1437 bytes} [Mon Feb 15 10:14:29 2016] POST /select/template_1/analysis/?user=minmin => generated 3 bytes in 165 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 29716|app: 0|req: 21/40] 222.209.181.22 () {48 vars in 1306 bytes} [Mon Feb 15 10:14:38 2016] GET /submit/welcome/realHandler?user=minmin => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 20/41] 222.209.181.22 () {48 vars in 1308 bytes} [Mon Feb 15 10:14:38 2016] GET /submit/welcome/realHandler/?user=minmin => generated 10867 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 29716|app: 0|req: 22/42] 222.209.181.22 () {48 vars in 1306 bytes} [Mon Feb 15 10:14:38 2016] GET /submit/welcome/realHandler?user=minmin => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 21/43] 222.209.181.22 () {48 vars in 1308 bytes} [Mon Feb 15 10:14:39 2016] GET /submit/welcome/realHandler/?user=minmin => generated 10867 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 23/44] 222.209.181.22 () {42 vars in 1124 bytes} [Mon Feb 15 10:15:27 2016] GET / => generated 58178 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 22/45] 222.209.181.22 () {44 vars in 1110 bytes} [Mon Feb 15 10:15:34 2016] GET /logout/ => generated 21 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 171 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 24/46] 222.209.181.22 () {44 vars in 1133 bytes} [Mon Feb 15 10:15:36 2016] GET /regist/ => generated 34741 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 25/47] 222.209.181.22 () {50 vars in 1249 bytes} [Mon Feb 15 10:15:45 2016] POST /regist/ => generated 12 bytes in 173 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 23/48] 222.209.181.22 () {44 vars in 1126 bytes} [Mon Feb 15 10:15:45 2016] GET / => generated 58174 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 26/49] 222.209.181.22 () {50 vars in 1240 bytes} [Mon Feb 15 10:15:53 2016] POST /login/ => generated 4 bytes in 234 msecs (HTTP/1.1 200) 4 headers in 177 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 24/50] 222.209.181.22 () {44 vars in 1110 bytes} [Mon Feb 15 10:15:54 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 27/51] 222.209.181.22 () {44 vars in 1177 bytes} [Mon Feb 15 10:15:54 2016] GET /select/ => generated 1626 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 25/52] 222.209.181.22 () {44 vars in 1206 bytes} [Mon Feb 15 10:15:55 2016] GET /select/template_1/ => generated 82698 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 28/53] 222.209.181.22 () {44 vars in 1227 bytes} [Mon Feb 15 10:15:57 2016] GET /select/template_1/edit/ => generated 23906 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 26/54] 222.209.181.22 () {54 vars in 1417 bytes} [Mon Feb 15 10:16:13 2016] POST /select/template_1/view/?user=haha => generated 11 bytes in 70 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 29/55] 222.209.181.22 () {42 vars in 1154 bytes} [Mon Feb 15 10:16:21 2016] GET /select/success/ => generated 14332 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 27/56] 222.209.181.22 () {46 vars in 1207 bytes} [Mon Feb 15 10:16:22 2016] GET /select/success/ => generated 14332 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /user_form_folders
+[pid: 29716|app: 0|req: 30/57] 222.209.181.22 () {48 vars in 1198 bytes} [Mon Feb 15 10:16:23 2016] GET /user_form_folders => generated 3488 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /select/template_1/view
+[pid: 29719|app: 0|req: 28/58] 222.209.181.22 () {44 vars in 1241 bytes} [Mon Feb 15 10:16:24 2016] GET /select/template_1/view?user=haha => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 120 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 31/59] 222.209.181.22 () {44 vars in 1243 bytes} [Mon Feb 15 10:16:24 2016] GET /select/template_1/view/?user=haha => generated 63802 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 29/60] 222.209.181.22 () {54 vars in 1431 bytes} [Mon Feb 15 10:16:30 2016] POST /select/template_1/analysis/?user=haha => generated 3 bytes in 187 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 29716|app: 0|req: 32/61] 222.209.181.22 () {48 vars in 1302 bytes} [Mon Feb 15 10:16:36 2016] GET /submit/welcome/realHandler?user=haha => generated 0 bytes in 9 msecs (HTTP/1.1 301) 2 headers in 124 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 30/62] 222.209.181.22 () {48 vars in 1304 bytes} [Mon Feb 15 10:16:36 2016] GET /submit/welcome/realHandler/?user=haha => generated 10863 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Not Found: /submit/welcome/realHandler
+[pid: 29716|app: 0|req: 33/63] 222.209.181.22 () {48 vars in 1302 bytes} [Mon Feb 15 10:16:36 2016] GET /submit/welcome/realHandler?user=haha => generated 0 bytes in 6 msecs (HTTP/1.1 301) 2 headers in 124 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 31/64] 222.209.181.22 () {48 vars in 1304 bytes} [Mon Feb 15 10:16:36 2016] GET /submit/welcome/realHandler/?user=haha => generated 10863 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 34/65] 222.209.181.22 () {40 vars in 958 bytes} [Mon Feb 15 10:16:48 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10864 bytes in 20 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 32/66] 220.181.108.146 () {38 vars in 524 bytes} [Mon Feb 15 10:17:12 2016] GET / => generated 58174 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 35/67] 222.209.181.22 () {40 vars in 950 bytes} [Mon Feb 15 10:17:25 2016] GET /select/template_1/view/?user=lizonghang => generated 63815 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 33/68] 222.209.181.22 () {40 vars in 950 bytes} [Mon Feb 15 10:17:26 2016] GET /select/template_1/view/?user=lizonghang => generated 63815 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 186, in analysis
+    return HttpResponse(dim)
+UnboundLocalError: local variable 'dim' referenced before assignment
+[pid: 29716|app: 0|req: 36/69] 222.209.181.22 () {50 vars in 1197 bytes} [Mon Feb 15 10:17:30 2016] POST /select/template_1/analysis/?user=lizonghang => generated 12118 bytes in 183 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 34/70] 222.209.181.22 () {40 vars in 873 bytes} [Mon Feb 15 10:17:39 2016] GET / => generated 58174 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/view/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 105, in view
+    return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm, 'user': user})
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+DoesNotExist: UserDefine matching query does not exist.
+[pid: 29716|app: 0|req: 37/71] 222.209.181.22 () {40 vars in 919 bytes} [Mon Feb 15 10:17:40 2016] GET /select/template_1/view/ => generated 65052 bytes in 106 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+Internal Server Error: /submit/welcome/realHandler/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 191, in real_handler
+    s = UserDefine.objects.get(username=user).statics_set.get(key='head')
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+DoesNotExist: UserDefine matching query does not exist.
+[pid: 29719|app: 0|req: 35/72] 222.209.181.22 () {40 vars in 927 bytes} [Mon Feb 15 10:17:41 2016] GET /submit/welcome/realHandler/ => generated 64891 bytes in 106 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 38/73] 222.209.181.22 () {40 vars in 958 bytes} [Mon Feb 15 10:17:44 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10864 bytes in 17 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 36/74] 222.209.181.22 () {40 vars in 958 bytes} [Mon Feb 15 10:17:45 2016] GET /submit/welcome/realHandler/?user=lizonghang => generated 10864 bytes in 16 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 39/75] 220.181.108.88 () {36 vars in 472 bytes} [Mon Feb 15 10:18:12 2016] GET / => generated 58174 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 37/76] 222.209.181.22 () {44 vars in 1110 bytes} [Mon Feb 15 10:18:32 2016] GET /select/ => generated 1626 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 40/77] 222.209.181.22 () {44 vars in 1177 bytes} [Mon Feb 15 10:18:32 2016] GET /select/ => generated 1626 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29719|app: 0|req: 38/78] 222.209.181.22 () {44 vars in 1219 bytes} [Mon Feb 15 10:19:16 2016] GET /regist/ => generated 34741 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 29716|app: 0|req: 41/79] 222.209.181.22 () {42 vars in 724 bytes} [Mon Feb 15 10:19:20 2016] GET /select/ => generated 12 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)

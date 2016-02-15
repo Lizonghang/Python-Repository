@@ -232,8 +232,8 @@ def real_handler(request):
 
 
 def bad_request(request):
-    return render_to_response("404.html", context_instance=RequestContext(request), status=400)
+    return render_to_response("404.html", status=404)
 
 
 def server_error(request):
-    return render_to_response("50x.html", context_instance=RequestContext(request), status=500)
+    return render_to_response("50x.html", status=500)

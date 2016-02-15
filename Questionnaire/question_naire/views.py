@@ -171,10 +171,10 @@ def analysis(request):
                             valid = True
                     if valid == True:
                         AnsCount.objects.create(multi_count=1, key="multi_count",
-                                                question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
+                                                question=UserDefine.objects.get(username=user).statics_set.get(key='arr[' + str(m) + '][0]'))
                     else:
                         AnsCount.objects.create(multi_count=0, key="multi_count",
-                                                question=Statics.objects.get(key='arr[' + str(m) + '][0]'))
+                                                question=UserDefine.objects.get(username=user).statics_set.get(key='arr[' + str(m) + '][0]'))
             s = UserDefine.objects.get(username=user).statics_set.get(key="head")
             s.QType = type
             s.save()

@@ -137,7 +137,7 @@ def analysis(request):
                     arr[i][j] = int(arr[i][j])
         if UserDefine.objects.get(username=user).statics_set.exclude(key='head'):
             for m in range(0, len(ans)):
-                if len(arr[m]) == 1:
+                if type_arr[m] == 'fitb':
                     foreign_key = 'arr[' + str(m) + '][0]'
                     s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
                     s.strValue = s.strValue + '\n' + arr[m][0]
@@ -159,7 +159,7 @@ def analysis(request):
                         a.save()
         else:
             for m in range(0, len(ans)):
-                if len(arr[m]) == 1:
+                if type_arr[m] == 'fitb':
                     foreign_key = 'arr[' + str(m) + '][0]'
                     Statics.objects.create(key=foreign_key, strValue=arr[m][0],
                                            user=UserDefine.objects.get(username=user))

@@ -126,7 +126,7 @@ def analysis(request):
         for k in range(0, len(ans)):
             arr.append([])
             if type_arr[k] == 'fitb':
-                arr[k] = ans[k].replace("\"", "")
+                arr[k].append(ans[k].replace("\"", ""))
                 continue
             arr[k] = ans[k].split(",")
         for i in range(0, len(ans)):

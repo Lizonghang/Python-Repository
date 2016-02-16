@@ -175,8 +175,10 @@
         function check_edit_end(){
             if(document.getElementById("selector_container")==null)
                 return true;
-            else
+            else {
+                alert("您尚未完成编辑");
                 return false;
+            }
         }
         function submit(){
             if(!check_edit_end()) return;

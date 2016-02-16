@@ -8,18 +8,6 @@
     <link id="linkBaseUrl" rel="stylesheet" type="text/css" href="http://www.desckie.com/static/admin/css/q.css" />
     <link href="http://www.desckie.com/static/admin/css/newdesign.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
-#m-rightbar {
-	z-index:99;
-	width:45px;
-	height:156px;
-	right: -47px;
-    top: 300px;
-    position: absolute;
-}
-.m-menu {
-	width:45px;
-	height:156px;
-}
 .m-menu li a {
 	width:45px;
 	height:39px;
@@ -27,24 +15,9 @@
 	text-indent:-9999px;
 	outline:0;
 }
-.m-top, .m-help, .m-comment, .m-bottom {
-	background:url(http://www.sojump.com/images/mysojump/rightbar.gif) no-repeat;
-	width:45px;
-	height:39px
-}
 .m-top a:hover, .m-help a:hover, .m-comment a:hover, .m-bottom a:hover {
 	background:url(http://www.sojump.com/images/mysojump/rightbar-hover.gif) no-repeat;
 }
-.m-help,.m-help a:hover {
-	background-position:0 -39px;
-}
-
-.m-comment,.m-comment a:hover{
-	background-position:0 -78px;
-}
-.m-bottom,.m-bottom a:hover{
-	background-position:0 -117px;
-	}
 </style>
     <style type="text/css">
                     .orange {
@@ -199,7 +172,14 @@
                 QNum++;
             }
         }
+        function check_edit_end(){
+            if(document.getElementById("selector_container")==null)
+                return true;
+            else
+                return false;
+        }
         function submit(){
+            if(!check_edit_end()) return;
             get_content();
             var pageForm = escape(document.getElementById('sur').innerHTML);
             var data = {'pageForm': pageForm, 'QContent': QContent};
@@ -272,7 +252,7 @@
     </div>
     <div id="submit_div" style="width: 820px;height: 60px;background-color: transparent">
         <div style="background-color: transparent;margin-left: 205px">
-            <a href="javascript:submit()" class="sumitbutton" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px;width: 270px">创建问卷</a>
+            <a href="javascript:submit();" class="sumitbutton" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px;width: 270px">创建问卷</a>
         </div>
     </div>
 </body>

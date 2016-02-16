@@ -114,14 +114,15 @@
               var j=0;
               selects = "";
               for(k=0;k<ans_len-j;k++){
+                  while(ans[k+j] == ""){
+                      j++;
+                  }
+                  if(ans[k+j] == undefined) break;
                   if(k%2==1){
                       selects += '<tr style="background:white">';
                   }
                   else{
                       selects += '<tr style="background:#eff6fb">';
-                  }
-                  while(ans[k+j] == ""){
-                      j++;
                   }
                   selects += '<td align="center">'+ (k+1) +'</td> <td>'+ ans[k+j] +'</td> </tr>';
               }

@@ -112,6 +112,7 @@
               data[i][0] = data[i][0].replace(/&quot;/g,"");
               var ans = data[i][0].split("\n");
               var ans_len = ans.length;
+              var j=0;
               for(k=0;k<ans_len;k++){
                   if(k%2==1){
                       selects += '<tr style="background:white">';
@@ -119,7 +120,10 @@
                   else{
                       selects += '<tr style="background:#eff6fb">';
                   }
-                  selects += '<td align="center">'+ (k+1) +'</td> <td>'+ ans[k] +'</td> </tr>';
+                  if(ans[k] == ""){
+                      j++;
+                  }
+                  selects += '<td align="center">'+ (k+1) +'</td> <td>'+ ans[k+j] +'</td> </tr>';
               }
               selects += '</tbody></table> <div style="padding-top: 5px;"></div> </div> </div> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"> <hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/> </span>';
               new_li.innerHTML = selects;

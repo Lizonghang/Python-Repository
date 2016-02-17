@@ -228,7 +228,7 @@ def real_handler(request):
             valid_count.append(lencheck)
     valid_json = json.dumps(valid_count)
     QContent = s.QContent
-    return render_to_response("realTimeStatics.html", {'type': type, 'data': data_json, 'valid': valid_json, 'QContent': QContent})
+    return render_to_response("realTimeStatics.html", {'type': type, 'data': data_json, 'valid': valid_json, 'QContent': QContent, 'user': user})
 
 
 def bad_request(request):

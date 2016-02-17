@@ -15237,3 +15237,53 @@ spawned uWSGI worker 2 (pid: 3990, cores: 1)
 [pid: 3987|app: 0|req: 6/11] 123.125.106.97 () {34 vars in 468 bytes} [Wed Feb 17 21:51:09 2016] GET /select/template_1/view?user=hangzi => generated 0 bytes in 2 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
 [pid: 3987|app: 0|req: 7/12] 180.149.135.16 () {32 vars in 468 bytes} [Wed Feb 17 21:51:09 2016] GET /select/template_1/view?user=hangzi => generated 0 bytes in 2 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
 [pid: 3990|app: 0|req: 6/13] 180.149.135.16 () {32 vars in 470 bytes} [Wed Feb 17 21:51:09 2016] GET /select/template_1/view/?user=hangzi => generated 64566 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Wed Feb 17 21:57:15 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x238f9c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x238f9c0 pid: 4034 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 4034, cores: 1)
+spawned uWSGI worker 2 (pid: 4037, cores: 1)
+[pid: 4034|app: 0|req: 1/1] 222.209.181.22 () {44 vars in 1164 bytes} [Wed Feb 17 21:57:23 2016] GET /select/success/ => generated 13764 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4037|app: 0|req: 1/2] 112.90.78.22 () {38 vars in 692 bytes} [Wed Feb 17 21:59:19 2016] GET /select/template_1/view?user=hangzi => generated 0 bytes in 27 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 2/3] 112.90.78.22 () {38 vars in 694 bytes} [Wed Feb 17 21:59:19 2016] GET /select/template_1/view/?user=hangzi => generated 64566 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 4037|app: 0|req: 2/4] 180.153.4.19 () {38 vars in 571 bytes} [Wed Feb 17 21:59:19 2016] GET /select/template_1/view?user=hangzi => generated 0 bytes in 2 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
+[pid: 4037|app: 0|req: 3/5] 180.153.4.19 () {40 vars in 646 bytes} [Wed Feb 17 21:59:19 2016] GET /select/template_1/view/?user=hangzi => generated 64566 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 3/6] 222.209.181.22 () {44 vars in 1352 bytes} [Wed Feb 17 21:59:28 2016] GET /select/template_1/view?user=hangzi => generated 0 bytes in 2 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 4/7] 222.209.181.22 () {44 vars in 1354 bytes} [Wed Feb 17 21:59:28 2016] GET /select/template_1/view/?user=hangzi => generated 64566 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 5/8] 222.209.181.22 () {44 vars in 1228 bytes} [Wed Feb 17 21:59:34 2016] GET /submit/welcome?user=hangzi => generated 0 bytes in 2 msecs (HTTP/1.1 301) 2 headers in 114 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 6/9] 222.209.181.22 () {44 vars in 1230 bytes} [Wed Feb 17 21:59:34 2016] GET /submit/welcome/?user=hangzi => generated 12686 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 4037|app: 0|req: 4/10] 222.209.181.22 () {50 vars in 1365 bytes} [Wed Feb 17 21:59:34 2016] POST /select/template_1/analysis/?user=hangzi => generated 2017 bytes in 134 msecs (HTTP/1.1 500) 2 headers in 107 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 7/11] 222.209.181.22 () {44 vars in 1136 bytes} [Wed Feb 17 21:59:34 2016] GET /user_form_folders => generated 1987 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 8/12] 222.209.181.22 () {44 vars in 1244 bytes} [Wed Feb 17 21:59:36 2016] GET /submit/welcome/realHandler?user=hangzi => generated 0 bytes in 2 msecs (HTTP/1.1 301) 2 headers in 126 bytes (1 switches on core 0)
+[pid: 4037|app: 0|req: 5/13] 222.209.181.22 () {44 vars in 1246 bytes} [Wed Feb 17 21:59:36 2016] GET /submit/welcome/realHandler/?user=hangzi => generated 11386 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 9/14] 222.209.181.22 () {42 vars in 1103 bytes} [Wed Feb 17 21:59:59 2016] GET / => generated 50930 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4037|app: 0|req: 6/15] 222.209.181.22 () {44 vars in 1172 bytes} [Wed Feb 17 22:00:09 2016] GET /select/success/ => generated 13764 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 10/16] 113.108.80.206 () {36 vars in 541 bytes} [Wed Feb 17 22:00:26 2016] GET /select/template_1/view?user=hangzi => generated 0 bytes in 2 msecs (HTTP/1.0 301) 2 headers in 122 bytes (1 switches on core 0)
+[pid: 4034|app: 0|req: 11/17] 113.108.80.206 () {38 vars in 616 bytes} [Wed Feb 17 22:00:26 2016] GET /select/template_1/view/?user=hangzi => generated 64566 bytes in 6 msecs (HTTP/1.0 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 4037|app: 0|req: 7/18] 222.209.181.22 () {40 vars in 1008 bytes} [Wed Feb 17 22:00:27 2016] GET /select/template_1/view?user=hangzi => generated 0 bytes in 2 msecs (HTTP/1.1 301) 2 headers in 122 bytes (1 switches on core 0)
+[pid: 4037|app: 0|req: 8/19] 222.209.181.22 () {40 vars in 1010 bytes} [Wed Feb 17 22:00:27 2016] GET /select/template_1/view/?user=hangzi => generated 64566 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)

@@ -239,17 +239,6 @@
     </div>
    </div>
   </div>
-  <script>
-    $(function(){
-    var formCoverJson = $.parseJSON('{"type":"Form","fid":"56aaf4e35d7d2806090000fd","token":"X5y5Lv","name":"未命名表单","color_i":3,"color":"#FF6885","icon":"form-icon-thumbs-up","count":0,"tags":[],"shared":false,"managable":true,"weixin":false,"folder_id":null,"pinned":false}');
-
-    $.get('/user_form_folders', function(response) {
-      GD.formSettingFolderListView = new GD.FormSettingFolderListView(response);
-      var formCover = new GD.BaseFileCover(formCoverJson);
-      GD.bindFormSettingTooltipster($('.form-name .settings'), '#form_overview_setting_template', formCover);
-    });
-    })
-  </script>
   <script charset="utf-8" type="text/javascript">
    shareIt.setEntry({
         title: "我刚刚在问卷网上创建了问卷,邀请大家轻击链接来填写,谢谢!",

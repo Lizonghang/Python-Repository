@@ -111,6 +111,7 @@
             selector.remove();
             subject_num++;
         }
+        var fisrt = true;
         function id_reset(){
             var labels = document.getElementsByTagName('label');
             var Qs = 0;
@@ -123,7 +124,11 @@
             }
             Qs_temp = Qs;
             currentQ.innerText = Qs + ".";
-            document.getElementsByClassName('Q1')[1].className="Q"+subject_num;
+            if(fisrt){
+                document.getElementsByClassName('Q1')[0].className="Q"+subject_num;
+                fisrt = false;
+            }
+            else    document.getElementsByClassName('Q1')[1].className="Q"+subject_num;
             var ul = document.getElementsByClassName('Q'+Qs)[0].getElementsByClassName('div_table_radio_question')[0].getElementsByTagName('ul')[0];
             var li_of_ul = ul.getElementsByTagName('li');
             var m=0;

@@ -7,46 +7,7 @@
   <link data-turbolinks-track="true" debug="false" href="https://cdn.jinshuju.net/assets/columbus/application-b088ea91390620e22dcde607f13bc41c.css" media="screen" rel="stylesheet"/>
   <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/pusher-854ace9c4d1b08136b5092a579a1a274.js"></script>
   <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/application-178a2318a181f06287fb0efaa636f7f8.js"></script>
-  <script>
-    window.zhuge = window.zhuge || [];
-  window.zhuge.methods = "_init debug identify track trackLink trackForm page".split(" ");
-  window.zhuge.factory = function(b) {
-    return function() {
-      var a = Array.prototype.slice.call(arguments);
-      a.unshift(b);
-      window.zhuge.push(a);
-      return window.zhuge
-    }
-  };
-  for (var i = 0; i < window.zhuge.methods.length; i++) {
-    var key = window.zhuge.methods[i];
-    window.zhuge[key] = window.zhuge.factory(key)
-  }
-  window.zhuge.load = function(b, x) {
-    if (!document.getElementById("zhuge-js")) {
-      var a = document.createElement("script");
-      var verDate = new Date();
-      var verStr = verDate.getFullYear().toString()
-          + verDate.getMonth().toString() + verDate.getDate().toString();
-
-      a.type = "text/javascript";
-      a.id = "zhuge-js";
-      a.async = !0;
-      a.src = (location.protocol == 'http:' ? "http://sdk.zhugeio.com/zhuge-lastest.min.js?v=" : 'https://zgsdk.zhugeio.com/zhuge-lastest.min.js?v=') + verStr;
-      var c = document.getElementsByTagName("script")[0];
-      c.parentNode.insertBefore(a, c);
-      window.zhuge._init(b, x)
-    }
-  };
-  window.zhuge.load('b205a9d9803249e29672f802d87a2fa9', {debug: "false" == 'true'});
-    zhuge.identify('56aaf4d0a3f5204c490008aa',
-      { name: '870644199@qq.com',
-        'paid': false,
-        '注册日期': 2016-01-29
-      });
-   </script>
-  <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-  <script src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+  <script type="text/javascript" src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
  </head>
  <body>
   <div class="flash-notifications" data-message="{}"></div>
@@ -111,16 +72,16 @@
           <span class="title">分享到微信</span>
          </div>
          <div class="section-body">
-          <div class="section-description"><p>微信扫描二维码分享给朋友或微信朋友圈</p></div>
+          <div class="section-description"><p>使用微信扫一扫分享给朋友或微信朋友圈</p></div>
           <div class="content-sub-section">
            <div class="weixin-share-content">
             <div class="weixin-timeline">
-             <img alt="Weixin timeline" style="margin-left: 100px" class="timeline-bg" src="https://cdn.jinshuju.net/assets/columbus/weixin_thumbnail/weixin_timeline-6f763cc8c21a32e3512938fa357d18a0.png">
-             <img alt="Wx img" style="margin-left: 100px" class="selected-thumbnail" src="https://cdn.jinshuju.net/assets/columbus/weixin_thumbnail/wx-img-10-9ce481de4c4f1a01b6a07c80eaca7237.png">
+             <img alt="Weixin timeline" style="margin-left: 150px" class="timeline-bg" src="https://cdn.jinshuju.net/assets/columbus/weixin_thumbnail/weixin_timeline-6f763cc8c21a32e3512938fa357d18a0.png"/>
+             <img alt="Wx img" style="margin-left: 150px" class="selected-thumbnail" src="https://cdn.jinshuju.net/assets/columbus/weixin_thumbnail/wx-img-10-9ce481de4c4f1a01b6a07c80eaca7237.png"/>
              <span class="form-name" style="margin-left: 150px">未命名表单</span>
             </div>
+            <div id="qrcode" style="background-color: white;width: 174px;height: 174px;margin-left: 520px"></div>
            </div>
-           <div id="qrcode" style="width: 174px;height: 174px;background-color: white;margin-left: 500px;margin-top: -174px"></div>
           </div>
          </div>
         </div>
@@ -155,7 +116,7 @@
       });
   </script>
  <script>
-     jQuery("#qrcode").qrcode({width: 174,height: 174,text: "http://www.desckie.com/select/template_1/view?user={{ user }}"});
+      jQuery('#qrcode').qrcode({width: 174,height: 174,text: "http://www.desckie.com/select/template_1/view?user={{ user }}"});
  </script>
  </body>
 </html>

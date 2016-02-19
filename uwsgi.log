@@ -293,3 +293,49 @@ Traceback (most recent call last):
     self.model._meta.object_name
 DoesNotExist: UserDefine matching query does not exist.
 [pid: 5977|app: 0|req: 32/62] 66.249.64.204 () {38 vars in 675 bytes} [Fri Feb 19 14:20:05 2016] GET /select/template_1/view/?user=None&title=None => generated 65002 bytes in 90 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Fri Feb 19 14:22:41 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1e1e9d0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1e1e9d0 pid: 6024 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 6024, cores: 1)
+spawned uWSGI worker 2 (pid: 6027, cores: 1)
+[pid: 6024|app: 0|req: 1/1] 222.209.180.37 () {40 vars in 962 bytes} [Fri Feb 19 14:22:46 2016] GET /select/template_1/edit/ => generated 24744 bytes in 42 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/view/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 120, in view
+    s = Statics.objects.create(key='head', question=Question.objects.get(title=title))
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 391, in get
+    (self.model._meta.object_name, num)
+MultipleObjectsReturned: get() returned more than one Question -- it returned 2!
+[pid: 6027|app: 0|req: 1/2] 222.209.180.37 () {50 vars in 1246 bytes} [Fri Feb 19 14:22:59 2016] POST /select/template_1/view/?user=lizonghang&title=hangQ2 => generated 15002 bytes in 109 msecs (HTTP/1.1 500) 2 headers in 93 bytes (1 switches on core 0)

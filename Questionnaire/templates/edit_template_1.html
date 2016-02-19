@@ -178,11 +178,16 @@
             }
         }
         function check_edit_end(){
-            if(document.getElementById("selector_container")==null)
-                return true;
-            else {
+            if(document.getElementById("selector_container")!=null){
                 alert("您尚未完成编辑");
                 return false;
+            }
+            else if(document.getElementsByClassName("Q1")[0]){
+                alert("您没有创建任一题目");
+                return false;
+            }
+            else{
+                return true;
             }
         }
         function submit(){
@@ -201,7 +206,7 @@
                                 $.post(URL, data);
                             }
                             else{
-                                alert("Something wrong happed while delete questionnaire");
+                                alert("Something wrong happened while delete questionnaire");
                             }
                         })
                     }
@@ -210,7 +215,7 @@
                     }
                 }
             });
-            //window.location.href="http://www.desckie.com/select/success/?user={{ user }}&title="+title;
+            window.location.href="http://www.desckie.com/select/success/?user={{ user }}&title="+title;
         }
     </script>
 </head>

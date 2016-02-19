@@ -177,12 +177,12 @@
                 QNum++;
             }
         }
-        function check_edit_end(){
+        function check_valid(){
             if(document.getElementById("selector_container")!=null){
                 alert("您尚未完成编辑");
                 return false;
             }
-            else if(document.getElementsByClassName("Q1")[0]){
+            else if(!document.getElementsByClassName("Q1")[0]){
                 alert("您没有创建任一题目");
                 return false;
             }
@@ -191,7 +191,7 @@
             }
         }
         function submit(){
-            if(!check_edit_end()) return;
+            if(!check_valid()) return;
             get_content();
             var pageForm = escape(document.getElementById('sur').innerHTML);
             var data = {'pageForm': pageForm, 'QContent': QContent};

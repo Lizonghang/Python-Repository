@@ -46,12 +46,17 @@
    <div style="clear: both;"></div>
   </div>
   <div style="clear: both;"></div>
+  <script>
+         var isEnd = "{{ isEnd }}";
+         if(isEnd == "True"){
+            document.getElementById("end").style.visibility = 'hidden';
+         }
+     </script>
  <script>
       var QType = "{{ type }}".split(",");
       var valid = "{{ valid }}".replace("[","").replace("]","").split(",");
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
-      var isEnd = "{{ isEnd }}";
       data = data.substring(2,data.length-2).split("], [");
       var title = QContent[0];
       document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
@@ -131,9 +136,6 @@
           }
           ul.appendChild(new_li);
           Qs++;
-      }
-      if(isEnd == "True"){
-        document.getElementById("end").style.visibility = 'hidden';
       }
      function endPublish(){
           var url = "http://www.desckie.com/submit/welcome/realHandler/endPublish/";

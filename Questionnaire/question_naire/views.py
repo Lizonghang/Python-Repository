@@ -211,7 +211,7 @@ def analysis(request):
 def real_handler(request):
     user = request.GET.get('user')
     title = request.GET.get('title')
-    if not UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.exclude(key='head'):
+    if UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.exclude(key='head'):
         s = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key='head')
         d = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set
         type = s.QType

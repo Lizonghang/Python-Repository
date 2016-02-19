@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/edit_template_1.html" afterPath="$PROJECT_DIR$/templates/edit_template_1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Questionnaire/settings.py" afterPath="$PROJECT_DIR$/Questionnaire/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_def_temp1.html" afterPath="$PROJECT_DIR$/templates/user_def_temp1.html" />
     </list>
     <ignored path="Questionnaire.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,6 +28,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="user_def_temp1.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4380531">
+              <caret line="2518" column="12" selection-start-line="2518" selection-start-column="12" selection-end-line="2518" selection-end-column="12" />
+              <folding>
+                <marker date="1455862088000" expanded="true" signature="49161:49190" placeholder="{...}" />
+                <marker date="1455862088000" expanded="true" signature="52264:52293" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Questionnaire/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -42,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/question_naire/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+              <caret line="124" column="59" selection-start-line="124" selection-start-column="59" selection-end-line="124" selection-end-column="59" />
               <folding>
                 <element signature="e#15#62#0" expanded="true" />
               </folding>
@@ -90,21 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit_template_1.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit_template_1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/edit_template_1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7345133">
-              <caret line="212" column="89" selection-start-line="212" selection-start-column="89" selection-end-line="212" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.375">
-              <caret line="351" column="70" selection-start-line="351" selection-start-column="70" selection-end-line="351" selection-end-column="70" />
+            <state vertical-scroll-proportion="-20.75">
+              <caret line="212" column="14" selection-start-line="212" selection-start-column="14" selection-end-line="212" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -179,11 +182,11 @@
         <option value="$PROJECT_DIR$/question_naire/models.py" />
         <option value="$PROJECT_DIR$/Questionnaire/urls.py" />
         <option value="$PROJECT_DIR$/templates/Success.html" />
-        <option value="$PROJECT_DIR$/templates/user_def_temp1.html" />
         <option value="$PROJECT_DIR$/question_naire/views.py" />
         <option value="$PROJECT_DIR$/templates/welcome.html" />
         <option value="$PROJECT_DIR$/Questionnaire/settings.py" />
         <option value="$PROJECT_DIR$/templates/edit_template_1.html" />
+        <option value="$PROJECT_DIR$/templates/user_def_temp1.html" />
       </list>
     </option>
   </component>
@@ -871,17 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.875">
-          <caret line="2521" column="8" selection-start-line="2521" selection-start-column="8" selection-end-line="2521" selection-end-column="8" />
-          <folding>
-            <marker date="1455860839000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1455860839000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.75">
@@ -898,14 +890,6 @@
             <marker date="1455723943000" expanded="true" signature="-1:-1" placeholder="{...}" />
             <marker date="1455723943000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/temp_choose.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.875">
-          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,14 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Success.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-53.625">
-          <caret line="165" column="138" selection-start-line="165" selection-start-column="138" selection-end-line="165" selection-end-column="138" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Questionnaire/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -968,7 +944,7 @@
     <entry file="file://$PROJECT_DIR$/question_naire/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+          <caret line="124" column="59" selection-start-line="124" selection-start-column="59" selection-end-line="124" selection-end-column="59" />
           <folding>
             <element signature="e#15#62#0" expanded="true" />
           </folding>
@@ -977,9 +953,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/edit_template_1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7345133">
-          <caret line="212" column="89" selection-start-line="212" selection-start-column="89" selection-end-line="212" selection-end-column="89" />
+        <state vertical-scroll-proportion="-20.75">
+          <caret line="212" column="14" selection-start-line="212" selection-start-column="14" selection-end-line="212" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/temp_choose.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.875">
+          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Success.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-53.625">
+          <caret line="165" column="138" selection-start-line="165" selection-start-column="138" selection-end-line="165" selection-end-column="138" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4380531">
+          <caret line="2518" column="12" selection-start-line="2518" selection-start-column="12" selection-end-line="2518" selection-end-column="12" />
+          <folding>
+            <marker date="1455862088000" expanded="true" signature="49161:49190" placeholder="{...}" />
+            <marker date="1455862088000" expanded="true" signature="52264:52293" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -139,6 +139,7 @@
           var url = "http://www.desckie.com/submit/welcome/realHandler/endPublish/";
           var data = {'title': title};
           $.post(url,data, function(response){
+              document.getElementById("end").style.visibility = 'hidden';
               alert(response);
           })
       }

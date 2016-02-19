@@ -111,7 +111,7 @@ def view(request):
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm').encode('utf-8')
         QContent = request.POST.get('QContent').encode('utf-8')
-        if not len(UserDefine.objects.get(username=user).question_set.filter(title='title')) == 0:
+        if UserDefine.objects.get(username=user).question_set.filter(title=title):
             return HttpResponse("您已创建该问卷")
         Question.objects.create(title=title, pageForm=pageForm, isEnd=False, user=UserDefine.objects.get(username=user))
         u = UserDefine.objects.get(username=user)

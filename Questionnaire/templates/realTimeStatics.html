@@ -4,11 +4,6 @@
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <link href="http://www.sojump.com/css/NewDefault.css?v=1" rel="stylesheet" type="text/css"/>
   <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
-  <script>
-      function endPublish(){
-          //终止问卷发布
-      }
-  </script>
  </head>
  <body style="BACKGROUND:#B0E0FA url(http://sojump.b0.upaiyun.com/images/wjx/JoinQuestionnaire/bg/abc2.jpg)  no-repeat fixed center 0">
   <div class="" id="container">
@@ -29,7 +24,7 @@
        <div style="clear: both;"></div>
        <ul id="ulList" style="list-style-type: none;"></ul>
        <div style="clear: both; height: 25px;"></div>
-       <div style="visibility: hidden;">
+       <div style="visibility: visible;" id="end">
         <div style="float:left;"></div>
         <div style="float: right; padding-top:7px; vertical-align: bottom;"></div>
         <div style="margin-left: 42%;display: inline;">
@@ -55,7 +50,9 @@
       var valid = "{{ valid }}".replace("[","").replace("]","").split(",");
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
+      var isEnd = {{ isEnd }};
       data = data.substring(2,data.length-2).split("], [");
+      var title = QContent[0];
       document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
       QContent.splice(0,1);
       var j;
@@ -133,6 +130,16 @@
           }
           ul.appendChild(new_li);
           Qs++;
+      }
+      if(isEnd){
+        document.getElementById("isEnd").style.visibility = 'hidden';
+      }
+     function endPublish(){
+          var url = "http://www.desckie.com/submit/welcome/realHandler/endPublish/";
+          var data = {'title': title};
+          $.post(url,data, function(response){
+              alert(response);
+          })
       }
   </script>
  </body>

@@ -2519,6 +2519,12 @@ fieldset{border:0;}
           window.location.href="http://www.desckie.com/submit/welcome?user=" + "{{ user }}&title={{ title }}";
       }
   </script>
+     <script>
+         var isEnd = {{ isEnd }};
+         if(isEnd){
+             document.getElementById("submit_div").style.visibility = 'hidden';
+         }
+     </script>
  </head>
  <body>
   <div id="divNotRun" style="height:100px; text-align:center; display:none;">

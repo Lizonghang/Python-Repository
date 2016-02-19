@@ -64,11 +64,11 @@
      <div class="col-md-12">
       <div class="pull-right" id="copy_published_form_link">
        <span>发布表单</span>
-       <input class="copy-target gd-input-thin" id="published_form_link" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}" disabled="disabled"/>
+       <input class="copy-target gd-input-thin" id="published_form_link" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}&title={{ title }}" disabled="disabled"/>
        <a class="with-tooltip copy-form-link copy-form-link-event track-event" data-clipboard-target="#published_form_link" data-message="网址复制成功" data-need-reset-after-hide="true" data-placement="bottom" data-role="copy" data-title="复制网址" href="javascript:void(0);" title="复制网址">
         <i class="gd-icon-copy"></i>
        </a>
-       <a class="with-tooltip open-form-link open-form-link-event track-event" data-no-turbolink="true" data-placement="bottom" href="http://www.desckie.com/select/template_1/view?user={{ user }}" target="_blank" title="直接打开">
+       <a class="with-tooltip open-form-link open-form-link-event track-event" data-no-turbolink="true" data-placement="bottom" href="http://www.desckie.com/select/template_1/view?user={{ user }}&title={{ title }}" target="_blank" title="直接打开">
         <i class="gd-icon-publish"></i>
        </a>
       </div>
@@ -79,7 +79,7 @@
        <a class="active track-event" href="javascript:void(0);" id="publish_nav">
         发布
        </a>
-       <a class="track-event" href="/submit/welcome/realHandler?user={{ user }}" id="entries_nav">
+       <a class="track-event" href="/submit/welcome/realHandler?user={{ user }}&title={{ title }}" id="entries_nav">
         数据
        </a>
       </div>
@@ -99,9 +99,9 @@
          </div>
          <div class="section-body">
           <div class="content-sub-section sibling-form-el-container">
-           <input class="copy-target gd-input-xxlarge" id="published_form_link_2" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}"/>
+           <input class="copy-target gd-input-xxlarge" id="published_form_link_2" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}&title={{ title }}"/>
            <a class="copy-link gd-btn gd-btn-info" data-clipboard-target="#published_form_link_2" data-message="网址复制成功" data-role="copy" href="javascript:void(0)" id="copy_link_1">复制网址</a>
-           <a class="gd-btn gd-btn-info open-url" data-no-turbolink="true" href="http://www.desckie.com/select/template_1/view?user={{ user }}" target="_blank">直接打开</a>
+           <a class="gd-btn gd-btn-info open-url" data-no-turbolink="true" href="http://www.desckie.com/select/template_1/view?user={{ user }}&title={{ title }}" target="_blank">直接打开</a>
           </div>
          </div>
         </div>
@@ -163,7 +163,7 @@
       }
   </script>
   <script>
-      jQuery('#qrcode').qrcode({width: 174,height: 174,text: "http://www.desckie.com/select/template_1/view?user={{ user }}"});
+      jQuery('#qrcode').qrcode({width: 174,height: 174,text: "http://www.desckie.com/select/template_1/view?user={{ user }}&title={{ title }}"});
   </script>
  </body>
 </html>

@@ -43,6 +43,7 @@ def clear_all_user(request):
     auth.logout(request)
     User.objects.all().delete()
     UserDefine.objects.all().delete()
+    Question.objects.all().delete()
     Statics.objects.all().delete()
     AnsCount.objects.all().delete()
     return HttpResponse("注册用户信息全部删除")
@@ -56,6 +57,7 @@ def register(request):
             return HttpResponse(u"该用户已注册")
         else:
             User.objects.create_user(username=username, password=password)
+            UserDefine.objects.create(username=username, QCount=0)
             user = auth.authenticate(username=username, password=password)
             if user is not None:
                 auth.login(request, user)
@@ -82,7 +84,8 @@ def template_1(request):
 
 def submit_success(request):
     user = request.session['username']
-    return render_to_response("Success.html", {'user': user})
+    title = request.GET.get('title')
+    return render_to_response("Success.html", {'user': user, 'title': title})
 
 
 def edit_template_1(request):
@@ -90,34 +93,48 @@ def edit_template_1(request):
     return render_to_response("edit_template_1.html", {'user': user})
 
 
+def delete(request):
+    user = request.GET.get('user')
+    title = request.GET.get('title')
+    q = UserDefine.objects.get(username=user).question_set.get(title=title)
+    s = q.statics_set.all()
+    for i in range(0, len(s)):
+        s[i].anscount_set.all().delete()
+    s.delete()
+    q.delete()
+    return HttpResponse('delete success')
+
+
 def view(request):
     user = request.GET.get('user')
+    title = request.GET.get('title')
     if request.method == 'POST':
         pageForm = request.POST.get('pageForm').encode('utf-8')
         QContent = request.POST.get('QContent').encode('utf-8')
-        if UserDefine.objects.filter(username=user):
-            s = Statics.objects.filter(user=UserDefine.objects.get(username=user))
-            for i in range(0, len(s)):
-                s[i].anscount_set.all().delete()
-            UserDefine.objects.get(username=user).statics_set.all().delete()
-            UserDefine.objects.get(username=user).delete()
-        UserDefine.objects.create(username=user, pageForm=pageForm)
-        s = Statics.objects.create(key='head', user=UserDefine.objects.get(username=user))
+        if UserDefine.objects.get(username=user).question_set.filter(title='title'):
+            return HttpResponse("您已创建该问卷")
+        Question.objects.create(title=title, pageForm=pageForm, isEnd=False, user=UserDefine.objects.get(username=user))
+        u = UserDefine.objects.get(username=user)
+        u.QCount += 1
+        u.save()
+        s = Statics.objects.create(key='head', question=Question.objects.get(title=title))
         s.QContent = QContent
         s.save()
         return HttpResponse('Method:Post')
     else:
-        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).pageForm, 'user': user})
+        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).question_set.get(title=title).pageForm, 'user': user, 'title': title})
 
 
 def welcome(request):
     user = request.GET.get('user')
-    return render_to_response('welcome.html', {'user': user})
+    title = request.GET.get('title')
+    return render_to_response('welcome.html', {'user': user, 'title': title})
 
 
 def analysis(request):
     if request.method == 'POST':
         user = request.GET.get('user')
+        title = request.GET.get('title')
         ans = request.POST.get('data')
         ans = ans[2:len(ans) - 2].split("],[")
         arr = []
@@ -136,17 +153,17 @@ def analysis(request):
             for j in range(0, len(arr[i])):
                 if arr[i][j] == '1' or arr[i][j] == '0':
                     arr[i][j] = int(arr[i][j])
-        if UserDefine.objects.get(username=user).statics_set.exclude(key='head'):
+        if UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.exclude(key='head'):
             for m in range(0, len(ans)):
                 if type_arr[m] == 'fitb':
                     foreign_key = 'arr[' + str(m) + '][0]'
-                    s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
+                    s = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key=foreign_key)
                     s.strValue = s.strValue + '\n' + arr[m][0]
                     s.save()
                     continue
                 for l in range(0, len(arr[m])):
                     foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
-                    s = UserDefine.objects.get(username=user).statics_set.get(key=foreign_key)
+                    s = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key=foreign_key)
                     s.intValue = s.intValue + arr[m][l]
                     s.save()
                 if type_arr[m] == 'checkbox':
@@ -155,7 +172,7 @@ def analysis(request):
                         if arr[m][r] == 1:
                             valid = True
                     if valid == True:
-                        a = UserDefine.objects.get(username=user).statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.get(key="multi_count")
+                        a = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key='arr[' + str(m) + '][0]').anscount_set.get(key="multi_count")
                         a.multi_count += 1
                         a.save()
         else:
@@ -163,12 +180,12 @@ def analysis(request):
                 if type_arr[m] == 'fitb':
                     foreign_key = 'arr[' + str(m) + '][0]'
                     Statics.objects.create(key=foreign_key, strValue=arr[m][0],
-                                           user=UserDefine.objects.get(username=user))
+                                           question=UserDefine.objects.get(username=user).question_set.get(title=title))
                     continue
                 for l in range(0, len(arr[m])):
                     foreign_key = 'arr[' + str(m) + '][' + str(l) + ']'
                     Statics.objects.create(key=foreign_key, intValue=arr[m][l],
-                                           user=UserDefine.objects.get(username=user))
+                                           question=UserDefine.objects.get(username=user).question_set.get(title=title))
                 if type_arr[m] == 'checkbox':
                     valid = False
                     for r in range(0, len(arr[m])):
@@ -176,11 +193,11 @@ def analysis(request):
                             valid = True
                     if valid == True:
                         AnsCount.objects.create(multi_count=1, key="multi_count",
-                                                question=UserDefine.objects.get(username=user).statics_set.get(key='arr[' + str(m) + '][0]'))
+                                                statics=UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key='arr[' + str(m) + '][0]'))
                     else:
                         AnsCount.objects.create(multi_count=0, key="multi_count",
-                                                question=UserDefine.objects.get(username=user).statics_set.get(key='arr[' + str(m) + '][0]'))
-            s = UserDefine.objects.get(username=user).statics_set.get(key="head")
+                                                statics=UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key='arr[' + str(m) + '][0]'))
+            s = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key="head")
             s.QType = type
             s.save()
             for k in range(0, len(ans)):
@@ -193,8 +210,9 @@ def analysis(request):
 
 def real_handler(request):
     user = request.GET.get('user')
-    s = UserDefine.objects.get(username=user).statics_set.get(key='head')
-    d = UserDefine.objects.get(username=user).statics_set
+    title = request.GET.get('title')
+    s = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key='head')
+    d = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set
     type = s.QType
     type_arr = type.split(",")
     dim = s.dim

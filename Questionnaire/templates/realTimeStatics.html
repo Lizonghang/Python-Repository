@@ -50,7 +50,7 @@
       var valid = "{{ valid }}".replace("[","").replace("]","").split(",");
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
-      var isEnd = {{ isEnd }};
+      var isEnd = "{{ isEnd }}";
       data = data.substring(2,data.length-2).split("], [");
       var title = QContent[0];
       document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
@@ -131,7 +131,7 @@
           ul.appendChild(new_li);
           Qs++;
       }
-      if(isEnd){
+      if(isEnd == "False"){
         document.getElementById("isEnd").style.visibility = 'hidden';
       }
      function endPublish(){

@@ -155,13 +155,13 @@
 
         }
         var QContent = "";
+        var title;
         function get_content(){
             var tempQ;
             var QNum=1;
             var sTitle;
             var lis;
             var i;
-            var title;
             title = document.getElementById("pater_title").innerText;
             QContent += title;
             while(tempQ = document.getElementsByClassName("Q"+QNum)[0]){
@@ -190,9 +190,27 @@
             get_content();
             var pageForm = escape(document.getElementById('sur').innerHTML);
             var data = {'pageForm': pageForm, 'QContent': QContent};
-            var URL = "http://www.desckie.com/select/template_1/view/?user={{ user }}";
-            $.post(URL,data);
-            window.location.href="http://www.desckie.com/select/success?user={{ user }}";
+            var URL = "http://www.desckie.com/select/template_1/view/?user={{ user }}&title=" + title;
+            $.post(URL,data,function(response){
+                if(response=="您已创建该问卷"){
+                    var overwrite = confirm(response+",要覆盖原问卷吗?");
+                    if(overwrite){
+                        var url = "http://www.desckie.com/delete/?user={{ user }}&title="+title;
+                        $.get(url,function(response){
+                            if(response == "delete success"){
+                                $.post(URL, data);
+                            }
+                            else{
+                                alert("Something wrong happed while delete questionnaire");
+                            }
+                        })
+                    }
+                    else{
+                        return;
+                    }
+                }
+            });
+            window.location.href="http://www.desckie.com/select/success?user={{ user }}?title="+title;
         }
     </script>
 </head>

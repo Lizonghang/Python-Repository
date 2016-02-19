@@ -4,29 +4,37 @@ from django.db import models
 
 class UserDefine(models.Model):
     username = models.CharField(max_length=20)
-    pageForm = models.TextField(blank=True, null=True)
-    user_account = models.CharField(max_length=20)
-    passkey = models.CharField(max_length=20)
+    QCount = models.IntegerField(default=0)
 
     def __unicode__(self):
         return self.username
+
+
+class Question(models.Model):
+    title = models.CharField(max_length=30)
+    pageForm = models.TextField(blank=True, null=True)
+    isEnd = models.BooleanField(default=False)
+    user = models.ForeignKey(UserDefine)
+
+    def __unicode__(self):
+        return self.title + ',isEnd=' + str(self.isEnd) + ',user=' + self.user.username
 
 
 class Statics(models.Model):
     key = models.CharField(max_length=10)
     intValue = models.IntegerField(default=0)
     strValue = models.TextField(default="")
-    user = models.ForeignKey(UserDefine)
     QContent = models.TextField(default="")
     QType = models.TextField(default="")
     dim = models.CharField(default="", max_length=10)
+    question = models.ForeignKey(Question)
 
     def __unicode__(self):
-        return self.key
+        return self.key + ':' + str(self.intValue) + ',' + self.strValue
 
 
 class AnsCount(models.Model):
-    question = models.ForeignKey(Statics)
+    statics = models.ForeignKey(Statics)
     key = models.CharField(max_length=20, default="")
     multi_count = models.IntegerField(default=0)
 

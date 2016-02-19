@@ -5,7 +5,6 @@ from question_naire.models import *
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import auth
-from django.template import RequestContext
 
 
 def home_page(request):
@@ -122,7 +121,8 @@ def view(request):
         s.save()
         return HttpResponse('Method:Post')
     else:
-        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).question_set.get(title=title).pageForm, 'user': user, 'title': title})
+        isEnd = UserDefine.objects.get(username=user).question_set.get(title=title).isEnd
+        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).question_set.get(title=title).pageForm, 'user': user, 'title': title, 'isEnd': isEnd})
 
 
 def welcome(request):
@@ -135,6 +135,8 @@ def analysis(request):
     if request.method == 'POST':
         user = request.GET.get('user')
         title = request.GET.get('title')
+        if UserDefine.objects.get(username=user).question_set.get(title=title).isEnd:
+            return HttpResponse('该问卷已停止发布')
         ans = request.POST.get('data')
         ans = ans[2:len(ans) - 2].split("],[")
         arr = []
@@ -247,9 +249,21 @@ def real_handler(request):
                 valid_count.append(lencheck)
         valid_json = json.dumps(valid_count)
         QContent = s.QContent
-        return render_to_response("realTimeStatics.html", {'type': type, 'data': data_json, 'valid': valid_json, 'QContent': QContent, 'user': user})
+        isEnd = UserDefine.objects.get(username=user).question_set.get(title=title).isEnd
+        return render_to_response("realTimeStatics.html", {'type': type, 'data': data_json, 'valid': valid_json, 'QContent': QContent, 'user': user, 'isEnd': isEnd})
     else:
         return render_to_response("no_ans_collect.html")
+
+
+def end_publish(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated():
+            user = request.session['username']
+            title = request.POST.get('title')
+            UserDefine.objects.get(username=user).question_set.get(title=title).isEnd = True
+            return HttpResponse('该问卷已停止发布')
+        else:
+            return HttpResponse('您没有终止发布的权限')
 
 
 def bad_request(request):

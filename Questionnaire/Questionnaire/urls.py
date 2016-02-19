@@ -19,5 +19,6 @@ urlpatterns = [
     url(r'^select/template_1/analysis/$', analysis),
     url(r'^submit/welcome/$', welcome),
     url(r'^submit/welcome/realHandler/$', real_handler),
+    url(r'^submit/welcome/realHandler/endPublish/$', end_publish),
     url(r'^$', home_page),
 ]

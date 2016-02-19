@@ -260,7 +260,9 @@ def end_publish(request):
         if request.user.is_authenticated():
             user = request.session['username']
             title = request.POST.get('title')
-            UserDefine.objects.get(username=user).question_set.get(title=title).isEnd = True
+            q = UserDefine.objects.get(username=user).question_set.get(title=title)
+            q.isEnd = True
+            q.save()
             return HttpResponse('该问卷已停止发布')
         else:
             return HttpResponse('您没有终止发布的权限')

@@ -211,42 +211,45 @@ def analysis(request):
 def real_handler(request):
     user = request.GET.get('user')
     title = request.GET.get('title')
-    s = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key='head')
-    d = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set
-    type = s.QType
-    type_arr = type.split(",")
-    dim = s.dim
-    dim_arr = dim.split(",")
-    for h in range(0, len(dim_arr)):
-        dim_arr[h] = int(dim_arr[h])
-    data_arr = []
-    for i in range(0, len(dim_arr)):
-        data_arr.append([])
-        if dim_arr[i] == 1:
-            foreign_key = 'arr[' + str(i) + '][0]'
-            data_arr[i].append(d.get(key=foreign_key).strValue)
-            continue
-        for j in range(0, dim_arr[i]):
-            foreign_key = 'arr[' + str(i) + '][' + str(j) + ']'
-            data_arr[i].append(d.get(key=foreign_key).intValue)
-    data_json = json.dumps(data_arr)
-    valid_count = []
-    for k in range(0, len(type_arr)):
-        if type_arr[k] == 'fitb':
-            a = d.get(key='arr['+str(k) + '][0]').strValue
-            lenstr = len(a.split('\n'))
-            valid_count.append(lenstr)
-        elif type_arr[k] == 'radio':
-            lenradio = 0
-            for l in range(0, len(data_arr[k])):
-                lenradio += data_arr[k][l]
-            valid_count.append(lenradio)
-        elif type_arr[k] == 'checkbox':
-            lencheck = d.get(key='arr[' + str(k) + '][0]').anscount_set.get(key="multi_count").multi_count
-            valid_count.append(lencheck)
-    valid_json = json.dumps(valid_count)
-    QContent = s.QContent
-    return render_to_response("realTimeStatics.html", {'type': type, 'data': data_json, 'valid': valid_json, 'QContent': QContent, 'user': user})
+    if not UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.exclude(key='head'):
+        s = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set.get(key='head')
+        d = UserDefine.objects.get(username=user).question_set.get(title=title).statics_set
+        type = s.QType
+        type_arr = type.split(",")
+        dim = s.dim
+        dim_arr = dim.split(",")
+        for h in range(0, len(dim_arr)):
+            dim_arr[h] = int(dim_arr[h])
+        data_arr = []
+        for i in range(0, len(dim_arr)):
+            data_arr.append([])
+            if dim_arr[i] == 1:
+                foreign_key = 'arr[' + str(i) + '][0]'
+                data_arr[i].append(d.get(key=foreign_key).strValue)
+                continue
+            for j in range(0, dim_arr[i]):
+                foreign_key = 'arr[' + str(i) + '][' + str(j) + ']'
+                data_arr[i].append(d.get(key=foreign_key).intValue)
+        data_json = json.dumps(data_arr)
+        valid_count = []
+        for k in range(0, len(type_arr)):
+            if type_arr[k] == 'fitb':
+                a = d.get(key='arr['+str(k) + '][0]').strValue
+                lenstr = len(a.split('\n'))
+                valid_count.append(lenstr)
+            elif type_arr[k] == 'radio':
+                lenradio = 0
+                for l in range(0, len(data_arr[k])):
+                    lenradio += data_arr[k][l]
+                valid_count.append(lenradio)
+            elif type_arr[k] == 'checkbox':
+                lencheck = d.get(key='arr[' + str(k) + '][0]').anscount_set.get(key="multi_count").multi_count
+                valid_count.append(lencheck)
+        valid_json = json.dumps(valid_count)
+        QContent = s.QContent
+        return render_to_response("realTimeStatics.html", {'type': type, 'data': data_json, 'valid': valid_json, 'QContent': QContent, 'user': user})
+    else:
+        return render_to_response("no_ans_collect.html")
 
 
 def bad_request(request):

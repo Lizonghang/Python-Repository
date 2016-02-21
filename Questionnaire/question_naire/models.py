@@ -45,7 +45,6 @@ class AnsCount(models.Model):
 class Collect(models.Model):
     user = models.ForeignKey(UserDefine)
     title = models.CharField(max_length=30)
-    link = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.title + ':' + self.link

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/collect.html" afterPath="$PROJECT_DIR$/templates/collect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/question_naire/models.py" afterPath="$PROJECT_DIR$/question_naire/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/userQList.html" afterPath="$PROJECT_DIR$/templates/userQList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/question_naire/views.py" afterPath="$PROJECT_DIR$/question_naire/views.py" />
     </list>
@@ -46,17 +47,17 @@
         <entry file="file://$PROJECT_DIR$/Questionnaire/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="23" />
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/question_naire/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53418803">
-              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="322" column="38" selection-start-line="322" selection-start-column="38" selection-end-line="322" selection-end-column="38" />
               <folding>
                 <element signature="e#15#62#0" expanded="true" />
               </folding>
@@ -68,17 +69,17 @@
         <entry file="file://$PROJECT_DIR$/question_naire/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+              <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collect.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="collect.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/collect.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.25">
-              <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.9336283">
+              <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -97,8 +98,8 @@
       <file leaf-file-name="userQList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/userQList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.75">
-              <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
+            <state vertical-scroll-proportion="-13.875">
+              <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -189,10 +190,10 @@
         <option value="$PROJECT_DIR$/templates/Success.html" />
         <option value="$PROJECT_DIR$/templates/user_def_temp1.html" />
         <option value="$PROJECT_DIR$/Questionnaire/urls.py" />
-        <option value="$PROJECT_DIR$/question_naire/models.py" />
         <option value="$PROJECT_DIR$/templates/test.html" />
-        <option value="$PROJECT_DIR$/templates/userQList.html" />
+        <option value="$PROJECT_DIR$/question_naire/models.py" />
         <option value="$PROJECT_DIR$/templates/collect.html" />
+        <option value="$PROJECT_DIR$/templates/userQList.html" />
         <option value="$PROJECT_DIR$/question_naire/views.py" />
       </list>
     </option>
@@ -951,14 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/question_naire/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.125">
@@ -981,34 +974,42 @@
     <entry file="file://$PROJECT_DIR$/Questionnaire/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="23" />
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/question_naire/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/userQList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.75">
-          <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/collect.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.25">
-          <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+        <state vertical-scroll-proportion="-13.875">
+          <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/question_naire/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53418803">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="322" column="38" selection-start-line="322" selection-start-column="38" selection-end-line="322" selection-end-column="38" />
           <folding>
             <element signature="e#15#62#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/collect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9336283">
+          <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

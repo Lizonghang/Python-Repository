@@ -110,9 +110,10 @@
           if(pic_src == "grey_heart.png"){
               var method = "collect";
               var title = div.getElementsByClassName("title")[0].innerText;
+              alert(title);
               var link = div.getElementsByTagName("input")[0].value;
               var url = "http://www.desckie.com/select/collect_log/";
-              $.post(url, {'method': method, 'link': link, 'title': title}, function (response) {
+              $.post(url, {'method': method, 'title': title}, function (response) {
                   if(response == "收藏成功")
                     div.getElementsByTagName("img")[0].src = "/static/admin/img/red_heart.png";
                   else

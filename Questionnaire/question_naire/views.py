@@ -298,10 +298,9 @@ def collect_log(request):
             method = request.POST.get('method')
             if method == 'collect':
                 title = request.POST.get('title')
-                link = request.POST.get('link')
                 if UserDefine.objects.get(username=user).collect_set.filter(title=title):
                     return HttpResponse('已收藏')
-                Collect.objects.create(user=UserDefine.objects.get(username=user), title=title, link=link)
+                Collect.objects.create(user=UserDefine.objects.get(username=user), title=title)
                 return HttpResponse('收藏成功')
             elif method == 'uncollect':
                 title = request.POST.get('title')
@@ -320,11 +319,11 @@ def collect(request):
         user = request.session['username']
         c = UserDefine.objects.get(username=user).collect_set.all()
         if c:
-            title = ''
+            titles = ''
             for i in range(0, len(c)):
-                title += (c[i].title + ',')
-            title = title[0: len(title)-1]
-            return render_to_response("collect.html", {'user': user, 'title': title})
+                titles += (c[i].title + ',')
+            titles = titles[0: len(titles)-1]
+            return render_to_response("collect.html", {'user': user, 'titles': titles})
         else:
             return HttpResponse('您没有收藏任何问卷')
     else:

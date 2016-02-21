@@ -2560,14 +2560,19 @@ fieldset{border:0;}
          document.getElementById("submit_div").style.visibility = 'hidden';
      }
      var pater_title = document.getElementById("pater_title");
+     var url_search = window.location.search.replace("?","").split("&");
+     var username = url_search[0].split("=")[1];
+     var title = url_search[1].split("=")[1];
      var heart_button = document.createElement("a");
      heart_button.href = "javascript:collect();";
-     heart_button.innerHTML = '&nbsp;&nbsp;<img src="/static/admin/img/grey_heart.png" style="width: 18px;height: 18px;margin-right: 10px">';
+     $.post("http://www.desckie.com/select/isCollected/", {'username':username, 'title':title}, function(response){
+         if(response == "collected")
+            heart_button.innerHTML = '&nbsp;&nbsp;<img src="/static/admin/img/red_heart.png" style="width: 18px;height: 18px;margin-right: 10px">';
+         else if(response == "uncollected")
+            heart_button.innerHTML = '&nbsp;&nbsp;<img src="/static/admin/img/grey_heart.png" style="width: 18px;height: 18px;margin-right: 10px">';
+     })
      pater_title.appendChild(heart_button);
      function collect(){
-         var url_search = window.location.search.replace("?","").split("&");
-         var username = url_search[0].split("=")[1];
-         var title = url_search[1].split("=")[1];
          var url = "http://www.desckie.com/select/collect_log/";
          var heart_src = document.getElementsByTagName("img")[0].src.split("/");
          heart_src = heart_src[heart_src.length-1];

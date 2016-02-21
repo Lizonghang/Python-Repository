@@ -5219,3 +5219,5 @@ Not Found: /select/collect_log/
 [pid: 8775|app: 0|req: 32/64] 125.71.229.19 () {44 vars in 1184 bytes} [Sun Feb 21 19:29:28 2016] GET /select/template_1/ => generated 82698 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
 Not Found: /select/collect_log/
 [pid: 8772|app: 0|req: 33/65] 125.71.229.19 () {46 vars in 881 bytes} [Sun Feb 21 20:02:01 2016] POST /select/collect_log/ => generated 3858 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /a.html
+[pid: 8775|app: 0|req: 33/66] 180.109.136.12 () {32 vars in 378 bytes} [Sun Feb 21 20:03:24 2016] GET /a.html => generated 3815 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)

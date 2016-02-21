@@ -40,3 +40,12 @@ class AnsCount(models.Model):
 
     def __unicode__(self):
         return u'多选题' + str(self.multi_count) + u'道'
+
+
+class Collect(models.Model):
+    user = models.ForeignKey(UserDefine)
+    title = models.CharField(max_length=30)
+    link = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return self.title + ':' + self.link

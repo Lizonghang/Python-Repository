@@ -272,14 +272,60 @@ def user_list(request):
     if request.user.is_authenticated():
         user = request.session['username']
         titles = ''
+        collect = ''
         qs = UserDefine.objects.get(username=user).question_set.all()
         if qs:
             for i in range(0, len(qs)):
                 titles += (qs[i].title + ',')
+                if UserDefine.objects.get(username=user).collect_set.filter(title=qs[i].title):
+                    collect += '1,'
+                else:
+                    collect += '0,'
             titles = titles[0: len(titles)-1]
-            return render_to_response("userQList.html", {'user': user, 'titles': titles})
+            collect = collect[0: len(collect)-1]
+            return render_to_response("userQList.html", {'user': user, 'titles': titles, 'collect': collect})
         else:
             return render_to_response("50x.html")
+    else:
+        return HttpResponse("请先登录")
+
+
+def collect_log(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated():
+            user = request.session['username']
+            method = request.POST.get('method')
+            if method == 'collect':
+                title = request.POST.get('title')
+                link = request.POST.get('link')
+                if UserDefine.objects.get(username=user).collect_set.filter(title=title):
+                    return HttpResponse('已收藏')
+                Collect.objects.create(user=UserDefine.objects.get(username=user), title=title, link=link)
+                return HttpResponse('收藏成功')
+            elif method == 'uncollect':
+                title = request.POST.get('title')
+                if UserDefine.objects.get(username=user).collect_set.filter(title=title):
+                    UserDefine.objects.get(username=user).collect_set.get(title=title).delete()
+                    return HttpResponse('取消收藏')
+                return HttpResponse('还没有收藏该问卷')
+        else:
+            return HttpResponse('请先登录')
+    else:
+        return HttpResponse('Incorrect Operation')
+
+
+def collect(request):
+    if request.user.is_authenticated():
+        user = request.session['username']
+        c = UserDefine.objects.get(username=user).collect_set.all()
+        if c:
+            title = ''
+            for i in range(0, len(c)):
+                title += (c[i].title + ',')
+            title = title[0: len(title)-1]
+            return render_to_response("collect.html", {'user': user, 'title': title})
+        else:
+            return HttpResponse('您没有收藏任何问卷')
     else:
         return HttpResponse("请先登录")
 

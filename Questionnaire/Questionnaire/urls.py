@@ -15,6 +15,8 @@ urlpatterns = [
     url(r'^select/template_1/$', template_1),
     url(r'^select/success/$', submit_success),
     url(r'^select/list/$', user_list),
+    url(r'^select/collect/$', collect),
+    url(r'^select/collect_log/$', collect_log),
     url(r'^select/template_1/edit/$', edit_template_1),
     url(r'^select/template_1/view/$', view),
     url(r'^select/template_1/analysis/$', analysis),

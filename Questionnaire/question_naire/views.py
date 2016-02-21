@@ -269,7 +269,19 @@ def end_publish(request):
 
 
 def user_list(request):
-    return render_to_response("userQList.html")
+    if request.user.is_authenticated():
+        user = request.session['username']
+        titles = ''
+        qs = UserDefine.objects.get(username=user).question_set.all()
+        if qs:
+            for i in range(0, len(qs)):
+                titles += (qs[i].title + ',')
+            titles = titles[0: len(titles)-1]
+            return render_to_response("userQList.html", {'user': user, 'titles': titles})
+        else:
+            return render_to_response("50x.html")
+    else:
+        return HttpResponse("请先登录")
 
 
 def bad_request(request):

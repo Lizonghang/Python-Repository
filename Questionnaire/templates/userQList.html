@@ -78,25 +78,31 @@
      <div class="main_content with-tabs" id="form_publish">
       <div class="tab-content">
        <div class="tab-pane active" id="tab_visit_url">
-        <div class="content-section">
-         <div class="section-header">
-          <span class="title">Title_1</span>
-         </div>
-         <div class="section-body">
-          <div class="content-sub-section sibling-form-el-container">
-           <input class="copy-target gd-input-xxlarge" id="published_form_link_2" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}&title={{ title }}"/>
-           <a class="copy-link gd-btn gd-btn-info" data-clipboard-target="#published_form_link_2" data-message="网址复制成功" data-role="copy" href="javascript:void(0)" id="copy_link_1">复制网址</a>
-           <a class="gd-btn gd-btn-info open-url" data-no-turbolink="true" href="http://www.desckie.com/select/template_1/view?user={{ user }}&title={{ title }}" target="_blank">直接打开</a>
-           <a class="gd-btn gd-btn-info open-url" data-no-turbolink="true" href="http://www.desckie.com/submit/welcome/realHandler?user={{ user }}&title={{ title }}" target="_blank">查看数据</a>
-          </div>
-         </div>
-        </div>
+        <!-- -->
+
        </div>
       </div>
      </div>
     </div>
    </div>
   </div>
+  <script>
+      var title_str = "{{ titles }}";
+      var title_list = title_str.split(",");
+      var list_count = title_list.length;
+      var i;
+      var target_div = document.getElementById("tab_visit_url");
+      for(i=0;i<list_count;i++){
+          var new_div = document.createElement("div");
+          new_div.className = "content-section";
+          var content = '<div class="section-header"><span class="title">'+title_list[i]+'</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
+          content += '<input class="copy-target gd-input-xxlarge" id="published_form_link_2" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}&title='+title_list[i]+'"/>';
+          content += '<a class="gd-btn gd-btn-info open-url" href="http://www.desckie.com/select/success/?user={{ user }}&title='+title_list[i]+'" target="_blank">查看详情</a>';
+          content += '</div></div>';
+          new_div.innerHTML = content;
+          target_div.appendChild(new_div);
+      }
+  </script>
   <script>
       function logout(){
           var url = "http://www.desckie.com/logout/";

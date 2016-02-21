@@ -2562,11 +2562,33 @@ fieldset{border:0;}
      var pater_title = document.getElementById("pater_title");
      var heart_button = document.createElement("a");
      heart_button.href = "javascript:collect();";
-     heart_button.innerHTML = '<img src="/static/admin/img/grey_heart.png" style="width: 12px;height: 12px;margin-right: 10px">';
+     heart_button.innerHTML = '&nbsp;&nbsp;<img src="/static/admin/img/grey_heart.png" style="width: 18px;height: 18px;margin-right: 10px">';
      pater_title.appendChild(heart_button);
      function collect(){
-         var local_url = window.location.search;
-         alert(local_url);
+         var url_search = window.location.search.replace("?","").split("&");
+         var username = local_url[0].split("=")[1];
+         var title = local_url[1].split("=")[1];
+         var url = "http://www.desckie.com/select/collect_log/";
+         var heart_src = document.getElementsByTagName("img")[0].src.split("/");
+         heart_src = heart_src[heart_src.length-1];
+         if(heart_src == "grey_heart.png"){
+              var method = "collect";
+              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
+                  if(response == "收藏成功")
+                    div.getElementsByTagName("img")[0].src = "/static/admin/img/red_heart.png";
+                  else
+                    alert(response);
+              })
+          }
+          else if(heart_src == "red_heart.png"){
+              var method = "uncollect";
+              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
+                  if(response == "取消收藏")
+                    div.getElementsByTagName("img")[0].src = "/static/admin/img/grey_heart.png";
+                  else
+                    alert(response);
+              })
+          }
      }
  </script>
  </body>

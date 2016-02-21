@@ -100,7 +100,7 @@
             var content = '<div class="section-header"><span class="title"><a href="javascript:collect('+i+');"><img src="/static/admin/img/red_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>'+title_list[i]+'</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
           else if(collect_list[i] == "0")
             var content = '<div class="section-header"><span class="title"><a href="javascript:collect('+i+');"><img src="/static/admin/img/grey_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>'+title_list[i]+'</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
-          content += '<input class="copy-target gd-input-xxlarge" id="published_form_link_2" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}&title='+title_list[i]+'"/>';
+          content += '<input class="copy-target gd-input-xxlarge" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}&title='+title_list[i]+'"/>';
           content += '<a class="gd-btn gd-btn-info open-url" href="http://www.desckie.com/select/success/?user={{ user }}&title='+title_list[i]+'" target="_blank">查看详情</a>';
           content += '</div></div>';
           new_div.innerHTML = content;
@@ -112,11 +112,13 @@
           var div = document.getElementById("Q"+index);
           var pic_src = div.getElementsByTagName("img")[0].src.split("/");
           pic_src = pic_src[pic_src.length-1];
+          var tu = div.getElementsByTagName("input")[0].value.split("?")[1].split("&");
+          var title = tu[1].split("=")[1];
+          var username = tu[0].split("=")[1];
+          var url = "http://www.desckie.com/select/collect_log/";
           if(pic_src == "grey_heart.png"){
               var method = "collect";
-              var title = div.getElementsByClassName("title")[0].innerText;
-              var url = "http://www.desckie.com/select/collect_log/";
-              $.post(url, {'method': method, 'title': title}, function (response) {
+              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
                   if(response == "收藏成功")
                     div.getElementsByTagName("img")[0].src = "/static/admin/img/red_heart.png";
                   else
@@ -125,9 +127,7 @@
           }
           else if(pic_src == "red_heart.png"){
               var method = "uncollect";
-              var title = div.getElementsByClassName("title")[0].innerText;
-              var url = "http://www.desckie.com/select/collect_log/";
-              $.post(url, {'method': method, 'title': title}, function (response) {
+              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
                   if(response == "取消收藏")
                     div.getElementsByTagName("img")[0].src = "/static/admin/img/grey_heart.png";
                   else

@@ -296,15 +296,16 @@ def collect_log(request):
         if request.user.is_authenticated():
             user = request.session['username']
             method = request.POST.get('method')
+            username = request.POST.get('username')
             title = request.POST.get('title')
             if method == 'collect':
-                if UserDefine.objects.get(username=user).collect_set.filter(title=title):
+                if UserDefine.objects.get(username=user).collect_set.filter(username=username, title=title):
                     return HttpResponse('已收藏')
-                Collect.objects.create(user=UserDefine.objects.get(username=user), title=title)
+                Collect.objects.create(user=UserDefine.objects.get(username=user), username=username, title=title)
                 return HttpResponse('收藏成功')
             elif method == 'uncollect':
-                if UserDefine.objects.get(username=user).collect_set.filter(title=title):
-                    UserDefine.objects.get(username=user).collect_set.get(title=title).delete()
+                if UserDefine.objects.get(username=user).collect_set.filter(username=username, title=title):
+                    UserDefine.objects.get(username=user).collect_set.get(username=username, title=title).delete()
                     return HttpResponse('取消收藏')
                 return HttpResponse('还没有收藏该问卷')
         else:
@@ -317,12 +318,15 @@ def collect(request):
     if request.user.is_authenticated():
         user = request.session['username']
         c = UserDefine.objects.get(username=user).collect_set.all()
+        username = ''
         titles = ''
         if c:
             for i in range(0, len(c)):
                 titles += (c[i].title + ',')
+                username += (c[i].username + ',')
             titles = titles[0: len(titles)-1]
-        return render_to_response("collect.html", {'user': user, 'titles': titles})
+            username = username[0: len(username)-1]
+        return render_to_response("collect.html", {'user': user, 'titles': titles, 'username': username})
     else:
         return HttpResponse("请先登录")
 

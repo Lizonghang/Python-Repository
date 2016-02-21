@@ -44,6 +44,7 @@ class AnsCount(models.Model):
 
 class Collect(models.Model):
     user = models.ForeignKey(UserDefine)
+    username = models.CharField(max_length=16)
     title = models.CharField(max_length=30)
 
     def __unicode__(self):

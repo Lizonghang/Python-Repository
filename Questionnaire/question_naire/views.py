@@ -307,7 +307,7 @@ def collect_log(request):
         else:
             return HttpResponse('请先登录')
     else:
-        return HttpResponse('Incorrect Operation')
+        return HttpResponse('Method: GET Error')
 
 
 def collect(request):

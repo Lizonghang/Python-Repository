@@ -5499,3 +5499,56 @@ spawned uWSGI worker 2 (pid: 9217, cores: 1)
 [pid: 9217|app: 0|req: 1/2] 125.71.229.19 () {44 vars in 1165 bytes} [Sun Feb 21 20:22:25 2016] GET /select/list/ => generated 6989 bytes in 42 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 Not Found: /azenv.php
 [pid: 9214|app: 0|req: 2/3] 95.213.187.187 () {40 vars in 715 bytes} [Sun Feb 21 20:23:02 2016] POST /azenv.php?auth=145605738249&a=PSCN&i=1926723903&p=80 => generated 4127 bytes in 12 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Sun Feb 21 20:25:01 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x169d9d0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x169d9d0 pid: 9260 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 9260, cores: 1)
+spawned uWSGI worker 2 (pid: 9266, cores: 1)
+[pid: 9260|app: 0|req: 1/1] 125.71.229.19 () {46 vars in 1179 bytes} [Sun Feb 21 20:25:05 2016] GET /select/list/ => generated 6989 bytes in 44 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9266|app: 0|req: 1/2] 125.71.229.19 () {48 vars in 1236 bytes} [Sun Feb 21 20:25:08 2016] GET /select/collect/ => generated 27 bytes in 30 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9260|app: 0|req: 2/3] 125.71.229.19 () {46 vars in 1179 bytes} [Sun Feb 21 20:25:11 2016] GET /select/list/ => generated 6989 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9266|app: 0|req: 2/4] 125.71.229.19 () {54 vars in 1355 bytes} [Sun Feb 21 20:25:14 2016] POST /select/collect_log/ => generated 12 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9260|app: 0|req: 3/5] 125.71.229.19 () {48 vars in 1236 bytes} [Sun Feb 21 20:26:22 2016] GET /select/collect/ => generated 6482 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /select/template_1/view/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 124, in view
+    isEnd = UserDefine.objects.get(username=user).question_set.get(title=title).isEnd
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+DoesNotExist: UserDefine matching query does not exist.
+[pid: 9266|app: 0|req: 3/6] 66.249.69.29 () {38 vars in 755 bytes} [Sun Feb 21 20:26:52 2016] GET /select/template_1/view/ => generated 64380 bytes in 92 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 9260|app: 0|req: 4/7] 125.71.229.19 () {54 vars in 1356 bytes} [Sun Feb 21 20:27:33 2016] POST /select/collect_log/ => generated 24 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9266|app: 0|req: 4/8] 125.71.229.19 () {48 vars in 1233 bytes} [Sun Feb 21 20:27:38 2016] GET /select/list/ => generated 6989 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9260|app: 0|req: 5/9] 125.71.229.19 () {48 vars in 1236 bytes} [Sun Feb 21 20:27:54 2016] GET /select/collect/ => generated 6482 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)

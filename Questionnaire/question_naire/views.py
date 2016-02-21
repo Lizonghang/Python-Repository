@@ -268,6 +268,10 @@ def end_publish(request):
             return HttpResponse('您没有终止发布的权限')
 
 
+def user_list(request):
+    return render_to_response("userQList.html")
+
+
 def bad_request(request):
     return render_to_response("404.html", status=404)
 

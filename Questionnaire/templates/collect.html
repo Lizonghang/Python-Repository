@@ -113,9 +113,11 @@
           pic_src = pic_src[pic_src.length-1];
           if(pic_src == "red_heart.png"){
               var method = "uncollect";
-              var title = div.getElementsByClassName("title")[0].innerText;
+              var link = div.getElementsByTagName("input")[0].value.split("?")[1].split("&");
+              var title = link[1].split("=")[1];
+              var username = link[0].split("=")[1];
               var url = "http://www.desckie.com/select/collect_log/";
-              $.post(url, {'method': method, 'title': title}, function (response) {
+              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
                   if(response == "取消收藏")
                     div.remove();
                   else

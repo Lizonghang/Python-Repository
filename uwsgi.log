@@ -6020,3 +6020,7 @@ Not Found: /a.html
 [pid: 9502|app: 0|req: 13/25] 182.138.127.154 () {44 vars in 1185 bytes} [Sun Feb 21 23:02:56 2016] GET /select/collect/ => generated 6531 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 9505|app: 0|req: 13/26] 182.138.127.154 () {50 vars in 1305 bytes} [Sun Feb 21 23:02:59 2016] POST /select/collect_log/ => generated 12 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 9502|app: 0|req: 14/27] 182.138.127.154 () {44 vars in 1182 bytes} [Sun Feb 21 23:03:01 2016] GET /select/list/ => generated 6918 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9505|app: 0|req: 14/28] 182.138.127.154 () {42 vars in 1104 bytes} [Sun Feb 21 23:13:00 2016] GET / => generated 50931 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9502|app: 0|req: 15/29] 182.138.127.154 () {42 vars in 1134 bytes} [Sun Feb 21 23:13:02 2016] GET /clear_all_user/ => generated 30 bytes in 134 msecs (HTTP/1.1 200) 3 headers in 171 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 9505|app: 0|req: 15/30] 182.138.127.154 () {42 vars in 1030 bytes} [Sun Feb 21 23:13:02 2016] GET /favicon.ico => generated 4071 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)

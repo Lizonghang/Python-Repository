@@ -284,9 +284,7 @@ def user_list(request):
                     collect += '0,'
             titles = titles[0: len(titles)-1]
             collect = collect[0: len(collect)-1]
-            return render_to_response("userQList.html", {'user': user, 'titles': titles, 'collect': collect})
-        else:
-            return render_to_response("50x.html")
+        return render_to_response("userQList.html", {'user': user, 'titles': titles, 'collect': collect})
     else:
         return HttpResponse("请先登录")
 

@@ -45,6 +45,7 @@ def clear_all_user(request):
     Question.objects.all().delete()
     Statics.objects.all().delete()
     AnsCount.objects.all().delete()
+    Collect.objects.all().delete()
     return HttpResponse("注册用户信息全部删除")
 
 

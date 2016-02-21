@@ -299,15 +299,11 @@ def collect_log(request):
             username = request.POST.get('username')
             title = request.POST.get('title')
             if method == 'collect':
-                if UserDefine.objects.get(username=user).collect_set.filter(username=username, title=title):
-                    return HttpResponse('已收藏')
                 Collect.objects.create(user=UserDefine.objects.get(username=user), username=username, title=title)
                 return HttpResponse('收藏成功')
             elif method == 'uncollect':
-                if UserDefine.objects.get(username=user).collect_set.filter(username=username, title=title):
-                    UserDefine.objects.get(username=user).collect_set.get(username=username, title=title).delete()
-                    return HttpResponse('取消收藏')
-                return HttpResponse('还没有收藏该问卷')
+                UserDefine.objects.get(username=user).collect_set.get(username=username, title=title).delete()
+                return HttpResponse('取消收藏')
         else:
             return HttpResponse('请先登录')
     else:

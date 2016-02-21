@@ -2555,10 +2555,19 @@ fieldset{border:0;}
    </div>
   </div>
  <script>
-         var isEnd = "{{ isEnd }}";
-         if(isEnd == "True"){
-             document.getElementById("submit_div").style.visibility = 'hidden';
-         }
-     </script>
+     var isEnd = "{{ isEnd }}";
+     if(isEnd == "True"){
+         document.getElementById("submit_div").style.visibility = 'hidden';
+     }
+     var pater_title = document.getElementById("pater_title");
+     var heart_button = document.createElement("a");
+     heart_button.href = "javascript:collect();";
+     heart_button.innerHTML = '<img src="/static/admin/img/grey_heart.png" style="width: 12px;height: 12px;margin-right: 10px">';
+     pater_title.appendChild(heart_button);
+     function collect(){
+         var local_url = window.location.search;
+         alert(local_url);
+     }
+ </script>
  </body>
 </html>

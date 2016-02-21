@@ -83,7 +83,8 @@ def template_1(request):
 
 
 def submit_success(request):
-    user = request.session['username']
+    user = request.GET.get('user')
+    # user = request.session['username']
     title = request.GET.get('title')
     return render_to_response("Success.html", {'user': user, 'title': title})
 

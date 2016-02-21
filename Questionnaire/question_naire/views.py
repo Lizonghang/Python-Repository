@@ -318,14 +318,12 @@ def collect(request):
     if request.user.is_authenticated():
         user = request.session['username']
         c = UserDefine.objects.get(username=user).collect_set.all()
+        titles = ''
         if c:
-            titles = ''
             for i in range(0, len(c)):
                 titles += (c[i].title + ',')
             titles = titles[0: len(titles)-1]
-            return render_to_response("collect.html", {'user': user, 'titles': titles})
-        else:
-            return HttpResponse('您没有收藏任何问卷')
+        return render_to_response("collect.html", {'user': user, 'titles': titles})
     else:
         return HttpResponse("请先登录")
 

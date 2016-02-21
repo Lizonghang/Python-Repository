@@ -86,20 +86,22 @@
   </div>
   <script>
       var title_str = "{{ titles }}";
-      var title_list = title_str.split(",");
-      var list_count = title_list.length;
-      var i;
-      var target_div = document.getElementById("tab_visit_url");
-      for(i=0;i<list_count;i++){
-          var new_div = document.createElement("div");
-          new_div.className = "content-section";
-          new_div.id = "Q"+i;
-          var content = '<div class="section-header"><span class="title"><a href="javascript:collect('+i+');"><img src="/static/admin/img/red_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>'+title_list[i]+'</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
-          content += '<input class="copy-target gd-input-xxlarge" id="published_form_link_2" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}&title='+title_list[i]+'"/>';
-          content += '<a class="gd-btn gd-btn-info open-url" href="http://www.desckie.com/select/success/?user={{ user }}&title='+title_list[i]+'" target="_blank">查看详情</a>';
-          content += '</div></div>';
-          new_div.innerHTML = content;
-          target_div.appendChild(new_div);
+      if(title_str){
+          var title_list = title_str.split(",");
+          var list_count = title_list.length;
+          var i;
+          var target_div = document.getElementById("tab_visit_url");
+          for(i=0;i<list_count;i++){
+              var new_div = document.createElement("div");
+              new_div.className = "content-section";
+              new_div.id = "Q"+i;
+              var content = '<div class="section-header"><span class="title"><a href="javascript:collect('+i+');"><img src="/static/admin/img/red_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>'+title_list[i]+'</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
+              content += '<input class="copy-target gd-input-xxlarge" id="published_form_link_2" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user={{ user }}&title='+title_list[i]+'"/>';
+              content += '<a class="gd-btn gd-btn-info open-url" href="http://www.desckie.com/select/success/?user={{ user }}&title='+title_list[i]+'" target="_blank">查看详情</a>';
+              content += '</div></div>';
+              new_div.innerHTML = content;
+              target_div.appendChild(new_div);
+          }
       }
   </script>
   <script>

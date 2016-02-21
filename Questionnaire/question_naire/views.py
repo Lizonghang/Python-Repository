@@ -296,14 +296,13 @@ def collect_log(request):
         if request.user.is_authenticated():
             user = request.session['username']
             method = request.POST.get('method')
+            title = request.POST.get('title')
             if method == 'collect':
-                title = request.POST.get('title')
                 if UserDefine.objects.get(username=user).collect_set.filter(title=title):
                     return HttpResponse('已收藏')
                 Collect.objects.create(user=UserDefine.objects.get(username=user), title=title)
                 return HttpResponse('收藏成功')
             elif method == 'uncollect':
-                title = request.POST.get('title')
                 if UserDefine.objects.get(username=user).collect_set.filter(title=title):
                     UserDefine.objects.get(username=user).collect_set.get(title=title).delete()
                     return HttpResponse('取消收藏')

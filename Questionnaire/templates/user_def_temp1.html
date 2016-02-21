@@ -2575,7 +2575,7 @@ fieldset{border:0;}
               var method = "collect";
               $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
                   if(response == "收藏成功")
-                    div.getElementsByTagName("img")[0].src = "/static/admin/img/red_heart.png";
+                    document.getElementsByTagName("img")[0].src = "/static/admin/img/red_heart.png";
                   else
                     alert(response);
               })
@@ -2584,7 +2584,7 @@ fieldset{border:0;}
               var method = "uncollect";
               $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
                   if(response == "取消收藏")
-                    div.getElementsByTagName("img")[0].src = "/static/admin/img/grey_heart.png";
+                    document.getElementsByTagName("img")[0].src = "/static/admin/img/grey_heart.png";
                   else
                     alert(response);
               })

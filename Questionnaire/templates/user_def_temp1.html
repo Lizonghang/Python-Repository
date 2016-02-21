@@ -2566,8 +2566,8 @@ fieldset{border:0;}
      pater_title.appendChild(heart_button);
      function collect(){
          var url_search = window.location.search.replace("?","").split("&");
-         var username = local_url[0].split("=")[1];
-         var title = local_url[1].split("=")[1];
+         var username = url_search[0].split("=")[1];
+         var title = url_search[1].split("=")[1];
          var url = "http://www.desckie.com/select/collect_log/";
          var heart_src = document.getElementsByTagName("img")[0].src.split("/");
          heart_src = heart_src[heart_src.length-1];

@@ -309,6 +309,21 @@ def collect_log(request):
         return HttpResponse('Method: GET Error')
 
 
+def isCollected(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated():
+            user = request.session['username']
+            username = request.POST.get('username')
+            title = request.POST.get('title')
+            if UserDefine.objects.get(username=user).collect_set.filter(username=username, title=title):
+                return HttpResponse('collected')
+            else:
+                return HttpResponse('uncollected')
+        else:
+            return HttpResponse('uncollected')
+    else:
+        return HttpResponse('Method GET Error')
+
 def collect(request):
     if request.user.is_authenticated():
         user = request.session['username']

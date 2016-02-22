@@ -53,11 +53,11 @@
         var Q = document.getElementsByClassName("Q"+i)[0];
         while(Q){
             var new_button = document.createElement("button");
-            new_button.value = "编辑文本";
+            new_button.innerText = "编辑文本";
             new_button.onclick = "edit();";
-            Q[0].getElementsByClassName("div_title_question")[0].appendChild(new_button);
+            Q.getElementsByClassName("div_title_question")[0].appendChild(new_button);
             i++;
-            Q = document.getElementsByClassName("Q"+i);
+            Q = document.getElementsByClassName("Q"+i)[0];
         }
         function edit(){
             alert(this);

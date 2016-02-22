@@ -49,7 +49,19 @@
     </style>
     <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
     <script>
-
+        var i=1;
+        var Q = document.getElementsByClassName("Q"+i);
+        while(Q){
+            var new_button = document.createElement("button");
+            new_button.value = "编辑文本";
+            new_button.onclick = "edit();";
+            Q[0].getElementsByClassName("div_title_question")[0].appendChild(new_button);
+            i++;
+            Q = document.getElementsByClassName("Q"+i);
+        }
+        function edit(){
+            alert(this);
+        }
     </script>
 </head>
 <body style="background: #eeeeee; margin: 0px; padding: 0px;">

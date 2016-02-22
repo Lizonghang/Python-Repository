@@ -96,7 +96,8 @@
             Q = document.getElementsByClassName("Q" + i)[0];
         }
         function edit(id){
-            alert(id);
+            var block = document.getElementById(id).parentNode.parentNode.parentNode;
+            alert(block);
         }
 </script>
 </body>

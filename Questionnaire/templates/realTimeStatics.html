@@ -25,7 +25,7 @@
        <div style="clear: both;"></div>
        <ul id="ulList" style="list-style-type: none;"></ul>
        <div style="clear: both; height: 25px;"></div>
-       <div style="visibility: visible;" id="end">
+       <div style="visibility: visible;">
         <div style="float:left;"></div>
         <div style="float: right; padding-top:7px; vertical-align: bottom;"></div>
         <div style="margin-left: 42%;display: inline;">
@@ -49,7 +49,9 @@
   <script>
          var isEnd = "{{ isEnd }}";
          if(isEnd == "True"){
-            document.getElementById("end").style.visibility = 'hidden';
+            var a = document.getElementById("ctl02_ContentPlaceHolder1_hrefSave2");
+             a.href = "javascript:print();";
+             a.getElementsByTagName("span")[0].innerText = "打印数据";
          }
      </script>
  <script>
@@ -145,7 +147,9 @@
           $.post(url,data, function(response){
               alert(response);
               if(response=="该问卷停止发布"){
-                  document.getElementById("end").style.visibility = 'hidden';
+                  var a = document.getElementById("ctl02_ContentPlaceHolder1_hrefSave2");
+                  a.href = "javascript:print();";
+                  a.getElementsByTagName("span")[0].innerText = "打印数据";
               }
           })
       }

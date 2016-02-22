@@ -262,12 +262,18 @@ def end_publish(request):
         if request.user.is_authenticated():
             user = request.session['username']
             title = request.POST.get('title')
-            q = UserDefine.objects.get(username=user).question_set.get(title=title)
-            q.isEnd = True
-            q.save()
-            return HttpResponse('该问卷已停止发布')
+            username = request.POST.get('username')
+            if user == username:
+                q = UserDefine.objects.get(username=user).question_set.get(title=title)
+                q.isEnd = True
+                q.save()
+                return HttpResponse('该问卷停止发布')
+            else:
+                return HttpResponse('您没有权限停止发布')
         else:
-            return HttpResponse('您没有终止发布的权限')
+            return HttpResponse('您没有登录')
+    else:
+        return HttpResponse('ERROR OPERATION GET')
 
 
 def user_list(request):
@@ -309,7 +315,7 @@ def collect_log(request):
         return HttpResponse('Method: GET Error')
 
 
-def isCollected(request):
+def is_collected(request):
     if request.method == 'POST':
         if request.user.is_authenticated():
             user = request.session['username']
@@ -323,6 +329,7 @@ def isCollected(request):
             return HttpResponse('uncollected')
     else:
         return HttpResponse('Method GET Error')
+
 
 def collect(request):
     if request.user.is_authenticated():

@@ -58,7 +58,6 @@
       var QContent = "{{ QContent }}".split(";");
       var data = "{{ data }}";
       data = data.substring(2,data.length-2).split("], [");
-      var title = QContent[0];
       document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
       QContent.splice(0,1);
       var j;
@@ -139,7 +138,10 @@
       }
      function endPublish(){
           var url = "http://www.desckie.com/submit/welcome/realHandler/endPublish/";
-          var data = {'title': title};
+          var local_url = window.location.search.replace("?","").split("&");
+          var username = local_url[0].split("=")[1];
+          var title = local_url[1].split("=")[1];
+          var data = {'title': title, 'username': username};
           $.post(url,data, function(response){
               alert(response);
               if(response=="该问卷已停止发布"){

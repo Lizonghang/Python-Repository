@@ -2556,7 +2556,9 @@ fieldset{border:0;}
  <script>
      var isEnd = "{{ isEnd }}";
      if(isEnd == "True"){
-         document.getElementById("submit_div").style.visibility = 'hidden';
+         var a = document.getElementsByClassName("sumitbutton")[0];
+         a.href = "javascript:print();";
+         a.innerText = "打印问卷";
          alert("该问卷已停止发布");
      }
      var pater_title = document.getElementById("pater_title");

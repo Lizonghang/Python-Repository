@@ -2457,68 +2457,6 @@ legend{display:none;}
 fieldset{border:0;}
   </style>
   <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
-  <script>
-      function submit(){
-          var Qs=1;
-          var tempQ;
-          //var maxLen=1;
-          while(tempQ = document.getElementsByClassName("Q"+Qs)[0]){
-              if(tempQ.getElementsByClassName("plot")[0].style.visibility == 'visible'){
-                  var lis = tempQ.getElementsByTagName("li");
-                  var check = false;
-                  var len = lis.length;
-                  //if(len > maxLen)  maxLen = len;
-                  if(len == 1){
-                      if(lis[0].getElementsByTagName("textarea")[0].value != "")
-                          check = true;
-                  }
-                  else{
-                      for(var i=0;i<len;i++){
-                        if(lis[i].getElementsByTagName("input")[0].checked == true)   check = true;
-                      }
-                  }
-                  if(check == false){
-                      alert("题目"+Qs+"为必选题");
-                      return;
-                  }
-              }
-              Qs++;
-          }
-          Qs=1;
-          var ans = new Array();
-          var type = new Array();
-          while(document.getElementsByClassName("Q"+Qs)[0]){
-              ans[Qs-1] = new Array();
-              Qs++;
-          }
-          Qs=1;
-          while(tempQ = document.getElementsByClassName("Q"+Qs)[0]){
-              lis = tempQ.getElementsByTagName("li");
-              len = lis.length;
-              var k;
-              if(len==1){
-                  ans[Qs-1][0]=lis[0].getElementsByTagName("textarea")[0].value;
-                  type[Qs-1]="fitb";
-              }
-              else{
-                  for(k=0;k<len;k++){
-                      ans[Qs-1][k]=(lis[k].getElementsByTagName("input")[0].checked==true?1:0);
-                  }
-                   var eType = lis[0].getElementsByTagName("input")[0].type;
-                  if(eType == "radio"){
-                      type[Qs-1]="radio";
-                  }
-                  else if(eType == "checkbox"){
-                      type[Qs-1]="checkbox";
-                  }
-              }
-              Qs++;
-          }
-          var url = "http://www.desckie.com/select/template_1/analysis/?user={{ user }}&title={{ title }}";
-          $.post(url,{'data':JSON.stringify(ans),'type':JSON.stringify(type)});
-          window.location.href="http://www.desckie.com/submit/welcome?user=" + "{{ user }}&title={{ title }}";
-      }
-  </script>
  </head>
  <body>
   <div id="divNotRun" style="height:100px; text-align:center; display:none;">
@@ -2533,13 +2471,10 @@ fieldset{border:0;}
    <div id="mainCss">
     <div id="mainInner">
      <div id="box">
-      <style rel="stylesheet" type="text/css">
-       html{ overflow-x:hidden;overflow-y:auto;}
-      </style>
+      <style rel="stylesheet" type="text/css">html{ overflow-x:hidden;overflow-y:auto;}</style>
       <div class="survey" style="margin:0px auto;">
        <script>
-        var def_html = unescape('{{ pageForm }}');
-              document.getElementsByClassName('survey')[0].innerHTML = def_html;
+           document.getElementsByClassName('survey')[0].innerHTML = unescape('{{ pageForm }}');
        </script>
       </div>
      </div>
@@ -2548,52 +2483,12 @@ fieldset{border:0;}
   </div>
   <div id="submit_div" style="width: 820px;height: 60px;background-color: transparent">
    <div style="background-color: transparent;margin-left: 180px">
-    <a class="sumitbutton" href="javascript:submit()" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px;width: 320px">
-     确认提交
-    </a>
+    <a class="sumitbutton" href="javascript:submit();" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px;width: 320px">完成修改</a>
    </div>
   </div>
  <script>
-     var isEnd = "{{ isEnd }}";
-     if(isEnd == "True"){
-         document.getElementById("submit_div").style.visibility = 'hidden';
-         alert("该问卷已停止发布");
-     }
-     var pater_title = document.getElementById("pater_title");
-     var url_search = window.location.search.replace("?","").split("&");
-     var username = url_search[0].split("=")[1];
-     var title = url_search[1].split("=")[1];
-     var heart_button = document.createElement("a");
-     heart_button.href = "javascript:collect();";
-     $.post("http://www.desckie.com/select/isCollected/", {'username':username, 'title':title}, function(response){
-         if(response == "collected")
-            heart_button.innerHTML = '&nbsp;&nbsp;<img src="/static/admin/img/red_heart.png" style="width: 18px;height: 18px;margin-right: 10px">';
-         else if(response == "uncollected")
-            heart_button.innerHTML = '&nbsp;&nbsp;<img src="/static/admin/img/grey_heart.png" style="width: 18px;height: 18px;margin-right: 10px">';
-     })
-     pater_title.appendChild(heart_button);
-     function collect(){
-         var url = "http://www.desckie.com/select/collect_log/";
-         var heart_src = document.getElementsByTagName("img")[0].src.split("/");
-         heart_src = heart_src[heart_src.length-1];
-         if(heart_src == "grey_heart.png"){
-              var method = "collect";
-              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
-                  if(response == "收藏成功")
-                    document.getElementsByTagName("img")[0].src = "/static/admin/img/red_heart.png";
-                  else
-                    alert(response);
-              })
-          }
-          else if(heart_src == "red_heart.png"){
-              var method = "uncollect";
-              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
-                  if(response == "取消收藏")
-                    document.getElementsByTagName("img")[0].src = "/static/admin/img/grey_heart.png";
-                  else
-                    alert(response);
-              })
-          }
+     function submit(){
+
      }
  </script>
  </body>

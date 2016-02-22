@@ -89,14 +89,14 @@
         while(Q) {
             var new_button = document.createElement("button");
             new_button.innerText = "编辑文本";
-            new_button.onclick = function(){edit(this);};
+            new_button.onclick = function(){edit(this.id);};
             new_button.id = "button_" + i;
             Q.getElementsByClassName("div_title_question")[0].appendChild(new_button);
             i++;
             Q = document.getElementsByClassName("Q" + i)[0];
         }
-        function edit(){
-            alert(this);
+        function edit(id){
+            alert(id);
         }
 </script>
 </body>

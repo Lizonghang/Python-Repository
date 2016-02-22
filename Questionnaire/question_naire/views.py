@@ -84,7 +84,6 @@ def template_1(request):
 
 def submit_success(request):
     user = request.GET.get('user')
-    # user = request.session['username']
     title = request.GET.get('title')
     return render_to_response("Success.html", {'user': user, 'title': title})
 
@@ -92,6 +91,28 @@ def submit_success(request):
 def edit_template_1(request):
     user = request.session['username']
     return render_to_response("edit_template_1.html", {'user': user})
+
+
+def re_edit(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated():
+            user = request.session['username']
+            username = request.GET.get('user')
+            title = request.GET.get('title')
+            if user == username:
+                question = UserDefine.objects.get(username=user).question_set.get(title=title)
+                if question.isEnd:
+                    return HttpResponse('该问卷已停止发布,不可编辑')
+                else:
+                    pageForm = question.pageForm
+                    title = question.title
+                    return render_to_response('re_edit.html', {'pageForm': pageForm, 'title': title, 'user': user})
+            else:
+                return HttpResponse('您没有修改权限')
+        else:
+            return HttpResponse('请先登录')
+    else:
+        return HttpResponse('METHOD ERROR GET')
 
 
 def delete(request):

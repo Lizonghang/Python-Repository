@@ -96,8 +96,24 @@
             Q = document.getElementsByClassName("Q" + i)[0];
         }
         function edit(id){
-            var block = document.getElementById(id).parentNode.parentNode.parentNode;
-            alert(block.className);
+            var button = document.getElementById(id);
+            var block = button.parentNode.parentNode.parentNode;
+            var lis = block.getElementsByClassName("ul_select")[0].getElementsByTagName("li");
+            if(lis.length == 1){
+                var tspan = block.getElementById("title_1");
+                var title = tspan.innerText;
+                tspan.innerHTML = '<input id="edit_input" value="'+title+'">';
+                button.innerText = "完成";
+                button.onclick = function(){
+                    var new_title = tspan.getElementsByTagName("input")[0].value;
+                    tspan.innerText = new_title;
+                    button.innerText = "编辑文本";
+                    button.onclick = function(){edit(this.id)};
+                };
+            }
+            else{
+                alert("尚未修改");
+            }
         }
 </script>
 </body>

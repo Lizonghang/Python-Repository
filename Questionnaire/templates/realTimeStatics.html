@@ -144,7 +144,7 @@
           var data = {'title': title, 'username': username};
           $.post(url,data, function(response){
               alert(response);
-              if(response=="该问卷已停止发布"){
+              if(response=="该问卷停止发布"){
                   document.getElementById("end").style.visibility = 'hidden';
               }
           })

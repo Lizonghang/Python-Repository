@@ -2558,6 +2558,7 @@ fieldset{border:0;}
      var isEnd = "{{ isEnd }}";
      if(isEnd == "True"){
          document.getElementById("submit_div").style.visibility = 'hidden';
+         alert("该问卷已停止发布");
      }
      var pater_title = document.getElementById("pater_title");
      var url_search = window.location.search.replace("?","").split("&");

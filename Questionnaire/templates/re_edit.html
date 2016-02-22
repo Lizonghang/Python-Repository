@@ -100,7 +100,7 @@
             var block = button.parentNode.parentNode.parentNode;
             var lis = block.getElementsByClassName("ul_select")[0].getElementsByTagName("li");
             if(lis.length == 1){
-                var tspan = block.getElementById("title_1");
+                var tspan = block.getElementsByTagName("span")[0];
                 var title = tspan.innerText;
                 tspan.innerHTML = '<input id="edit_input" value="'+title+'">';
                 button.innerText = "完成";

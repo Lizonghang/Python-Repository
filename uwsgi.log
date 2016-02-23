@@ -12502,3 +12502,70 @@ Not Found: /a.html
 [pid: 14938|app: 0|req: 25/51] 123.125.71.115 () {36 vars in 472 bytes} [Tue Feb 23 22:18:43 2016] GET / => generated 51151 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 14941|app: 0|req: 27/52] 121.42.210.61 () {28 vars in 317 bytes} [Tue Feb 23 22:21:11 2016] GET / => generated 51151 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 14938|app: 0|req: 26/53] 103.41.52.94 () {34 vars in 497 bytes} [Tue Feb 23 22:29:14 2016] GET / => generated 51151 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Tue Feb 23 23:45:44 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x172a9c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x172a9c0 pid: 15142 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 15142, cores: 1)
+spawned uWSGI worker 2 (pid: 15145, cores: 1)
+[pid: 15142|app: 0|req: 1/1] 182.138.127.158 () {44 vars in 1142 bytes} [Tue Feb 23 23:46:48 2016] GET / => generated 51116 bytes in 49 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 15145|app: 0|req: 1/2] 182.138.127.158 () {50 vars in 1220 bytes} [Tue Feb 23 23:46:56 2016] POST /login/ => generated 10 bytes in 271 msecs (HTTP/1.1 200) 4 headers in 177 bytes (1 switches on core 0)
+Internal Server Error: /head_sculpture/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 23, in head_sculpture
+    head_img_src = UserDefine.objects.get(username=user).headImgSrc
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 381, in get
+    num = len(clone)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 240, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: question_naire_userdefine.headImgSrc
+[pid: 15142|app: 0|req: 2/3] 182.138.127.158 () {44 vars in 1173 bytes} [Tue Feb 23 23:46:58 2016] GET /head_sculpture/ => generated 105485 bytes in 144 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 15145|app: 0|req: 2/4] 182.138.127.158 () {42 vars in 1074 bytes} [Tue Feb 23 23:46:59 2016] GET /favicon.ico => generated 4659 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)

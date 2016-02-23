@@ -2554,13 +2554,6 @@ fieldset{border:0;}
    </div>
   </div>
  <script>
-     var isEnd = "{{ isEnd }}";
-     if(isEnd == "True"){
-         var a = document.getElementsByClassName("sumitbutton")[0];
-         a.href = "javascript:print();";
-         a.innerText = "打印问卷";
-         alert("该问卷已停止发布");
-     }
      var pater_title = document.getElementById("pater_title");
      var url_search = window.location.search.replace("?","").split("&");
      var username = url_search[0].split("=")[1];
@@ -2596,6 +2589,13 @@ fieldset{border:0;}
                     alert(response);
               })
           }
+     }
+     var isEnd = "{{ isEnd }}";
+     if(isEnd == "True"){
+         var a = document.getElementsByClassName("sumitbutton")[0];
+         a.href = "javascript:print();";
+         a.innerText = "打印问卷";
+         alert("该问卷已停止发布");
      }
  </script>
  </body>

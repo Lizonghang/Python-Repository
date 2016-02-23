@@ -107,8 +107,9 @@
             title_button.innerText = "完成编辑";
             title_button.onclick = function(){
                 title_button.innerText = "编辑描述";
-                //discription.innerText = discription.getElementsByTagName("textarea")[0].innerText;
-                discription.innerText = "1";
+                var new_desc = discription.getElementsByTagName("textarea")[0].innerText;
+                alert(new_desc);
+                discription.innerText = new_desc;
                 title_button.onclick = function(){edit_desc();};
             }
         }

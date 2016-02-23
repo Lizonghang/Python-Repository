@@ -101,11 +101,12 @@
             up_button.innerText = "上移";
             up_button.onclick = function(){upmove(this.id)};
             up_button.id = "up_button_" + i;
-            up_button.innerText = "下移";
-            up_button.onclick = function(){downmove(this.id)};
-            up_button.id = "down_button_" + i;
+            down_button.innerText = "下移";
+            down_button.onclick = function(){downmove(this.id)};
+            down_button.id = "down_button_" + i;
             Q.getElementsByClassName("div_title_question")[0].appendChild(edit_button);
             Q.getElementsByClassName("div_title_question")[0].appendChild(up_button);
+            Q.getElementsByClassName("div_title_question")[0].appendChild(down_button);
             i++;
             Q = document.getElementsByClassName("Q" + i)[0];
         }
@@ -160,7 +161,7 @@
 
         }
         function downmove(id){
-            
+
         }
 </script>
 </body>

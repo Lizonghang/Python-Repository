@@ -134,8 +134,8 @@
       <file leaf-file-name="userQList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/userQList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6242171">
-              <caret line="106" column="108" selection-start-line="106" selection-start-column="108" selection-end-line="106" selection-end-column="108" />
+            <state vertical-scroll-proportion="0.67118996">
+              <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -1051,8 +1051,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/userQList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6242171">
-          <caret line="106" column="108" selection-start-line="106" selection-start-column="108" selection-end-line="106" selection-end-column="108" />
+        <state vertical-scroll-proportion="0.67118996">
+          <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
           <folding />
         </state>
       </provider>

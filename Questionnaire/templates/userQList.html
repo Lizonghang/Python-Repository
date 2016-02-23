@@ -154,7 +154,7 @@
               var url = "http://www.desckie.com/delete_question/";
               $.post(url, {'username': '{{ user }}', 'title': title}, function(response){
                   if(response=="Success"){
-                      confirm_result.remove();
+                      content_section.remove();
                       alert(title);
                   }
               });

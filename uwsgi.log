@@ -10344,3 +10344,35 @@ Not Found: /editor/filemanager/browser/default/connectors/aspx/connector.aspx
 [pid: 12496|app: 0|req: 57/113] 121.42.0.39 () {40 vars in 916 bytes} [Tue Feb 23 09:31:40 2016] POST /editor/filemanager/browser/default/connectors/aspx/connector.aspx?Command=FileUpload&Type=File&CurrentFolder=%2F => generated 4529 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
 Not Found: /mailmain
 [pid: 12499|app: 0|req: 57/114] 121.42.0.39 () {36 vars in 539 bytes} [Tue Feb 23 09:31:42 2016] GET /mailmain?type=login => generated 4313 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Tue Feb 23 09:39:10 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1b149c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1b149c0 pid: 12543 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 12543, cores: 1)
+spawned uWSGI worker 2 (pid: 12546, cores: 1)
+[pid: 12543|app: 0|req: 1/1] 125.71.229.19 () {46 vars in 1320 bytes} [Tue Feb 23 09:39:14 2016] GET /select/re_edit/?user=lizonghang&title=%E6%B5%8B%E8%AF%95%E5%86%B2%E7%BC%96%E8%BE%91 => generated 12201 bytes in 41 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)

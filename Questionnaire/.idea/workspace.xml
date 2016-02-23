@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Questionnaire/urls.py" afterPath="$PROJECT_DIR$/Questionnaire/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/userQList.html" afterPath="$PROJECT_DIR$/templates/userQList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_def_temp1.html" afterPath="$PROJECT_DIR$/templates/user_def_temp1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/question_naire/views.py" afterPath="$PROJECT_DIR$/question_naire/views.py" />
     </list>
     <ignored path="Questionnaire.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/question_naire/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85539716">
+            <state vertical-scroll-proportion="0.0">
               <caret line="124" column="32" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
               <folding>
                 <element signature="e#15#62#0" expanded="true" />
@@ -74,8 +71,8 @@
       <file leaf-file-name="re_edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/re_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.541667">
-              <caret line="158" column="32" selection-start-line="158" selection-start-column="32" selection-end-line="158" selection-end-column="32" />
+            <state vertical-scroll-proportion="-4.9166665">
+              <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -134,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userQList.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="userQList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/userQList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.791666">
-              <caret line="157" column="35" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
+            <state vertical-scroll-proportion="-0.017745303">
+              <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -201,8 +198,8 @@
         <option value="$PROJECT_DIR$/templates/re_edit.html" />
         <option value="$PROJECT_DIR$/templates/user_def_temp1.html" />
         <option value="$PROJECT_DIR$/Questionnaire/urls.py" />
-        <option value="$PROJECT_DIR$/templates/userQList.html" />
         <option value="$PROJECT_DIR$/question_naire/views.py" />
+        <option value="$PROJECT_DIR$/templates/userQList.html" />
       </list>
     </option>
   </component>
@@ -998,14 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/re_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.541667">
-          <caret line="158" column="32" selection-start-line="158" selection-start-column="32" selection-end-line="158" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/edit_template_1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.166666">
@@ -1042,21 +1031,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/userQList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.791666">
-          <caret line="157" column="35" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/question_naire/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85539716">
+        <state vertical-scroll-proportion="0.0">
           <caret line="124" column="32" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
           <folding>
             <element signature="e#15#62#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/re_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.9166665">
+          <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/userQList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.017745303">
+          <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

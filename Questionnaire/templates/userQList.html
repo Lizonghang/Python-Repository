@@ -149,11 +149,10 @@
       function delete_question(id){
           var confirm_result = confirm("确定要删除该问卷吗?");
           if(confirm_result){
-              alert(id);
               var content_section = document.getElementById(id).parentNode.parentNode.parentNode;
               var title = content_section.getElementsByClassName("title")[0].innerText;
               var url = "http://www.desckie.com/delete_question/";
-              $.post(url, {'username': {{ user }}, 'title': title}, function(response){
+              $.post(url, {'username': '{{ user }}', 'title': title}, function(response){
                   if(response=="Success"){
                       confirm_result.remove();
                       alert(title);

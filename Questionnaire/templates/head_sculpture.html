@@ -306,6 +306,7 @@
           var head_img_src = document.getElementById("head_img").src;
           var url = "http://www.desckie.com/set_head_img/";
           $.post(url, {'img_src': head_img_src}, function(response){
+              document.getElementsByClassName("avatar")[0].src = head_img_src;
               alert(response);
           })
       }

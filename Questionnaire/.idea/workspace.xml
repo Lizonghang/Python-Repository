@@ -55,8 +55,8 @@
       <file leaf-file-name="re_edit.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/re_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32672232">
-              <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.6242171">
+              <caret line="109" column="98" selection-start-line="109" selection-start-column="98" selection-end-line="109" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -1040,8 +1040,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/re_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32672232">
-          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.6242171">
+          <caret line="109" column="98" selection-start-line="109" selection-start-column="98" selection-end-line="109" selection-end-column="98" />
           <folding />
         </state>
       </provider>

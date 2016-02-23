@@ -161,8 +161,11 @@ def view(request):
         s.save()
         return HttpResponse('Saved')
     else:
-        isEnd = UserDefine.objects.get(username=user).question_set.get(title=title).isEnd
-        return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).question_set.get(title=title).pageForm, 'user': user, 'title': title, 'isEnd': isEnd})
+        if UserDefine.objects.get(username=user).question_set.filter(title=title):
+            isEnd = UserDefine.objects.get(username=user).question_set.get(title=title).isEnd
+            return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).question_set.get(title=title).pageForm, 'user': user, 'title': title, 'isEnd': isEnd})
+        else:
+            return HttpResponse('该问卷不存在')
 
 
 def welcome(request):

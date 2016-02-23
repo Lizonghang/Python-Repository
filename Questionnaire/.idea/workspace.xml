@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_def_temp1.html" afterPath="$PROJECT_DIR$/templates/user_def_temp1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Questionnaire.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,10 +31,12 @@
         <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.48329854">
-              <caret line="2573" column="8" selection-start-line="2573" selection-start-column="8" selection-end-line="2573" selection-end-column="8" />
+              <caret line="2545" column="160" selection-start-line="2545" selection-start-column="160" selection-end-line="2545" selection-end-column="160" />
               <folding>
-                <marker date="1456224716000" expanded="true" signature="49159:49188" placeholder="{...}" />
-                <marker date="1456224716000" expanded="true" signature="52262:52291" placeholder="{...}" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1456225512000" expanded="true" signature="49159:49188" placeholder="{...}" />
+                <marker date="1456225512000" expanded="true" signature="52262:52291" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -1032,10 +1033,12 @@
     <entry file="file://$PROJECT_DIR$/templates/user_def_temp1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48329854">
-          <caret line="2573" column="8" selection-start-line="2573" selection-start-column="8" selection-end-line="2573" selection-end-column="8" />
+          <caret line="2545" column="160" selection-start-line="2545" selection-start-column="160" selection-end-line="2545" selection-end-column="160" />
           <folding>
-            <marker date="1456224716000" expanded="true" signature="49159:49188" placeholder="{...}" />
-            <marker date="1456224716000" expanded="true" signature="52262:52291" placeholder="{...}" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1456225512000" expanded="true" signature="49159:49188" placeholder="{...}" />
+            <marker date="1456225512000" expanded="true" signature="52262:52291" placeholder="{...}" />
           </folding>
         </state>
       </provider>

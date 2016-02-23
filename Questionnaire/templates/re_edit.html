@@ -97,24 +97,7 @@
             edit_button.onclick = function(){edit(this.id);};
             edit_button.id = "edit_button_" + i;
             Q.getElementsByClassName("div_title_question")[0].appendChild(edit_button);
-            if(i!=1) {
-                var up_button = document.createElement("button");
-                up_button.innerText = "上移";
-                up_button.onclick = function () {
-                    upmove(this.id)
-                };
-                up_button.id = "up_button_" + i;
-                Q.getElementsByClassName("div_title_question")[0].appendChild(up_button);
-            }
             i++;
-            if(!document.getElementsByClassName("Q" + i)[0]){
-                break;
-            }
-            var down_button = document.createElement("button");
-            down_button.innerText = "下移";
-            down_button.onclick = function(){downmove(this.id)};
-            down_button.id = "down_button_" + (i-1);
-            Q.getElementsByClassName("div_title_question")[0].appendChild(down_button);
             Q = document.getElementsByClassName("Q" + i)[0]
         }
         function edit_desc(){
@@ -163,12 +146,6 @@
                         button.onclick = function(){edit(this.id);};
                     }
             }
-        }
-        function upmove(id){
-
-        }
-        function downmove(id){
-
         }
 </script>
 </body>

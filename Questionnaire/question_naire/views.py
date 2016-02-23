@@ -117,6 +117,7 @@ def delete(request):
         s[i].anscount_set.all().delete()
     s.delete()
     q.delete()
+    UserDefine.objects.get(username=user).collect_set.get(username=user, title=title).delete()
     return HttpResponse('delete success')
 
 

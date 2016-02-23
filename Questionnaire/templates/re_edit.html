@@ -88,6 +88,7 @@
         var title_button = document.createElement("button");
         title_button.innerText = "编辑描述";
         title_button.onclick = function(){edit_desc();};
+        document.getElementById("divId").appendChild(title_button);
         var i=1;
         var Q = document.getElementsByClassName("Q"+i)[0];
         while(Q) {

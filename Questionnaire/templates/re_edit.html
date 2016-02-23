@@ -53,22 +53,6 @@
     <div style="width:870px; margin: 0 auto; text-align: left;" id="page">
         <div id="topnav" style="position:relative">
             <div class="tabQTypet" style="background: 0px; border: 0px; height: 40px;">
-                <ul id="tQType">
-                    <li style="margin-left: 250px; width:85px;">
-                        <a id="hrefChoice" href="javascript:createFreQ('simple_select');" style="text-decoration: none; padding:0;">
-                            <span class="design-icon design-radio"></span><span class="spanQTxt">单项选择</span>
-                        </a>
-                    </li>
-                    <li style="width:85px;"><a href="javascript:createFreQ('multiple_choice');" style="text-decoration: none;padding: 0;">
-                        <span class="design-icon design-check"></span><span class="spanQTxt">多项选择</span>
-                    </a>
-                    </li>
-                    <li style="width:85px;">
-                        <a href="javascript:createFreQ('fitb');" style="text-decoration: none;padding: 0;">
-                        <span class="design-icon design-text"></span><span class="spanQTxt">单项填空</span>
-                        </a>
-                    </li>
-                </ul>
                 <div style="clear:both;"></div>
             </div>
         </div>
@@ -152,9 +136,16 @@
     function check_valid(){
         return !document.getElementsByClassName("redit")[0];
     }
+    function remove_button(){
+        var allButton = document.getElementsByTagName("button");
+        var i;
+        for(i=0;i<allButton.length;i++){
+            allButton[i].remove();
+        }
+    }
     function submit(){
         if(check_valid()){
-            alert("有效");
+            remove_button();
         }
         else{
             alert("尚未确认修改");

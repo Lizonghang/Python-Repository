@@ -121,6 +121,10 @@ def delete(request):
     return HttpResponse('delete success')
 
 
+def delete_question(request):
+    return HttpResponse('Success')
+
+
 def view(request):
     user = request.GET.get('user')
     title = request.GET.get('title')

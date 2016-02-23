@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^login/$', login),
     url(r'^logout/$', logout),
     url(r'^delete/$', delete),
+    url(r'^delete_question/$', delete_question),
     url(r'^clear_all_user', clear_all_user),
     url(r'^select/agreement/$', agreement),
     url(r'^select/template_1/$', template_1),

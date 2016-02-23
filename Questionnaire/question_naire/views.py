@@ -129,7 +129,7 @@ def delete_question(request):
         if request.user.is_authenticated():
             username = request.POST.get('username')
             title = request.POST.get('title')
-            u = UserDefine.objects.get(user=username)
+            u = UserDefine.objects.get(username=username)
             q = u.question_set.get(title=title)
             s = q.statics_set.all()
             for i in range(0, len(s)):

@@ -10873,3 +10873,35 @@ spawned uWSGI worker 1 (pid: 13231, cores: 1)
 spawned uWSGI worker 2 (pid: 13234, cores: 1)
 [pid: 13231|app: 0|req: 1/1] 125.71.229.19 () {46 vars in 1320 bytes} [Tue Feb 23 10:52:33 2016] GET /select/re_edit/?user=lizonghang&title=%E6%B5%8B%E8%AF%95%E5%86%B2%E7%BC%96%E8%BE%91 => generated 13716 bytes in 51 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 13234|app: 0|req: 1/2] 125.71.229.19 () {46 vars in 1320 bytes} [Tue Feb 23 10:53:39 2016] GET /select/re_edit/?user=lizonghang&title=%E6%B5%8B%E8%AF%95%E5%86%B2%E7%BC%96%E8%BE%91 => generated 13716 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Tue Feb 23 10:56:51 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c2f9c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1c2f9c0 pid: 13278 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 13278, cores: 1)
+spawned uWSGI worker 2 (pid: 13281, cores: 1)
+[pid: 13278|app: 0|req: 1/1] 125.71.229.19 () {46 vars in 1320 bytes} [Tue Feb 23 10:56:56 2016] GET /select/re_edit/?user=lizonghang&title=%E6%B5%8B%E8%AF%95%E5%86%B2%E7%BC%96%E8%BE%91 => generated 13758 bytes in 43 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)

@@ -134,7 +134,7 @@
 </script>
 <script>
     function check_valid(){
-        return !(document.getElementsByClassName("redit")[0]||document.getElementsByTagName("button")[0]);
+        return !(document.getElementsByClassName("redit")[0]);
     }
     function remove_button(){
         var allButton = document.getElementsByTagName("button");
@@ -168,10 +168,10 @@
         }
     }
     function submit(){
-        remove_button();
         if(check_valid()){
             var confirm_result = confirm("提交后将覆盖原问卷并且丢失已收集的数据,是否继续?");
             if(confirm_result){
+                remove_button();
                 get_content();
                 var pageForm = escape(document.getElementById('sur').innerHTML);
                 var data = {'pageForm': pageForm, 'QContent': QContent};

@@ -2461,13 +2461,11 @@ fieldset{border:0;}
       function submit(){
           var Qs=1;
           var tempQ;
-          //var maxLen=1;
           while(tempQ = document.getElementsByClassName("Q"+Qs)[0]){
               if(tempQ.getElementsByClassName("plot")[0].style.visibility == 'visible'){
                   var lis = tempQ.getElementsByTagName("li");
                   var check = false;
                   var len = lis.length;
-                  //if(len > maxLen)  maxLen = len;
                   if(len == 1){
                       if(lis[0].getElementsByTagName("textarea")[0].value != "")
                           check = true;

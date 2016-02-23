@@ -105,7 +105,7 @@ def re_edit(request):
             else:
                 pageForm = question.pageForm
                 title = question.title
-                return render_to_response('re_edit.html', {'pageForm': pageForm, 'title': title, 'user': user})
+                return render_to_response('re_edit.html', {'pageForm': pageForm, 'user': user})
         else:
             return HttpResponse('您没有修改权限')
     else:
@@ -139,7 +139,7 @@ def view(request):
         s = Statics.objects.create(key='head', question=Question.objects.get(title=title))
         s.QContent = QContent
         s.save()
-        return HttpResponse('Method:Post')
+        return HttpResponse('Saved')
     else:
         isEnd = UserDefine.objects.get(username=user).question_set.get(title=title).isEnd
         return render_to_response('user_def_temp1.html', {'pageForm': UserDefine.objects.get(username=user).question_set.get(title=title).pageForm, 'user': user, 'title': title, 'isEnd': isEnd})

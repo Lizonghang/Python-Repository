@@ -118,7 +118,7 @@ def delete(request):
             s[i].anscount_set.all().delete()
         s.delete()
         q.delete()
-        UserDefine.objects.get(username=user).collect_set.get(username=user, title=title).delete()
+        UserDefine.objects.get(username=user).collect_set.filter(username=user, title=title).delete()
         return HttpResponse('delete success')
     else:
         return HttpResponse('ERROR METHOD POST')
@@ -136,7 +136,7 @@ def delete_question(request):
                 s[i].anscount_set.all().delete()
             s.delete()
             q.delete()
-            u.collect_set.get(username=username, title=title).delete()
+            u.collect_set.filter(username=username, title=title).delete()
             return HttpResponse('Success')
         else:
             return HttpResponse('请先登录')

@@ -109,20 +109,38 @@ def re_edit(request):
 
 
 def delete(request):
-    user = request.GET.get('user')
-    title = request.GET.get('title')
-    q = UserDefine.objects.get(username=user).question_set.get(title=title)
-    s = q.statics_set.all()
-    for i in range(0, len(s)):
-        s[i].anscount_set.all().delete()
-    s.delete()
-    q.delete()
-    UserDefine.objects.get(username=user).collect_set.get(username=user, title=title).delete()
-    return HttpResponse('delete success')
+    if request.method == 'GET':
+        user = request.GET.get('user')
+        title = request.GET.get('title')
+        q = UserDefine.objects.get(username=user).question_set.get(title=title)
+        s = q.statics_set.all()
+        for i in range(0, len(s)):
+            s[i].anscount_set.all().delete()
+        s.delete()
+        q.delete()
+        UserDefine.objects.get(username=user).collect_set.get(username=user, title=title).delete()
+        return HttpResponse('delete success')
+    else:
+        return HttpResponse('ERROR METHOD POST')
 
 
 def delete_question(request):
-    return HttpResponse('Success')
+    if request.method == 'POST':
+        if request.user.is_authenticated():
+            username = request.POST.get('username')
+            title = request.POST.get('title')
+            u = UserDefine.objects.get(user=username)
+            q = u.question_set.get(title=title)
+            s = q.statics_set.all()
+            for i in range(0, len(s)):
+                s[i].anscount_set.all().delete()
+            s.delete()
+            q.delete()
+            u.collect_set.get(username=username, title=title).delete()
+        else:
+            return HttpResponse('请先登录')
+    else:
+        return HttpResponse('ERROR METHOD GET')
 
 
 def view(request):

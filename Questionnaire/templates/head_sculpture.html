@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>我的头像</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
+  <link data-turbolinks-track="true" debug="false" href="https://cdn.jinshuju.net/assets/columbus/application-b088ea91390620e22dcde607f13bc41c.css" media="screen" rel="stylesheet"/>
+  <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/pusher-854ace9c4d1b08136b5092a579a1a274.js"></script>
+  <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/application-178a2318a181f06287fb0efaa636f7f8.js"></script>
+ </head>
+ <body>
+  <div class="flash-notifications" data-message="{}"></div>
+  <header>
+   <div class="container header-banner">
+    <div class="header-nav header-logo">
+     <a class="brand brand-event track-event" href="http://www.desckie.com/">
+         <i class="gd-icon-logo"></i><span class="brand-name">问卷网</span>
+     </a>
+    </div>
+    <!-- 搜索功能禁用 -->
+    <div class="global-search-container search-box" id="global_search_container">
+     <div class="search-backdrop"></div>
+     <input class="search-content" id="key_word" name="key_word" type="search" value="搜索功能暂时禁用" disabled="disabled"/>
+     <i class="search-icon gd-icon-search" style="margin-left: -150px;margin-top: -15px"></i>
+     <a class="search-trigger" href="javascript:void(0)"></a>
+    </div>
+    <ul class="header-nav user-nav">
+     <li>
+      <a class="top-settings" href="javascript:void(0)">
+       <div class="avatar-container">
+        <img alt="Avatar default" class="avatar" src="{{ head_img_src }}"/>
+       </div>
+       <span class="user-name"><span class="popup-trigger"></span></span>
+      </a>
+     </li>
+    </ul>
+    <div class="top-settings-popup gd-hide">
+     <div class="top-settings-content">
+      <ul class="links">
+       <li class="email-with-plan">
+        您好,亲爱的用户:
+        <div class="name-with-vip-style">
+         <span class="vip-user free_user">lizonghang</span>
+        </div>
+       </li>
+       <li class="separator"></li>
+       <li><a class="setting-profile-link profile-event track-event" href="http://www.desckie.com">主页</a></li>
+       <li class="separator"></li>
+       <li><a class="template-event track-event" href="http://www.desckie.com/select/">模板中心</a></li>
+       <li class="separator"></li>
+       <li><a href="http://www.desckie.com/select/list/" target="_blank">我的问卷</a></li>
+       <li class="separator"></li>
+       <li><a href="javascript:logout();">注销</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="form-nav">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <div class="pull-right" id="copy_published_form_link" style="height: 25px;"></div>
+      <div class="subnav" data-placement="bottom" id="form_nav"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-10">
+     <div class="main_content with-tabs" id="form_publish">
+      <div class="tab-content">
+       <div class="tab-pane active" id="tab_visit_url">
+        <div class="content-section weixin-thumbnail-section">
+         <div class="section-header">
+          <span class="title">选择头像</span>
+         </div>
+         <div class="section-body" style="height: 300px">
+          <div class="section-description"><p>选择默认头像或上传自定义头像</p></div>
+            <div>
+                <ul class="thumbnail-icons predefined-thumbnail">
+                    <li class="">
+                      <img id="pic_1" onclick="choosed(this.id)" src="http://e.hiphotos.baidu.com/image/h%3D200/sign=a0901680a3c27d1eba263cc42bd4adaf/b21bb051f819861842d54ba04ded2e738bd4e600.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_2" onclick="choosed(this.id)" src="http://img4.duitang.com/uploads/item/201601/21/20160121102221_LjFyB.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_3" onclick="choosed(this.id)" src="http://img5.duitang.com/uploads/item/201601/06/20160106202904_NjC8Z.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_4" onclick="choosed(this.id)" src="http://img4.duitang.com/uploads/item/201601/11/20160111175420_ZmTzU.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_5" onclick="choosed(this.id)" src="http://img3.imgtn.bdimg.com/it/u=3157750720,423401783&fm=11&gp=0.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_6" onclick="choosed(this.id)" src="http://img4.duitang.com/uploads/item/201601/03/20160103175943_SkFQf.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_7" onclick="choosed(this.id)" src="http://d.hiphotos.baidu.com/zhidao/pic/item/b8014a90f603738dfa989413b51bb051f819ec35.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_8" onclick="choosed(this.id)" src="http://tx.haiqq.com/uploads/allimg/150323/1513261b8-0.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_9" onclick="choosed(this.id)" src="http://p1.gexing.com/G1/M00/AD/AF/rBACE1OcAYai8-dGAAAhhzdFhps872_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_10" onclick="choosed(this.id)" src="http://e.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=741f08f897cad1c8d0eef4234a0e4b3f/d1a20cf431adcbef325866d1aeaf2edda2cc9ffc.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_11" onclick="choosed(this.id)" src="http://p3.gexing.com/G1/M00/EE/19/rBACFFI1aJzwWj5iAAEDuR1pCMo580_200x200_3.png?recache=20131109">
+                    </li>
+                    <li class="">
+                      <img id="pic_12" onclick="choosed(this.id)" src="http://b.hiphotos.baidu.com/zhidao/wh%3D600%2C800/sign=307fcddb962bd4074292dbfb4bb9b269/5fdf8db1cb1349543078bb97574e9258d0094ada.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_13" onclick="choosed(this.id)" src="http://img4.duitang.com/uploads/item/201207/15/20120715180052_JZBJV.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_14" onclick="choosed(this.id)" src="http://p4.gexing.com/G1/M00/07/B7/rBACFFHvyrmRi7O2AAAYpQir52w312_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_15" onclick="choosed(this.id)" src="http://p3.gexing.com/G1/M00/9E/A7/rBACFFOsKV7Q1V8GAAAlvCfhhCw005_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_16" onclick="choosed(this.id)" src="http://v1.qzone.cc/avatar/201402/06/12/38/52f311d5136eb590.jpg!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_17" onclick="choosed(this.id)" src="http://p1.gexing.com/G1/M00/E6/24/rBABFFHneCuQHJu6AAAlR1v-Ad4195_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_18" onclick="choosed(this.id)" src="http://p3.gexing.com/touxiang/20120825/2158/5038d9fdae561_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_19" onclick="choosed(this.id)" src="http://p4.gexing.com/G1/M00/A9/E3/rBACE1Ljzr2QeMd4AAAZZDW-9qo896_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_20" onclick="choosed(this.id)" src="http://p1.gexing.com/touxiang/20120925/0030/50608aa15bc6b_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_21" onclick="choosed(this.id)" src="http://d.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=32f6b10487025aafd36776cfcedd8752/9d82d158ccbf6c8163efdb2cb93eb13532fa401e.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_22" onclick="choosed(this.id)" src="http://imgsrc.baidu.com/forum/w%3D580/sign=6c86f09f1f30e924cfa49c397c096e66/b14db319ebc4b74528275a81cffc1e178b82158a.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_23" onclick="choosed(this.id)" src="http://b.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=a8c2d690d52a60595245e91e1d0418ad/a8773912b31bb05101d48971347adab44bede0f3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_24" onclick="choosed(this.id)" src="http://img.woyaogexing.com/2014/07/21/a19ca033b1f4f1a1%21200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_25" onclick="choosed(this.id)" src="http://p3.gexing.com/G1/M00/EE/19/rBACFFI1aJzwdm1pAAAaezEouNA205_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_26" onclick="choosed(this.id)" src="http://p1.gexing.com/G1/M00/53/BA/rBACE1PLkJ-zcV1KAAAhUFVjCFs395_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_27" onclick="choosed(this.id)" src="http://d.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=085677a917ce36d3a2518b340fc316b1/2f738bd4b31c8701f2683995257f9e2f0608ffe3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_28" onclick="choosed(this.id)" src="http://v1.qzone.cc/avatar/201304/09/18/14/5163ea1eb3f7d603.gif%21200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_29" onclick="choosed(this.id)" src="http://p2.gexing.com/touxiang/20130408/1859/5162a32b45eb6_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_30" onclick="choosed(this.id)" src="http://p3.gexing.com/G1/M00/0C/13/rBACFFNyMzniHGbbAAAXXKMKjTI000_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_31" onclick="choosed(this.id)" src="http://www.feizl.com/upload2007/2012_12/121225160390128.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_32" onclick="choosed(this.id)" src="http://www.qqbody.com/uploads/allimg/201411/10-171801_947.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_33" onclick="choosed(this.id)" src="http://www.qqbody.com/uploads/allimg/201501/21-091754_896.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_34" onclick="choosed(this.id)" src="http://p3.gexing.com/G1/M00/26/AB/rBACE1JMFq7Apc5KAADwUmJBTnk931_200x200_3.png?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_35" onclick="choosed(this.id)" src="http://p3.gexing.com/touxiang/20130502/1403/518201ba31544_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_36" onclick="choosed(this.id)" src="http://p3.gexing.com/touxiang/20120726/0928/50109d23d5307_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_37" onclick="choosed(this.id)" src="http://img4.duitang.com/uploads/item/201310/02/20131002143214_TiCw5.thumb.224_0.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_38" onclick="choosed(this.id)" src="http://c.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=868798dfcdbf6c81f76224ec890e9d03/11385343fbf2b2118916f9f9cb8065380cd78e48.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_39" onclick="choosed(this.id)" src="http://qq1234.org/uploads/allimg/141212/3_141212135049_2.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_40" onclick="choosed(this.id)" src="http://img4.duitang.com/uploads/item/201208/15/20120815234815_TF5J3.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_41" onclick="choosed(this.id)" src="http://p3.gexing.com/touxiang/20121120/1652/50ab44c089ea6_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_42" onclick="choosed(this.id)" src="http://www.feizl.com/upload2007/2012_08/120815134333542.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_43" onclick="choosed(this.id)" src="http://img5.duitang.com/uploads/blog/201408/15/20140815075118_ZUUFk.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_44" onclick="choosed(this.id)" src="http://p1.gexing.com/touxiang/20130116/0946/50f60681b6514_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_45" onclick="choosed(this.id)" src="http://up.qqjia.com/z/14/tu17244_15.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_46" onclick="choosed(this.id)" src="http://b.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=42772ee7b54543a9f54ef2c82b27a6b4/960a304e251f95ca20a662a5cb177f3e67095256.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_47" onclick="choosed(this.id)" src="http://img0w.pconline.com.cn/pconline/1310/29/3719176_136677628112.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_48" onclick="choosed(this.id)" src="http://diy.qqjay.com/u2/2013/0214/5754f03f53dc627f0996c0310d08634e.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_49" onclick="choosed(this.id)" src="http://a.hiphotos.baidu.com/zhidao/wh%3D600%2C800/sign=3767ae7ecafcc3ceb495c135a275fab0/d4628535e5dde711e09861aaa5efce1b9d166127.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_50" onclick="choosed(this.id)" src="http://p3.gexing.com/touxiang/20130512/1455/518f3cc77e7fd_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_51" onclick="choosed(this.id)" src="http://p4.gexing.com/G1/M00/9E/A7/rBACFFOsKV7DHlTqAAAoIjUhkFg461_200x200_3.jpg?recache=20131108">
+                    </li>
+                    <li class="">
+                      <img id="pic_52" onclick="choosed(this.id)" src="http://imgsrc.baidu.com/forum/pic/item/8527a71f3a292df5421317ccbc315c6036a87364.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_53" onclick="choosed(this.id)" src="http://p1.gexing.com/touxiang/20130403/2053/515c263635619_200x200_3.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_54" onclick="choosed(this.id)" src="http://b.hiphotos.baidu.com/zhidao/wh%3D600%2C800/sign=d8284bda314e251fe2a2ecfe97b6e52f/caef76094b36acafb7c17f1c7dd98d1001e99c29.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_55" onclick="choosed(this.id)" src="http://p4.gexing.com/G1/M00/8C/6A/rBACFFJ2QxTw6rrtAAAji2_MB-I287_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_56" onclick="choosed(this.id)" src="http://f.hiphotos.baidu.com/zhidao/wh%3D600%2C800/sign=7840a1fb48540923aa3c6b78a268fd31/3b87e950352ac65ce5c939abfaf2b21192138a1e.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_57" onclick="choosed(this.id)" src="http://e.hiphotos.baidu.com/zhidao/pic/item/c8177f3e6709c93d7c098a699e3df8dcd00054b0.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_58" onclick="choosed(this.id)" src="http://imgsrc.baidu.com/forum/pic/item/e0a21b1ed21b0ef4018abc8fddc451da80cb3e64.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_59" onclick="choosed(this.id)" src="http://www.qqjia.com/z/04/tu5467_13.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_60" onclick="choosed(this.id)" src="http://v1.qzone.cc/avatar/201307/03/15/59/51d3d9e33e1d4858.jpg!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_61" onclick="choosed(this.id)" src="http://p3.gexing.com/G1/M00/6E/98/rBABE1G8IM3jn_q1AAAj5l0gRnQ068_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_62" onclick="choosed(this.id)" src="http://p1.gexing.com/touxiang/20130217/1940/5120c1aa07a5a_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_63" onclick="choosed(this.id)" src="http://p4.gexing.com/touxiang/20130217/1937/5120c0e86a205_200x200_3.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_64" onclick="choosed(this.id)" src="http://p1.gexing.com/touxiang/20120829/1420/503db4b4174c2_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_65" onclick="choosed(this.id)" src="http://p4.gexing.com/G1/M00/40/2F/rBACFFH9u9LDrdCoAAEYuQRbRyg245_200x200_3.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_66" onclick="choosed(this.id)" src="http://p2.gexing.com/touxiang/20120810/1729/5024d47ff065d_200x200_3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_67" onclick="choosed(this.id)" src="http://p3.gexing.com/touxiang/2011/12/4/201124864432881.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_68" onclick="choosed(this.id)" src="http://p3.gexing.com/G1/M00/16/63/rBACE1Hybr_CaxEAAAAcjzJkJkI197_200x200_3.jpg">
+                    </li>
+                </ul>
+            </div>
+         </div>
+        </div>
+        <div style="margin-left: 1000px;margin-top: -300px;">
+            <img id="head_img" src="{{ head_img_src }}" alt="head_img" style="background-color: midnightblue;width: 174px;height: 174px;border: 2px solid mediumpurple;border-radius: 87px">
+            <button style="margin-left: 48px;margin-top: 30px;width: 80px;height: 25px;" onclick="asHead();">选择头像</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+      function choosed(id){
+          document.getElementById("head_img").src = document.getElementById(id).src;
+      }
+      function asHead(){
+          var head_img_src = document.getElementById("head_img").src;
+          var url = "http://www.desckie.com/set_head_img/";
+          $.post(url, {'img_src': head_img_src}, function(response){
+              alert(response);
+          })
+      }
+      function logout(){
+          var url = "http://www.desckie.com/logout/";
+          $.get(url, function(response){
+              window.location.href = "http://www.desckie.com";
+              alert(response);
+          });
+      }
+  </script>
+ </body>
+</html>

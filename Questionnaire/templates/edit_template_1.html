@@ -218,6 +218,16 @@
             window.location.href="http://www.desckie.com/select/success/?user={{ user }}&title="+title;
         }
     </script>
+    <script>
+        function ensure(){
+            if(document.getElementById("paper_attr_title").value){
+                document.getElementById('PDF_bg_chezchenz').style.display='none';
+                document.getElementById('pater_title').innerText= document.getElementById('paper_attr_title').value;
+                document.getElementById('pater_desc').innerHTML= document.getElementById('pater_attr_desc').value;
+            }
+            else    alert("请输入问卷标题");
+        }
+    </script>
 </head>
 <body style="background: #eeeeee; margin: 0px; padding: 0px;">
     <div style="width:870px; margin: 0 auto; text-align: left;" id="page">
@@ -267,11 +277,7 @@
                             <li><div style="height: 20px;width: 100%"></div></li>
                             <li>
                                 <div align="center">
-                                    <button id="ensure_button" class="orange" onclick="
-                                    document.getElementById('PDF_bg_chezchenz').style.display='none';
-                                    document.getElementById('pater_title').innerText= document.getElementById('paper_attr_title').value;
-                                    document.getElementById('pater_desc').innerHTML= document.getElementById('pater_attr_desc').value;
-                                    ">确定</button>
+                                    <button id="ensure_button" class="orange" onclick="ensure();">确定</button>
                                 </div>
                             </li>
                         </ul>

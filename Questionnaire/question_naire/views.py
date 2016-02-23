@@ -137,6 +137,7 @@ def delete_question(request):
             s.delete()
             q.delete()
             u.collect_set.get(username=username, title=title).delete()
+            return HttpResponse('Success')
         else:
             return HttpResponse('请先登录')
     else:

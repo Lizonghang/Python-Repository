@@ -100,12 +100,8 @@ def re_edit(request):
         title = request.GET.get('title')
         if user == username:
             question = UserDefine.objects.get(username=user).question_set.get(title=title)
-            if question.isEnd:
-                return HttpResponse('该问卷已停止发布,不可编辑')
-            else:
-                pageForm = question.pageForm
-                title = question.title
-                return render_to_response('re_edit.html', {'pageForm': pageForm, 'user': user})
+            pageForm = question.pageForm
+            return render_to_response('re_edit.html', {'pageForm': pageForm, 'user': user})
         else:
             return HttpResponse('您没有修改权限')
     else:

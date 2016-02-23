@@ -159,9 +159,7 @@
       }
   </script>
   <script>
-      var title = unescape("{{ title }}");
-      var text = "http://www.desckie.com/select/template_1/view?user={{ user }}&title=" + title;
-      jQuery('#qrcode').qrcode({width: 174,height: 174,text: text});
+      jQuery('#qrcode').qrcode({width: 174,height: 174,text: encodeURI("http://www.desckie.com/select/template_1/view?user={{ user }}&title={{ title }}")});
   </script>
  </body>
 </html>

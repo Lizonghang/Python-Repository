@@ -181,6 +181,7 @@
                     if(response == "delete success"){
                         $.post(URL, data, function(response){
                             if(response == "Saved")
+                                $.post("http://www.desckie.com/select/collect_log/", {'method': 'collect', 'username': {{ user }}, 'title': title});
                                 window.location.href="http://www.desckie.com/select/success/?user={{ user }}&title="+title;
                         });
                     }

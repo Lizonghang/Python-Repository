@@ -99,20 +99,35 @@
             var button = document.getElementById(id);
             var block = button.parentNode.parentNode.parentNode;
             var lis = block.getElementsByClassName("ul_select")[0].getElementsByTagName("li");
+            var tspan = block.getElementsByTagName("span")[0];
+            var title = tspan.innerText;
+            tspan.innerHTML = '<input value="'+title+'">';
+            button.innerText = "完成";
             if(lis.length == 1){
-                var tspan = block.getElementsByTagName("span")[0];
-                var title = tspan.innerText;
-                tspan.innerHTML = '<input id="edit_input" value="'+title+'">';
-                button.innerText = "完成";
                 button.onclick = function(){
                     var new_title = tspan.getElementsByTagName("input")[0].value;
                     tspan.innerText = new_title;
                     button.innerText = "编辑文本";
-                    button.onclick = function(){edit(this.id)};
+                    button.onclick = function(){edit(this.id);};
                 };
             }
             else{
-                alert("尚未修改");
+                var k,j;
+                var origi_sel;
+                for(k=0;k<lis.length;k++){
+                    origi_sel = lis[k].getElementsByTagName("label")[0].innerText;
+                    lis[k].getElementsByTagName("label")[0].innerHTML = '<input class="edit_sel" value="'+origi_sel+'">';
+                }
+                button.onclick = function(){
+                        var new_title = tspan.getElementsByTagName("input")[0].value;
+                        tspan.innerText = new_title;
+                        for(j=0;j<lis.length;j++){
+                            var new_sel = lis[j].getElementsByClassName("edit_sel")[0].innerText;
+                            lis[j].getElementsByTagName("label")[0].innerText = new_sel;
+                        }
+                        button.innerText = "编辑文本";
+                        button.onclick = function(){edit(this.id);};
+                    }
             }
         }
 </script>

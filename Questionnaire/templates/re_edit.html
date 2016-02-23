@@ -96,6 +96,7 @@
             edit_button.innerText = "编辑文本";
             edit_button.onclick = function(){edit(this.id);};
             edit_button.id = "edit_button_" + i;
+            Q.getElementsByClassName("div_title_question")[0].appendChild(edit_button);
             if(i!=1) {
                 var up_button = document.createElement("button");
                 up_button.innerText = "上移";
@@ -105,7 +106,6 @@
                 up_button.id = "up_button_" + i;
                 Q.getElementsByClassName("div_title_question")[0].appendChild(up_button);
             }
-            Q.getElementsByClassName("div_title_question")[0].appendChild(edit_button);
             i++;
             if(!document.getElementsByClassName("Q" + i)[0]){
                 break;

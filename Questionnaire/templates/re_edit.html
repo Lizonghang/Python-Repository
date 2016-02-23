@@ -84,6 +84,10 @@
         </div>
     </div>
 <script>
+        var title_div = document.getElementById("pater_title");
+        var title_button = document.createElement("button");
+        title_button.innerText = "编辑描述";
+        title_button.onclick = function(){edit_desc();};
         var i=1;
         var Q = document.getElementsByClassName("Q"+i)[0];
         while(Q) {
@@ -94,6 +98,16 @@
             Q.getElementsByClassName("div_title_question")[0].appendChild(new_button);
             i++;
             Q = document.getElementsByClassName("Q" + i)[0];
+        }
+        function edit_desc(){
+            var discription = document.getElementById("pater_desc");
+            var desc_text = discription.innerText;
+            discription.innerHTML = '<textarea style="width: 730px;height: 70px">'+desc_text+'</textarea>';
+            title_button.innerText = "完成编辑";
+            title_button.onclick = function(){
+                title_button.innerText = "编辑描述";
+                title_button.onclick = function(){edit_desc();};
+            }
         }
         function edit(id){
             var button = document.getElementById(id);

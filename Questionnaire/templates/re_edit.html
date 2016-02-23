@@ -122,7 +122,7 @@
                         var new_title = tspan.getElementsByTagName("input")[0].value;
                         tspan.innerText = new_title;
                         for(j=0;j<lis.length;j++){
-                            var new_sel = lis[j].getElementsByClassName("edit_sel")[0].innerText;
+                            var new_sel = lis[j].getElementsByClassName("edit_sel")[0].value;
                             lis[j].getElementsByTagName("label")[0].innerText = new_sel;
                         }
                         button.innerText = "编辑文本";

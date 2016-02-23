@@ -155,7 +155,6 @@
               $.post(url, {'username': '{{ user }}', 'title': title}, function(response){
                   if(response=="Success"){
                       content_section.remove();
-                      alert(title);
                   }
               });
           }

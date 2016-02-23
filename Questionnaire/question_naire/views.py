@@ -17,6 +17,30 @@ def home_page(request):
         return render_to_response("questionnaire.html", {'logged': logged})
 
 
+def head_sculpture(request):
+    if request.user.is_authenticated():
+        user = request.session['username']
+        head_img_src = UserDefine.objects.get(username=user).headImgSrc
+        return render_to_response("head_sculpture.html", {'user': user, 'head_img_src': head_img_src})
+    else:
+        return HttpResponse("请先登录")
+
+
+def set_head_img(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated():
+            user = request.session['username']
+            img_src = request.POST.get('img_src')
+            u = UserDefine.objects.get(username=user)
+            u.headImgSrc = img_src
+            u.save()
+            return HttpResponse('头像设置成功')
+        else:
+            return HttpResponse('请先登录')
+    else:
+        return HttpResponse('ERROR METHOD GET')
+
+
 def login(request):
     if request.method == 'POST':
         if not request.user.is_authenticated():
@@ -85,7 +109,8 @@ def template_1(request):
 def submit_success(request):
     user = request.GET.get('user')
     title = request.GET.get('title')
-    return render_to_response("Success.html", {'user': user, 'title': title})
+    head_img_src = UserDefine.objects.get(username=user).headImgSrc
+    return render_to_response("Success.html", {'user': user, 'title': title, 'head_img_src': head_img_src})
 
 
 def edit_template_1(request):
@@ -320,6 +345,7 @@ def end_publish(request):
 def user_list(request):
     if request.user.is_authenticated():
         user = request.session['username']
+        head_img_src = UserDefine.objects.get(username=user).headImgSrc
         titles = ''
         collect = ''
         qs = UserDefine.objects.get(username=user).question_set.all()
@@ -332,7 +358,7 @@ def user_list(request):
                     collect += '0,'
             titles = titles[0: len(titles)-1]
             collect = collect[0: len(collect)-1]
-        return render_to_response("userQList.html", {'user': user, 'titles': titles, 'collect': collect})
+        return render_to_response("userQList.html", {'user': user, 'titles': titles, 'collect': collect, 'head_img_src': head_img_src})
     else:
         return HttpResponse("请先登录")
 
@@ -375,6 +401,7 @@ def is_collected(request):
 def collect(request):
     if request.user.is_authenticated():
         user = request.session['username']
+        head_img_src = UserDefine.objects.get(username=user).headImgSrc
         c = UserDefine.objects.get(username=user).collect_set.all()
         username = ''
         titles = ''
@@ -384,7 +411,7 @@ def collect(request):
                 username += (c[i].username + ',')
             titles = titles[0: len(titles)-1]
             username = username[0: len(username)-1]
-        return render_to_response("collect.html", {'user': user, 'titles': titles, 'username': username})
+        return render_to_response("collect.html", {'user': user, 'titles': titles, 'username': username, 'head_img_src': head_img_src})
     else:
         return HttpResponse("请先登录")
 

@@ -5,6 +5,7 @@ from django.db import models
 class UserDefine(models.Model):
     username = models.CharField(max_length=20)
     QCount = models.IntegerField(default=0)
+    headImgSrc = models.CharField(max_length=100, default="https://cdn.jinshuju.net/assets/columbus/avatar_default-5e358f2433179a760ee1ed1f7524eb66.png")
 
     def __unicode__(self):
         return self.username

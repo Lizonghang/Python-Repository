@@ -240,7 +240,7 @@
                             <label class="item" id="name">昵称</label>
                             <div class="ipt_box nick_ipt_box">
                                 <div id="nick_bg" class="bg_txt">
-                                    <input type="text" class="new_txt" id="username" style="z-index:0" maxlength="24" autocomplete="off">
+                                    <input type="text" class="new_txt" id="username" style="z-index:0" maxlength="20" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -273,10 +273,10 @@
                             <div class="ipt_box">
                                 <br><br>
                                 <div class="agree_box">
-                                    <input id="agree" type="checkbox" checked="checked">我已阅读并同意<a style="color: red" href="http://www.desckie.com/select/agreement/" target="_blank">相关服务条款和隐私政策</a></input>
+                                    <input id="agree" checked="checked" type="checkbox" onchange="agree();">我已阅读并同意&nbsp;<a style="color: red" href="http://www.desckie.com/select/agreement/" target="_blank">使用条款及说明</a></input>
                                     <div class="submit">
-                                        <br>
-                                    <input type="button" value="提交注册" id="submit" onclick="javascript:submit();">
+                                    <br>
+                                    <input type="button" value="提交注册" id="submit" onclick="javascript:submit();" disabled="" style="">
                                 </div>
                             </div>
                         </div>
@@ -288,6 +288,20 @@
     </div>
 </div>
 <div class="footer">Copyright <span>©</span> 2016 Hang All Rights Reserved</div>
+<script>
+    function agree(){
+        var status = document.getElementById("agree");
+        var submit_button = document.getElementById("submit");
+        if(status.checked != true){
+            submit_button.disabled = "disabled";
+            submit_button.style.backgroundColor = "gray";
+        }
+        else{
+            submit_button.disabled = "";
+            submit_button.style.backgroundColor = "";
+        }
+    }
+</script>
 <script>
         var username;
         var password;

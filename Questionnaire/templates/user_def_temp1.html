@@ -2561,7 +2561,7 @@ fieldset{border:0;}
      var pater_title = document.getElementById("pater_title");
      var url_search = window.location.search.replace("?","").split("&");
      var username = url_search[0].split("=")[1];
-     var title = url_search[1].split("=")[1];
+     var title = $.trim(pater_title.innerText);
      var heart_button = document.createElement("a");
      heart_button.href = "javascript:collect();";
      $.post("http://www.desckie.com/select/isCollected/", {'username':username, 'title':title}, function(response){

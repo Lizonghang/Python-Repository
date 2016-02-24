@@ -102,7 +102,7 @@
             var lis = block.getElementsByClassName("ul_select")[0].getElementsByTagName("li");
             var tspan = block.getElementsByTagName("span")[0];
             var title = tspan.innerText;
-            tspan.innerHTML = '<input value="'+title+'" class="redit"> onclick="select();"';
+            tspan.innerHTML = '<input value="'+title+'" class="redit" onclick="select();">';
             button.innerText = "完成";
             if(lis.length == 1){
                 button.onclick = function(){

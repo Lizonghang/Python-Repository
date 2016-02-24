@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a3afa8-674b-4150-bd61-2f833beeca09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/head_sculpture.html" afterPath="$PROJECT_DIR$/templates/head_sculpture.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Success.html" afterPath="$PROJECT_DIR$/templates/Success.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/collect.html" afterPath="$PROJECT_DIR$/templates/collect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/userQList.html" afterPath="$PROJECT_DIR$/templates/userQList.html" />
     </list>
     <ignored path="Questionnaire.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userQList.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userQList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/userQList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8141962">
-              <caret line="52" column="89" selection-start-line="52" selection-start-column="89" selection-end-line="52" selection-end-column="89" />
+            <state vertical-scroll-proportion="-33.75">
+              <caret line="54" column="74" selection-start-line="54" selection-start-column="74" selection-end-line="54" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#li#6;n#ul#0;n#div#0;n#div#2;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -72,8 +74,8 @@
       <file leaf-file-name="collect.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/collect.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="19.458334">
-              <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+            <state vertical-scroll-proportion="-24.291666">
+              <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
               <folding>
                 <element signature="n#style#0;n#li#8;n#ul#0;n#div#0;n#div#2;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -81,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Success.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Success.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/Success.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.291666">
-              <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.32672232">
+              <caret line="55" column="74" selection-start-line="55" selection-start-column="74" selection-end-line="55" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -199,10 +201,10 @@
         <option value="$PROJECT_DIR$/templates/agreement.html" />
         <option value="$PROJECT_DIR$/templates/temp_choose.html" />
         <option value="$PROJECT_DIR$/templates/user_def_temp1.html" />
-        <option value="$PROJECT_DIR$/templates/collect.html" />
+        <option value="$PROJECT_DIR$/templates/head_sculpture.html" />
         <option value="$PROJECT_DIR$/templates/userQList.html" />
         <option value="$PROJECT_DIR$/templates/Success.html" />
-        <option value="$PROJECT_DIR$/templates/head_sculpture.html" />
+        <option value="$PROJECT_DIR$/templates/collect.html" />
       </list>
     </option>
   </component>
@@ -1013,14 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Success.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.291666">
-          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/head_sculpture.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="133.83333">
@@ -1031,23 +1025,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/userQList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-33.75">
+          <caret line="54" column="74" selection-start-line="54" selection-start-column="74" selection-end-line="54" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#li#6;n#ul#0;n#div#0;n#div#2;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/collect.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.458334">
-          <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+        <state vertical-scroll-proportion="-24.291666">
+          <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#li#8;n#ul#0;n#div#0;n#div#2;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/userQList.html">
+    <entry file="file://$PROJECT_DIR$/templates/Success.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8141962">
-          <caret line="52" column="89" selection-start-line="52" selection-start-column="89" selection-end-line="52" selection-end-column="89" />
-          <folding>
-            <element signature="n#style#0;n#li#6;n#ul#0;n#div#0;n#div#2;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.32672232">
+          <caret line="55" column="74" selection-start-line="55" selection-start-column="74" selection-end-line="55" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>

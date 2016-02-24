@@ -87,7 +87,7 @@
         function edit_desc(){
             var discription = document.getElementById("pater_desc");
             var desc_text = discription.innerText;
-            discription.innerHTML = '<textarea style="width: 730px;height: 70px" class="redit">'+desc_text+'</textarea>';
+            discription.innerHTML = '<textarea style="width: 730px;height: 70px" class="redit"> onclick="select();"'+desc_text+'</textarea>';
             title_button.innerText = "完成编辑";
             title_button.onclick = function(){
                 title_button.innerText = "编辑描述";
@@ -102,7 +102,7 @@
             var lis = block.getElementsByClassName("ul_select")[0].getElementsByTagName("li");
             var tspan = block.getElementsByTagName("span")[0];
             var title = tspan.innerText;
-            tspan.innerHTML = '<input value="'+title+'" class="redit">';
+            tspan.innerHTML = '<input value="'+title+'" class="redit"> onclick="select();"';
             button.innerText = "完成";
             if(lis.length == 1){
                 button.onclick = function(){
@@ -117,7 +117,7 @@
                 var origi_sel;
                 for(k=0;k<lis.length;k++){
                     origi_sel = lis[k].getElementsByTagName("label")[0].innerText;
-                    lis[k].getElementsByTagName("label")[0].innerHTML = '<input class="redit" value="'+origi_sel+'">';
+                    lis[k].getElementsByTagName("label")[0].innerHTML = '<input class="redit" value="'+origi_sel+'" onclick="select();">';
                 }
                 button.onclick = function(){
                         var new_title = tspan.getElementsByTagName("input")[0].value;

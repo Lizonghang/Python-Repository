@@ -16635,3 +16635,59 @@ Not Found: /admin/
 [pid: 17104|app: 0|req: 323/643] 182.138.127.159 () {40 vars in 917 bytes} [Thu Feb 25 12:34:20 2016] GET / => generated 51124 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 Not Found: /hha
 [pid: 17107|app: 0|req: 321/644] 182.138.127.159 () {40 vars in 923 bytes} [Thu Feb 25 12:34:21 2016] GET /hha => generated 4635 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Thu Feb 25 12:35:44 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x15c39d0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x15c39d0 pid: 17748 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 17748, cores: 1)
+spawned uWSGI worker 2 (pid: 17751, cores: 1)
+[pid: 17748|app: 0|req: 1/1] 182.138.127.159 () {42 vars in 1060 bytes} [Thu Feb 25 12:35:49 2016] GET / => generated 51116 bytes in 76 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/sites.py", line 265, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/sites.py", line 234, in inner
+    if request.path == reverse('admin:logout', current_app=self.name):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: [u'admin/$logout/$']
+[pid: 17751|app: 0|req: 1/2] 182.138.127.159 () {42 vars in 1072 bytes} [Thu Feb 25 12:35:54 2016] GET /admin/ => generated 85401 bytes in 280 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 17748|app: 0|req: 2/3] 182.138.127.159 () {42 vars in 1021 bytes} [Thu Feb 25 12:35:54 2016] GET /favicon.ico => generated 4767 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /testproxy.php
+[pid: 17751|app: 0|req: 2/4] 185.49.14.190 () {38 vars in 626 bytes} [Thu Feb 25 12:44:35 2016] GET /testproxy.php => generated 4777 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)

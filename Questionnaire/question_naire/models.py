@@ -8,7 +8,7 @@ class UserDefine(models.Model):
     headImgSrc = models.CharField(max_length=100, default="https://cdn.jinshuju.net/assets/columbus/avatar_default-5e358f2433179a760ee1ed1f7524eb66.png", verbose_name='头像链接')
 
     def __unicode__(self):
-        return '%s %s %s' % (self.username, self.QCount, self.headImgSrc)
+        return self.username
 
 
 class Question(models.Model):
@@ -18,7 +18,7 @@ class Question(models.Model):
     user = models.ForeignKey(UserDefine, verbose_name="问卷创建人")
 
     def __unicode__(self):
-        return '%s %s %s' % (self.title, self.isEnd, self.user.username)
+        return '%s %s %s' % (self.title, self.isEnd, self.user)
 
 
 class Statics(models.Model):

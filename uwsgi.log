@@ -17962,3 +17962,49 @@ Not Found: /static/admin/img/icon-changelink.svg
 [pid: 18712|app: 0|req: 50/100] 125.71.229.19 () {46 vars in 1527 bytes} [Thu Feb 25 19:03:47 2016] GET /admin/question_naire/question/ => generated 3384 bytes in 43 msecs (HTTP/1.1 200) 9 headers in 499 bytes (1 switches on core 0)
 [pid: 18709|app: 0|req: 51/101] 125.71.229.19 () {42 vars in 1135 bytes} [Thu Feb 25 19:03:47 2016] GET /admin/jsi18n/ => generated 7138 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
 [pid: 18712|app: 0|req: 51/102] 125.71.229.19 () {42 vars in 1146 bytes} [Thu Feb 25 19:03:53 2016] GET / => generated 51124 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Thu Feb 25 19:04:45 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x25d59d0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x25d59d0 pid: 18765 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 18765, cores: 1)
+spawned uWSGI worker 2 (pid: 18768, cores: 1)
+[pid: 18765|app: 0|req: 1/1] 125.71.229.19 () {42 vars in 1146 bytes} [Thu Feb 25 19:04:52 2016] GET / => generated 51124 bytes in 54 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 18768|app: 0|req: 1/2] 125.71.229.19 () {42 vars in 1158 bytes} [Thu Feb 25 19:05:27 2016] GET /admin/ => generated 4831 bytes in 98 msecs (HTTP/1.1 200) 7 headers in 295 bytes (1 switches on core 0)
+[pid: 18765|app: 0|req: 2/3] 125.71.229.19 () {42 vars in 1158 bytes} [Thu Feb 25 19:05:27 2016] GET /admin/ => generated 4831 bytes in 60 msecs (HTTP/1.1 200) 7 headers in 295 bytes (1 switches on core 0)
+[pid: 18768|app: 0|req: 2/4] 125.71.229.19 () {44 vars in 1224 bytes} [Thu Feb 25 19:08:56 2016] GET /admin/auth/group/ => generated 3580 bytes in 45 msecs (HTTP/1.1 200) 8 headers in 417 bytes (1 switches on core 0)
+[pid: 18768|app: 0|req: 3/5] 125.71.229.19 () {42 vars in 1174 bytes} [Thu Feb 25 19:08:56 2016] GET /static/admin/img/search.svg => generated 1987 bytes in 10 msecs (HTTP/1.1 404) 4 headers in 153 bytes (1 switches on core 0)
+[pid: 18765|app: 0|req: 3/6] 125.71.229.19 () {42 vars in 1121 bytes} [Thu Feb 25 19:08:56 2016] GET /admin/jsi18n/ => generated 7138 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+[pid: 18768|app: 0|req: 4/7] 125.71.229.19 () {42 vars in 1174 bytes} [Thu Feb 25 19:08:56 2016] GET /static/admin/img/search.svg => generated 1987 bytes in 5 msecs (HTTP/1.1 404) 4 headers in 153 bytes (1 switches on core 0)
+[pid: 18765|app: 0|req: 4/8] 125.71.229.19 () {44 vars in 1223 bytes} [Thu Feb 25 19:09:00 2016] GET /admin/auth/ => generated 2621 bytes in 36 msecs (HTTP/1.1 200) 7 headers in 295 bytes (1 switches on core 0)
+[pid: 18768|app: 0|req: 5/9] 125.71.229.19 () {44 vars in 1237 bytes} [Thu Feb 25 19:09:02 2016] GET /admin/auth/group/add/ => generated 8697 bytes in 62 msecs (HTTP/1.1 200) 8 headers in 417 bytes (1 switches on core 0)
+[pid: 18765|app: 0|req: 5/10] 125.71.229.19 () {42 vars in 1125 bytes} [Thu Feb 25 19:09:02 2016] GET /admin/jsi18n/ => generated 7138 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+[pid: 18768|app: 0|req: 6/11] 125.71.229.19 () {44 vars in 1227 bytes} [Thu Feb 25 19:09:44 2016] GET /admin/auth/ => generated 2621 bytes in 29 msecs (HTTP/1.1 200) 7 headers in 295 bytes (1 switches on core 0)
+[pid: 18765|app: 0|req: 6/12] 125.71.229.19 () {44 vars in 1207 bytes} [Thu Feb 25 19:09:46 2016] GET /admin/ => generated 4831 bytes in 35 msecs (HTTP/1.1 200) 7 headers in 295 bytes (1 switches on core 0)
+[pid: 18768|app: 0|req: 7/13] 125.71.229.19 () {44 vars in 1250 bytes} [Thu Feb 25 19:11:08 2016] GET /admin/question_naire/question/ => generated 3240 bytes in 39 msecs (HTTP/1.1 200) 8 headers in 417 bytes (1 switches on core 0)
+[pid: 18765|app: 0|req: 7/14] 125.71.229.19 () {42 vars in 1134 bytes} [Thu Feb 25 19:11:08 2016] GET /admin/jsi18n/ => generated 7138 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+[pid: 18768|app: 0|req: 8/15] 125.71.229.19 () {44 vars in 1207 bytes} [Thu Feb 25 19:11:10 2016] GET /admin/ => generated 4831 bytes in 37 msecs (HTTP/1.1 200) 7 headers in 295 bytes (1 switches on core 0)

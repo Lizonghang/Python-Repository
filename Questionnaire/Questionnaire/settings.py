@@ -43,6 +43,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -79,13 +80,13 @@ WSGI_APPLICATION = 'Questionnaire.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.db.backends.sqlite3',
-	    'NAME': 'postgres',
-        #'USER': 'postgres',
-        #'PASSWORD': '199014',
-        #'HOST': 'localhost',
-        #'PORT': '5432',
+        'NAME': 'postgres',
+        # 'USER': 'postgres',
+        # 'PASSWORD': '199014',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
     }
 }
 

@@ -18682,3 +18682,47 @@ lock engine: pthread robust mutexes
 thunder lock: disabled (you can enable it with --thunder-lock)
 probably another instance of uWSGI is running on the same address (127.0.0.1:8077).
 bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.11.2 (64bit) on [Fri Feb 26 00:20:36 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x104f9c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x104f9c0 pid: 19348 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 19348, cores: 1)
+spawned uWSGI worker 2 (pid: 19351, cores: 1)
+[pid: 19348|app: 0|req: 1/1] 182.138.127.159 () {46 vars in 1225 bytes} [Fri Feb 26 00:20:39 2016] GET /select/list/ => generated 8590 bytes in 62 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+Not Found: /search
+[pid: 19351|app: 0|req: 1/2] 182.138.127.159 () {48 vars in 1222 bytes} [Fri Feb 26 00:20:44 2016] GET /search?keyword=hang => generated 0 bytes in 55 msecs (HTTP/1.1 301) 4 headers in 165 bytes (1 switches on core 0)
+Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 459, in search
+    if UserDefine.objects.get(username=user).collect_set.filter(username=sq[i].user.username, title=sq[i].title):
+NameError: global name 'user' is not defined
+[pid: 19348|app: 0|req: 2/3] 182.138.127.159 () {48 vars in 1224 bytes} [Fri Feb 26 00:20:44 2016] GET /search/?keyword=hang => generated 12358 bytes in 37 msecs (HTTP/1.1 500) 4 headers in 151 bytes (1 switches on core 0)

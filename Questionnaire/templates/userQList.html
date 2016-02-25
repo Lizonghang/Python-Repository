@@ -5,7 +5,6 @@
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
   <link data-turbolinks-track="true" debug="false" href="https://cdn.jinshuju.net/assets/columbus/application-b088ea91390620e22dcde607f13bc41c.css" media="screen" rel="stylesheet"/>
-  <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/pusher-854ace9c4d1b08136b5092a579a1a274.js"></script>
   <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/application-178a2318a181f06287fb0efaa636f7f8.js"></script>
  </head>
  <body>
@@ -17,11 +16,10 @@
          <i class="gd-icon-logo"></i><span class="brand-name">问卷网</span>
      </a>
     </div>
-    <!-- 搜索功能禁用 -->
     <div class="global-search-container search-box" id="global_search_container">
      <div class="search-backdrop"></div>
-     <input class="search-content" id="key_word" name="key_word" type="search" value="搜索功能暂时禁用" disabled="disabled"/>
-     <i class="search-icon gd-icon-search" style="margin-left: -150px;margin-top: -15px"></i>
+     <input class="search-content" id="key_word" name="key_word" type="search" onkeydown="test_search();">
+     <i class="search-icon gd-icon-search" style="margin-top: -15px"></i>
      <a class="search-trigger" href="javascript:void(0)"></a>
     </div>
     <ul class="header-nav user-nav">
@@ -162,6 +160,20 @@
                   }
               });
           }
+      }
+      function test_search(){
+          if(event.keyCode == 13)   search();
+      }
+      function search(){
+          var title_include = document.getElementById("key_word").value;
+          if(title_include){
+              var url = "http://www.desckie.com/search/";
+              $.post(url, {'title_include': title_include}, function(response){
+                  if(response=="请先登录")  alert(response);
+                  else  alert("进入搜索结果页面");
+              });
+          }
+          else  alert("请输入需要检索的问卷标题");
       }
   </script>
  </body>

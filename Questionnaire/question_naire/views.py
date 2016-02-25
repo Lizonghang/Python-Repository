@@ -446,6 +446,7 @@ def search_beifen(request):
 
 def search(request):
     if request.user.is_authenticated():
+        user = request.session['username']
         if request.method == 'GET':
             title_include = request.GET.get('keyword')
             sq = Question.objects.filter(title__contains=title_include)

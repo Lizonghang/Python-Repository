@@ -18578,3 +18578,107 @@ Not Found: /favicon.ico
 Not Found: /search
 [pid: 19252|app: 0|req: 4/8] 182.138.127.159 () {44 vars in 1169 bytes} [Fri Feb 26 00:07:06 2016] GET /search?keyword=hang => generated 0 bytes in 14 msecs (HTTP/1.1 301) 4 headers in 165 bytes (1 switches on core 0)
 [pid: 19249|app: 0|req: 5/9] 182.138.127.159 () {44 vars in 1171 bytes} [Fri Feb 26 00:07:06 2016] GET /search/?keyword=hang => generated 16 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Fri Feb 26 00:09:41 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xc669c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xc669c0 pid: 19293 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 19293, cores: 1)
+spawned uWSGI worker 2 (pid: 19296, cores: 1)
+[pid: 19293|app: 0|req: 1/1] 182.138.127.159 () {44 vars in 1203 bytes} [Fri Feb 26 00:09:45 2016] GET /select/list/ => generated 8590 bytes in 65 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 427, in search
+    sq = Question.objects.filter(title__contains=title_include)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/query.py", line 1155, in build_filter
+    value, lookups, used_joins = self.prepare_lookup_value(value, lookups, can_reuse, allow_joins)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/query.py", line 1000, in prepare_lookup_value
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[pid: 19296|app: 0|req: 1/2] 182.138.127.159 () {44 vars in 1171 bytes} [Fri Feb 26 00:09:50 2016] GET /search/?keyword=hang => generated 13419 bytes in 91 msecs (HTTP/1.1 500) 4 headers in 151 bytes (1 switches on core 0)
+Not Found: /search
+[pid: 19293|app: 0|req: 2/3] 182.138.127.159 () {48 vars in 1222 bytes} [Fri Feb 26 00:09:56 2016] GET /search?keyword=hang => generated 0 bytes in 13 msecs (HTTP/1.1 301) 4 headers in 165 bytes (1 switches on core 0)
+Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./question_naire/views.py", line 427, in search
+    sq = Question.objects.filter(title__contains=title_include)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/query.py", line 1155, in build_filter
+    value, lookups, used_joins = self.prepare_lookup_value(value, lookups, can_reuse, allow_joins)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/query.py", line 1000, in prepare_lookup_value
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[pid: 19296|app: 0|req: 2/4] 182.138.127.159 () {48 vars in 1224 bytes} [Fri Feb 26 00:09:57 2016] GET /search/?keyword=hang => generated 13476 bytes in 45 msecs (HTTP/1.1 500) 4 headers in 151 bytes (1 switches on core 0)
+[pid: 19293|app: 0|req: 3/5] 123.125.71.76 () {36 vars in 471 bytes} [Fri Feb 26 00:14:09 2016] GET / => generated 51116 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 141 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Fri Feb 26 00:20:21 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8077).
+bind(): Address already in use [core/socket.c line 769]

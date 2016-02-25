@@ -13,7 +13,7 @@ class UserDefine(models.Model):
 
 class Question(models.Model):
     title = models.CharField(max_length=30, verbose_name='问卷题目')
-    pageForm = models.TextField(blank=True, null=True)
+    pageForm = models.TextField(blank=True, null=True, verbose_name='问卷内容页')
     isEnd = models.BooleanField(default=False, verbose_name='停止发布')
     user = models.ForeignKey(UserDefine, verbose_name="问卷创建人")
 

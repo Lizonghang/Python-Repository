@@ -450,13 +450,23 @@ def search(request):
         if request.method == 'GET':
             title_include = request.GET.get('keyword')
             sq = Question.objects.filter(title__contains=title_include)
+            titles = ''
+            if sq:
+                for i in range(0, len(sq)):
+                    titles += (sq[i].title + ',')
+                titles = titles[0: len(titles)-1]
+            return HttpResponse(titles)
+        else:
+            title_include = request.POST.get('title_include')
+            head_img_src = UserDefine.objects.get(username=user).headImgSrc
+            sq = Question.objects.filter(title__contains=title_include)
             username = ''
             titles = ''
             collects = ''
             if sq:
                 for i in range(0, len(sq)):
                     username += (sq[i].user.username + ',')
-                    titles += (sq[i].title + '\n')
+                    titles += (sq[i].title + ',')
                     if UserDefine.objects.get(username=user).collect_set.filter(username=sq[i].user.username, title=sq[i].title):
                         collects += '1,'
                     else:
@@ -464,9 +474,7 @@ def search(request):
                 username = username[0: len(username)-1]
                 titles = titles[0: len(titles)-1]
                 collects = collects[0: len(collects)-1]
-            return HttpResponse(titles)
-        else:
-            return HttpResponse('Method Post')
+            return render_to_response("search_result.html", {'user': user, 'head_img_src': head_img_src, 'username': username, 'titles': titles, 'collect': collects})
     else:
         return HttpResponse('请先登录')
 

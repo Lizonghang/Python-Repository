@@ -2,7 +2,7 @@
 from django.shortcuts import render_to_response
 import json
 from question_naire.models import *
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
@@ -474,7 +474,8 @@ def search(request):
                 username = username[0: len(username)-1]
                 titles = titles[0: len(titles)-1]
                 collects = collects[0: len(collects)-1]
-            return render_to_response("search_result.html", {'user': user, 'head_img_src': head_img_src, 'username': username, 'titles': titles, 'collect': collects})
+            page = render_to_response("search_result.html", {'user': user, 'head_img_src': head_img_src, 'username': username, 'titles': titles, 'collect': collects})
+            return HttpResponseRedirect(page)
     else:
         return HttpResponse('请先登录')
 

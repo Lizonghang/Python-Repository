@@ -17751,3 +17751,64 @@ Not Found: /static/admin/img/icon-yes.svg
 [pid: 18545|app: 0|req: 61/120] 125.71.229.19 () {46 vars in 1231 bytes} [Thu Feb 25 18:09:11 2016] GET /static/admin/img/icon-yes.svg => generated 4820 bytes in 21 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
 [pid: 18548|app: 0|req: 60/121] 123.125.71.87 () {36 vars in 471 bytes} [Thu Feb 25 18:14:14 2016] GET / => generated 51116 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 141 bytes (1 switches on core 0)
 [pid: 18545|app: 0|req: 62/122] 220.181.108.153 () {36 vars in 473 bytes} [Thu Feb 25 18:22:03 2016] GET / => generated 51116 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 141 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Thu Feb 25 18:49:36 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xba09c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xba09c0 pid: 18659 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 18659, cores: 1)
+spawned uWSGI worker 2 (pid: 18662, cores: 1)
+[pid: 18659|app: 0|req: 1/1] 125.71.229.19 () {46 vars in 1231 bytes} [Thu Feb 25 18:49:38 2016] GET /admin/auth/user/ => generated 7068 bytes in 132 msecs (HTTP/1.1 200) 8 headers in 417 bytes (1 switches on core 0)
+[pid: 18662|app: 0|req: 1/2] 125.71.229.19 () {46 vars in 1174 bytes} [Thu Feb 25 18:49:38 2016] GET /admin/jsi18n/ => generated 7138 bytes in 50 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+Not Found: /static/admin/img/search.svg
+[pid: 18659|app: 0|req: 2/3] 125.71.229.19 () {46 vars in 1227 bytes} [Thu Feb 25 18:49:39 2016] GET /static/admin/img/search.svg => generated 4814 bytes in 11 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/icon-no.svg
+[pid: 18662|app: 0|req: 2/4] 125.71.229.19 () {46 vars in 1229 bytes} [Thu Feb 25 18:49:39 2016] GET /static/admin/img/icon-no.svg => generated 4817 bytes in 15 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/icon-yes.svg
+[pid: 18659|app: 0|req: 3/5] 125.71.229.19 () {46 vars in 1231 bytes} [Thu Feb 25 18:49:39 2016] GET /static/admin/img/icon-yes.svg => generated 4820 bytes in 14 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/search.svg
+[pid: 18662|app: 0|req: 3/6] 125.71.229.19 () {46 vars in 1227 bytes} [Thu Feb 25 18:49:40 2016] GET /static/admin/img/search.svg => generated 4814 bytes in 12 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/icon-no.svg
+[pid: 18659|app: 0|req: 4/7] 125.71.229.19 () {46 vars in 1229 bytes} [Thu Feb 25 18:49:40 2016] GET /static/admin/img/icon-no.svg => generated 4817 bytes in 11 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/icon-yes.svg
+[pid: 18662|app: 0|req: 4/8] 125.71.229.19 () {46 vars in 1231 bytes} [Thu Feb 25 18:49:40 2016] GET /static/admin/img/icon-yes.svg => generated 4820 bytes in 12 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/icon-no.svg
+[pid: 18659|app: 0|req: 5/9] 125.71.229.19 () {40 vars in 1121 bytes} [Thu Feb 25 18:49:48 2016] GET /static/admin/img/icon-no.svg => generated 4817 bytes in 12 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/icon-yes.svg
+[pid: 18662|app: 0|req: 5/10] 125.71.229.19 () {40 vars in 1123 bytes} [Thu Feb 25 18:49:48 2016] GET /static/admin/img/icon-yes.svg => generated 4820 bytes in 11 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /static/admin/img/icon-no.svg
+[pid: 18659|app: 0|req: 6/11] 125.71.229.19 () {40 vars in 1123 bytes} [Thu Feb 25 18:49:51 2016] GET /static/admin/img/icon-yes.svg => generated 4820 bytes in 29 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 18662|app: 0|req: 6/12] 125.71.229.19 () {40 vars in 1121 bytes} [Thu Feb 25 18:49:51 2016] GET /static/admin/img/icon-no.svg => generated 4817 bytes in 26 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 18659|app: 0|req: 7/13] 125.71.229.19 () {46 vars in 1231 bytes} [Thu Feb 25 18:51:04 2016] GET /admin/auth/user/ => generated 7068 bytes in 63 msecs (HTTP/1.1 200) 8 headers in 417 bytes (1 switches on core 0)
+[pid: 18662|app: 0|req: 7/14] 125.71.229.19 () {46 vars in 1174 bytes} [Thu Feb 25 18:51:04 2016] GET /admin/jsi18n/ => generated 7138 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+Not Found: /static/admin/img/search.svg
+[pid: 18659|app: 0|req: 8/15] 125.71.229.19 () {46 vars in 1227 bytes} [Thu Feb 25 18:51:04 2016] GET /static/admin/img/search.svg => generated 4814 bytes in 11 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /static/admin/img/icon-no.svg
+[pid: 18662|app: 0|req: 8/16] 125.71.229.19 () {46 vars in 1231 bytes} [Thu Feb 25 18:51:04 2016] GET /static/admin/img/icon-yes.svg => generated 4820 bytes in 27 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 18659|app: 0|req: 9/17] 125.71.229.19 () {46 vars in 1229 bytes} [Thu Feb 25 18:51:04 2016] GET /static/admin/img/icon-no.svg => generated 4817 bytes in 24 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)

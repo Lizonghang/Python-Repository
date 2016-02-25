@@ -1,10 +1,12 @@
-from django.conf.urls import url, handler404, handler500
+from django.conf.urls import url, handler404, handler500, include
 from question_naire.views import *
+from django.contrib import admin
 
 handler404 = 'question_naire.views.bad_request'
 handler500 = 'question_naire.views.server_error'
 
 urlpatterns = [
+    url(r'^admin/$', include(admin.site.urls)),
     url(r'^regist/$', register),
     url(r'^select/$', choose_template),
     url(r'^login/$', login),

@@ -3,22 +3,22 @@ from django.db import models
 
 
 class UserDefine(models.Model):
-    username = models.CharField(max_length=20)
-    QCount = models.IntegerField(default=0)
-    headImgSrc = models.CharField(max_length=100, default="https://cdn.jinshuju.net/assets/columbus/avatar_default-5e358f2433179a760ee1ed1f7524eb66.png")
+    username = models.CharField(max_length=20, verbose_name='用户名')
+    QCount = models.IntegerField(default=0, verbose_name='问卷数目')
+    headImgSrc = models.CharField(max_length=100, default="https://cdn.jinshuju.net/assets/columbus/avatar_default-5e358f2433179a760ee1ed1f7524eb66.png", verbose_name='头像链接')
 
     def __unicode__(self):
-        return self.username
+        return '%s %s %s' % (self.username, self.QCount, self.headImgSrc)
 
 
 class Question(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=30, verbose_name='问卷题目')
     pageForm = models.TextField(blank=True, null=True)
-    isEnd = models.BooleanField(default=False)
-    user = models.ForeignKey(UserDefine)
+    isEnd = models.BooleanField(default=False, verbose_name='停止发布')
+    user = models.ForeignKey(UserDefine, verbose_name="问卷创建人")
 
     def __unicode__(self):
-        return self.title + ',isEnd=' + str(self.isEnd) + ',user=' + self.user.username
+        return '%s %s %s' % (self.title, self.isEnd, self.user.username)
 
 
 class Statics(models.Model):

@@ -18,7 +18,7 @@ class Question(models.Model):
     user = models.ForeignKey(UserDefine)
 
     def __unicode__(self):
-        return self.title + ',isEnd=' + str(self.isEnd) + ',user=' + self.user.username
+        return self.title
 
 
 class Statics(models.Model):

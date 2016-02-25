@@ -456,7 +456,7 @@ def search(request):
             if sq:
                 for i in range(0, len(sq)):
                     username += (sq[i].user.username + ',')
-                    titles += (sq[i].title + ',')
+                    titles += (sq[i].title + '\n')
                     if UserDefine.objects.get(username=user).collect_set.filter(username=sq[i].user.username, title=sq[i].title):
                         collects += '1,'
                     else:

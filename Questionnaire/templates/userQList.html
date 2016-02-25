@@ -169,8 +169,8 @@
           if(title_include){
               var url = "http://www.desckie.com/search/";
               $.post(url, {'title_include': title_include}, function(response){
-                  if(response=="请先登录")  alert(response);
-                  else  alert("进入搜索结果页面");
+                  if(response=="Method Post")  alert(response);
+                  
               });
           }
           else  alert("请输入需要检索的问卷标题");

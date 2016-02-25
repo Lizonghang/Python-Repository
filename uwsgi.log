@@ -18536,3 +18536,45 @@ spawned uWSGI worker 2 (pid: 19205, cores: 1)
 [pid: 19202|app: 0|req: 2/3] 182.138.127.159 () {54 vars in 1375 bytes} [Fri Feb 26 00:04:15 2016] POST /search/ => generated 7020 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
 [pid: 19205|app: 0|req: 2/4] 182.138.127.159 () {48 vars in 1250 bytes} [Fri Feb 26 00:04:17 2016] GET /search?keyword=%E6%B5%8B%E8%AF%95 => generated 0 bytes in 6 msecs (HTTP/1.1 301) 4 headers in 179 bytes (1 switches on core 0)
 [pid: 19202|app: 0|req: 3/5] 182.138.127.159 () {48 vars in 1252 bytes} [Fri Feb 26 00:04:17 2016] GET /search/?keyword=%E6%B5%8B%E8%AF%95 => generated 16 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Fri Feb 26 00:06:24 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x11e09c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x11e09c0 pid: 19249 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 19249, cores: 1)
+spawned uWSGI worker 2 (pid: 19252, cores: 1)
+[pid: 19249|app: 0|req: 1/1] 157.55.39.112 () {40 vars in 555 bytes} [Fri Feb 26 00:06:44 2016] GET /select/ => generated 12 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 141 bytes (1 switches on core 0)
+[pid: 19252|app: 0|req: 1/2] 182.138.127.159 () {44 vars in 1203 bytes} [Fri Feb 26 00:06:45 2016] GET /select/list/ => generated 8590 bytes in 54 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 19249|app: 0|req: 2/3] 182.138.127.159 () {42 vars in 1148 bytes} [Fri Feb 26 00:06:55 2016] GET / => generated 51124 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 19252|app: 0|req: 2/4] 182.138.127.159 () {42 vars in 1160 bytes} [Fri Feb 26 00:06:58 2016] GET /admin/ => generated 5881 bytes in 65 msecs (HTTP/1.1 200) 7 headers in 295 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 19249|app: 0|req: 3/5] 182.138.127.159 () {42 vars in 1109 bytes} [Fri Feb 26 00:06:58 2016] GET /favicon.ico => generated 4875 bytes in 12 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 19252|app: 0|req: 3/6] 182.138.127.159 () {44 vars in 1253 bytes} [Fri Feb 26 00:07:00 2016] GET /admin/question_naire/question/ => generated 4671 bytes in 52 msecs (HTTP/1.1 200) 8 headers in 417 bytes (1 switches on core 0)
+[pid: 19249|app: 0|req: 4/7] 182.138.127.159 () {42 vars in 1137 bytes} [Fri Feb 26 00:07:00 2016] GET /admin/jsi18n/ => generated 7138 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+Not Found: /search
+[pid: 19252|app: 0|req: 4/8] 182.138.127.159 () {44 vars in 1169 bytes} [Fri Feb 26 00:07:06 2016] GET /search?keyword=hang => generated 0 bytes in 14 msecs (HTTP/1.1 301) 4 headers in 165 bytes (1 switches on core 0)
+[pid: 19249|app: 0|req: 5/9] 182.138.127.159 () {44 vars in 1171 bytes} [Fri Feb 26 00:07:06 2016] GET /search/?keyword=hang => generated 16 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)

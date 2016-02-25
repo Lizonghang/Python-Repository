@@ -6,7 +6,7 @@ handler404 = 'question_naire.views.bad_request'
 handler500 = 'question_naire.views.server_error'
 
 urlpatterns = [
-    url(r'^admin/$', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^regist/$', register),
     url(r'^select/$', choose_template),
     url(r'^login/$', login),

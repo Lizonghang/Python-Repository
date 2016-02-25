@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
-  <title>我的收藏</title>
+  <title>搜索结果</title>
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
   <link data-turbolinks-track="true" debug="false" href="https://cdn.jinshuju.net/assets/columbus/application-b088ea91390620e22dcde607f13bc41c.css" media="screen" rel="stylesheet"/>
@@ -47,9 +47,9 @@
        <li class="separator"></li>
        <li><a class="template-event track-event" href="http://www.desckie.com/select/">模板中心</a></li>
        <li class="separator"></li>
-       <li><a href="http://www.desckie.com/select/list/" target="_blank">我的问卷</a></li>
+       <li style="color: darkgray">我的问卷</li>
        <li class="separator"></li>
-       <li style="color: darkgray">我的收藏</li>
+       <li><a href="http://www.desckie.com/select/collect/" target="_blank">我的收藏</a></li>
        <li class="separator"></li>
        <li><a href="http://www.desckie.com/head_sculpture/" target="_blank">我的头像</a></li>
        <li class="separator"></li>
@@ -62,16 +62,7 @@
   <div class="form-nav">
    <div class="container">
     <div class="row">
-     <div class="col-md-12">
-      <div class="subnav" data-placement="bottom" id="form_nav">
-       <a class="track-event" href="http://www.desckie.com/select/list/" target="_self">
-        我的问卷
-       </a>
-       <a class="active track-event" href="javascript:void(0);">
-        我的收藏
-       </a>
-      </div>
-     </div>
+     <div class="col-md-12" style="height: 29px"></div>
     </div>
    </div>
   </div>
@@ -89,20 +80,25 @@
   </div>
   <script>
       var title_str = "{{ titles }}";
-      if(title_str){
+      if(title_str) {
           var title_list = title_str.split(",");
           var list_count = title_list.length;
+          var collect_str = "{{ collect }}";
+          var collect_list = collect_str.split(",");
           var username_str = "{{ username }}";
           var username_list = username_str.split(",");
           var i;
           var target_div = document.getElementById("tab_visit_url");
-          for(i=0;i<list_count;i++){
+          for (i = 0; i < list_count; i++) {
               var new_div = document.createElement("div");
               new_div.className = "content-section";
-              new_div.id = "Q"+i;
-              var content = '<div class="section-header"><span class="title"><a href="javascript:collect('+i+');"><img src="/static/admin/img/red_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>'+title_list[i]+'</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
-              content += '<input class="copy-target gd-input-xxlarge" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user='+username_list[i]+'&title='+title_list[i]+'"/>';
-              content += '<a class="gd-btn gd-btn-info open-url" href="http://www.desckie.com/select/success/?user='+username_list[i]+'&title='+title_list[i]+'" target="_blank">查看详情</a>';
+              new_div.id = "Q" + i;
+              if (collect_list[i] == "1")
+                  var content = '<div class="section-header"><span class="title"><a href="javascript:collect(' + i + ');"><img src="/static/admin/img/red_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>' + title_list[i] + '</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
+              else if (collect_list[i] == "0")
+                  var content = '<div class="section-header"><span class="title"><a href="javascript:collect(' + i + ');"><img src="/static/admin/img/grey_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>' + title_list[i] + '</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
+              content += '<input class="copy-target gd-input-xxlarge" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user='+username_list[i]+'&title=' + title_list[i] + '"/>';
+              content += '<a class="gd-btn gd-btn-info open-url" href="http://www.desckie.com/select/success/?user='+username_list[i]+'&title=' + title_list[i] + '" target="_blank">查看详情</a>';
               content += '</div></div>';
               new_div.innerHTML = content;
               target_div.appendChild(new_div);
@@ -114,15 +110,24 @@
           var div = document.getElementById("Q"+index);
           var pic_src = div.getElementsByTagName("img")[0].src.split("/");
           pic_src = pic_src[pic_src.length-1];
-          if(pic_src == "red_heart.png"){
+          var tu = div.getElementsByTagName("input")[0].value.split("?")[1].split("&");
+          var title = tu[1].split("=")[1];
+          var username = tu[0].split("=")[1];
+          var url = "http://www.desckie.com/select/collect_log/";
+          if(pic_src == "grey_heart.png"){
+              var method = "collect";
+              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
+                  if(response == "收藏成功")
+                    div.getElementsByTagName("img")[0].src = "/static/admin/img/red_heart.png";
+                  else
+                    alert(response);
+              })
+          }
+          else if(pic_src == "red_heart.png"){
               var method = "uncollect";
-              var link = div.getElementsByTagName("input")[0].value.split("?")[1].split("&");
-              var title = link[1].split("=")[1];
-              var username = link[0].split("=")[1];
-              var url = "http://www.desckie.com/select/collect_log/";
               $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
                   if(response == "取消收藏")
-                    div.remove();
+                    div.getElementsByTagName("img")[0].src = "/static/admin/img/grey_heart.png";
                   else
                     alert(response);
               })

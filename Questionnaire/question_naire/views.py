@@ -416,6 +416,34 @@ def collect(request):
         return HttpResponse("请先登录")
 
 
+def search(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated():
+            user = request.session['username']
+            title_include = request.POST.get('title_include')
+            head_img_src = UserDefine.objects.get(username=user).headImgSrc
+            username = ''
+            titles = ''
+            collects = ''
+            sq = Question.objects.filter(title__contains=title_include)
+            if sq:
+                for i in range(0, len(sq)):
+                    username += (sq[i].user.username + ',')
+                    titles += (sq[i].title + ',')
+                    if UserDefine.objects.get(username=user).collect_set.filter(username=sq[i].user.username, title=sq[i].title):
+                        collects += '1,'
+                    else:
+                        collects += '0,'
+                username = username[0: len(username)-1]
+                titles = titles[0: len(titles)-1]
+                collects = collects[0: len(collects)-1]
+            return render_to_response("search_result.html", {'user': user, 'head_img_src': head_img_src, 'username': username, 'titles': titles, 'collect': collects})
+        else:
+            return HttpResponse("请先登录")
+    else:
+        return HttpResponse("ERROR METHOD GET")
+
+
 def bad_request(request):
     return render_to_response("404.html", status=404)
 

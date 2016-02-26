@@ -418,7 +418,6 @@ def collect(request):
 
 def search(request):
     if request.user.is_authenticated():
-        user = request.session['username']
         if request.method == 'GET':
             title_include = request.GET.get('keyword')
             sq = Question.objects.filter(title__contains=title_include)
@@ -429,7 +428,16 @@ def search(request):
                 titles = titles[0: len(titles)-1]
             return HttpResponse(titles)
         else:
-            title_include = request.POST.get('title_include')
+            return HttpResponse('ERROR METHOD POST')
+    else:
+        return HttpResponse('请先登录')
+
+
+def search_result(request):
+    if request.user.is_authenticated():
+        if request.method == 'GET':
+            user = request.session['username']
+            title_include = request.GET.get('title_include')
             head_img_src = UserDefine.objects.get(username=user).headImgSrc
             sq = Question.objects.filter(title__contains=title_include)
             username = ''
@@ -447,6 +455,8 @@ def search(request):
                 titles = titles[0: len(titles)-1]
                 collects = collects[0: len(collects)-1]
             return render_to_response("search_result.html", {'user': user, 'head_img_src': head_img_src, 'username': username, 'titles': titles, 'collect': collects})
+        else:
+            return HttpResponse('ERROR METHOD POST')
     else:
         return HttpResponse('请先登录')
 

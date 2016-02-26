@@ -576,7 +576,7 @@
                 <label class="item" for="password" style="font-family: 'Lucida Grande'">密码</label>
                 <div class="ipt_box">
                     <div id="password_bg" class="bg_txt">
-                        <input type="password" class="new_txt" id="password" maxlength="16" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px">
+                        <input type="password" class="new_txt" id="password" maxlength="16" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px" onkeydown="check_login();">
                     </div>
                 </div>
             </div>
@@ -592,9 +592,7 @@
         var logged = "{{ logged }}";
         if(logged == "logged"){
             document.getElementById("login_button").innerText = "欢迎您:";
-            document.getElementById("login_button").disabled = true;
             document.getElementById("regist_button").innerText = "{{ user }}";
-            document.getElementById("regist_button").disabled = true;
             document.getElementById("logout").style.visibility = "visible";
             document.getElementById("myQ").style.visibility = "visible";
         }
@@ -603,6 +601,9 @@
 <script>
     var username;
     var password;
+    function check_login(){
+        if(event.keyCode == 13) login();
+    }
     function login(){
         username = document.getElementById("username").value;
         password = document.getElementById("password").value;
@@ -613,9 +614,7 @@
                 $('.theme-popover-mask').hide();
                 $('.theme-popover').slideUp(200);
                 document.getElementById("login_button").innerText = "欢迎您:";
-                document.getElementById("login_button").disabled = true;
                 document.getElementById("regist_button").innerText = response;
-                document.getElementById("regist_button").disabled = true;
                 document.getElementById("logout").style.visibility = "visible";
                 document.getElementById("myQ").style.visibility = "visible";
             }
@@ -625,9 +624,7 @@
         var url="http://www.desckie.com/logout/";
         $.get(url,function(response){
             document.getElementById("login_button").innerText = "登录";
-            document.getElementById("login_button").disabled = false;
             document.getElementById("regist_button").innerText = "注册";
-            document.getElementById("regist_button").disabled = false;
             document.getElementById("logout").style.visibility = "hidden";
             document.getElementById("myQ").style.visibility = "hidden";
             alert(response);

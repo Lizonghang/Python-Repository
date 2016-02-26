@@ -568,7 +568,7 @@
                 <label class="item" for="nick" style="font-family: 'Lucida Grande';">账号</label>
                 <div class="ipt_box nick_ipt_box">
                     <div id="nick_bg" class="bg_txt">
-                        <input type="text" class="new_txt" id="username" maxlength="24" autocomplete="off" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px">
+                        <input type="text" class="new_txt" id="username" maxlength="24" autocomplete="off" style="height: 45px;width: 290px;font-size: 150%;margin-top: -5px" onkeydown="next();">
                     </div>
                 </div>
             </div>
@@ -603,6 +603,11 @@
     var password;
     function check_login(){
         if(event.keyCode == 13) login();
+    }
+    function next(){
+        if(event.keyCode == 13){
+            document.getElementById("password").focus();
+        }
     }
     function login(){
         username = document.getElementById("username").value;

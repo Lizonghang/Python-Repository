@@ -240,7 +240,7 @@
                             <label class="item" id="name">昵称</label>
                             <div class="ipt_box nick_ipt_box">
                                 <div id="nick_bg" class="bg_txt">
-                                    <input type="text" class="new_txt" id="username" style="z-index:0" maxlength="20" autocomplete="off">
+                                    <input type="text" class="new_txt" id="username" style="z-index:0" maxlength="20" autocomplete="off" onkeydown="next(this.id);">
                                 </div>
                             </div>
                         </div>
@@ -248,7 +248,7 @@
                             <label class="item">密码</label>
                             <div class="ipt_box">
                                 <div id="password_bg" class="bg_txt">
-                                    <input type="password" class="new_txt" id="password" maxlength="16">
+                                    <input type="password" class="new_txt" id="password" maxlength="16" onkeydown="next(this.id);">
                                 </div>
                             </div>
                             <div class="info pwd_info">
@@ -264,7 +264,7 @@
                             <label class="item" id="ensure">确认密码</label>
                             <div class="ipt_box">
                                 <div id="password_again_bg" class="bg_txt">
-                                    <input type="password" class="new_txt" id="password_again" maxlength="16">
+                                    <input type="password" class="new_txt" id="password_again" maxlength="16" onkeydown="next(this.id);">
                                 </div>
                             </div>
                         </div>
@@ -299,6 +299,13 @@
         else{
             submit_button.disabled = "";
             submit_button.style.backgroundColor = "";
+        }
+    }
+    function next(id){
+        if(event.keyCode == 13){
+            if(id == "username")    document.getElementById("password").focus();
+            else if(id == "password")   document.getElementById("password_again").focus();
+            else if(id == "password_again") submit();
         }
     }
 </script>

@@ -19704,3 +19704,48 @@ Not Found: /select/template_1/view
 [pid: 20245|app: 0|req: 14/27] 182.138.171.165 () {50 vars in 1417 bytes} [Fri Feb 26 14:25:33 2016] POST /select/isCollected/ => generated 11 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
 Not Found: /azenv.php
 [pid: 20248|app: 0|req: 14/28] 5.178.86.77 () {40 vars in 712 bytes} [Fri Feb 26 14:26:58 2016] POST /azenv.php?auth=145646801855&a=PSCN&i=1926723903&p=80 => generated 5047 bytes in 10 msecs (HTTP/1.1 404) 4 headers in 133 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.11.2 (64bit) on [Fri Feb 26 14:29:42 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/Questionnaire
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xcc39c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xcc39c0 pid: 20294 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 20294, cores: 1)
+spawned uWSGI worker 2 (pid: 20297, cores: 1)
+[pid: 20294|app: 0|req: 1/1] 182.138.171.165 () {42 vars in 1148 bytes} [Fri Feb 26 14:29:52 2016] GET / => generated 51122 bytes in 55 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 20297|app: 0|req: 1/2] 182.138.171.165 () {44 vars in 1211 bytes} [Fri Feb 26 14:29:55 2016] GET /select/list/ => generated 8550 bytes in 55 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 20294|app: 0|req: 2/3] 182.138.171.165 () {44 vars in 1217 bytes} [Fri Feb 26 14:30:00 2016] GET /head_sculpture/ => generated 18886 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 20297|app: 0|req: 2/4] 182.138.171.165 () {50 vars in 1339 bytes} [Fri Feb 26 14:30:09 2016] POST /set_head_img/ => generated 18 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+Not Found: /search
+[pid: 20294|app: 0|req: 3/5] 182.138.171.165 () {44 vars in 1166 bytes} [Fri Feb 26 14:30:13 2016] GET /search?keyword=a => generated 0 bytes in 12 msecs (HTTP/1.1 301) 4 headers in 162 bytes (1 switches on core 0)
+[pid: 20297|app: 0|req: 3/6] 182.138.171.165 () {44 vars in 1168 bytes} [Fri Feb 26 14:30:14 2016] GET /search/?keyword=a => generated 10 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+Not Found: /search
+[pid: 20294|app: 0|req: 4/7] 182.138.171.165 () {48 vars in 1219 bytes} [Fri Feb 26 14:30:20 2016] GET /search?keyword=a => generated 0 bytes in 11 msecs (HTTP/1.1 301) 4 headers in 162 bytes (1 switches on core 0)
+[pid: 20297|app: 0|req: 4/8] 182.138.171.165 () {48 vars in 1221 bytes} [Fri Feb 26 14:30:20 2016] GET /search/?keyword=a => generated 10 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 20294|app: 0|req: 5/9] 182.138.171.165 () {44 vars in 1168 bytes} [Fri Feb 26 14:30:21 2016] GET /search/?keyword=a => generated 10 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 20297|app: 0|req: 5/10] 182.138.171.165 () {44 vars in 1261 bytes} [Fri Feb 26 14:30:22 2016] GET /search_result/?title_include=a => generated 7434 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 20294|app: 0|req: 6/11] 182.138.171.165 () {44 vars in 1168 bytes} [Fri Feb 26 14:30:22 2016] GET /search/?keyword=a => generated 10 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 20297|app: 0|req: 6/12] 182.138.171.165 () {44 vars in 1134 bytes} [Fri Feb 26 14:30:30 2016] GET /logout/ => generated 21 bytes in 34 msecs (HTTP/1.1 200) 5 headers in 221 bytes (1 switches on core 0)

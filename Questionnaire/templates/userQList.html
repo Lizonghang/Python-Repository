@@ -168,13 +168,8 @@
       function search(){
           var title_include = document.getElementById("key_word").value;
           if(title_include){
-              var url = "http://www.desckie.com/search/";
-              $.post(url, {'title_include': title_include}, function(response){
-                  if(response=="请先登录")  alert(response);
-                  else{
-                      window.location.href = response;
-                  }
-              });
+              var url = "http://www.desckie.com/search_result/?title_include="+title_include;
+              window.location.href = url;
           }
           else  alert("请输入需要检索的问卷标题");
       }

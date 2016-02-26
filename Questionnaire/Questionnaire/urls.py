@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^set_head_img/$', set_head_img),
     url(r'^delete_question/$', delete_question),
     url(r'^search/$', search),
+    url(r'^search_result/$', search_result),
     url(r'^clear_all_user', clear_all_user),
     url(r'^select/agreement/$', agreement),
     url(r'^select/template_1/$', template_1),

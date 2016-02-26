@@ -171,6 +171,9 @@
               var url = "http://www.desckie.com/search/";
               $.post(url, {'title_include': title_include}, function(response){
                   if(response=="请先登录")  alert(response);
+                  else{
+                      window.location.href = response;
+                  }
               });
           }
           else  alert("请输入需要检索的问卷标题");

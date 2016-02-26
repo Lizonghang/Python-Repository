@@ -516,7 +516,6 @@
         <p style="font-family: 'Lucida Grande'">可通过网页、手机、微信、邮件等多种方式让你<br/>的客户方便的参与调查</p>
     </div>
 </div>
-
 <div class="survey_box2 wj_bg">
     <img src="../static/admin/img/wj_bg.jpg" width="100%" />
     <div class="banner">
@@ -593,7 +592,9 @@
         var logged = "{{ logged }}";
         if(logged == "logged"){
             document.getElementById("login_button").innerText = "欢迎您:";
+            document.getElementById("login_button").disabled = true;
             document.getElementById("regist_button").innerText = "{{ user }}";
+            document.getElementById("regist_button").disabled = true;
             document.getElementById("logout").style.visibility = "visible";
             document.getElementById("myQ").style.visibility = "visible";
         }
@@ -612,7 +613,9 @@
                 $('.theme-popover-mask').hide();
                 $('.theme-popover').slideUp(200);
                 document.getElementById("login_button").innerText = "欢迎您:";
+                document.getElementById("login_button").disabled = true;
                 document.getElementById("regist_button").innerText = response;
+                document.getElementById("regist_button").disabled = true;
                 document.getElementById("logout").style.visibility = "visible";
                 document.getElementById("myQ").style.visibility = "visible";
             }
@@ -622,7 +625,9 @@
         var url="http://www.desckie.com/logout/";
         $.get(url,function(response){
             document.getElementById("login_button").innerText = "登录";
+            document.getElementById("login_button").disabled = false;
             document.getElementById("regist_button").innerText = "注册";
+            document.getElementById("regist_button").disabled = false;
             document.getElementById("logout").style.visibility = "hidden";
             document.getElementById("myQ").style.visibility = "hidden";
             alert(response);

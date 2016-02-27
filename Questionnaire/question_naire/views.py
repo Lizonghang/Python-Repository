@@ -467,3 +467,7 @@ def bad_request(request):
 
 def server_error(request):
     return render_to_response("50x.html", status=500)
+
+
+def code(request):
+    return render_to_response('code.html')

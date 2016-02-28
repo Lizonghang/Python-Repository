@@ -471,3 +471,7 @@ def server_error(request):
 
 def code(request):
     return render_to_response('code.html')
+
+
+def interact(request):
+    return render_to_response('interact.html')

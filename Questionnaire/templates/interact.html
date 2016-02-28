@@ -152,20 +152,31 @@ sup {
 	}
 }
 </style>
-<title>主页交互:
-
-	1.login()
-	
-		parameter:		username, password
-		url:			/login/
-		method:			post
-		function:		get sessionid.
-		
-	2</title>
-
+<title>前后台交互说明</title>
 </head>
 <body>
-<p>主页交互:</p>
+<table>
+<tbody>
+<tr>
+<td>
+    <aside style="position: fixed; top:0; bottom:0; left: 0; width:200px; background: grey;">
+        <ul>
+            <li style="color: white">前后台交互表</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L1" style="color: white;font-size: 14px;text-decoration: none;">主页交互</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L2" style="color: white;font-size: 14px;text-decoration: none;">注册交互</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L3" style="color: white;font-size: 14px;text-decoration: none;">问卷设计交互</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L4" style="color: white;font-size: 14px;text-decoration: none;">提交成功交互</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L5" style="color: white;font-size: 14px;text-decoration: none;">填写问卷交互</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L6" style="color: white;font-size: 14px;text-decoration: none;">查看数据交互</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L7" style="color: white;font-size: 14px;text-decoration: none;">我的问卷交互</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L8" style="color: white;font-size: 14px;text-decoration: none;">我的收藏交互</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#L9" style="color: white;font-size: 14px;text-decoration: none;">我的头像交互</a></li>
+        </ul>
+    </aside>
+</td>
+<td>
+<div>
+<p id="L1">主页交互:</p>
 
 <pre><code>1.login()
 
@@ -189,7 +200,7 @@ sup {
     function:       validate if request.user.is_authenticated.
 </code></pre>
 
-<p>注册交互:</p>
+<p id="L2">注册交互:</p>
 
 <pre><code>1.submit()
 
@@ -199,7 +210,7 @@ sup {
     function:       create_user(username,password) and validate if user.exist().
 </code></pre>
 
-<p>问卷设计交互:</p>
+<p id="L3">问卷设计交互:</p>
 
 <pre><code>1.submit()
 
@@ -208,7 +219,7 @@ sup {
     function:       user.questionnaire.create() and validate if exists.
 </code></pre>
 
-<p>提交成功交互:</p>
+<p id="L4">提交成功交互:</p>
 
 <pre><code>1.logout()
 
@@ -225,7 +236,7 @@ sup {
     function:       search questionnaire by title and return to the result page.
 </code></pre>
 
-<p>填写问卷交互:</p>
+<p id="L5">填写问卷交互:</p>
 
 <pre><code>1.collect()
 
@@ -241,7 +252,7 @@ sup {
     function:       collect ans_data and ans_info.
 </code></pre>
 
-<p>查看数据交互:</p>
+<p id="L6">查看数据交互:</p>
 
 <pre><code>1.endPublish()
 
@@ -251,7 +262,7 @@ sup {
     function:       set is_end = true and enable print function.
 </code></pre>
 
-<p>我的问卷交互:</p>
+<p id="L7">我的问卷交互:</p>
 
 <pre><code>1.collect()
 
@@ -282,7 +293,7 @@ sup {
     function:       user(username).questionnaire(title).delete
 </code></pre>
 
-<p>我的收藏交互:</p>
+<p id="L8">我的收藏交互:</p>
 
 <pre><code>1.collect()
 
@@ -306,7 +317,7 @@ sup {
     function:       search questionnaire by title and return to the result page.
 </code></pre>
 
-<p>我的头像交互:</p>
+<p id="L9">我的头像交互:</p>
 
 <pre><code>1.asHead()
 
@@ -329,5 +340,10 @@ sup {
     method:         get
     function:       search questionnaire by title and return to the result page.    
 </code></pre>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </body>
 </html>

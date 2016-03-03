@@ -1,0 +1,21 @@
+<div><p>nginx是一款优秀的服务器软件，拥有优秀的静态文件处理能力，同时通过作为反向代理转发动态请求到后端服务器。如果现在需要在一台服务器上同时部署两个网站并通过独立的两个域名分别访问两个网站，应该怎样对nginx进行配置？在apache中可以通过设置virtualhost来配置多个网站，而在nginx其实也有类似的功能，并且实现比apache还要简单一些。这里以nginx+uwsgi部署两个django网站为例，具体操作过程如下：</p><ol><li><p>在nginx目录下（就是nginx.conf所在的目录，如果找不到可以使用whereis nginx命令查找，我的是在/etc下）新建文件夹vhost： </p><code>cd /etc/nginx</code><br><code>mkdir vhost</code><br><code>cd vhost</code></li><li><p></p><p>在vhost/下新建文件<strong>www.yourdomain.com.conf</strong>，然后在其中添加： </p><code>server {
+    listen 80;
+    server_name www.yourdomain.com;
+    #charset koi8-r;
+    log_format www.yourdomain.com \'$remote_addr - $remote_user [$time_local] $request\'
+    access_log /var/www/logs/yourdomain.com.log www.yourdomain.com;
+
+    location / {
+        uwsgi_pass 127.0.0.1:9090;
+        include uwsgi_params;
+    }
+
+    location ^~ /static/ {
+        root /var/;
+    }
+
+    location ~ ^/(images|javascript|js|css|flash|media)/ {
+        expires 30d;
+        root /var/static/;
+    }
+}</code></li><p></p><li><p>然后新建另一个网站的配置文件（此处根据需要可以建立多个配置文件对应多个网站）<strong>yourotherdomain.com.conf</strong>，然后在其中添加如上内容，并且相应修改域名字段，最后最重要的一点：更改<strong>uwsgi_pass 127.0.0.1:9090;</strong>中的端口号为其他空闲端口，例如<strong>9091</strong></p></li><li><p>然后回到上级目录，修改nginx.conf文件。首先删去之前的<strong>server</strong>范围的所有内容（包括<strong>server</strong>本身），然后在<strong>http</strong>范围中加入：</p><code>include vhost/*.conf;</code></li><p></p><li><p>重启nginx：</p><code>nginx -s reload</code></li><p></p><li><p>配置相应django网站的uwsgi配置文件，将其<em>socket参数分别改为上文中所配置的127.0.0.1:9090和127.0.0.1:9091</em>，然后分别运行uwsgi服务器即可：</p><code>uwsgi --xml uwsgl.xml</code></li></ol><p>最后将配置的两个域名都指向此服务器即可通过两个域名分别访问两个网站。看，是不是要比apache还简单。</p></div>

@@ -5,5 +5,6 @@ from iec_blog.views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/([a-zA-Z]*)/(\d{1,2})/$', blog),
-    url(r'^test/$', test),
+    url(r'^publish/$', publish),
+    url(r'^del/([a-zA-Z]*)/$', del_all),
 ]

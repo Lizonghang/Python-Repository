@@ -8,7 +8,14 @@ class BlogUserAdmin(admin.ModelAdmin):
 
 class BlogMessageAdmin(admin.ModelAdmin):
     list_display = ('title', 'publish_date', 'author', 'blog_id')
+    search_fields = ('title', 'blog_id')
+
+
+class BlogLogAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author')
+    search_fields = ('title',)
 
 
 admin.site.register(BlogMessage, BlogMessageAdmin)
 admin.site.register(BlogUser, BlogUserAdmin)
+admin.site.register(BlogCollectLog, BlogLogAdmin)

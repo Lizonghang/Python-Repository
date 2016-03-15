@@ -1,3 +1,4 @@
+# coding=utf-8
 from django.shortcuts import render_to_response
 from iec_blog.models import *
 from django.http import HttpResponse
@@ -5,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 import json
 from datetime import datetime
+import random
 
 
 def blog(request, author_name, blog_id):
@@ -51,25 +53,33 @@ def blog(request, author_name, blog_id):
 
 def publish(request):
     if request.method == 'POST':
-        title = request.POST.get('title')
-        author = request.POST.get('author')
-        date = datetime.strptime(request.POST.get('date'), '%Y-%m-%d')
+        title = request.POST.get('title', '')
+        author = request.POST.get('author', '')
+        date = request.POST.get('date', '')
+        desc = request.POST.get('desc', '')
+        if title == '' or author == '':
+            return HttpResponse(u'错误的数据')
+        if date:
+            date = datetime.strptime(request.POST.get('date'), '%Y-%m-%d')
+        else:
+            date = datetime.now()
         article = request.POST.get('article')
         if BlogUser.objects.filter(username=author):
             blog_user = BlogUser.objects.get(username=author)
-            if blog_user.blog_set.filter(title=title):
-                return HttpResponse('EXIST')
+            if blog_user.collect_log.filter(title=title):
+                return HttpResponse(u'已存在: ' + title)
             else:
-                blogid = len(BlogUser.objects.get(username=author).blog_set.all()) + 1
+                if blog_user.blog_set.filter(title=title):
+                    return HttpResponse(u'日志与文章列表不同步')
+                blogid = len(blog_user.blog_set.all()) + 1
+                # blogid = random.randint(0, 999)
+                # while blog_user.blog_set.filter(blog_id=blogid):
+                #     blogid = random.randint(0, 999)
                 BlogMessage.objects.create(title=title, article=article, author=BlogUser.objects.get(username=author),
-                                           publish_date=date, blog_id=blogid, ps="")
-                return HttpResponse('GET: ' + title)
+                                           publish_date=date, blog_id=blogid, desc=desc)
+                BlogCollectLog.objects.create(title=title, author=BlogUser.objects.get(username=author))
+                return HttpResponse(u'收集: ' + title)
         else:
-            return HttpResponse('NO USER')
+            return HttpResponse(u'不存在的用户')
     else:
-        return HttpResponse('No way')
-
-
-def del_all(request, author_name):
-    BlogUser.objects.get(username=author_name).blog_set.all().delete()
-    return HttpResponse('Delete ' + author_name + ' All')
+        return HttpResponse(u'非法的请求')

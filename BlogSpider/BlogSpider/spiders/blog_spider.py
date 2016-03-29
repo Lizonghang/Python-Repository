@@ -58,12 +58,14 @@ class toxni_spider(scrapy.Spider):
                     tag['src'] = head_link + tag['src']
         for tag in soup.find_all(attrs={'class': True}):
             del tag['class']
-        return soup.prettify()
+        return soup
 
     def handler(self, title, date, author, article, desc):
         post_data = {'title': title, 'date': date, 'author': author, 'article': article, 'desc': desc}
         req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
-        print urllib2.urlopen(req).read()
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response
 
 
 class lypeer_spider(scrapy.Spider):
@@ -113,12 +115,14 @@ class lypeer_spider(scrapy.Spider):
                     tag['src'] = head_link + tag['src']
         for tag in soup.find_all(attrs={'class': True}):
             del tag['class']
-        return soup.prettify()
+        return soup
 
     def handler(self, title, date, author, article, desc):
         post_data = {'title': title, 'date': date, 'author': author, 'article': article, 'desc': desc}
         req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
-        print urllib2.urlopen(req).read()
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response
 
 
 class lazycat_spider(scrapy.Spider):
@@ -158,10 +162,21 @@ class lazycat_spider(scrapy.Spider):
                 title = title[0]
             author = 'lazycat'
             article = self.reset_article(selector.xpath('//div[@class="entry-content"]/*').extract(), head_link)
-            desc = ''
-            self.handler(title, author, article, desc)
+            desc = self.get_desc(article)
+            date = response.url.split('/')[-3] + '-' + response.url.split('/')[-2] + '-1'
+            self.handler(title, author, article, desc, date)
             if len(self.urls):
                 yield Request(self.urls.pop(), callback=self.parse)
+
+    def get_desc(self, article):
+        soup = article
+        for p_tag in soup.find_all('p'):
+            p_length = len(p_tag.getText())
+            if p_length > 50:
+                if p_length > 150:
+                    return p_tag.getText()[0:150] + '...'
+                return p_tag.getText()
+        return ''
 
     def reset_article(self, article_div, head_link):
         article_content = ''
@@ -179,12 +194,14 @@ class lazycat_spider(scrapy.Spider):
         for tag in soup.find_all(attrs={'class': True}):
             del tag['class']
         soup.find(id='anyShare').string = ''
-        return soup.prettify()
+        return soup
 
-    def handler(self, title, author, article, desc):
-        post_data = {'title': title, 'author': author, 'article': article, 'desc': desc}
+    def handler(self, title, author, article, desc, date):
+        post_data = {'title': title, 'author': author, 'article': article, 'desc': desc, 'date': date}
         req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
-        print urllib2.urlopen(req).read()
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response
 
 
 class shadow_spider(scrapy.Spider):
@@ -249,12 +266,14 @@ class shadow_spider(scrapy.Spider):
         for tag in soup.find_all(attrs={'class': True}):
             del tag['class']
         soup.find('h3').string = ''
-        return soup.prettify()
+        return soup
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
         req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
-        print urllib2.urlopen(req).read()
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response
 
 
 class yasic_spider(scrapy.Spider):
@@ -312,12 +331,14 @@ class yasic_spider(scrapy.Spider):
                     tag['src'] = head_link + tag['src']
         for tag in soup.find_all(attrs={'class': True}):
             del tag['class']
-        return soup.prettify()
+        return soup
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
         req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
-        print urllib2.urlopen(req).read()
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response
 
 
 class trotyl_spider(scrapy.Spider):
@@ -379,12 +400,14 @@ class trotyl_spider(scrapy.Spider):
                     tag['src'] = head_link + tag['src']
         for tag in soup.find_all(attrs={'class': True}):
             del tag['class']
-        return soup.prettify()
+        return soup
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
         req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
-        print urllib2.urlopen(req).read()
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response
 
 
 class rapo_spider(scrapy.Spider):
@@ -399,7 +422,7 @@ class rapo_spider(scrapy.Spider):
         title = data['body']['blog']['sub_caption']
         author = 'rapo'
         article = data['body']['blog']['content']
-        desc = ''
+        desc = self.get_desc(article)
         next_id = data['body']['pagination']['next_id']
         this_id = data['body']['blog']['id']
         self.handler(title, author, article, date, desc)
@@ -409,27 +432,22 @@ class rapo_spider(scrapy.Spider):
         else:
             return
 
-    def reset_article(self, article_div, head_link):
-        article_content = ''
-        for ele in article_div:
-            article_content += ele
-        soup = BeautifulSoup(article_content, 'lxml')
-        for tag in soup.find_all(['a', 'img']):
-            if tag.name == 'a':
-                if tag.has_attr('href'):
-                    if 'http' not in tag['href']:
-                        tag['href'] = head_link + tag['href']
-            elif tag.name == 'img':
-                if 'http' not in tag['src']:
-                    tag['src'] = head_link + tag['src']
-        for tag in soup.find_all(attrs={'class': True}):
-            del tag['class']
-        return soup.prettify()
+    def get_desc(self, article):
+        soup = BeautifulSoup(article, 'lxml')
+        for p_tag in soup.find_all('p'):
+            p_length = len(p_tag.getText())
+            if p_length > 50:
+                if p_length > 150:
+                    return p_tag.getText()[0:150] + '...'
+                return p_tag.getText()
+        return soup.p.getText()
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
         req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
-        print urllib2.urlopen(req).read()
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response
 
 
 class snowbean_spider(scrapy.Spider):
@@ -479,9 +497,80 @@ class snowbean_spider(scrapy.Spider):
                     tag['src'] = head_link + tag['src']
         for tag in soup.find_all(attrs={'class': True}):
             del tag['class']
-        return soup.prettify()
+        return soup
 
     def handler(self, title, date, author, article, desc):
         post_data = {'title': title, 'date': date, 'author': author, 'article': article, 'desc': desc}
         req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
-        print urllib2.urlopen(req).read()
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response
+
+
+class vizards_spider(scrapy.Spider):
+    name = 'vizards.com'
+    start_urls = ['http://blog.flowmine.xyz/']
+    start = True
+    ready = False
+
+    url_id = 1
+    end_id = None
+    urls = []
+    desc = []
+
+    def parse(self, response):
+        if not self.ready:
+            selector = scrapy.Selector(response)
+            if self.start:
+                self.end_id = int(
+                    selector.xpath('//div[@class="pager common_width"]/ul/li/a/text()').extract()[-1])
+                self.start = False
+            domain = 'http://blog.flowmine.xyz'
+            for block in selector.xpath('//div[@class="posts"]/div'):
+                link = block.xpath('div/div[@class="read_more"]/a/@href').extract()[0]
+                if 'http' not in link:
+                    link = domain + link
+                self.urls.append(link)
+                self.desc.append(block.xpath('div/div[@class="post_body"]/div/p/text()').extract()[0])
+            if self.url_id != self.end_id:
+                self.url_id += 1
+                next_url = 'http://blog.flowmine.xyz/page/' + str(self.url_id)
+                yield Request(next_url, callback=self.parse)
+            else:
+                self.ready = True
+                yield Request(self.urls.pop(), callback=self.parse)
+        else:
+            selector = scrapy.Selector(response)
+            head_link = 'http://blog.flowmine.xyz'
+            title = selector.xpath('//h2[@class="title"]/text()').extract()[0]
+            author = 'vizards'
+            article = self.reset_article(selector.xpath('//div[@class="post_body"]/*[not(@class="toc")]').extract(), head_link)
+            date = selector.xpath('//span[@class="date"]/text()').extract()[0].split()[-1]
+            desc = self.desc.pop()
+            self.handler(title, author, article, date, desc)
+            if len(self.urls):
+                yield Request(self.urls.pop(), callback=self.parse)
+
+    def reset_article(self, article_div, head_link):
+        article_content = ''
+        for ele in article_div:
+            article_content += ele
+        soup = BeautifulSoup(article_content, 'lxml')
+        for tag in soup.find_all(['a', 'img']):
+            if tag.name == 'a':
+                if tag.has_attr('href'):
+                    if 'http' not in tag['href'] and '#' not in tag['href']:
+                        tag['href'] = head_link + tag['href']
+            elif tag.name == 'img':
+                if 'http' not in tag['src']:
+                    tag['src'] = head_link + tag['src']
+        for tag in soup.find_all(attrs={'class': True}):
+            del tag['class']
+        return soup
+
+    def handler(self, title, author, article, date, desc):
+        post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
+        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        response = urllib2.urlopen(req).read()
+        if response != '':
+            print response

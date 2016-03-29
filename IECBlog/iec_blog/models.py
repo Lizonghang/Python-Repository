@@ -21,7 +21,7 @@ class BlogMessage(models.Model):
     blog_id = models.IntegerField(verbose_name=u'博文编号')
 
     def __unicode__(self):
-        return self.title
+        return self.title + ' ' + str(self.publish_date)
 
 
 class BlogCollectLog(models.Model):

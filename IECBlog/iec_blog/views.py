@@ -12,48 +12,45 @@ import random
 def blog(request, author_name, blog_id):
     blog_id = int(blog_id)
     if not len(BlogUser.objects.filter(username=author_name)) == 1:
-        return HttpResponse("UserList Error Occur")
+        return HttpResponse(u"没有这个作者")
     else:
         author = BlogUser.objects.get(username=author_name)
     if len(author.blog_set.filter(blog_id=blog_id)) == 1:
+        blog_set = list(author.blog_set.order_by('publish_date'))
+        blog_set_length = len(blog_set)
         blog = author.blog_set.get(blog_id=blog_id)
-        recommend_bloguser = BlogUser.objects.exclude(username=author_name).order_by('?')[0: 5]
-        recommend_bloguser_username = []
-        recommend_bloguser_blogid = []
-        recommend_bloguser_blogtitle = []
-        for each_bloguser in recommend_bloguser:
-            recommend_bloguser_username.append(each_bloguser.username)
-            each_blog = each_bloguser.blog_set.order_by('?')[0]
-            recommend_bloguser_blogid.append(str(each_blog.blog_id))
-            recommend_bloguser_blogtitle.append(each_blog.title)
-        author_blog = author.blog_set.exclude(title=blog.title)
-        if len(author_blog) > 5:
-            author_blog = author_blog.order_by('?')[0:5]
-        author_blogid = []
-        author_blogtitle = []
-        for each_blog in author_blog:
-            author_blogtitle.append(each_blog.title)
-            author_blogid.append(str(each_blog.blog_id))
+        blog_index = blog_set.index(blog)
+        if blog_index == 0:
+            newer_blog_index = blog_index + 1
+            pre_link = '/blog/' + author_name + '/' + str(blog_set[newer_blog_index].blog_id) + '/'
+            next_link = 'javascript:alert("已经是最后一篇")'
+        elif blog_index == blog_set_length - 1:
+            older_blog_index = blog_index - 1
+            pre_link = 'javascript:alert("已经是最新文章")'
+            next_link = '/blog/' + author_name + '/' + str(blog_set[older_blog_index].blog_id) + '/'
+        else:
+            newer_blog_index = blog_index + 1
+            older_blog_index = blog_index - 1
+            pre_link = '/blog/' + author_name + '/' + str(blog_set[newer_blog_index].blog_id) + '/'
+            next_link = '/blog/' + author_name + '/' + str(blog_set[older_blog_index].blog_id) + '/'
         render_data = {
             'title': blog.title,
             'article': blog.article,
             'author': blog.author,
-            'quoto': author.quoto,
-            'work': author.work,
-            'recommend_user': json.dumps(recommend_bloguser_username),
-            'recommend_blogid': json.dumps(recommend_bloguser_blogid),
-            'recommend_blogtitle': json.dumps(recommend_bloguser_blogtitle),
-            'author_blogtitle': json.dumps(author_blogtitle),
-            'author_blogid': json.dumps(author_blogid),
+            'desc': blog.desc,
+            'blog_id': blog.blog_id,
+            'date': blog.publish_date,
+            'pre': pre_link,
+            'next': next_link,
         }
-        return render_to_response('blog_template.html', render_data)
+        return render_to_response('article.html', render_data)
     else:
-        return HttpResponse("AuthorList Error Occur")
+        return HttpResponse(u"错误的ID")
 
 
 def publish(request):
     if request.method == 'POST':
-        title = request.POST.get('title', '')
+        title = request.POST.get('title', '').replace('[', ' ').replace(']', ' ')
         author = request.POST.get('author', '')
         date = request.POST.get('date', '')
         desc = request.POST.get('desc', '')
@@ -67,14 +64,11 @@ def publish(request):
         if BlogUser.objects.filter(username=author):
             blog_user = BlogUser.objects.get(username=author)
             if blog_user.collect_log.filter(title=title):
-                return HttpResponse(u'已存在: ' + title)
+                return HttpResponse()
             else:
                 if blog_user.blog_set.filter(title=title):
                     return HttpResponse(u'日志与文章列表不同步')
                 blogid = len(blog_user.blog_set.all()) + 1
-                # blogid = random.randint(0, 999)
-                # while blog_user.blog_set.filter(blog_id=blogid):
-                #     blogid = random.randint(0, 999)
                 BlogMessage.objects.create(title=title, article=article, author=BlogUser.objects.get(username=author),
                                            publish_date=date, blog_id=blogid, desc=desc)
                 BlogCollectLog.objects.create(title=title, author=BlogUser.objects.get(username=author))
@@ -83,3 +77,16 @@ def publish(request):
             return HttpResponse(u'不存在的用户')
     else:
         return HttpResponse(u'非法的请求')
+
+
+def delete(request, author_name):
+    blog_list = BlogUser.objects.get(username=author_name).blog_set.all()
+    if len(blog_list):
+        for each_blog in blog_list:
+            blog_title = each_blog.title
+            if BlogCollectLog.objects.filter(title=blog_title):
+                BlogCollectLog.objects.get(title=blog_title).delete()
+                each_blog.delete()
+        return HttpResponse(u'删除作者:' + author_name + u' 的信息')
+    else:
+        return HttpResponse(u'作者:' + author_name + u'没有博客')

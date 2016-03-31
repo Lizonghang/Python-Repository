@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="http://img.t.sinajs.cn/t6/style/css/pages/special/weibo404.css?version=31400edbf23a7820" rel="stylesheet" type="text/css"/>
+  <link href="http://img.t.sinajs.cn/t6/skin/skin058/skin.css?version=31400edbf23a7820" rel="stylesheet" type="text/css"/>
+  <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
+  <title>没有找到问卷信息</title>
+ </head>
+ <body class="B_weibo404">
+  <div class="WB_miniblog">
+   <div class="WB_miniblog_fb">
+    <div class="W_main">
+     <div class="W_error_bg">
+      <div class="page_error">
+       <div class="note">
+        <span class="W_icon icon_rederrorB"></span>
+        <em class="S_link1">您似乎进行了错误的操作哦?</em>
+       </div>
+       <dl class="detail" style="margin-left: 55px">
+        <dt class="S_txt2">
+         <em class="S_link1" id="reload_num_span">5</em>秒之后跳转选择模板
+        </dt>
+       </dl>
+      </div>
+     </div>
+    </div>
+       <!-- TIME COUNTER -->
+    <script>
+     (function() {
+        var box = document.getElementById('reload_num_span');
+        var time  = parseInt(box.innerHTML, 10);
+        function go() {
+            box.innerHTML = time;
+            time = time-1;
+            if(time > 0) {
+                setTimeout(go, 1000);
+            }else{
+                window.location = 'http://www.desckie.com/select/';
+            }
+        }
+        go();
+    })();
+    </script>
+    <div id="plc_bot">
+      <div class="other_link S_bg1 clearfix">
+       <p class="company" align="center">
+        <span class="copy S_txt2">
+         Copyright © 2016 Hang All Rights Reserved
+        </span>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

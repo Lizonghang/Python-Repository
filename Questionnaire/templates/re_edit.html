@@ -1,0 +1,200 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>修改问卷</title>
+    <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <link href="http://www.desckie.com/static/admin/css/NewDefault.css" rel="stylesheet" type="text/css" />
+    <link id="linkBaseUrl" rel="stylesheet" type="text/css" href="http://www.desckie.com/static/admin/css/q.css" />
+    <link href="http://www.desckie.com/static/admin/css/newdesign.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+.m-menu li a {
+	width:45px;
+	height:39px;
+	display:block;
+	text-indent:-9999px;
+	outline:0;
+}
+.m-top a:hover, .m-help a:hover, .m-comment a:hover, .m-bottom a:hover {
+	background:url(http://www.sojump.com/images/mysojump/rightbar-hover.gif) no-repeat;
+}
+</style>
+    <style type="text/css">
+                    .orange {
+                        color: #fef4e9;
+                        border: solid 1px #da7c0c;
+                        background: #f78d1d;
+                        background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+                        background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+                        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+                        width: 90px;
+                        height: 30px;
+                        -webkit-border-radius: .5em;
+                        -moz-border-radius: .5em;
+                        border-radius: .5em;
+
+                    }
+                    .orange:hover {
+                        background: #f47c20;
+                        background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+                        background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+                        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+                    }
+                    .orange:active {
+                        color: #fcd3a5;
+                        background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+                        background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+                        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+                    }
+    </style>
+    <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
+</head>
+<body style="background: #eeeeee; margin: 0px; padding: 0px;">
+    <div style="width:870px; margin: 0 auto; text-align: left;" id="page">
+        <div id="topnav" style="position:relative">
+            <div class="tabQTypet" style="background: 0px; border: 0px; height: 40px;">
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="survey" style="padding: 15px 24px 15px 25px; overflow: auto; background-color: rgb(255, 255, 255); width: 820px; height: 515px" id="sur">
+            <script>
+                  document.getElementsByClassName('survey')[0].innerHTML = unescape('{{ pageForm }}');
+            </script>
+        </div>
+    </div>
+    <div id="submit_div" style="width: 820px;height: 60px;background-color: transparent">
+        <div style="background-color: transparent;margin-left: 205px">
+            <a href="javascript:submit();" class="sumitbutton" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px;width: 270px">完成修改</a>
+        </div>
+    </div>
+<script>
+        var title_div = document.getElementById("pater_title");
+        var title_button = document.createElement("button");
+        title_button.innerText = "编辑描述";
+        title_button.onclick = function(){edit_desc();};
+        document.getElementById("divId").appendChild(title_button);
+        var i=1;
+        var Q = document.getElementsByClassName("Q"+i)[0];
+        while(Q) {
+            var edit_button = document.createElement("button");
+            edit_button.innerText = "编辑文本";
+            edit_button.onclick = function(){edit(this.id);};
+            edit_button.id = "edit_button_" + i;
+            Q.getElementsByClassName("div_title_question")[0].appendChild(edit_button);
+            i++;
+            Q = document.getElementsByClassName("Q" + i)[0]
+        }
+        function edit_desc(){
+            var discription = document.getElementById("pater_desc");
+            var desc_text = discription.innerText;
+            discription.innerHTML = '<textarea style="width: 730px;height: 70px" class="redit" onclick="select();"> '+desc_text+'</textarea>';
+            title_button.innerText = "完成编辑";
+            title_button.onclick = function(){
+                title_button.innerText = "编辑描述";
+                var new_desc = discription.getElementsByTagName("textarea")[0].value;
+                discription.innerText = new_desc;
+                title_button.onclick = function(){edit_desc();};
+            }
+        }
+        function edit(id){
+            var button = document.getElementById(id);
+            var block = button.parentNode.parentNode.parentNode;
+            var lis = block.getElementsByClassName("ul_select")[0].getElementsByTagName("li");
+            var tspan = block.getElementsByTagName("span")[0];
+            var title = tspan.innerText;
+            tspan.innerHTML = '<input value="'+title+'" class="redit" onclick="select();">';
+            button.innerText = "完成";
+            if(lis.length == 1){
+                button.onclick = function(){
+                    var new_title = tspan.getElementsByTagName("input")[0].value;
+                    tspan.innerText = new_title;
+                    button.innerText = "编辑文本";
+                    button.onclick = function(){edit(this.id);};
+                };
+            }
+            else{
+                var k,j;
+                var origi_sel;
+                for(k=0;k<lis.length;k++){
+                    origi_sel = lis[k].getElementsByTagName("label")[0].innerText;
+                    lis[k].getElementsByTagName("label")[0].innerHTML = '<input class="redit" value="'+origi_sel+'" onclick="select();">';
+                }
+                button.onclick = function(){
+                        var new_title = tspan.getElementsByTagName("input")[0].value;
+                        tspan.innerText = new_title;
+                        for(j=0;j<lis.length;j++){
+                            var new_sel = lis[j].getElementsByClassName("redit")[0].value;
+                            lis[j].getElementsByTagName("label")[0].innerText = new_sel;
+                        }
+                        button.innerText = "编辑文本";
+                        button.onclick = function(){edit(this.id);};
+                }
+            }
+        }
+</script>
+<script>
+    function check_valid(){
+        return !(document.getElementsByClassName("redit")[0]);
+    }
+    function remove_button(){
+        var allButton = document.getElementsByTagName("button");
+        var i;
+        var len = allButton.length;
+        for(i=0;i<len;i++){
+            allButton[0].remove();
+        }
+    }
+    var QContent = "";
+    var title;
+    function get_content(){
+        var tempQ;
+        var QNum=1;
+        var sTitle;
+        var lis;
+        var i;
+        title = document.getElementById("pater_title").innerText;
+        QContent += title;
+        while(tempQ = document.getElementsByClassName("Q"+QNum)[0]){
+            QContent += ";";
+            sTitle = tempQ.getElementsByTagName("span")[0].innerText;
+            QContent += sTitle;
+            lis = tempQ.getElementsByTagName("li");
+            if(lis[0].getElementsByTagName("label")[0]){
+                for(i=0;i<lis.length;i++) {
+                    QContent += ("," + lis[i].getElementsByTagName("label")[0].innerText);
+                }
+            }
+            QNum++;
+        }
+    }
+    function submit(){
+        if(check_valid()){
+            var confirm_result = confirm("提交后将覆盖原问卷并且丢失已收集的数据,是否继续?");
+            if(confirm_result){
+                remove_button();
+                get_content();
+                var pageForm = escape(document.getElementById('sur').innerHTML);
+                var data = {'pageForm': pageForm, 'QContent': QContent};
+                var URL = "http://www.desckie.com/select/template_1/view/?user={{ user }}&title=" + title;
+                var url = "http://www.desckie.com/delete/?user={{ user }}&title="+title;
+                $.get(url,function(response){
+                    if(response == "delete success"){
+                        $.post(URL, data, function(response){
+                            if(response == "Saved")
+                                $.post("http://www.desckie.com/select/collect_log/", {'method': 'collect', 'username': '{{ user }}', 'title': title});
+                                window.location.href="http://www.desckie.com/select/success/?user={{ user }}&title="+title;
+                        });
+                    }
+                    else{
+                        alert("Something wrong happened while delete questionnaire");
+                    }
+                })
+            }
+        }
+        else{
+            alert("尚未确认修改");
+        }
+    }
+</script>
+</body>
+</html>

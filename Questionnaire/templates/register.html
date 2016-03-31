@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
+    <title>注册</title>
+    <style rel="stylesheet" type="text/css">
+        .box_2 input,.box_9 input{ime-mode:disabled}form{padding-top:20px}
+        .red{color:#f66}  .bg_error{background:url(../static/admin/img/input_error.png) no-repeat;border:none;height:35px;width:300px}
+        .year_bg_error{background:url(../static/admin/img/input_error.png) 0 -36px no-repeat;border:none;height:23px;width:106px}
+        .month_day_bg_error{background:url(../static/admin/img/input_error.png) -107px -36px no-repeat}
+        .box .ipt_box .ipt_self
+        .self_email_bg_error{background:url(../static/admin/img/input_error.png) 0 -114px no-repeat}
+        .box_9 .code_bg .code_ipt_error{background:url(../static/admin/img/input_error.png) 0 -60px no-repeat}
+        .box{clear:both;height:auto}
+        .box .item{float:left;text-align:right;width:179px;padding-right:10px;height:44px;padding-top:6px;height:43px\9;_height:44px;_padding-top:8px;line-height:20px;font-size:14px}
+        .box .ipt_box{float:left;width:306px;height:50px;position:relative}
+        .box .ipt_box input.new_txt,
+        .box .ipt_box input.txt{width:284px;padding:8px;border:none;line-height:18px;font-size:14px}
+        .box .ipt_box input.txt{height:19px;background:url(../static/admin/img/ipt.png) no-repeat;_background-attachment:fixed}
+        .box .ipt_box input.focus{background:url(../static/admin/img/ipt.png) 0 -35px no-repeat;_background-attachment:fixed}
+        .box .ipt_box input.new_txt{height:18px;_height:17px;background:0 0}
+        .box_1 .info,.box_1 .item{padding-top:0;height:40px}
+        .box .ipt_box .bg_txt{border:none;height:35px;width:300px;background:url(../static/admin/img/ipt.png) no-repeat}
+        .box .ipt_box .bg_focus{background:url(../static/admin/img/ipt.png) 0 -35px no-repeat}
+        .box .ipt_box input.radio{visibility:hidden}.box .info{float:left;width:236px;height:40px;height:38px\9}
+        .box .nopadding{width:306px;padding-left:0}
+        .box .error{color:#f66;background:url(../static/admin/img/pwd_sprite.png) 0 -342px no-repeat;padding-left:16px}
+        .box .ok{color:#48A309;background:url(../static/admin/img/ok.png) 0 11px no-repeat;padding-left:14px}
+        .box .tip{color:grey;background:0 0}.info table{margin-left:6px}.info td{width:233px;height:35px;vertical-align:middle}
+        .box_1 .ipt_box{height:40px}
+        .box .method_box{width:306px;padding-left:0}
+        .box .method_box a{padding-left:20px;background:url(../static/admin/img/ipt.png) -300px -321px no-repeat;display:inline-block;height:18px;line-height:18px;margin-right:6px;cursor:pointer}
+        .box .ipt_box .ipt_other,.box .ipt_box .ipt_self{height:50px;position:relative}
+        .box .method_box a.checked{background:url(../static/admin/img/ipt.png) -300px -353px no-repeat}
+        .box .ipt_box .ipt_other{}.box .ipt_box .ipt_self input{background:url(../static/admin/img/ipt.png) 0 -176px no-repeat;border:none;line-height:18px;font-size:14px;width:181px;padding:8px;display:block;float:left;margin-right:4px;height:19px}
+        .box .ipt_box .ipt_self input.focus{background:url(../static/admin/img/ipt.png) 0 -211px no-repeat}
+        .box .ipt_box .ipt_self .outer{background:url(../static/admin/img/ipt.png) -166px -70px no-repeat;height:35px;width:99px;cursor:default;float:left;position:relative}
+        .box .ipt_box .ipt_self .outer div{line-height:19px;font-size:12px;height:19px;padding:8px 0 8px 3px;color:#696c6e;outline:0}
+        .box .ipt_box .ipt_self .outer div.focus{background:url(../static/admin/img/ipt.png) -166px -105px no-repeat}
+        .box .ipt_box .ipt_self .outer ul{position:absolute;top:35px;left:0;background:#F3F9FC;border:1px solid #57a8e4;width:97px}
+        .box .ipt_box .ipt_self .outer ul li{line-height:20px;cursor:default}
+        .box .ipt_box .ipt_self .outer ul li.hover{background:#57a8e4}
+        .sea_area_value_bg, .sea_area_value_bg_focus{background:url(../static/admin/img/ipt.png) 0 -523px no-repeat;cursor:default;height:35px;position:relative;width:300px}  .sea_area_value_bg_focus{background-position:0 -561px}
+        .sea_country_input{display:inline-block;height:18px;line-height:18px;width:284px;background:0 0;border:none;color:#696C6E;padding:8px}
+        .sea_country_input:hover{color:#696C6E}
+        .sea_country_input::-ms-clear{display:none}.sea_phone_num_bg,.sea_phone_num_bg_focus{background:url(../static/admin/img/ipt.png) 0 -176px no-repeat;display:block;float:left;font-size:14px;height:19px;line-height:18px;margin-right:4px;padding:8px;width:181px}
+        .sea_phone_num_bg_focus{background-position:0 -211px}
+        .sea_phone_num_prefix{display:inline-block;height:19px;color:#4199D7}
+        .sea_country_box{float:left;position:relative;width:300px;height:35px;line-height:35px;z-index:1000}
+        .sea_country_box .combox-list{background:#F3F9FC;border:1px solid #57A8E4;cursor:auto;left:0;max-height:200px;_height:80px;overflow-x:hidden;padding:1px;position:absolute;top:35px;width:296px;z-index:1000}
+        .sea_country_box .combox-list li{cursor:default;height:20px;line-height:20px;overflow:hidden;padding-left:3px}
+        .phone_num_placeholder{position:absolute;height:18px;line-height:18px;padding:8px 8px 8px 10px;cursor:text;color:#AAA}
+        .box_6 .info,
+        .box_6 .item{padding-top:0;height:40px}.phone_box_land{z-index:1000;width:746px}.phone_box_land .sea_phone{display:none;z-index:8;position:relative}.phone_box_land .land_phone{z-index:7;position:relative}.hover{background:#57a8e4}
+        .box .other,.box .self{width:306px;padding-left:0}.box .self .ipt_other{display:none}
+        .box .self .ipt_self{display:block}.box .other .ipt_other{display:block;position:relative}
+        .box .other .ipt_other .other_email_ul{background:#F3F9FC;position:absolute;left:0;top:35px;height:auto;width:298px;border:1px solid #57A8E4}
+        .box .other .ipt_other .other_email_ul li{line-height:20px;height:20px;cursor:default}
+        .box .other .ipt_other .other_email_ul p{line-height:20px;padding-left:2px}
+        .box .other .ipt_other .other_email_ul .hover{background:#57a8e4}.box .other .ipt_self{display:none}
+        .box .other .ipt_self .outer,.box .other .ipt_self input{background:0 0}
+        .box_2 .ipt_box{z-index:99}
+        .box_2 .ipt_box li{padding-left:2px}
+        .box_4 .empty,.box_4 .rankHigh,.box_4 .rankLow, .box_4 .rankMiddle{float:left;width:163px;height:15px;padding-left:70px;background:url(../static/admin/img/pwd_sprite.png) no-repeat}
+        .box_4 .empty{background-position:-6px 0}
+        .box_4 .rankLow{background-position:0 -100px;color:#ff9c3a}
+        .box_4 .rankMiddle{background-position:0 -142px;color:#61d01c}
+        .box_4 .rankHigh{background-position:0 -190px;color:#61d01c}
+        .box .sex_box a,.box .sex_box a.unchecked{background:url(../static/admin/img/ipt.png) -300px -322px no-repeat}
+        .box .nick_ipt_box{z-index:0}.box .sex_box a{padding-left:20px;display:inline-block;height:18px;line-height:18px;margin-right:30px;cursor:pointer}
+        .box .sex_box a.checked{background:url(../static/admin/img/ipt.png) -300px -354px no-repeat}
+        .box .sex_box a.unchecked_focus{background:url(../static/admin/img/ipt.png) -300px -385px no-repeat}
+        .box .sex_box a.checked_focus{background:url(../static/admin/img/ipt.png) -300px -417px no-repeat}
+        .box_6 .ipt_box{height:40px}.box_6 .ok{background:url(../static/admin/img/ok.png) 0 5px no-repeat}
+        .box_7 #birthday_type_value,.box_7 #day_value,.box_7 #month_value,.box_7 #year_value{display:inline-block;margin:0;padding-left:5px}
+        .box_7 #birthday_type_value{width:55px}.box_7 #year_value{width:101px;height:23px;_height:21px;line-height:23px;border:none;color:#4199D7;background:0 0}
+        .box_7 #day_value,.box_7 #month_value{width:55px;height:23px;line-height:23px;border:none;color:#4199D7}
+        .box .ipt_box #birthday_type_box{background:url(../static/admin/img/ipt.png) -197px -176px no-repeat;width:60px;height:23px;float:left;margin-right:4px}
+        .box .ipt_box .birthday_type_box_focus{background:url(../static/admin/img/ipt.png) -197px -199px no-repeat}
+        .box .ipt_box #year_box{width:106px;height:23px;float:left;margin-right:4px}
+        .box .ipt_box .year_bg_focus,.box .ipt_box .year_bg_txt{width:106px;height:23px}
+        .box .ipt_box #day_box,.box .ipt_box #month_box{width:60px;height:23px;float:left}
+        .box .ipt_box .year_bg_txt{background:url(../static/admin/img/ipt.png) 0 -246px no-repeat}
+        .box .ipt_box .year_bg_focus{background:url(../static/admin/img/ipt.png) 0 -269px no-repeat}
+        .box .ipt_box #month_box{margin-right:4px}.box .ipt_box .month_value{background:url(../static/admin/img/ipt.png) -197px -176px no-repeat}
+        .box .ipt_box .month_value_focus{background:url(../static/admin/img/ipt.png) -197px -199px no-repeat}
+        .box .ipt_box .day_value{background:url(../static/admin/img/ipt.png?) -197px -176px no-repeat}
+        .box .ipt_box .day_value_focus{background:url(../static/admin/img/ipt.png) -197px -199px no-repeat}
+        .box_7 .item{padding-top:0;height:39px\9\0;padding-top:1px\9\0;_height:38px;_padding-top:2px}
+        .box_7 .ipt_box{height:40px;z-index:10}
+        .box_7 .info{height:40px;padding-top:0;background-position:left 4px;line-height:20px}
+        .box_7 .info td{height:23px}.box_7 .error,.box_8 .error{background-position:0 -348px}
+        .box_7 .birthdayTip{background:url(../static/admin/img/ok.png) 0 4px no-repeat;color:grey;padding-left:14px}
+        .box_7 .gray{line-height:20px;padding-left:2px;color:grey}
+        .box_7 .ipt_box .value_box{margin-left:5px;line-height:23px;overflow:hidden;height:23px;word-wrap:break-word}
+        .box_7 .ipt_box li{line-height:20px;cursor:default;padding-left:2px}.box_7 .ipt_box li.hover{background:#57a8e4}
+        .box_7 #birthday_type_box,.box_7 #day_box,.box_7 #month_box,.box_7 #year_box{position:relative}
+        .box_7 #birthday_type_ul{position:absolute;top:23px;left:0;width:56px;height:40px;overflow:hidden;background:#F3F9FC;border:1px solid #57a8e4;padding:1px}
+        .box_7 #day_ul,.box_7 #month_ul,.box_7 #year_ul{position:absolute;height:150px;background:#F3F9FC;border:1px solid #57a8e4;padding:1px;top:23px;left:0}
+        .box_7 #year_ul{width:102px;overflow-y:scroll}
+        .box_7 #day_ul,.box_7 #month_ul{width:56px;overflow-y:scroll}#city_box,#country_box,#province_box{float:left;height:23px;line-height:23px;position:relative;width:101px}
+        .box .ipt_box .city_value,.box .ipt_box .country_value,.box .ipt_box .province_value{width:92px;height:23px;_height:21px;line-height:23px;border:none;display:inline-block;padding-left:5px;color:#4199D7;background:0 0}
+        .box .ipt_box .area_value_bg,.box .ipt_box .area_value_bg_focus{width:97px;height:23px;line-height:23px}
+        .box .ipt_box .area_value_bg_focus{background:url(../static/admin/img/ipt.png) -106px -269px no-repeat}
+        .box .ipt_box .area_value_bg{background:url(../static/admin/img/ipt.png) -106px -246px no-repeat}
+        .box .ipt_box #city_box ul,.box .ipt_box #country_box ul,.box .ipt_box #province_box ul{max-height:200px;_height:200px;overflow-y:scroll;overflow-x:hidden;background:#f3f9fc;position:absolute;left:0;top:23px;border:1px solid #57a8e4;cursor:auto;padding:1px}
+        .box .ipt_box #city_box .noSearchResult,.box .ipt_box #country_box .noSearchResult,.box .ipt_box #province_box .noSearchResult{height:20px;overflow-y:hidden;overflow-x:hidden;background:#f3f9fc;position:absolute;left:0;top:23px;border:1px solid #57a8e4;cursor:auto;padding:1px}
+        .box_8 .info,.box_8 .item{padding-top:0;height:40px}
+        .box .ipt_box .disable_box{background:url(../static/admin/img/ipt.png) 0 -397px no-repeat}
+        .box_8 .ipt_box li{padding-left:3px}.box .ipt_box .value_box{margin-left:5px;line-height:23px;overflow:hidden;height:23px;word-wrap:break-word}
+        .box_8 .ipt_box{height:40px;z-index:9}.box_8 .info td{height:23px}.box_8 .error{background-position-y:5px}
+        .box_8 .ok{background:url(../static/admin/img/ok.png) 0 6px no-repeat;padding-left:14px}
+        .box .ipt_box #country_box ul{width:163px}.box .ipt_box #city_box ul,.box .ipt_box #province_box ul{width:93px}
+        .box .ipt_box #city_box ul li,.box .ipt_box #country_box ul li,.box .ipt_box #province_box ul li{cursor:default;white-space:nowrap;line-height:20px;height:20px;overflow:hidden}
+        .box .ipt_box #city_box ul li.hover,.box .ipt_box #country_box ul li.hover,.box .ipt_box #province_box ul li.hover{background:#57a8e4}.focus_loc{background:url(../static/admin/img/type.png) no-repeat!important}
+        .box_9 .item{height:49px;padding-top:15px}.box_9 .ipt_box{width:306px;padding-left:0}
+        .box_9 .ipt_box input{font-weight:700}.box_9 .code_bg{height:64px}
+        .box_9 .code_bg input{background:url(../static/admin/img/ipt.png) 0 -70px no-repeat;border:none;height:37px;line-height:38px;width:150px;font-size:24px;padding:8px;float:left}
+        .box_9 .code_bg input.focus{background:url(../static/admin/img/ipt.png) 0 -123px}.box_9 .info{height:74px;padding:0;width:248px}
+        .box_9 input{font-family:Verdana,Geneva,sans-serif}
+        .box_9 .info span{color:red;display:inline-block;background:url(../static/admin/img/pwd_sprite.png) 0 -353px no-repeat;padding-left:15px}
+        .box_9 .info span.change{color:#4199d7;cursor:pointer;margin-bottom:0;background:0 0;padding-left:0}
+        .box_9 .info span.tips{color:grey;padding-left:0;background:0 0}
+        .box_10 .item{height:25px;padding-top:0}.box_10 .qzone_box{height:25px}
+        .box_10 .qzone_box a{display:inline-block;line-height:18px;height:18px;padding:0 20px;background:url(../static/admin/img/ipt.png) -300px -253px no-repeat;color:#000;cursor:pointer}
+        .box_10 .qzone_box .checked{background:url(../static/admin/img/ipt.png) -300px -292px no-repeat;color:inherit}
+        .box_10 .qzone_box .unchecked{background:url(../static/admin/img/ipt.png) -300px -253px no-repeat;color:grey}
+        .box_10 .qzone_box .checked_focus{background:url(../static/admin/img/ipt.png) -300px -478px no-repeat;color:inherit}
+        .box_10 .qzone_box .unchecked_focus{background:url(../static/admin/img/ipt.png) -300px -446px no-repeat;color:grey}
+        .box_11{height:90px}.box_11 .ipt_box{height:90px;background:0 0;padding-left:0}
+        .box_11 .ipt_box .agree_box{height:35px}
+        .box_11 .ipt_box .agree_box .a_1{display:block;float:left;line-height:18px;height:18px;padding-left:20px;background:url(../static/admin/img/ipt.png) -300px -253px no-repeat;cursor:pointer;margin-right:10px;color:red}
+        .box_11 .ipt_box .agree_box .checked{background:url(../static/admin/img/ipt.png) -300px -292px no-repeat;color:#000}
+        .box_11 .ipt_box .agree_box .unchecked{background:url(../static/admin/img/ipt.png) -300px -253px no-repeat;color:grey}
+        .box_11 .ipt_box .agree_box .checked_focus{background:url(../static/admin/img/ipt.png) -300px -478px no-repeat;color:#000}
+        .box_11 .ipt_box .agree_box .unchecked_focus{background:url(../static/admin/img/ipt.png) -300px -446px no-repeat;color:grey}
+        .box_11 .ipt_box .agree_box .x_box{float:left;cursor:pointer;position:relative;top:3px}
+        .box_11 .ipt_box .agree_box .x_box div{background:url(../static/admin/img/pwd_sprite.png) -35px -319px no-repeat #f8fdff;width:19px;height:13px;position:relative;z-index:1}
+        .box_11 .ipt_box .agree_box .x_box p{position:absolute;width:161px;left:0;top:12px;border:1px solid #74b4ef;z-index:0;display:none}
+        .box_11 .ipt_box .agree_box .show div{background-position:-16px -319px}
+        .box_11 .ipt_box .agree_box .show p{display:block;padding:5px}.box_11 .ipt_box .agree_box .show p a{line-height:20px}
+        .box_11 .ipt_box .submit input{background:#69b946;display:inline-block;height:52px;width:306px;text-align:center;cursor:pointer;font:22px/52px "寰蒋闆呴粦";color:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;border-style:solid;border-width:1px;border-color:transparent}
+        .box_11 .ipt_box .submit input.disabled{background:#f4f9fd;color:#888;cursor:default;border-color:#d0dae3}.chk_email_code .div_3 a,.chk_email_code .div_3 img,.getverima div,.phone_del{cursor:pointer}.cover{width:100%;height:900px;position:absolute;left:0;top:0;background:#000;z-index:100;display:none;filter:alpha(opacity=30);opacity:.3}
+        .box_{width:900px;margin:0 auto;height:0;position:relative;z-index:101}
+        .chk_email_code{width:420px;position:absolute;left:250px;top:200px;background:#fff;height:280px;border:1px solid #74b4ef;z-index:100;display:none}
+        .chk_email_code a.close{position:absolute;height:32px;width:32px;background:url(../static/admin/img/close_1.png) center center no-repeat;right:1px;top:1px;cursor:pointer}
+        .chk_email_code h2{height:32px;line-height:32px;font-size:14px;background:#b4d8f3;padding-left:10px}
+        .chk_email_code .div_1{padding-left:70px;margin:30px 0;color:red;font-weight:700;position:relative}
+        .chk_email_code .div_1 .chkError{background:url(../static/admin/img/pwd_sprite.png) 0 -353px no-repeat;width:13px;height:13px;position:relative;top:2px;*top:1px;display:inline-block}
+        .chk_email_code .div_2{background:url(../static/admin/img/email_code_ipt.png) 130px top no-repeat;height:22px}
+        .chk_email_code .div_2 span{display:inline-block;text-align:right;width:130px;line-height:22px;padding-right:2px}
+        .chk_email_code .div_2 input{background:0 0;border:none;width:119px;ime-mode:disabled}
+        .chk_email_code .div_3{padding-left:130px;line-height:30px}
+        .chk_email_code .div_3 input{background:url(../static/admin/img/mail_code_btn_chs.png) no-repeat;border:none;width:55px;height:22px}#email_code_ipt_err{color:red;display:none}
+        .box_11,a{outline:0}.method_box .tahoma{font-family:Tahoma;line-height:18px;height:18px;color:#84A8C8}.method_box a:hover,.method_box a:hover .tahoma{color:#4199d7}#password,#password_again{font-family:Arial,Helvetica,sans-serif}.red_bg{background-color:#C30;color:#fff;height:20px;line-height:20px}
+        .paopao,.paopao .p_l,.paopao .p_r{height:31px;position:absolute}
+        .paopao{background:url(../static/admin/img/pao_c.png) repeat-x;z-index:10;white-space:nowrap}
+        .paopao .p_l{background:url(../static/admin/img/pwd_sprite.png) 0 -387px no-repeat;color:#666;display:inline-block;font-size:12px;font-weight:400;line-height:24px;padding-left:8px;top:0}
+        .paopao .p_r{background:url(../static/admin/img/pwd_sprite.png) 0 -423px no-repeat;display:inline-block;right:0;width:5px}
+        .pwd_info{position:relative}
+        .pwd_tips{width:158px;height:71px;padding-top:6px;position:absolute;top:-18px;background:url(../static/admin/img/pwd_sprite.png) no-repeat}
+        .pwd_tips div{height:18px;line-height:22px;margin-left:15px;padding-left:18px}
+        .pwd_tips .default{background:url(../static/admin/img/pwd_sprite.png) 0 -215px no-repeat}
+        .pwd_tips .yes{background:url(../static/admin/img/pwd_sprite.png) 0 -247px no-repeat}
+        .pwd_tips .no{background:url(../static/admin/img/pwd_sprite.png) 0 -281px no-repeat}
+        .pwd_info .password_info{vertical-align:top;color:grey}.phone_tips{width:240px;z-index:100;left:190px;top:-31px}.arrow,.phone_del{top:7px;position:absolute}.phone_del{width:21px;height:21px;right:14px;background:url(../static/admin/icon_3_tiny.png) -116px -160px no-repeat;.arrow{right:1px;width:13px;height:8px;line-height:14px;background:url(../static/admin/img/pwd_sprite.png) -40px -323px no-repeat}
+        .web_notice{background:#FFF6CD;height:22px;width:100%;position:absolute;left:0;display:none;z-index:9999}
+        .web_notice_text{line-height:22px;margin:0 auto;width:956px;text-align:center;font-family:Tahoma;color:#5D6161}#verima_bg{background:url(../static/admin/img/ipt.png) 0 -597px no-repeat;width:169px}#verima_bg .bg_focus{background-position-y:-634px}#verima_bg.bg_error{background:url(../static/admin/img/input_error.png) 0 -151px no-repeat}#verima_ipt_box{width:179px}#verima_ipt_box input{width:153px}.getverima{width:121px;float:left}.getverima span{color:#fff}.getverima .sended span{color:#888}
+        .getverima div{background:#69b946;color:#fff;display:inline-block;font:16px/33px "寰蒋闆呴粦","瀹嬩綋";height:31px;text-align:center;width:119px;padding-bottom:3px;_padding-bottom:0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;border-style:solid;border-width:1px;border-color:transparent}.getverima div.sended{color:#888;background:#f4f9fd;border-color:#d0dae3}#timeLeft,#verimaTip{font-size:15px}.box_phone_tip{position:relative;top:-10px}.green{color:green}#up_box p{font-size:14px}#up_box .tip{margin-top:5px;margin-bottom:15px}#x_box>p{background:#f8fdff}
+    </style>
+    <style rel="stylesheet" type="text/css">
+        .box_{position:fixed}.cover{height:981px}#enterBanner{display:block;width:610px;height:165px;background:url(../static/admin/img/assess_topic.jpg) no-repeat center;margin-left:60px;margin-top:0;margin-bottom:-5px}.haomaTitle{position:relative;width:604px;height:80px;margin-left:63px;border-bottom:1px solid #ddd}.haomaTitle .haoma-inner{position:absolute;width:100%;height:25px;line-height:25px;font-family:"微软雅黑";font-size:18px;text-indent:6px;border-left:3px solid #59AfE4;margin-top:50px;color:#616161}#haomaBox{width:610px;height:260px;position:fixed;background:#fff;left:50%;top:50%;margin-top:-130px;margin-left:-305px;z-index:9999;background:url(../static/admin/img/assess_topic.jpg) no-repeat center;z-index:1028;display:none;_position:absolute}#haomaBtn{display:block;width:160px;height:40px;background:url(http://3gimg.qq.com/qq_product_operations/temp/enterBtn.jpg) no-repeat center;position:absolute;top:180px;left:365px}#haomaBox:hover{cursor:pointer}#haomaClose{display:block;width:15px;height:15px;background:url(http://3gimg.qq.com/qq_product_operations/temp/closeBtn.png) no-repeat center;position:absolute;left:590px;top:5px;background-size:100%}#to_good_num{display:block;width:385px;height:96px;background:url(../static/admin/img/form_topic.jpg);margin-top:150px;margin-left:170px}#old_reg{display:block;width:385px;height:96px;background:url(http://3gimg.qq.com/qq_product_operations/temp/good_num_enter.png);margin-top:50px;margin-left:170px}.phone_box_land{z-index:5}.enterB{display:none}.cover{animation:fadeShow 1s ease-in-out;-webkit-animation:fadeShow 1s}@-webkit-keyframes fadeShow{0%{opacity:.05}50%{opacity:.05}100%{opacity:.3}}@keyframes fadeShow{0%{opacity:.5}50%{opacity:0}100%{opacity:.3}}
+    </style>
+    <style rel="stylesheet" type="text/css">
+        .confirm_btn:hover,a{text-decoration:none}a:hover,a:link{color:#4199d7}*,body{color:#333}*{padding:0;margin:0;list-style:none}img,table,td,tr{border:none;border-collapse:collapse}a{color:#84a8c8}a:active,a:visited{color:#4099d6}a:hover{cursor:pointer}
+        .clear{clear:both;font-size:0;line-height:0}
+        .hide{display:none!important}
+        .hidden{visibility:hidden!important}
+        .noborder{border:none!important}
+        .nobg{background:0 0!important}html{overflow-y:scroll;overflow-x:auto}body{background:url(../static/admin/img/body.png) repeat-x #fff;font:400 12px/14px Geneva,"瀹嬩綋",Tahoma,sans-serif;overflow-y:hidden;overflow-x:auto\9}
+        .bg{background:url(../static/admin/img/bg_chs.png) center top no-repeat}
+        .container{width:956px;margin:0 auto;background:url(../static/admin/img/left.png) left bottom no-repeat;position:relative}
+        .header{background:url(../static/admin/img/bg_chs.png) center top no-repeat;height:94px}
+        .header .logo{float:left;width:289px;height:94px}
+        .header .feedback{float:right;color:#fff;margin:65px 20px 0 0;margin-top:67px\9;cursor:pointer}
+        .left,.left .search ul a,.left .search ul li,.right{float:left}
+        .left{width:210px;background:url(../static/admin/img/left.png) left top no-repeat #f8fdff;height:580px;padding-top:30px}
+        .left a.nav_box{margin-left:2px;background:url(../static/admin/img/left_2.png) left top no-repeat;height:72px;padding:10px 0 0 20px;cursor:pointer;display:block;width:168px}
+        .left a.nav_box span{display:block;color:#616c72}
+        .left a.cur{background-position:left bottom;color:#fff;width:auto}
+        .left a.nav_box span.dt{font-size:20px;font-family:'寰蒋闆呴粦';line-height:26px;padding-left:30px;height:26px}
+        .left .search ul .item_1{background:url(../static/admin/img/ipt.png) -267px -70px no-repeat}
+        .left .search ul .item_2{background:url(../static/admin/img/ipt.png) -267px -97px no-repeat}
+        .left .search ul .item_3{background:url(../static/admin/img/ipt.png) -267px -125px no-repeat}
+        .left .search ul .item_4{background:url(../static/admin/img/ipt.png) -267px -152px no-repeat}
+        .left .search ul .item_5{background:url(../static/admin/img/ipt.png) -267px -181px no-repeat}
+        .left .search ul .item_6{background:url(../static/admin/img/ipt.png) -267px -209px no-repeat}
+        .right{border-top:solid 1px #80add9;border-bottom:solid 1px #d6d9db;background:url(//6.url.cn/zc/chs/img/right_1600.png?v=10078) right top no-repeat #f8fdff;padding-bottom:80px;min-height:530px;_height:530px;width:746px}
+        .right .phone{text-align:left;height:20px;padding:10px 0 0;position:relative;z-index:1}
+        .right .phone h3{font-weight:700;color:#333;font-size:12px}
+        .right .phone .hr{background-color:#ddd;height:1px;margin:3px 0;line-height:1px}
+        .right .phone .hover,.right .phone .normal{border-style:solid;border-width:1px 1px 0;display:inline-block;height:14px;padding-top:2px;padding-left:8px;width:90px;z-index:2;color:#3F9AD3;top:10px;right:6px;position:absolute}
+        .right .phone .normal{border-color:#F8FDFF}.right .phone .hover{border-color:#7FBBF1;background:#fff}
+        .right .phone .tip{color:#6F7374}.right .phone .red{color:#f66}
+        .right .phone .quickReg{background-color:#FFF;border:1px solid #7FBBF1;display:none;height:248px;position:absolute;right:6px;top:26px;width:236px;z-index:1;line-height:18px;padding:6px 0 0 10px}
+        .right .phone .quickReg p{color:#6f7374}.right .phone .quickReg .ml55{margin-left:54px}
+        .right .box{margin-right:3px}.footer{width:956px;margin:0 auto;background:#fff;text-align:center;color:#a6a6a6;padding:20px 0}
+        .footer span{font-family:Tahoma,Verdana,Arial,'瀹嬩綋';color:#A6A6A6}.search .ipt_box .search_form{margin:0;padding:2px 0 0}.radio_checked,.radio_unchecked{padding-left:20px;height:18px;line-height:18px;display:inline-block}#lang_box{position:absolute;z-index:99;right:2px;top:40px}#lang_box a,#lang_box a:active,#lang_box a:hover,#lang_box a:visited{color:#E7E7E7}#lang_box,#lang_box span{color:#FFF}#lang_box,#lang_box a,#lang_box span{font-family:Tahoma,Verdana,Arial,'瀹嬩綋'}
+        .radio_checked{background:url(../static/admin/img/ipt.png) -300px -354px no-repeat;color:#84A8C8}
+        .radio_checked:link{color:#84A8C8}.radio_checked:hover{color:#4199d7;cursor:pointer}
+        .radio_unchecked{background:url(../static/admin/img/ipt.png) -300px -322px no-repeat;color:#84A8C8}
+        .radio_unchecked:link{color:#84A8C8}.radio_unchecked:hover{color:#4199d7;cursor:pointer}
+        .confirm_btn{background:url(../static/admin/img/ipt.png) 0 -344px no-repeat;border:none;color:#FFF;cursor:pointer;display:inline-block;font:700 22px/52px "寰蒋闆呴粦";height:52px;text-align:center;width:183px}
+        .confirm_btn:hover{color:#FFF}.phone_verify_sea_country_box{z-index:1000}
+        .phone_verify_sea_country_box .combox-list{overflow-y:scroll;max-height:200px;_height:200px}
+        .phone_verify_sea_phone{display:none}.phone_verify_phone_tips{color:grey;left:0;position:absolute;top:45px;width:360px}
+        .phone_verify_sea_country_input{background:0 0;border:none;color:#696C6E;display:inline-block;height:18px;line-height:18px;padding:8px;width:284px}#nav_3{display:none}input::-ms-clear{display:none}input::-ms-reveal{display:none}
+    </style>
+    <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
+</head>
+<body>
+<div class="web_notice" id="web_notice">
+    <div class="web_notice_text" id="web_notice_text"></div>
+</div>
+<div class="cover" id="cover"></div>
+<div class="bg">
+    <div class="container">
+        <div class="header"></div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="right">
+                <div class="phone" id="phone_quick"></div>
+                <div class="enterA" id="enterA">
+                    <div class="haomaTitle">
+                        <div class="haoma-inner" id="haoma-inner">帐号注册</div>
+                    </div>
+                    <div style="margin-top: 20px">
+                        <div class="box box_3" style="z-index:0">
+                            <label class="item" id="name">昵称</label>
+                            <div class="ipt_box nick_ipt_box">
+                                <div id="nick_bg" class="bg_txt">
+                                    <input type="text" class="new_txt" id="username" style="z-index:0" maxlength="20" autocomplete="off" onkeydown="next(this.id);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box_4">
+                            <label class="item">密码</label>
+                            <div class="ipt_box">
+                                <div id="password_bg" class="bg_txt">
+                                    <input type="password" class="new_txt" id="password" maxlength="16" onkeydown="next(this.id);">
+                                </div>
+                            </div>
+                            <div class="info pwd_info">
+                                <div class="pwd_tips" id="pwd_tips">
+                                    <div class="default" id="pwd_tip1" style="margin-top: -5px">长度为6-16个字符</div>
+                                    <div class="default" id="pwd_tip2">不能包含空格</div>
+                                    <div class="default" id="pwd_tip3">不能是9位以下纯数字</div>
+                                    <div class="default" id="pwd_tip4">两次输入的密码不同</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box_5">
+                            <label class="item" id="ensure">确认密码</label>
+                            <div class="ipt_box">
+                                <div id="password_again_bg" class="bg_txt">
+                                    <input type="password" class="new_txt" id="password_again" maxlength="16" onkeydown="next(this.id);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box_11">
+                            <div class="item"></div>
+                            <div class="ipt_box">
+                                <br><br>
+                                <div class="agree_box">
+                                    <input id="agree" checked="checked" type="checkbox" onchange="agree();">我已阅读并同意&nbsp;<a style="color: red" href="http://www.desckie.com/select/agreement/" target="_blank">使用条款及说明</a></input>
+                                    <div class="submit">
+                                    <br>
+                                    <input type="button" value="提交注册" id="submit" onclick="javascript:submit();" style="">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">Copyright <span>©</span> 2016 Hang All Rights Reserved</div>
+<script>
+    function agree(){
+        var status = document.getElementById("agree");
+        var submit_button = document.getElementById("submit");
+        if(status.checked != true){
+            submit_button.disabled = "disabled";
+            submit_button.style.backgroundColor = "gray";
+        }
+        else{
+            submit_button.disabled = "";
+            submit_button.style.backgroundColor = "";
+        }
+    }
+    function next(id){
+        if(event.keyCode == 13){
+            if(id == "username")    document.getElementById("password").focus();
+            else if(id == "password")   document.getElementById("password_again").focus();
+            else if(id == "password_again") submit();
+        }
+    }
+</script>
+<script>
+        var username;
+        var password;
+        function checkForm(){
+            var valid = true;
+            username = document.getElementById("username").value;
+            password = document.getElementById("password").value;
+            var password_again = document.getElementById("password_again").value;
+            if(username == ""){
+                document.getElementById("name").style.color = "red";
+                valid = false;
+            }
+            else{
+                document.getElementById("name").style.color = "black";
+            }
+            if(password.length < 6 || password.length >16){
+                document.getElementById("pwd_tip1").style.color = "red";
+                valid = false;
+            }
+            else{
+                document.getElementById("pwd_tip1").style.color = "green";
+            }
+            if(password.indexOf(" ")>0){
+                document.getElementById("pwd_tip2").style.color = "red";
+                document.getElementById("password").value = "";
+                document.getElementById("password_again").value = "";
+                valid = false;
+            }
+            else{
+                document.getElementById("pwd_tip2").style.color = "green";
+            }
+            if(password.length<9){
+                if(password == parseInt(password)){
+                    document.getElementById("pwd_tip3").style.color = "red";
+                    valid = false;
+                }
+                else{
+                    document.getElementById("pwd_tip3").style.color = "green";
+                }
+            }
+            else{
+                document.getElementById("pwd_tip3").style.color = "green";
+            }
+            if(password != password_again){
+                document.getElementById("pwd_tip4").style.color = "red";
+                document.getElementById("password_again").value = "";
+                valid = false;
+            }
+            else{
+                document.getElementById("pwd_tip4").style.color = "green";
+            }
+            return valid;
+        }
+        function submit(){
+            if(!checkForm()){
+                return;
+            }
+            var URL = "http://www.desckie.com/regist/";
+            var data = {'username': username, 'password': password};
+            $.post(URL,data,function(response){
+                if(response == "该用户已注册")    alert(response);
+                else    window.location.href = "http://www.desckie.com";
+            });
+        }
+    </script>
+</body>
+</html>

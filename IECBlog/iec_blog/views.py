@@ -5,6 +5,10 @@ from django.http import HttpResponse
 from datetime import datetime
 
 
+def get_homepage(request):
+    return HttpResponse('Homepage')
+
+
 def blog(request, author_name, blog_id):
     blog_id = int(blog_id)
     if not len(BlogUser.objects.filter(username=author_name)) == 1:

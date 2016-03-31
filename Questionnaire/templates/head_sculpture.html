@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>我的头像</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
+  <link data-turbolinks-track="true" debug="false" href="https://cdn.jinshuju.net/assets/columbus/application-b088ea91390620e22dcde607f13bc41c.css" media="screen" rel="stylesheet"/>
+  <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/pusher-854ace9c4d1b08136b5092a579a1a274.js"></script>
+  <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/application-178a2318a181f06287fb0efaa636f7f8.js"></script>
+ </head>
+ <body>
+  <div class="flash-notifications" data-message="{}"></div>
+  <header>
+   <div class="container header-banner">
+    <div class="header-nav header-logo">
+     <a class="brand brand-event track-event" href="http://www.desckie.com/">
+         <i class="gd-icon-logo"></i><span class="brand-name">问卷网</span>
+     </a>
+    </div>
+    <div class="global-search-container search-box" id="global_search_container">
+     <div class="search-backdrop"></div>
+     <input class="search-content" id="key_word" name="key_word" type="search" onkeydown="search();">
+     <i class="search-icon gd-icon-search" style="margin-top: -15px"></i>
+     <a class="search-trigger" href="javascript:void(0)"></a>
+    </div>
+    <ul class="header-nav user-nav">
+     <li>
+      <a class="top-settings" href="javascript:void(0)">
+       <div class="avatar-container">
+        <img alt="Avatar default" class="avatar" src="{{ head_img_src }}"/>
+       </div>
+       <span class="user-name"><span class="popup-trigger"></span></span>
+      </a>
+     </li>
+    </ul>
+    <div class="top-settings-popup gd-hide">
+     <div class="top-settings-content">
+      <ul class="links">
+       <li class="email-with-plan">
+        您好,亲爱的用户:
+        <div class="name-with-vip-style">
+         <span class="vip-user free_user">lizonghang</span>
+        </div>
+       </li>
+       <li class="separator"></li>
+       <li><a class="setting-profile-link profile-event track-event" href="http://www.desckie.com">主页</a></li>
+       <li class="separator"></li>
+       <li><a class="template-event track-event" href="http://www.desckie.com/select/">模板中心</a></li>
+       <li class="separator"></li>
+       <li><a href="http://www.desckie.com/select/list/" target="_blank">我的问卷</a></li>
+       <li class="separator"></li>
+       <li><a href="http://www.desckie.com/select/collect/" target="_blank">我的收藏</a></li>
+       <li class="separator"></li>
+       <li style="color: darkgray">我的头像</li>
+       <li class="separator"></li>
+       <li><a href="javascript:logout();">注销</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="form-nav">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <div class="pull-right" id="copy_published_form_link" style="height: 25px;"></div>
+      <div class="subnav" data-placement="bottom" id="form_nav"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-10">
+     <div class="main_content with-tabs" id="form_publish">
+      <div class="tab-content">
+       <div class="tab-pane active" id="tab_visit_url">
+        <div class="content-section weixin-thumbnail-section">
+         <div class="section-header">
+          <span class="title">选择头像</span>
+         </div>
+         <div class="section-body" style="height: 300px">
+          <div class="section-description"><p>选择默认头像或自定义头像</p></div>
+            <div>
+                <ul class="thumbnail-icons predefined-thumbnail">
+                    <li class="">
+                      <img id="pic_1" onclick="choosed(this.id)" src="../static/admin/img/head_img/b21bb051f819861842d54ba04ded2e738bd4e600.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_2" onclick="choosed(this.id)" src="../static/admin/img/head_img/20160121102221_LjFyB.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_3" onclick="choosed(this.id)" src="../static/admin/img/head_img/20160106202904_NjC8Z.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_4" onclick="choosed(this.id)" src="../static/admin/img/head_img/20160111175420_ZmTzU.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_5" onclick="choosed(this.id)" src="../static/admin/img/head_img/3157750720423401783.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_6" onclick="choosed(this.id)" src="../static/admin/img/head_img/20160103175943_SkFQf.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_7" onclick="choosed(this.id)" src="../static/admin/img/head_img/b8014a90f603738dfa989413b51bb051f819ec35.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_8" onclick="choosed(this.id)" src="../static/admin/img/head_img/1513261b8-0.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_9" onclick="choosed(this.id)" src="../static/admin/img/head_img/28d4955ce9c72e05!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_10" onclick="choosed(this.id)" src="../static/admin/img/head_img/d1a20cf431adcbef325866d1aeaf2edda2cc9ffc.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_11" onclick="choosed(this.id)" src="../static/admin/img/head_img/59e8964a6cf8aebe!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_12" onclick="choosed(this.id)" src="../static/admin/img/head_img/5fdf8db1cb1349543078bb97574e9258d0094ada.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_13" onclick="choosed(this.id)" src="../static/admin/img/head_img/20120715180052_JZBJV.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_14" onclick="choosed(this.id)" src="../static/admin/img/head_img/cf9834255fa3c988!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_15" onclick="choosed(this.id)" src="../static/admin/img/head_img/4ad8138593ff855f!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_16" onclick="choosed(this.id)" src="../static/admin/img/head_img/52f311d5136eb590.jpg!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_17" onclick="choosed(this.id)" src="../static/admin/img/head_img/a43cae40c045d671!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_18" onclick="choosed(this.id)" src="../static/admin/img/head_img/295b392d9aa9fabf!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_19" onclick="choosed(this.id)" src="../static/admin/img/head_img/082dd31a1d325798!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_20" onclick="choosed(this.id)" src="../static/admin/img/head_img/807dcbcf10c34916!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_21" onclick="choosed(this.id)" src="../static/admin/img/head_img/9d82d158ccbf6c8163efdb2cb93eb13532fa401e.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_22" onclick="choosed(this.id)" src="../static/admin/img/head_img/b14db319ebc4b74528275a81cffc1e178b82158a.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_23" onclick="choosed(this.id)" src="../static/admin/img/head_img/a8773912b31bb05101d48971347adab44bede0f3.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_24" onclick="choosed(this.id)" src="../static/admin/img/head_img/a19ca033b1f4f1a1%21200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_25" onclick="choosed(this.id)" src="../static/admin/img/head_img/e2a030ded69cc421!200x200.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_26" onclick="choosed(this.id)" src="../static/admin/img/head_img/275d9c13e8426e50!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_27" onclick="choosed(this.id)" src="../static/admin/img/head_img/2f738bd4b31c8701f2683995257f9e2f0608ffe3.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_28" onclick="choosed(this.id)" src="../static/admin/img/head_img/5163ea1eb3f7d603.gif%21200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_29" onclick="choosed(this.id)" src="../static/admin/img/head_img/d0b76dd3da18c726!200x200.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_30" onclick="choosed(this.id)" src="../static/admin/img/head_img/98c2d15006d60fc4!200x200.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_31" onclick="choosed(this.id)" src="../static/admin/img/head_img/121225160390128.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_32" onclick="choosed(this.id)" src="../static/admin/img/head_img/10-171801_947.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_33" onclick="choosed(this.id)" src="../static/admin/img/head_img/21-091754_896.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_34" onclick="choosed(this.id)" src="../static/admin/img/head_img/7081a99e9d6d583e!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_35" onclick="choosed(this.id)" src="../static/admin/img/head_img/632e5af25a5fc5f6!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_36" onclick="choosed(this.id)" src="../static/admin/img/head_img/1dff905704954773!200x200.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_37" onclick="choosed(this.id)" src="../static/admin/img/head_img/20131002143214_TiCw5.thumb.224_0.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_38" onclick="choosed(this.id)" src="../static/admin/img/head_img/11385343fbf2b2118916f9f9cb8065380cd78e48.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_39" onclick="choosed(this.id)" src="../static/admin/img/head_img/3_141212135049_2.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_40" onclick="choosed(this.id)" src="../static/admin/img/head_img/20120815234815_TF5J3.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_41" onclick="choosed(this.id)" src="../static/admin/img/head_img/659f7badd4bdba6b!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_42" onclick="choosed(this.id)" src="../static/admin/img/head_img/16970caa01f0983c!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_43" onclick="choosed(this.id)" src="../static/admin/img/head_img/20140815075118_ZUUFk.jpeg">
+                    </li>
+                    <li class="">
+                      <img id="pic_44" onclick="choosed(this.id)" src="../static/admin/img/head_img/120815134333542.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_45" onclick="choosed(this.id)" src="../static/admin/img/head_img/4fa567e21d643317!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_46" onclick="choosed(this.id)" src="../static/admin/img/head_img/960a304e251f95ca20a662a5cb177f3e67095256.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_47" onclick="choosed(this.id)" src="../static/admin/img/head_img/3719176_136677628112.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_48" onclick="choosed(this.id)" src="../static/admin/img/head_img/5754f03f53dc627f0996c0310d08634e.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_49" onclick="choosed(this.id)" src="../static/admin/img/head_img/d4628535e5dde711e09861aaa5efce1b9d166127.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_50" onclick="choosed(this.id)" src="../static/admin/img/head_img/25949fbd07e58c02!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_51" onclick="choosed(this.id)" src="../static/admin/img/head_img/ef52743543034f0f!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_52" onclick="choosed(this.id)" src="../static/admin/img/head_img/8527a71f3a292df5421317ccbc315c6036a87364.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_53" onclick="choosed(this.id)" src="../static/admin/img/head_img/f12508426790bd02!200x200.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_54" onclick="choosed(this.id)" src="../static/admin/img/head_img/caef76094b36acafb7c17f1c7dd98d1001e99c29.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_55" onclick="choosed(this.id)" src="../static/admin/img/head_img/e9641092233440b1!200x200.png">
+                    </li>
+                    <li class="">
+                      <img id="pic_56" onclick="choosed(this.id)" src="../static/admin/img/head_img/3b87e950352ac65ce5c939abfaf2b21192138a1e.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_57" onclick="choosed(this.id)" src="../static/admin/img/head_img/c8177f3e6709c93d7c098a699e3df8dcd00054b0.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_58" onclick="choosed(this.id)" src="../static/admin/img/head_img/e0a21b1ed21b0ef4018abc8fddc451da80cb3e64.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_59" onclick="choosed(this.id)" src="../static/admin/img/head_img/tu5467_13.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_60" onclick="choosed(this.id)" src="../static/admin/img/head_img/51d3d9e33e1d4858.jpg!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_61" onclick="choosed(this.id)" src="../static/admin/img/head_img/5b3cab4cd8c49752!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_62" onclick="choosed(this.id)" src="../static/admin/img/head_img/b65d9fd09eccfd2e!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_63" onclick="choosed(this.id)" src="../static/admin/img/head_img/2f579d9935479ec7!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_64" onclick="choosed(this.id)" src="../static/admin/img/head_img/53245faf8a2ed399.jpg!200x200.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_65" onclick="choosed(this.id)" src="../static/admin/img/head_img/198218585025930700ad.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_66" onclick="choosed(this.id)" src="../static/admin/img/head_img/u=4271292265,2728609890&fm=23&gp=0.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_67" onclick="choosed(this.id)" src="../static/admin/img/head_img/u=3467593465,2692518938&fm=23&gp=0.jpg">
+                    </li>
+                    <li class="">
+                      <img id="pic_68" onclick="choosed(this.id)" src="../static/admin/img/head_img/u=1946078368,2429855216&fm=23&gp=0.jpg">
+                    </li>
+                </ul>
+            </div>
+         </div>
+        </div>
+        <div style="margin-left: 1000px;margin-top: -300px;">
+            <img id="head_img" src="{{ head_img_src }}" alt="head_img" style="background-color: midnightblue;width: 174px;height: 174px;border: 2px solid mediumpurple;border-radius: 87px">
+            <button style="margin-left: 48px;margin-top: 30px;width: 80px;height: 25px;" onclick="asHead();">选择头像</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+      function choosed(id){
+          document.getElementById("head_img").src = document.getElementById(id).src;
+      }
+      function asHead(){
+          var head_img_src = document.getElementById("head_img").src;
+          var url = "http://www.desckie.com/set_head_img/";
+          $.post(url, {'img_src': head_img_src}, function(response){
+              document.getElementsByClassName("avatar")[0].src = head_img_src;
+              alert(response);
+          })
+      }
+      function logout(){
+          var url = "http://www.desckie.com/logout/";
+          $.get(url, function(response){
+              window.location.href = "http://www.desckie.com";
+              alert(response);
+          });
+      }
+      function search(){
+          if(event.keyCode == 13){
+              var title_include = document.getElementById("key_word").value;
+              if(title_include){
+                  var url = "http://www.desckie.com/search_result/?title_include="+title_include;
+                  window.location.href = url;
+              }
+              else  alert("请输入需要检索的问卷标题");
+          }
+      }
+  </script>
+ </body>
+</html>

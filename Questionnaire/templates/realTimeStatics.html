@@ -1,0 +1,160 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head id="ctl02_head1">
+  <title>实时数据报告</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <link href="http://www.sojump.com/css/NewDefault.css?v=1" rel="stylesheet" type="text/css"/>
+  <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
+     <script src="http://www.desckie.com/static/admin/js/jquery.js"></script>
+ </head>
+ <body style="BACKGROUND:#B0E0FA url(http://sojump.b0.upaiyun.com/images/wjx/JoinQuestionnaire/bg/abc2.jpg)  no-repeat fixed center 0">
+  <div class="" id="container">
+   <div id="ctl02_header" style="overflow-x: hidden; width: 920px; background-repeat: repeat-x;">
+    <div style="display:none;"></div>
+   </div>
+   <div>
+    <div id="ctl02_wenjuan" style="margin-left: 10px; padding-bottom: 15px;">
+     <div id="ctl02_ContentPlaceHolder1_ViewResult1_divNotPublisher" style="line-height:28px; padding-left: 20px; margin:20px 0 20px;">
+      <div style="text-align:center;padding-top:10px;">
+       <a class="titlelnk" href="http://www.desckie.com/select/template_1/view/?user={{ user }}" id="ctl02_ContentPlaceHolder1_ViewResult1_lkJQ" style="font-size:16px; text-decoration:none;" target="_blank" title="填写此问卷">
+        <b><span id="ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie" class="QTitle"></span></b>
+       </a>
+      </div>
+     </div>
+     <div id="ctl02_ContentPlaceHolder1_divViewStat" style="width:850px;margin:0 auto; background:#ffffff; padding:0 30px 20px;">
+       <div id="divSumData">
+       <div style="clear: both;"></div>
+       <ul id="ulList" style="list-style-type: none;"></ul>
+       <div style="clear: both; height: 25px;"></div>
+       <div style="visibility: visible;">
+        <div style="float:left;"></div>
+        <div style="float: right; padding-top:7px; vertical-align: bottom;"></div>
+        <div style="margin-left: 42%;display: inline;">
+         <a class="sumitbutton" href="javascript:endPublish();" id="ctl02_ContentPlaceHolder1_hrefSave2" title="停止问卷数据的收集,点击后得到问卷结论数据且不再接受新数据.">
+          <span>终止问卷发布</span>
+         </a>
+        </div>
+        <div class="divclear"></div>
+       </div>
+       <div style="clear: both;"></div>
+      </div>
+     </div>
+     <div style="clear: both"></div>
+     <div style="height:20px;"></div>
+    </div>
+    <div style="clear: both;"></div>
+   </div>
+   <div style="clear: both;"></div>
+  </div>
+  <div style="clear: both;"></div>
+  <script>
+         var isEnd = "{{ isEnd }}";
+         if(isEnd == "True"){
+            var a = document.getElementById("ctl02_ContentPlaceHolder1_hrefSave2");
+             a.href = "javascript:print();";
+             a.getElementsByTagName("span")[0].innerText = "打印数据";
+             a.title = "打印数据";
+         }
+     </script>
+ <script>
+      var QType = "{{ type }}".split(",");
+      var valid = "{{ valid }}".replace("[","").replace("]","").split(",");
+      var QContent = "{{ QContent }}".split(";");
+      var data = "{{ data }}";
+      data = data.substring(2,data.length-2).split("], [");
+      document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText = QContent[0];
+      QContent.splice(0,1);
+      var j;
+      var QNum = QType.length;
+      for(j=0;j<QNum;j++){
+          QContent[j] = QContent[j].split(",");
+      }
+      for(j=0;j<valid.length;j++){
+          valid[j] = parseInt(valid[j]);
+      }
+      for(j=0;j<data.length;j++){
+          data[j] = data[j].split(",");
+      }
+      var Qs = 1;
+      var i;
+      var ul = document.getElementById("ulList");
+      for(i=0;i<QNum;i++){
+          var new_li = document.createElement("li");
+          var k;
+          var selects;
+          if(QType[i] == 'radio'){
+              selects = '<div class="Q'+ (i+1) +'" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanTitle" style="line-height: 24px"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionIndex" style="color:#666666;font-weight:bold;color:#3d81ee;">第' + Qs + '题：</span><h3 style="margin: 0px; padding: 0px;"><span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionDesp" style="color:#333333;font-size:14px;">' + QContent[i][0] + '</span> </h3> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbType" style="color:#0066FF;">[单选题] </span> </div> <div style="margin: 5px 0;"></div> <div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_divResult"> <div style="margin-top: 5px;"> <table border="0" cellpadding="3" cellspacing="0" chartid="c10000" class="tableResult" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_tbItemCounter" style="background-color:#D9E5ED;font-size:12px;width:820px;border-collapse:collapse;"> <thead> <tr align="center" class="text2" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_titleRow" style="font-weight:bold;"> <td style="cursor: pointer;">选项</td> <td align="center" style="width:50px;cursor: pointer;">小计</td> <td align="left" style="width:360px;">比例</td> </tr> </thead>';
+              for(k=1;k<QContent[i].length;k++){
+                  if(k%2==1){
+                      selects += '<tbody><tr style="background:white">';
+                  }
+                  else{
+                      selects += '<tbody><tr style="background:#eff6fb">';
+                  }
+                  selects += '<td>'+ QContent[i][k] +'</td><td align="center">'+ data[i][k-1] +'</td><td><div class="bar"><div class="precent" style="width: ' + (data[i][k-1]*100/(valid[i]==0?1:valid[i])).toFixed(2) + '%; display: block;">';
+                  selects += '<img alt="" height="13" src="http://www.sojump.com/Images/wjx/viewstat/vote_cl_v2.png" width="149"/></div></div><div style="margin-top:3px;float:left;">'+ (data[i][k-1]*100/(valid[i]==0?1:valid[i])).toFixed(2) +'%</div><div style="clear:both;"></div></td></tr>';
+              }
+              selects += '</tbody><tfoot><tr><td><b>本题有效填写人次</b></td><td align="center"><b>'+ valid[i] +'</b></td><td></td></tr></tfoot></table><div style="padding-top: 5px;"></div></div></div><span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"><hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/></span>';
+              new_li.innerHTML = selects;
+          }
+          else if(QType[i] == 'checkbox'){
+              selects = '<div class="Q'+ (i+1) +'" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanTitle" style="line-height: 24px"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionIndex" style="color:#666666;font-weight:bold;color:#3d81ee;">第' + Qs + '题：</span><h3 style="margin: 0px; padding: 0px;"><span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionDesp" style="color:#333333;font-size:14px;">' + QContent[i][0] + '</span> </h3> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbType" style="color:#0066FF;">[多选题] </span> </div> <div style="margin: 5px 0;"></div> <div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_divResult"> <div style="margin-top: 5px;"> <table border="0" cellpadding="3" cellspacing="0" chartid="c10000" class="tableResult" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_tbItemCounter" style="background-color:#D9E5ED;font-size:12px;width:820px;border-collapse:collapse;"> <thead> <tr align="center" class="text2" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_titleRow" style="font-weight:bold;"> <td style="cursor: pointer;">选项</td> <td align="center" style="width:50px;cursor: pointer;">小计</td> <td align="left" style="width:360px;">比例</td> </tr> </thead>';
+              for(k=1;k<QContent[i].length;k++){
+                  if(k%2==1){
+                      selects += '<tbody><tr style="background:white">';
+                  }
+                  else{
+                      selects += '<tbody><tr style="background:#eff6fb">';
+                  }
+                  selects += '<td>'+ QContent[i][k] +'</td><td align="center">'+ data[i][k-1] +'</td><td><div class="bar"><div class="precent" style="width: ' + (data[i][k-1]*100/(valid[i]==0?1:valid[i])).toFixed(2) + '%; display: block;">';
+                  selects += '<img alt="" height="13" src="http://www.sojump.com/Images/wjx/viewstat/vote_cl_v2.png" width="149"/></div></div><div style="margin-top:3px;float:left;">'+ (data[i][k-1]*100/(valid[i]==0?1:valid[i])).toFixed(2) +'%</div><div style="clear:both;"></div></td></tr>';
+              }
+              selects += '</tbody><tfoot><tr><td><b>本题有效填写人次</b></td><td align="center"><b>'+ valid[i] +'</b></td><td></td></tr></tfoot></table><div style="padding-top: 5px;"></div></div></div><span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"><hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/></span>';
+              new_li.innerHTML = selects;
+          }
+          else if(QType[i] == 'fitb'){
+              var head;
+              data[i][0] = data[i][0].replace(/&quot;/g,"");
+              var ans = data[i][0].split("\n");
+              var ans_len = ans.length;
+              var j=0;
+              selects = "";
+              for(k=0;k<ans_len-j;k++){
+                  while(ans[k+j] == ""){
+                      j++;
+                  }
+                  if(ans[k+j] == undefined) break;
+                  if(k%2==1){
+                      selects += '<tr style="background:white">';
+                  }
+                  else{
+                      selects += '<tr style="background:#eff6fb">';
+                  }
+                  selects += '<td align="center">'+ (k+1) +'</td> <td>'+ ans[k+j] +'</td> </tr>';
+              }
+              head = '<div class="Q'+ (i+1) +'" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanTitle" style="line-height: 24px"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionIndex" style="color:#666666;font-weight:bold;color:#3d81ee;">第' + Qs + '题： </span> <h3 style="margin: 0px; padding: 0px;"> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbQuestionDesp" style="color:#333333;font-size:14px;">' + QContent[i][0] +' </span> </h3> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_lbType" style="color:#0066FF;">[填空题]&nbsp;&nbsp; </span> </div>';
+              head += '<div style="margin: 5px 0;"></div> <div id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_divResult"> <div style="margin-top: 5px;"> <table border="0" cellpadding="3" cellspacing="0" chartid="c10000" class="tableResult" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_tbItemCounter" style="background-color:#D9E5ED;font-size:12px;width:820px;border-collapse:collapse;"> <thead> <tr align="center" class="text2" id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_titleRow" style="font-weight:bold;"> <td style="width: 5%">序号</td> <td style="width: 95%">用户回复('+ (valid[i]-j) +'人填写)</td> </tr> </thead><tbody>';
+              selects += '</tbody></table> <div style="padding-top: 5px;"></div> </div> </div> <span id="ctl02_ContentPlaceHolder1_dtlQuestionCounter_ctl02_spanSegment" style="height: 30px"> <hr class="listhr" size="2" style="background: #eeeeff; color: #eeeeff"/> </span>';
+              new_li.innerHTML = head + selects;
+          }
+          ul.appendChild(new_li);
+          Qs++;
+      }
+     function endPublish(){
+          var url = "http://www.desckie.com/submit/welcome/realHandler/endPublish/";
+          var local_url = window.location.search.replace("?","").split("&");
+          var username = local_url[0].split("=")[1];
+          var title = document.getElementById("ctl02_ContentPlaceHolder1_ViewResult1_lkQuestionnarie").innerText;
+          var data = {'title': title, 'username': username};
+          $.post(url,data, function(response){
+              alert(response);
+              if(response=="该问卷停止发布"){
+                  var a = document.getElementById("ctl02_ContentPlaceHolder1_hrefSave2");
+                  a.href = "javascript:print();";
+                  a.getElementsByTagName("span")[0].innerText = "打印数据";
+                  a.title = "打印数据";
+              }
+          })
+      }
+  </script>
+ </body>
+</html>

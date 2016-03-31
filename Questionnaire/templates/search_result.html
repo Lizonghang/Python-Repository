@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>搜索结果</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <link href="http://www.desckie.com/static/admin/img/1431417666187269.png" rel="shortcut icon" type="image/x-icon"/>
+  <link data-turbolinks-track="true" debug="false" href="https://cdn.jinshuju.net/assets/columbus/application-b088ea91390620e22dcde607f13bc41c.css" media="screen" rel="stylesheet"/>
+  <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/pusher-854ace9c4d1b08136b5092a579a1a274.js"></script>
+  <script data-turbolinks-track="true" debug="false" src="https://cdn.jinshuju.net/assets/columbus/application-178a2318a181f06287fb0efaa636f7f8.js"></script>
+ </head>
+ <body>
+  <div class="flash-notifications" data-message="{}"></div>
+  <header>
+   <div class="container header-banner">
+    <div class="header-nav header-logo">
+     <a class="brand brand-event track-event" href="http://www.desckie.com/">
+         <i class="gd-icon-logo"></i><span class="brand-name">问卷网</span>
+     </a>
+    </div>
+    <div class="global-search-container search-box" id="global_search_container">
+     <div class="search-backdrop"></div>
+     <input class="search-content" id="key_word" name="key_word" type="search" onkeydown="search();">
+     <i class="search-icon gd-icon-search" style="margin-top: -15px"></i>
+     <a class="search-trigger" href="javascript:void(0)"></a>
+    </div>
+    <ul class="header-nav user-nav">
+     <li>
+      <a class="top-settings" href="javascript:void(0)">
+       <div class="avatar-container">
+        <img alt="Avatar default" class="avatar" src="{{ head_img_src }}"/>
+        </div>
+       <span class="user-name"><span class="popup-trigger"></span></span>
+      </a>
+     </li>
+    </ul>
+    <div class="top-settings-popup gd-hide">
+     <div class="top-settings-content">
+      <ul class="links">
+       <li class="email-with-plan">
+        您好,亲爱的用户:
+        <div class="name-with-vip-style">
+         <span class="vip-user free_user">{{ user }}</span>
+        </div>
+       </li>
+       <li class="separator"></li>
+       <li><a class="setting-profile-link profile-event track-event" href="http://www.desckie.com">主页</a></li>
+       <li class="separator"></li>
+       <li><a class="template-event track-event" href="http://www.desckie.com/select/">模板中心</a></li>
+       <li class="separator"></li>
+       <li style="color: darkgray">我的问卷</li>
+       <li class="separator"></li>
+       <li><a href="http://www.desckie.com/select/collect/" target="_blank">我的收藏</a></li>
+       <li class="separator"></li>
+       <li><a href="http://www.desckie.com/head_sculpture/" target="_blank">我的头像</a></li>
+       <li class="separator"></li>
+       <li><a href="javascript:logout();">注销</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="form-nav">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12" style="height: 29px"></div>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-10">
+     <div class="main_content with-tabs" id="form_publish">
+      <div class="tab-content">
+       <div class="tab-pane active" id="tab_visit_url">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+      var title_str = "{{ titles }}";
+      if(title_str) {
+          var title_list = title_str.split(",");
+          var list_count = title_list.length;
+          var collect_str = "{{ collect }}";
+          var collect_list = collect_str.split(",");
+          var username_str = "{{ username }}";
+          var username_list = username_str.split(",");
+          var i;
+          var target_div = document.getElementById("tab_visit_url");
+          for (i = 0; i < list_count; i++) {
+              var new_div = document.createElement("div");
+              new_div.className = "content-section";
+              new_div.id = "Q" + i;
+              if (collect_list[i] == "1")
+                  var content = '<div class="section-header"><span class="title"><a href="javascript:collect(' + i + ');"><img src="/static/admin/img/red_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>' + title_list[i] + '</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
+              else if (collect_list[i] == "0")
+                  var content = '<div class="section-header"><span class="title"><a href="javascript:collect(' + i + ');"><img src="/static/admin/img/grey_heart.png" style="width: 12px;height: 12px;margin-right: 10px"></a>' + title_list[i] + '</span></div><div class="section-body"><div class="content-sub-section sibling-form-el-container">';
+              content += '<input class="copy-target gd-input-xxlarge" readonly="readonly" type="text" value="http://www.desckie.com/select/template_1/view?user='+username_list[i]+'&title=' + title_list[i] + '"/>';
+              content += '<a class="gd-btn gd-btn-info open-url" href="http://www.desckie.com/select/success/?user='+username_list[i]+'&title=' + title_list[i] + '" target="_blank">查看详情</a>';
+              content += '</div></div>';
+              new_div.innerHTML = content;
+              target_div.appendChild(new_div);
+          }
+      }
+  </script>
+  <script>
+      function collect(index){
+          var div = document.getElementById("Q"+index);
+          var pic_src = div.getElementsByTagName("img")[0].src.split("/");
+          pic_src = pic_src[pic_src.length-1];
+          var tu = div.getElementsByTagName("input")[0].value.split("?")[1].split("&");
+          var title = tu[1].split("=")[1];
+          var username = tu[0].split("=")[1];
+          var url = "http://www.desckie.com/select/collect_log/";
+          if(pic_src == "grey_heart.png"){
+              var method = "collect";
+              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
+                  if(response == "收藏成功")
+                    div.getElementsByTagName("img")[0].src = "/static/admin/img/red_heart.png";
+                  else
+                    alert(response);
+              })
+          }
+          else if(pic_src == "red_heart.png"){
+              var method = "uncollect";
+              $.post(url, {'method': method, 'title': title, 'username': username}, function (response) {
+                  if(response == "取消收藏")
+                    div.getElementsByTagName("img")[0].src = "/static/admin/img/grey_heart.png";
+                  else
+                    alert(response);
+              })
+          }
+      }
+      function logout(){
+          var url = "http://www.desckie.com/logout/";
+          $.get(url, function(response){
+              window.location.href = "http://www.desckie.com";
+              alert(response);
+          });
+      }
+      function search(){
+          if(event.keyCode == 13){
+              var title_include = document.getElementById("key_word").value;
+              if(title_include){
+                  var url = "http://www.desckie.com/search_result/?title_include="+title_include;
+                  window.location.href = url;
+              }
+              else  alert("请输入需要检索的问卷标题");
+          }
+      }
+  </script>
+ </body>
+</html>

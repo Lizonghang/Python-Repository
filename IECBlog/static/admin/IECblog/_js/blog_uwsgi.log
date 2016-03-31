@@ -1,0 +1,46 @@
+*** Starting uWSGI 2.0.11.2 (64bit) on [Thu Mar 31 21:32:42 2016] ***
+compiled with version: 4.8.2 on 06 December 2015 10:28:08
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ28zgwg61iZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/git-lib/IECBlog/static/admin/IECblog/_js
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/git-lib/IECBlog
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7770
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8077 fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1dcda00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1dcda00 pid: 18056 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 18056, cores: 1)
+spawned uWSGI worker 2 (pid: 18059, cores: 1)
+spawned uWSGI worker 3 (pid: 18060, cores: 1)
+spawned uWSGI worker 4 (pid: 18061, cores: 1)
+[pid: 18056|app: 0|req: 1/1] 125.71.229.19 () {46 vars in 1220 bytes} [Thu Mar 31 21:32:44 2016] GET /blog/toxni/01/ => generated 6402 bytes in 60 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 18059|app: 0|req: 1/2] 125.71.229.19 () {44 vars in 1218 bytes} [Thu Mar 31 21:32:55 2016] GET /blog/toxni/2/ => generated 8463 bytes in 58 msecs (HTTP/1.1 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 18060|app: 0|req: 1/3] 125.71.229.19 () {42 vars in 1151 bytes} [Thu Mar 31 21:33:01 2016] GET /admin/ => generated 7328 bytes in 141 msecs (HTTP/1.1 200) 7 headers in 295 bytes (1 switches on core 0)
+[pid: 18059|app: 0|req: 2/4] 125.71.229.19 () {44 vars in 1238 bytes} [Thu Mar 31 21:33:04 2016] GET /admin/iec_blog/blogmessage/ => generated 45869 bytes in 221 msecs (HTTP/1.1 200) 8 headers in 417 bytes (1 switches on core 0)
+[pid: 18060|app: 0|req: 2/5] 125.71.229.19 () {42 vars in 1125 bytes} [Thu Mar 31 21:33:05 2016] GET /admin/jsi18n/ => generated 7138 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+Not Found: /static/admin/img/search.svg
+[pid: 18059|app: 0|req: 3/6] 125.71.229.19 () {42 vars in 1178 bytes} [Thu Mar 31 21:33:05 2016] GET /static/admin/img/search.svg => generated 2445 bytes in 11 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 18060|app: 0|req: 3/7] 125.71.229.19 () {46 vars in 1246 bytes} [Thu Mar 31 21:35:12 2016] GET /admin/iec_blog/blogmessage/ => generated 45869 bytes in 209 msecs (HTTP/1.1 200) 8 headers in 417 bytes (1 switches on core 0)
+[pid: 18059|app: 0|req: 4/8] 125.71.229.19 () {46 vars in 1178 bytes} [Thu Mar 31 21:35:13 2016] GET /admin/jsi18n/ => generated 7138 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+Not Found: /static/admin/img/search.svg
+[pid: 18060|app: 0|req: 4/9] 125.71.229.19 () {46 vars in 1231 bytes} [Thu Mar 31 21:35:13 2016] GET /static/admin/img/search.svg => generated 2445 bytes in 9 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)
+Not Found: /static/admin/img/search.svg
+[pid: 18059|app: 0|req: 5/10] 125.71.229.19 () {46 vars in 1231 bytes} [Thu Mar 31 21:35:14 2016] GET /static/admin/img/search.svg => generated 2445 bytes in 12 msecs (HTTP/1.1 404) 4 headers in 138 bytes (1 switches on core 0)

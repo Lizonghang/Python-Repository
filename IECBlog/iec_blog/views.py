@@ -2,11 +2,7 @@
 from django.shortcuts import render_to_response
 from iec_blog.models import *
 from django.http import HttpResponse
-from django.contrib.auth.models import User
-from django.contrib import auth
-import json
 from datetime import datetime
-import random
 
 
 def blog(request, author_name, blog_id):

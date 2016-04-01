@@ -62,7 +62,7 @@ class toxni_spider(scrapy.Spider):
 
     def handler(self, title, date, author, article, desc):
         post_data = {'title': title, 'date': date, 'author': author, 'article': article, 'desc': desc}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response
@@ -119,7 +119,7 @@ class lypeer_spider(scrapy.Spider):
 
     def handler(self, title, date, author, article, desc):
         post_data = {'title': title, 'date': date, 'author': author, 'article': article, 'desc': desc}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response
@@ -198,7 +198,7 @@ class lazycat_spider(scrapy.Spider):
 
     def handler(self, title, author, article, desc, date):
         post_data = {'title': title, 'author': author, 'article': article, 'desc': desc, 'date': date}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response
@@ -270,7 +270,7 @@ class shadow_spider(scrapy.Spider):
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response
@@ -335,7 +335,7 @@ class yasic_spider(scrapy.Spider):
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response
@@ -404,7 +404,7 @@ class trotyl_spider(scrapy.Spider):
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response
@@ -444,7 +444,7 @@ class rapo_spider(scrapy.Spider):
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response
@@ -501,7 +501,7 @@ class snowbean_spider(scrapy.Spider):
 
     def handler(self, title, date, author, article, desc):
         post_data = {'title': title, 'date': date, 'author': author, 'article': article, 'desc': desc}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response
@@ -570,7 +570,7 @@ class vizards_spider(scrapy.Spider):
 
     def handler(self, title, author, article, date, desc):
         post_data = {'title': title, 'author': author, 'article': article, 'date': date, 'desc': desc}
-        req = urllib2.Request('http://127.0.0.1:8000/publish/', data=urllib.urlencode(post_data))
+        req = urllib2.Request('http://www.desckie.com/publish/', data=urllib.urlencode(post_data))
         response = urllib2.urlopen(req).read()
         if response != '':
             print response

@@ -6,6 +6,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/([a-zA-Z]*)/(\d{1,3})/$', blog),
     url(r'^publish/$', publish),
-    url(r'^del/([a-zA-Z]*)/$', delete),
+#   url(r'^del/([a-zA-Z]*)/$', delete),
     url(r'^$', get_homepage),
 ]
